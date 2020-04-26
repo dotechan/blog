@@ -1,0 +1,7 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/dotechan/dotechan.github.io.git
+	branch = master
+[submodule "themes/erblog"]
+	path = themes/erblog
+	url = https://github.com/ertuil/erblog.git
