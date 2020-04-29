@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://dotechan.github.io/</loc>
+    <lastmod>2020-04-26T16:23:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/post/first_post/</loc>
+    <lastmod>2020-04-26T16:23:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/post/</loc>
+    <lastmod>2020-04-26T16:23:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/zone/zone/</loc>
+    <lastmod>2020-04-26T16:05:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/zone/</loc>
+    <lastmod>2020-04-26T16:05:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/gallery/</loc>
+    <lastmod>2020-04-26T16:02:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/gallery/gallery/</loc>
+    <lastmod>2020-04-26T16:02:07+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/tags/</loc>
+  </url>
+  
+</urlset>
