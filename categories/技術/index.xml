@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>技術 on Work From Dote</title>
-    <link>https://dotechan.github.io/categories/%E6%8A%80%E8%A1%93/</link>
+    <link>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</link>
     <description>Recent content in 技術 on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 29 Apr 2020 22:32:23 +0900</lastBuildDate>
     
-	<atom:link href="https://dotechan.github.io/categories/%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugoで生成した静的サイトをGitHub Pagesで公開する</title>
-      <link>https://dotechan.github.io/post/building_blog/</link>
+      <link>https://dotechan.github.io/blog/post/building_blog/</link>
       <pubDate>Wed, 29 Apr 2020 22:32:23 +0900</pubDate>
       
-      <guid>https://dotechan.github.io/post/building_blog/</guid>
+      <guid>https://dotechan.github.io/blog/post/building_blog/</guid>
       <description>はじめに Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。 ブログを公開するまでの流れを備忘録として残しておきます。 環</description>
     </item>
     
