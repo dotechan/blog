@@ -3,18 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://dotechan.github.io/</loc>
-    <lastmod>2020-04-26T16:23:31+09:00</lastmod>
+    <loc>https://dotechan.github.io/tags/asciidoctor/</loc>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dotechan.github.io/post/first_post/</loc>
-    <lastmod>2020-04-26T16:23:31+09:00</lastmod>
+    <loc>https://dotechan.github.io/categories/</loc>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/tags/git/</loc>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/tags/github-pages/</loc>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/tags/hugo/</loc>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/post/building_blog/</loc>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/post/</loc>
-    <lastmod>2020-04-26T16:23:31+09:00</lastmod>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/tags/</loc>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/</loc>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/categories/%E6%8A%80%E8%A1%93/</loc>
+    <lastmod>2020-04-29T22:32:23+09:00</lastmod>
   </url>
   
   <url>
@@ -25,24 +60,6 @@
   <url>
     <loc>https://dotechan.github.io/zone/</loc>
     <lastmod>2020-04-26T16:05:28+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/gallery/</loc>
-    <lastmod>2020-04-26T16:02:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/gallery/gallery/</loc>
-    <lastmod>2020-04-26T16:02:07+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/tags/</loc>
   </url>
   
 </urlset>

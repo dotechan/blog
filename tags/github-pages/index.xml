@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Work From Dote</title>
-    <link>https://dotechan.github.io/</link>
-    <description>Recent content on Work From Dote</description>
+    <title>GitHub Pages on Work From Dote</title>
+    <link>https://dotechan.github.io/tags/github-pages/</link>
+    <description>Recent content in GitHub Pages on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 29 Apr 2020 22:32:23 +0900</lastBuildDate>
     
-	<atom:link href="https://dotechan.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://dotechan.github.io/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://dotechan.github.io/post/building_blog/</guid>
       <description>はじめに Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。 ブログを公開するまでの流れを備忘録として残しておきます。 環</description>
-    </item>
-    
-    <item>
-      <title>Zone</title>
-      <link>https://dotechan.github.io/zone/zone/</link>
-      <pubDate>Sun, 26 Apr 2020 16:05:28 +0900</pubDate>
-      
-      <guid>https://dotechan.github.io/zone/zone/</guid>
-      <description>初めての投稿 これからダラダラと書いていきます</description>
     </item>
     
   </channel>

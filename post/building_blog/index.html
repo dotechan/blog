@@ -1,0 +1,411 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - Hugoで生成した静的サイトをGitHub Pagesで公開する </title>
+
+    
+    
+    <meta content="Hugo, GitHub Pages, Git, Asciidoctor, 技術" name="keywords">
+    
+    <meta content="Work From Dote - ブログを公開するまでの手順" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="/mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script src="/layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    <link rel="stylesheet" async href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="/self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/zone/">Zone</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/zone/">Zone</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>Hugoで生成した静的サイトをGitHub Pagesで公開する</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-04-29</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/tags/hugo/">
+            <span class="layui-badge" style="vertical-align: 2px;">Hugo</span>
+        </a>
+    
+        <a href="/tags/github-pages/">
+            <span class="layui-badge" style="vertical-align: 2px;">GitHub Pages</span>
+        </a>
+    
+        <a href="/tags/git/">
+            <span class="layui-badge" style="vertical-align: 2px;">Git</span>
+        </a>
+    
+        <a href="/tags/asciidoctor/">
+            <span class="layui-badge" style="vertical-align: 2px;">Asciidoctor</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。<br>
+ブログを公開するまでの流れを備忘録として残しておきます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Windows 10 Home (1903)</p>
+</li>
+<li>
+<p>Git for Windows (v2.26.2)</p>
+</li>
+<li>
+<p>Chocolatey (v0.1015)</p>
+</li>
+<li>
+<p>ruby (2.7.1p83)</p>
+</li>
+<li>
+<p>Asciidoctor (2.0.10)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_前提条件">前提条件</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>GitHubのアカウントを持っている</p>
+</li>
+<li>
+<p>Gitの使用経験があり、ワークツリーからリポジトリの操作の経験がある</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>[公式]Hugo</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://gohugo.io/getting-started/installing/">Install Hugo</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[公式]Chocolatey</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://chocolatey.org/install">Installing Chocolatey</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[公式]GitHub Pages</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://help.github.com/ja/github/working-with-github-pages/getting-started-with-github-pages">GitHub Pages を使ってみる</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[公式]Asciidoctor</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://asciidoctor.org/">Asciidoctor</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>静的サイトジェネレータの選定をする時に参考にした</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://exlair.net/trend-for-static-site-generator/">静的サイトジェネレーターの比較とHugoに決めた理由</a></p>
+</li>
+<li>
+<p><a href="https://uzimihsr.github.io/post/2019-08-07-create-blog-1/">GitHub PagesとHugoでブログをつくった</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ブログ公開までの流れ">ブログ公開までの流れ</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_chocolateyをインストール">1. Chocolateyをインストール</h3>
+<div class="paragraph">
+<p>Windowsのパッケージ管理ツールとしてchocolateyをインストールします。<br>
+<a href="https://chocolatey.org/install" class="bare">https://chocolatey.org/install</a></p>
+</div>
+<div class="paragraph">
+<p>HugoやRubyをインストールする際に利用しました。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_hugoをインストール">2. Hugoをインストール</h3>
+<div class="paragraph">
+<p>静的サイトジェネレーターとしてHugoをインストールします。<br>
+<a href="https://gohugo.io/getting-started/installing#windows" class="bare">https://gohugo.io/getting-started/installing#windows</a></p>
+</div>
+<div class="paragraph">
+<p>私自身、静的サイトジェネレーターの使用経験もなければ、HTMLやCSSも<br>
+ドットインストールでチュートリアルを実施したことがあるくらいで書けません。</p>
+</div>
+<div class="paragraph">
+<p>そのため、どの静的サイトジェネレーターを使用するか悩みましたが、<br>
+参考記事にあげた"静的サイトジェネレーターの比較とHugoに決めた理由"を参考にして<br>
+他の静的サイトジェネレーターと比べても"爆速"というところに惹かれ、Hugoを採用した。</p>
+</div>
+<div class="paragraph">
+<p>後はGoってなんか面白そうっていう単純な理由もあります😂</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_hugoのquick_startを実施">3. HugoのQuick Startを実施</h3>
+<div class="paragraph">
+<p>ブログ公開にあたってMustではないですが、Hugoで簡単かつ爆速に静的サイトを<br>
+生成できるというのが体験できるので実施しました。<br>
+<a href="https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site" class="bare">https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site</a></p>
+</div>
+<div class="paragraph">
+<p>※macOS向けの内容になっているので、コマンドはGit for Windows上で実施しました</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_github_pagesのリポジトリを作成">4. GitHub Pagesのリポジトリを作成</h3>
+<div class="paragraph">
+<p>GitHub Pagesは自前でサーバを用意せずに、GitHubのリポジトリから<br>
+直接Webサイトを公開できる静的なサイトホスティングサービスです。</p>
+</div>
+<div class="paragraph">
+<p>リポジトリの推奨上限は1GBのようですが、ブログといった使用用途であれば<br>
+雑に計算して、1つの記事が10Kbだとしても200,000記事は書けるので<br>
+容量の大きい画像さえ載せなければスケーラビリティの問題はないでしょう。</p>
+</div>
+<div class="paragraph">
+<p>もっとも、スケーラビリティを心配するほどブログの更新が続くかは怪しいですが😂</p>
+</div>
+<div class="paragraph">
+<p>このタイミングではGitHub User Pagesとしてリポジトリを作成しました。<br>
+<a href="https://help.github.com/ja/github/working-with-github-pagescreating-a-github-pages-site" class="bare">https://help.github.com/ja/github/working-with-github-pagescreating-a-github-pages-site</a></p>
+</div>
+<div class="paragraph">
+<p>※後述しますが、最終的にはGitHub Project Pagesとしてブログを公開しています</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_5_github_user_pagesからquick_startで生成したコンテンツを公開">5. GitHub User PagesからQuick Startで生成したコンテンツを公開</h3>
+<div class="paragraph">
+<p>GitHub Pagesのリポジトリに生成したWebサイト(以降、コンテンツ)を格納するだけ<br>
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github#github-user-or-organization-pages" class="bare">https://gohugo.io/hosting-and-deployment/hosting-on-github#github-user-or-organization-pages</a></p>
+</div>
+<div class="paragraph">
+<p>Youtubeにチュートリアルもありわかりやすかったです。<br>
+<a href="https://www.youtube.com/watch?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3v=qtIqKaDlqXo" class="bare">https://www.youtube.com/watch?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3v=qtIqKaDlqXo</a></p>
+</div>
+<div class="paragraph">
+<p>git-submoduleコマンドは初めて使ったが便利でした。<br>
+他にもworktreeなど便利なコマンドもあったので、ここらへんは後日まとめます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_hugoで生成する静的サイトのテーマを変更する">6. Hugoで生成する静的サイトのテーマを変更する</h3>
+<div class="paragraph">
+<p>テーマの一覧から自分が使いたいテーマを探して取り込みます。<br>
+<a href="https://themes.gohugo.io/" class="bare">https://themes.gohugo.io/</a></p>
+</div>
+<div class="paragraph">
+<p>今回は見た目と色合いがシンプルで気に入ったのでErblogというテーマを使用することにしました。<br>
+<a href="https://themes.gohugo.io/erblog/" class="bare">https://themes.gohugo.io/erblog/</a></p>
+</div>
+<div class="paragraph">
+<p>テーマの設定はconfig.tomlファイルに記述します。<br>
+今回はportraitなどテーマのREADMEを参考にカスタマイズしました。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_7_github_project_pagesからコンテンツを公開">7. GitHub Project Pagesからコンテンツを公開</h3>
+<div class="paragraph">
+<p>Github User Pagesとしてコンテンツを公開していたため、<br>
+コンテンツ生成前のファイルやdeploy用のシェルスクリプトと<br>
+公開するコンテンツが別々のリポジトリで管理していました。</p>
+</div>
+<div class="paragraph">
+<p>今回はブログに必要なファイルを1つのリポジトリでまとめて管理したかったので<br>
+blogというリポジトリを新規で作成し、GitHub Project Pagesの作法にならって<br>
+gh-pagesブランチからコンテンツを公開するように変更しました。<br>
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github#deployment-of-project-pages-from-your-gh-pages-branch" class="bare">https://gohugo.io/hosting-and-deployment/hosting-on-github#deployment-of-project-pages-from-your-gh-pages-branch</a></p>
+</div>
+<div class="paragraph">
+<p>gh-pagesブランチにはコンテンツを格納するpublicディレクトリのみをpushします。<br>
+ここらへんはgit-worktreeを使用することで1つのリポジトリに対して<br>
+複数のワークツリーを紐づけることができて、少ない手間で実行することができます。</p>
+</div>
+<div class="paragraph">
+<p>これでHugoでブログのコンテンツを生成し、GitHub Pagesでインターネットに<br>
+公開することができました。👏</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_asciidoctorのインストールおまけ">8. Asciidoctorのインストール(おまけ)</h3>
+<div class="paragraph">
+<p>今のところmarkdownでも問題ないのだが、今後技術情報をまとめる上でUMLだったりを<br>
+掲載することもあると考え、Asciidoctorとdiagramのプラグインを入れおきました。<br>
+AsciidoctorはAsciidocファイルをHTMLファイルにコンバートしてくれます。<br>
+<a href="https://asciidoctor.org/" class="bare">https://asciidoctor.org/</a></p>
+</div>
+<div class="paragraph">
+<p>Hugoでは元々asciidocをサポートしています。<br>
+<a href="https://gohugo.io/content-management/formats/#external-helpers" class="bare">https://gohugo.io/content-management/formats/#external-helpers</a></p>
+</div>
+<div class="paragraph">
+<p>なおパフォーマンスの関係からAsciidoctor呼び出し時のオプションに<br>
+「--no-header-footer --safe --trace」を指定しているようで<br>
+Asciidocの脚注といった表現を利用することができないようだ。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_最後に">最後に</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アウトプットする場所は作ったので有効活用していきたい。</p>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
