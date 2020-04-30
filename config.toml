@@ -1,10 +1,18 @@
+# Webサイトのタイトル
+title = "Work From Dote"
+
+# WebサイトのURL
 baseURL = "https://dotechan.github.io/"
-languageCode = "ja"
-title = "Blog"
+
+# Webサイトのテーマ(https://github.com/ertuil/erblog)
 theme = "erblog"
 
-# themeの説明
-# https://github.com/ertuil/erblog
+# 絵文字の有効化
+enableEmoji = true
+
+# 日本語の文字カウント等を有効化
+hasCJKLanguage = true
+languageCode = "ja"
 
 # ドットは裸キーでの使用が禁止されてる
 # https://qiita.com/b4b4r07/items/77c327742fc2256d6cbe
