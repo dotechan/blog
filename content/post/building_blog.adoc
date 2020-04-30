@@ -1,0 +1,149 @@
+---
+title: "Hugoで生成した静的サイトをGitHub Pagesで公開する"
+description: "ブログを公開するまでの手順"
+date: 2020-04-29T22:32:23+09:00
+categories: ["技術"]
+tags: ["Hugo", "GitHub Pages", "Git", "Asciidoctor"]
+draft: false
+---
+
+== はじめに
+
+Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。 +
+ブログを公開するまでの流れを備忘録として残しておきます。
+
+== 環境
+
+* Windows 10 Home (1903)
+* Git for Windows (v2.26.2)
+* Chocolatey (v0.1015)
+* ruby (2.7.1p83)
+* Asciidoctor (2.0.10)
+
+== 前提条件
+
+* GitHubのアカウントを持っている
+* Gitの使用経験があり、ワークツリーからリポジトリの操作の経験がある
+
+== 参考記事
+
+* [公式]Hugo
+** https://gohugo.io/getting-started/installing/[Install Hugo]
+
+* [公式]Chocolatey
+** https://chocolatey.org/install[Installing Chocolatey]
+
+* [公式]GitHub Pages
+** https://help.github.com/ja/github/working-with-github-pages/getting-started-with-github-pages[GitHub Pages を使ってみる]
+
+* [公式]Asciidoctor
+** https://asciidoctor.org/[Asciidoctor]
+
+* 静的サイトジェネレータの選定をする時に参考にした
+** https://exlair.net/trend-for-static-site-generator/[静的サイトジェネレーターの比較とHugoに決めた理由]
+** https://uzimihsr.github.io/post/2019-08-07-create-blog-1/[GitHub PagesとHugoでブログをつくった]
+
+== ブログ公開までの流れ
+
+=== 1. Chocolateyをインストール
+
+Windowsのパッケージ管理ツールとしてchocolateyをインストールします。 +
+https://chocolatey.org/install
+
+HugoやRubyをインストールする際に利用しました。
+
+=== 2. Hugoをインストール
+
+静的サイトジェネレーターとしてHugoをインストールします。 +
+https://gohugo.io/getting-started/installing#windows
+
+私自身、静的サイトジェネレーターの使用経験もなければ、HTMLやCSSも +
+ドットインストールでチュートリアルを実施したことがあるくらいで書けません。
+
+そのため、どの静的サイトジェネレーターを使用するか悩みましたが、 +
+参考記事にあげた"静的サイトジェネレーターの比較とHugoに決めた理由"を参考にして +
+他の静的サイトジェネレーターと比べても"爆速"というところに惹かれ、Hugoを採用した。
+
+後はGoってなんか面白そうっていう単純な理由もあります:joy:
+
+=== 3. HugoのQuick Startを実施
+
+ブログ公開にあたってMustではないですが、Hugoで簡単かつ爆速に静的サイトを +
+生成できるというのが体験できるので実施しました。 +
+https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site
+
+※macOS向けの内容になっているので、コマンドはGit for Windows上で実施しました
+
+=== 4. GitHub Pagesのリポジトリを作成
+
+GitHub Pagesは自前でサーバを用意せずに、GitHubのリポジトリから +
+直接Webサイトを公開できる静的なサイトホスティングサービスです。
+
+リポジトリの推奨上限は1GBのようですが、ブログといった使用用途であれば +
+雑に計算して、1つの記事が10Kbだとしても200,000記事は書けるので +
+容量の大きい画像さえ載せなければスケーラビリティの問題はないでしょう。
+
+もっとも、スケーラビリティを心配するほどブログの更新が続くかは怪しいですが:joy:
+
+このタイミングではGitHub User Pagesとしてリポジトリを作成しました。 +
+https://help.github.com/ja/github/working-with-github-pagescreating-a-github-pages-site
+
+※後述しますが、最終的にはGitHub Project Pagesとしてブログを公開しています
+
+=== 5. GitHub User PagesからQuick Startで生成したコンテンツを公開
+
+GitHub Pagesのリポジトリに生成したWebサイト(以降、コンテンツ)を格納するだけ +
+https://gohugo.io/hosting-and-deployment/hosting-on-github#github-user-or-organization-pages
+
+Youtubeにチュートリアルもありわかりやすかったです。 +
+https://www.youtube.com/watch?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3v=qtIqKaDlqXo
+
+git-submoduleコマンドは初めて使ったが便利でした。 +
+他にもworktreeなど便利なコマンドもあったので、ここらへんは後日まとめます。
+
+=== 6. Hugoで生成する静的サイトのテーマを変更する
+
+テーマの一覧から自分が使いたいテーマを探して取り込みます。 +
+https://themes.gohugo.io/
+
+今回は見た目と色合いがシンプルで気に入ったのでErblogというテーマを使用することにしました。 +
+https://themes.gohugo.io/erblog/
+
+テーマの設定はconfig.tomlファイルに記述します。 +
+今回はportraitなどテーマのREADMEを参考にカスタマイズしました。
+
+=== 7. GitHub Project Pagesからコンテンツを公開
+
+Github User Pagesとしてコンテンツを公開していたため、 +
+コンテンツ生成前のファイルやdeploy用のシェルスクリプトと +
+公開するコンテンツが別々のリポジトリで管理していました。
+
+今回はブログに必要なファイルを1つのリポジトリでまとめて管理したかったので +
+blogというリポジトリを新規で作成し、GitHub Project Pagesの作法にならって +
+gh-pagesブランチからコンテンツを公開するように変更しました。 +
+https://gohugo.io/hosting-and-deployment/hosting-on-github#deployment-of-project-pages-from-your-gh-pages-branch
+
+gh-pagesブランチにはコンテンツを格納するpublicディレクトリのみをpushします。 +
+ここらへんはgit-worktreeを使用することで1つのリポジトリに対して +
+複数のワークツリーを紐づけることができて、少ない手間で実行することができます。
+
+これでHugoでブログのコンテンツを生成し、GitHub Pagesでインターネットに +
+公開することができました。:clap:
+
+=== 8. Asciidoctorのインストール(おまけ)
+
+今のところmarkdownでも問題ないのだが、今後技術情報をまとめる上でUMLだったりを +
+掲載することもあると考え、Asciidoctorとdiagramのプラグインを入れおきました。 +
+AsciidoctorはAsciidocファイルをHTMLファイルにコンバートしてくれます。 +
+https://asciidoctor.org/
+
+Hugoでは元々asciidocをサポートしています。 +
+https://gohugo.io/content-management/formats/#external-helpers
+
+なおパフォーマンスの関係からAsciidoctor呼び出し時のオプションに +
+「--no-header-footer --safe --trace」を指定しているようで +
+Asciidocの脚注といった表現を利用することができないようだ。
+
+== 最後に
+
+アウトプットする場所は作ったので有効活用していきたい。
