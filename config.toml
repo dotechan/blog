@@ -26,12 +26,6 @@ languageCode = "ja"
     description = "弱々Androidエンジニア"
     bio = "技術的なことから日常のことまで幅広く投稿していきます"
 
-# 画面右上のメニューを追加する
-[[menu.main]]
-    url = ""
-    name = "Zone"
-    weight = 1
-
 # 画面下部のフッターを追加する
 [[menu.footer]]
     identifier = "home"
