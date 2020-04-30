@@ -9,7 +9,7 @@ theme = "erblog"
 # ドットは裸キーでの使用が禁止されてる
 # https://qiita.com/b4b4r07/items/77c327742fc2256d6cbe
 [Params]
-#    portrait = 'static/self/image/kichi_obusu.JPG'
+    portrait = 'self/image/kichi_obusu.JPG'
     author = "dotechan"
     description = "社会人5年目"
     bio = "日常や勉強したことをダラダラと書いていきます"
@@ -19,11 +19,6 @@ theme = "erblog"
     url = "/zone/"
     name = "Zone"
     weight = 1
-
-[[menu.main]]
-    url = "/gallery/"
-    name = "Gallery"
-    weight = 2
 
 # 画面下部のフッターを追加する
 [[menu.footer]]
