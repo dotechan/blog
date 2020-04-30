@@ -1,8 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
+description: "description"
 date: {{ .Date }}
+categories: ["技術", "日常", "教養"]
 tags: [""]
-categories: [""]
 draft: true
 ---
 
