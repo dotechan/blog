@@ -4,6 +4,10 @@ title = "Work From Dote"
 # WebサイトのURL
 baseURL = "https://dotechan.github.io/blog/"
 
+# 全ての相対URLがbaseURLで指定したrootに対して相対的になる
+# [Posts]Menu押下時にdotechan.github.io/に飛ばされるのを防げる
+relativeURLs = true
+
 # Webサイトのテーマ(https://github.com/ertuil/erblog)
 theme = "erblog"
 
@@ -19,20 +23,20 @@ languageCode = "ja"
 [Params]
     portrait = 'self/image/kichi_obusu.JPG'
     author = "dotechan"
-    description = "社会人5年目"
-    bio = "日常や勉強したことをダラダラと書いていきます"
+    description = "弱々Androidエンジニア"
+    bio = "技術的なことから日常のことまで幅広く投稿していきます"
 
 # 画面右上のメニューを追加する
 [[menu.main]]
-    url = "/zone/"
+    url = ""
     name = "Zone"
     weight = 1
 
 # 画面下部のフッターを追加する
 [[menu.footer]]
     identifier = "home"
+    url = ""
     name = "home"
-    url = "/"
     weight = 1
 
 # githubのアイコンを追加する
