@@ -2,7 +2,7 @@
 title = "Work From Dote"
 
 # WebサイトのURL
-baseURL = "https://dotechan.github.io/"
+baseURL = "https://dotechan.github.io/blog/"
 
 # Webサイトのテーマ(https://github.com/ertuil/erblog)
 theme = "erblog"
