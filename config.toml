@@ -18,6 +18,10 @@ enableEmoji = true
 hasCJKLanguage = true
 languageCode = "ja"
 
+# URLのカスタマイズ
+[permalinks]
+    post = "/:year/:month:/:day/:filename/"
+
 # ドットは裸キーでの使用が禁止されてる
 # https://qiita.com/b4b4r07/items/77c327742fc2256d6cbe
 [Params]
