@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<main id="main">
+
+<div class="layui-fluid list-show" >
+    <div class="layui-row">
+        <div class="layui-col-md6 layui-col-sm12 layui-col-xs12">
+            <div class="list-show-title">
+                <h1>技術的なことから日常のことまで幅広く投稿していきます</h1>
+            </div>
+        </div>
+        <div class="layui-col-md6 layui-col-sm12 layui-col-xs12" style="text-align:center;">
+            <img src="{{ .Site.BaseURL }}/self/img/undraw_chat_bot_kli5.png" class="list-title-pic">
+        </div>
+    </div>
+</div>
+
+<div class="layui-container">
+    {{partial "articles" .}}
+</div>
+
+</main>
+
+{{end}}

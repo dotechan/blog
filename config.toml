@@ -6,7 +6,7 @@ baseURL = "https://dotechan.github.io/blog/"
 
 # 全ての相対URLがbaseURLで指定したrootに対して相対的になる
 # [Posts]Menu押下時にdotechan.github.io/に飛ばされるのを防げる
-relativeURLs = true
+# relativeURLs = true
 
 # Webサイトのテーマ(https://github.com/ertuil/erblog)
 theme = "erblog"
