@@ -4,7 +4,7 @@ description: "サブモジュールの使い方のメモ"
 date: 2020-05-03T16:34:57+09:00
 categories: ["技術"]
 tags: ["Git"]
-draft: true
+draft: false
 ---
 
 = AsciiDoc Writer's Guide
@@ -74,3 +74,4 @@ git rmを利用することでメインとサブの紐づけを解くことが�
 git rm した時点で.gitmodulesからサブモジュールののデータが削除されます。 +
 完全にサブモジュールのデータを削除したい場合は.git/modules/に残っている +
 サブモジュールのデータを手動で削除する必要があります。
+
