@@ -1,0 +1,301 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - Git-submoduleを使いこなす </title>
+
+    
+    
+    <meta content="Git, 技術" name="keywords">
+    
+    <meta content="Work From Dote - サブモジュールの使い方のメモ" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>Git-submoduleを使いこなす</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-05-03</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/git/">
+            <span class="layui-badge" style="vertical-align: 2px;">Git</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+<li><a href="#_所感">所感</a></li>
+<li><a href="#_使い方">使い方</a>
+<ul class="sectlevel2">
+<li><a href="#_サブモジュールの作り方">サブモジュールの作り方</a></li>
+<li><a href="#_サブモジュールを含むプロジェクトのクローン">サブモジュールを含むプロジェクトのクローン</a></li>
+<li><a href="#_サブモジュールの紐づけを解除">サブモジュールの紐づけを解除</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hugoでブログを生成する時にgit-submoduleというコマンドを知ったので<br>
+軽く使い方について調べたのでメモしておきます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Git for Windows (v2.26.2)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>リファレンスを元にgit-submoduleの理解に利用したrepositoryは以下になります。<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>メインのプロジェクト : <a href="https://github.com/dotechan/mainmodule" class="bare">https://github.com/dotechan/mainmodule</a></p>
+</li>
+<li>
+<p>サブのプロジェクト : <a href="https://github.com/dotechan/submodule" class="bare">https://github.com/dotechan/submodule</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%B5%E3%83%96%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">Git のさまざまなツール - サブモジュール</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_所感">所感</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>メインのプロジェクト内でライブラリといったサブのプロジェクトを扱いたい場合に使用すると便利です。<br>
+submoduleとして取り込んだプロジェクトの変更をメインのプロジェクトの特定のブランチに紐づけることができます。<br>
+メインとサブのプロジェクトでバージョンの組み合わせを意識しなくても正しく動作することが保証できるといった<br>
+メリットがありそうです。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_使い方">使い方</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_サブモジュールの作り方">サブモジュールの作り方</h3>
+<div class="listingblock">
+<div class="content">
+<pre>git submodule add https://github.com/dotechan/submodule.git</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>サブモジュールの情報は.gitmodulesに記載されています。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_サブモジュールを含むプロジェクトのクローン">サブモジュールを含むプロジェクトのクローン</h3>
+<div class="listingblock">
+<div class="content">
+<pre>git clone https://github.com/dotechan/mainmodule.git
+git submodule init
+git submodule update</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>cloneするだけではサブモジュールの中身は空っぽです。<br>
+initとupdateすることでサブモジュールの最新の情報を取得することができます。<br>
+cloneのオプションに&#8212;&#8203;recursiveを付与することで同様の操作を行うことができます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_サブモジュールの紐づけを解除">サブモジュールの紐づけを解除</h3>
+<div class="paragraph">
+<p><a href="https://git-scm.com/docs/gitsubmodules" class="bare">https://git-scm.com/docs/gitsubmodules</a><br>
+上記のドキュメントを見てみると、どうやら二種類の方法がありそうです。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">①Deinitialized submodule</dt>
+<dd>
+<p>git submodule deinitを利用することでメインとサブの紐づけを解くことができます。<br>
+git submodule initを利用することで、再度メインとサブの紐づけを行うことができます。</p>
+</dd>
+<dt class="hdlist1">②Deleted submodule</dt>
+<dd>
+<p>git rmを利用することでメインとサブの紐づけを解くことができます。<br>
+git rm した時点で.gitmodulesからサブモジュールののデータが削除されます。<br>
+完全にサブモジュールのデータを削除したい場合は.git/modules/に残っている<br>
+サブモジュールのデータを手動で削除する必要があります。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/04/29/building_blog/">
+                                <h2 class="">Hugoで生成した静的サイトをGitHub Pagesで公開する</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-04-29</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/hugo/">
+            <span class="layui-badge" style="vertical-align: 2px;">Hugo</span>
+        </a>
+    
+        <a href="/blog/tags/github-pages/">
+            <span class="layui-badge" style="vertical-align: 2px;">GitHub Pages</span>
+        </a>
+    
+        <a href="/blog/tags/git/">
+            <span class="layui-badge" style="vertical-align: 2px;">Git</span>
+        </a>
+    
+        <a href="/blog/tags/asciidoctor/">
+            <span class="layui-badge" style="vertical-align: 2px;">Asciidoctor</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
