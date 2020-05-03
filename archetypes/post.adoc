@@ -10,3 +10,13 @@ draft: true
 = AsciiDoc Writer's Guide
 :toc:
 
+== はじめに
+
+== 環境
+
+* Windows 10 Home (1903)
+
+== 前提条件
+
+== 参考記事
+
