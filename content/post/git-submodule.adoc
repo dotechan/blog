@@ -1,0 +1,76 @@
+---
+title: "Git-submoduleを使いこなす"
+description: "サブモジュールの使い方のメモ"
+date: 2020-05-03T16:34:57+09:00
+categories: ["技術"]
+tags: ["Git"]
+draft: true
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+
+Hugoでブログを生成する時にgit-submoduleというコマンドを知ったので +
+軽く使い方について調べたのでメモしておきます。
+
+== 環境
+
+* Git for Windows (v2.26.2)
+
+リファレンスを元にgit-submoduleの理解に利用したrepositoryは以下になります。 +
+
+* メインのプロジェクト : https://github.com/dotechan/mainmodule
+
+* サブのプロジェクト : https://github.com/dotechan/submodule
+
+== 参考記事
+
+https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E3%82%B5%E3%83%96%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB[Git のさまざまなツール - サブモジュール]
+
+== 所感
+
+メインのプロジェクト内でライブラリといったサブのプロジェクトを扱いたい場合に使用すると便利です。 +
+submoduleとして取り込んだプロジェクトの変更をメインのプロジェクトの特定のブランチに紐づけることができます。 +
+メインとサブのプロジェクトでバージョンの組み合わせを意識しなくても正しく動作することが保証できるといった +
+メリットがありそうです。
+
+== 使い方
+
+=== サブモジュールの作り方
+
+----
+git submodule add https://github.com/dotechan/submodule.git
+----
+
+サブモジュールの情報は.gitmodulesに記載されています。
+
+=== サブモジュールを含むプロジェクトのクローン
+
+----
+git clone https://github.com/dotechan/mainmodule.git
+git submodule init
+git submodule update
+----
+
+cloneするだけではサブモジュールの中身は空っぽです。 +
+initとupdateすることでサブモジュールの最新の情報を取得することができます。 +
+cloneのオプションに--recursiveを付与することで同様の操作を行うことができます。
+
+=== サブモジュールの紐づけを解除
+
+https://git-scm.com/docs/gitsubmodules +
+上記のドキュメントを見てみると、どうやら二種類の方法がありそうです。
+
+①Deinitialized submodule::
+
+git submodule deinitを利用することでメインとサブの紐づけを解くことができます。 +
+git submodule initを利用することで、再度メインとサブの紐づけを行うことができます。
+
+②Deleted submodule::
+
+git rmを利用することでメインとサブの紐づけを解くことができます。 +
+git rm した時点で.gitmodulesからサブモジュールののデータが削除されます。 +
+完全にサブモジュールのデータを削除したい場合は.git/modules/に残っている +
+サブモジュールのデータを手動で削除する必要があります。
