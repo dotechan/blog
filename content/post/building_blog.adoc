@@ -7,6 +7,9 @@ tags: ["Hugo", "GitHub Pages", "Git", "Asciidoctor"]
 draft: false
 ---
 
+= AsciiDoc Writer's Guide
+:toc:
+
 == はじめに
 
 Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。 +
@@ -42,6 +45,9 @@ Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます�
 * 静的サイトジェネレータの選定をする時に参考にした
 ** https://exlair.net/trend-for-static-site-generator/[静的サイトジェネレーターの比較とHugoに決めた理由]
 ** https://uzimihsr.github.io/post/2019-08-07-create-blog-1/[GitHub PagesとHugoでブログをつくった]
+
+* URLの設定が上手くいっていない時に参考にした
+** https://knowledge.sakura.ad.jp/22908/[静的サイトジェネレータ「Hugo」と技術文書公開向けテーマ「Docsy」でOSSサイトを作る]
 
 == ブログ公開までの流れ
 
@@ -112,6 +118,8 @@ https://themes.gohugo.io/erblog/
 テーマの設定はconfig.tomlファイルに記述します。 +
 今回はportraitなどテーマのREADMEを参考にカスタマイズしました。
 
+※後々このテーマを選んだことで苦労したのですが、結果HugoのtemplateやHTMLの勉強にもなってよかったです。
+
 === 7. GitHub Project Pagesからコンテンツを公開
 
 Github User Pagesとしてコンテンツを公開していたため、 +
@@ -143,6 +151,27 @@ https://gohugo.io/content-management/formats/#external-helpers
 なおパフォーマンスの関係からAsciidoctor呼び出し時のオプションに +
 「--no-header-footer --safe --trace」を指定しているようで +
 Asciidocの脚注といった表現を利用することができないようだ。
+
+=== 9. Go Templatesのカスタマイズ(おまけ)
+
+Recent Postsから投稿した記事へ飛ぼうとしたら404 Not Foundとなってしまいます…。 +
+ブラウザのURLを見ると生成されたリンクが正しくありません。URLの設定周りがおかしそうです。 +
+同様にCategoriesやtagsも正しいURLにリンクされていないことがわかりました。
+
+結局、今回はerblogで使用しているPartial Templateを自前で用意したものに置き換える形で解決しました。
+
+erblogで用意されていたPartial Templateのうち、いくつかファイルで +
+jsやcssファイルが正しくロードされていませんでした。
+
+https://gohugo.io/templates/partials/[Partial Templates]
+上記を参考にlayouts/partials/配下に同名のhtmlファイルを用意します。 +
+自前で用意したhtmlファイルでは正しくjsファイルがロードできるように +
+href属性を"{{.RelPermalink}}/jsファイルのpath"といった形式に書き換えます。 +
+こうすることで正しくjsファイルの読み込みができ、レイアウトの崩れが発生するなど防ぐことができました。
+
+HTMLで記述されたGo Templates内では"{{ }}"からHugoのvariablesやfunctionsを使用できます。 +
+https://gohugo.io/templates/introduction/#basic-syntax[Basic Syntax]
+今後、自身でtemplatesをカスタマイズしたくなったらイジってみます。
 
 == 最後に
 
