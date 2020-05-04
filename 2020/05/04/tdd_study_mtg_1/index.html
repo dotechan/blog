@@ -1,0 +1,326 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - テスト駆動設計(TDD)オンライン勉強会#1 </title>
+
+    
+    
+    <meta content="TDD, 技術" name="keywords">
+    
+    <meta content="Work From Dote - ライブコーディングで体感するTDD基礎 講義編" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>テスト駆動設計(TDD)オンライン勉強会#1</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-05-04</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/tdd/">
+            <span class="layui-badge" style="vertical-align: 2px;">TDD</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_動画">動画</a></li>
+<li><a href="#_内容">内容</a>
+<ul class="sectlevel2">
+<li><a href="#_定義">定義</a></li>
+<li><a href="#_tddのゴール">TDDのゴール</a></li>
+<li><a href="#_スコープ">スコープ</a></li>
+<li><a href="#_ライブコーディング時のメモ">ライブコーディング時のメモ</a></li>
+<li><a href="#_tddが解決したい課題">TDDが解決したい課題</a></li>
+</ul>
+</li>
+<li><a href="#_感想">感想</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_動画">動画</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=UhHdnLTxOjE">TDDオンライン勉強会 #1「ライブコーディングで体感する TDD基礎 」(講義編)</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_内容">内容</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_定義">定義</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>自動化されたテストが失敗した時のみ新しいコードを書く</p>
+</li>
+<li>
+<p>重複を除去する</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tddのゴール">TDDのゴール</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>動作するきれいなコード(Clean code that works)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_スコープ">スコープ</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>レッド・グリーン・リファクタリングの進め方</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_red">Red</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>コンパイルエラーになるところから始めてもいい</p>
+</li>
+<li>
+<p>汚くてもいいのでGreenに持っていく</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_green">Green</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>assertして意図通りであることを確認</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_refactor">Refactor</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>必要であれば行う</p>
+</li>
+<li>
+<p>プロダクトコードだけでなくテストコードもリファクタリングの対象になる</p>
+</li>
+<li>
+<p>設計もここで見直す</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ライブコーディング時のメモ">ライブコーディング時のメモ</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>細かい粒度でテストを実施することで過剰な設計を防げる</p>
+</li>
+<li>
+<p>ParameterizedTestアノテーションを使用することで引数を柔軟に変更したテストができる(JUnit4からあるがJUnit5から利用が楽になった)</p>
+</li>
+<li>
+<p>リファクタリング後のテストコードが動作しているかプロダクトコードをわざと壊してレッドになることを確かめる(テストのテスト)</p>
+</li>
+<li>
+<p>フィードバックサイクルが短いのでバグを埋め込んでからバグの発見までのスピードが速くなる</p>
+</li>
+<li>
+<p>テストコードから仕様を読み取れるようにしておく(ParameterizedTestのパラメータを増やすか、メソッドするかの基準もこれ)</p>
+</li>
+<li>
+<p>テストコードを記載している時に仕様の漏れ(-1の場合は何が期待値?等)に気が付ける。テストコードを記載すれば仕様が仕様になる</p>
+</li>
+<li>
+<p>ドキュメントは修正忘れるけど、テストは落ちるから修正が必要になる</p>
+</li>
+<li>
+<p>MethodSourceアノテーションでメソッドでテストデータを生成できる</p>
+</li>
+<li>
+<p>JUnitにはcoverageを計測しながらテストすることができるが、テストがassertionされていなくてもテストコードで通っていれば100%になってしまう</p>
+</li>
+<li>
+<p>coverageが100%だからといってテストが"十分"とは言えない</p>
+</li>
+<li>
+<p>"TDD"と"自動テスト"は解決したい問題が別</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tddが解決したい課題">TDDが解決したい課題</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>十分なテストが書かれない</p>
+<div class="ulist">
+<ul>
+<li>
+<p>後からテストを書くと、必要パターンが漏れてしまうことが多い</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>テストを書こうとした段階で、テストを書きにくい設計であることに気が付く</p>
+<div class="ulist">
+<ul>
+<li>
+<p>自然と高凝集・低結合なクラスを書くようになる(テストしずらいクラスは責務過剰だったり依存関係が多い)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_感想">感想</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>メリットは分かったので実際にTDDでテストコードを書いてみるぞ</p>
+</li>
+<li>
+<p>精神的に安心できる(動かしてみるまでわからないを避けられる)というのが良いと思った</p>
+</li>
+<li>
+<p>フィードバックサイクルを短くするというのは設計/実装だけでなくレビューなどにも当てはまると思うので仕組みを作って取り入れていく</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

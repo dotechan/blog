@@ -6,10 +6,19 @@
     <description>Recent content in 技術 on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 03 May 2020 18:15:09 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2020 20:05:44 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>テスト駆動設計(TDD)オンライン勉強会#1</title>
+      <link>https://dotechan.github.io/blog/2020/05/04/tdd_study_mtg_1/</link>
+      <pubDate>Mon, 04 May 2020 20:05:44 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/05/04/tdd_study_mtg_1/</guid>
+      <description>Table of Contents 動画 内容 定義 TDDのゴール スコープ ライブコーディング時のメモ TDDが解決したい課題 感想 動画 TDDオンライン勉強会 #1「ライブコーディン</description>
+    </item>
     
     <item>
       <title>シェルスクリプトの実行方法は大きく分けて2つある</title>
