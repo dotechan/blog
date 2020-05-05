@@ -1,0 +1,448 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - KotlinのCoroutineを使ってみたい </title>
+
+    
+    
+    <meta content="Kotlin, coroutine, 技術" name="keywords">
+    
+    <meta content="Work From Dote - KotlinのCoroutineについて概念の理解から実装方法まで学んだ" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>KotlinのCoroutineを使ってみたい</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-05-04</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/kotlin/">
+            <span class="layui-badge" style="vertical-align: 2px;">Kotlin</span>
+        </a>
+    
+        <a href="/blog/tags/coroutine/">
+            <span class="layui-badge" style="vertical-align: 2px;">coroutine</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+<li><a href="#_your_first_coroutine_with_kotlin">Your first coroutine with Kotlin</a></li>
+<li><a href="#_asynchronous_programming_techniques">Asynchronous Programming Techniques</a>
+<ul class="sectlevel2">
+<li><a href="#_threading">Threading</a></li>
+<li><a href="#_callbacks">Callbacks</a></li>
+<li><a href="#_futures_promises_et_al">Futures, Promises et. al</a></li>
+<li><a href="#_reactive_extensions">Reactive Extensions</a></li>
+<li><a href="#_coroutines">Coroutines</a></li>
+</ul>
+</li>
+<li><a href="#_introduction_to_coroutines_and_channels">Introduction to Coroutines and Channels</a></li>
+<li><a href="#_use_kotlin_coroutines_in_your_android_app">Use Kotlin Coroutines in your Android App</a></li>
+<li><a href="#_感想">感想</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>公式とGoogle Codelabsを参考にKotlinのcoroutineについて学習したので<br>
+メモとして残しておきます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Windows 10 Home (1903)</p>
+</li>
+<li>
+<p>kotlin (1.3.72)</p>
+</li>
+<li>
+<p>kotlinx-coroutines-core (1.3.4)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://kotlinlang.org/docs/tutorials/coroutines/coroutines-basic-jvm.html">Your first coroutine with Kotlin</a></p>
+</li>
+<li>
+<p><a href="https://kotlinlang.org/docs/tutorials/coroutines/async-programming.html">Asynchronous Programming Techniques</a></p>
+</li>
+<li>
+<p><a href="https://play.kotlinlang.org/hands-on/Introduction%20to%20Coroutines%20and%20Channels/01_Introduction?_ga=2.169111841.1056717978.1588540257-64329349.1583585809">Introduction to Coroutines and Channels</a></p>
+</li>
+<li>
+<p><a href="https://codelabs.developers.google.com/codelabs/kotlin-coroutines/index.html?index=..%2F..index#0">Use Kotlin Coroutines in your Android App</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_your_first_coroutine_with_kotlin">Your first coroutine with Kotlin</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>coroutineはkotlinの言語レベルでサポートされている非同期プログラミングなどを実行する新しい手法(threadのような実行単位の1つと解釈した)</p>
+</li>
+<li>
+<p>coroutineはthreadの共有プール上で実行され、並列に処理される</p>
+</li>
+<li>
+<p>1つのthreadで多くのcoroutineを実行することができるのでthreadを生成するよりコストが低い</p>
+</li>
+<li>
+<p>coroutineはthreadをブロックせずにcoroutineのみをsuspend/resumeできる</p>
+</li>
+<li>
+<p>threadをブロックせず、coroutine内から呼び出す関数にはsuspend修飾子を付ける</p>
+</li>
+<li>
+<p>suspend関数はcoroutineかsuspend関数からのみ呼び出すことができる</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-kotlin" data-lang="kotlin">val deferred = (1..1_000_000).map { n -&gt;
+    GlobalScope.async {
+        delay(1000) // <b class="conum">(1)</b>
+        n
+    }
+}
+
+runBlocking {
+    val sum = deferred.map { it.await().toLong() }.sum() // <b class="conum">(2)</b>
+    println("Sum: $sum")
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>coroutineを1,000msec停止する(≒1,000,000sec実行スレッドでかかるわけではない)</p>
+</li>
+<li>
+<p>coroutineの結果を待ち合わせる。10sec程で完了するのでcoroutineが並列処理されているのがわかる</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_asynchronous_programming_techniques">Asynchronous Programming Techniques</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_threading">Threading</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>context switchingが発生するためコストが高い</p>
+</li>
+<li>
+<p>競合によりデバッグが難しい</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_callbacks">Callbacks</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>callbackがネストしていくことで可読性が低下する</p>
+</li>
+<li>
+<p>エラー処理が複雑になる</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_futures_promises_et_al">Futures, Promises et. al</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>戻り値はPromise型になり、実際のデータを直接指定することができない</p>
+</li>
+<li>
+<p>エラー処理が複雑になる(エラーの伝搬方法が直感的ではない気がする)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reactive_extensions">Reactive Extensions</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>多くのプラットフォームに移植されているので、一貫したAPIを利用できる</p>
+</li>
+<li>
+<p>新しい概念を導入することになるのでコストは高くなる</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_coroutines">Coroutines</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>同期コードを書くのと同様にtop-downで記述できる</p>
+</li>
+<li>
+<p>エラー処理は既存のプログラミング方法と変える必要がない</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction_to_coroutines_and_channels">Introduction to Coroutines and Channels</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>solutionブランチのコードを見ながらざっと流し読みした。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>coroutine scopeとcoroutine contextという概念がある</p>
+</li>
+<li>
+<p>coroutine scopeは構造化されており親子関係を持つ</p>
+</li>
+<li>
+<p>同じcoroutine scopeで実施されている場合、親coroutineがキャンセルされると子coroutineも自動的にキャンセルされる</p>
+</li>
+<li>
+<p>channelを使用して別々のcoroutine間で通信を行うことができる</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_kotlin_coroutines_in_your_android_app">Use Kotlin Coroutines in your Android App</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>suspend関数はコードが実行されるthreadを指定する訳ではないのでmain threadでも実行できる</p>
+</li>
+<li>
+<p>androidxのlifecycle-viewmodel-ktxライブラリにはDispathcers.MainにバインドされViewModelがクリアされた時にキャンセルされるviewModelScopeが追加されている</p>
+</li>
+<li>
+<p>coroutineのUnit Testはcoroutineのタイマー操作を行うことがdelayさせた時間を早めて実行することができ、実際にdelayさせる時間分待つ必要はない</p>
+</li>
+<li>
+<p>launchやasyncを使ってcoroutineを開始できる</p>
+</li>
+<li>
+<p>結果を返す必要がない場合はlaunchを使い、結果を返す必要がある場合はasyncを使う</p>
+</li>
+<li>
+<p>子coroutineが例外を投げた場合、デフォルトで親coroutineもキャンセルされる</p>
+</li>
+<li>
+<p>CoroutineExceptionHandlerを使ってcoroutine内でcatchされなかった例外が発生した時の動作をカスタマイズできる</p>
+</li>
+<li>
+<p>IO dispatcherはネットワークやディスクからの読み込みといったIOに最適化されている</p>
+</li>
+<li>
+<p>Default dispatcherはCPUを集中的に使用するタスクに最適化されている</p>
+</li>
+<li>
+<p>RoomもRetrofitもsuspend関数をmain-safeにしているので、Dispathcers.Mainから呼び出しても安全(main threadをブロックしない)</p>
+</li>
+<li>
+<p>main-safeなsuspend関数であればDispatcher.Mainから呼び出せる(withContextを使う
+必要がない)</p>
+</li>
+<li>
+<p>慣習として自分で用意したsuspend関数はmain-safeであることを保証する</p>
+</li>
+<li>
+<p>テスト関数を抜けた時点でテストが終了してしまうため、coroutineが完了するまでテスト実行threadが待つようにrunBlockingTestでcoroutineを開始する必要がある</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-kotlin" data-lang="kotlin">@Test
+fun whenRefreshTitleSuccess_insertsRows() {
+   val subject = TitleRepository(
+       MainNetworkFake("OK"),
+       TitleDaoFake("title")
+   )
+
+   // launch starts a coroutine then immediately returns
+   GlobalScope.launch {
+       // since this is asynchronous code, this may be called *after* the test completes
+       subject.refreshTitle()
+   }
+   // test function returns immediately, and
+   // doesn't see the results of refreshTitle
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>refreshTitleが実行されたかどうかを知らずにテストを終了してしまう</p>
+</li>
+<li>
+<p>refreshTitleが例外を投げた場合、テストコールスタックには投げられず、GlobalScopeの例外ハンドラでuncaught exceptionとして扱われる</p>
+</li>
+<li>
+<p>withTimeout functionを使用することでcoroutineのタイムアウトを設定できる</p>
+</li>
+<li>
+<p>advanceTimeBy functionを使用することでcoroutineの仮想時間を指定した時間だけ勧めることができるので、タイムアウトのテストに利用できる</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_感想">感想</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Coroutineを利用することでアプリのパフォーマンスが向上するだけでなく<br>
+可読性も大幅に上がるので、これを機に利用していこうと思います。<br></p>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
