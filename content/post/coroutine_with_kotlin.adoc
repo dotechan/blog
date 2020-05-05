@@ -1,16 +1,21 @@
 ---
-title: "Coroutine_with_kotlin"
-description: "description"
+title: "KotlinのCoroutineを使ってみたい"
+description: "KotlinのCoroutineについて概念の理解から実装方法まで学んだ"
 date: 2020-05-04T06:23:29+09:00
 categories: ["技術"]
 tags: ["Kotlin", "coroutine"]
-draft: true
+draft: false
 ---
 
 = AsciiDoc Writer's Guide
 :toc:
 
+
 == はじめに
+
+公式とGoogle Codelabsを参考にKotlinのcoroutineについて学習したので +
+メモとして残しておきます。
+
 
 == 環境
 
@@ -18,7 +23,6 @@ draft: true
 * kotlin (1.3.72)
 * kotlinx-coroutines-core (1.3.4)
 
-== 前提条件
 
 == 参考記事
 
@@ -59,7 +63,6 @@ runBlocking {
 
 == Asynchronous Programming Techniques
 
-
 === Threading
 
 * context switchingが発生するためコストが高い
@@ -94,6 +97,7 @@ solutionブランチのコードを見ながらざっと流し読みした。
 * coroutine scopeは構造化されており親子関係を持つ
 * 同じcoroutine scopeで実施されている場合、親coroutineがキャンセルされると子coroutineも自動的にキャンセルされる
 * channelを使用して別々のcoroutine間で通信を行うことができる
+
 
 == Use Kotlin Coroutines in your Android App
 
@@ -132,5 +136,10 @@ fun whenRefreshTitleSuccess_insertsRows() {
 ----
 * refreshTitleが実行されたかどうかを知らずにテストを終了してしまう
 * refreshTitleが例外を投げた場合、テストコールスタックには投げられず、GlobalScopeの例外ハンドラでuncaught exceptionとして扱われる
+* withTimeout functionを使用することでcoroutineのタイムアウトを設定できる
+* advanceTimeBy functionを使用することでcoroutineの仮想時間を指定した時間だけ勧めることができるので、タイムアウトのテストに利用できる
 
-== Write a timeout testから再開(https://codelabs.developers.google.com/codelabs/kotlin-coroutines/index.html?index=..%2F..index#9)
+== 感想
+
+Coroutineを利用することでアプリのパフォーマンスが向上するだけでなく +
+可読性も大幅に上がるので、これを機に利用していこうと思います。 +
