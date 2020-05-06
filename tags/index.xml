@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 04 May 2020 20:05:44 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 19:11:51 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android</title>
+      <link>https://dotechan.github.io/blog/tags/android/</link>
+      <pubDate>Wed, 06 May 2020 19:11:51 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>style</title>
+      <link>https://dotechan.github.io/blog/tags/style/</link>
+      <pubDate>Wed, 06 May 2020 19:11:51 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/style/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>theme</title>
+      <link>https://dotechan.github.io/blog/tags/theme/</link>
+      <pubDate>Wed, 06 May 2020 19:11:51 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/theme/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>TDD</title>

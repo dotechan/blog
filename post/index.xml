@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 04 May 2020 20:05:44 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 19:11:51 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Androidのstyleとtheme</title>
+      <link>https://dotechan.github.io/blog/2020/05/06/android_style_theme/</link>
+      <pubDate>Wed, 06 May 2020 19:11:51 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/05/06/android_style_theme/</guid>
+      <description>Table of Contents はじめに 参考記事 Style Theme XMLからリソースへのアクセス はじめに Androidのstyleとthemeの使い分けについて調べた 参考記事 スタイ</description>
+    </item>
     
     <item>
       <title>テスト駆動設計(TDD)オンライン勉強会#1</title>

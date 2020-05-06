@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>theme on Work From Dote</title>
+    <link>https://dotechan.github.io/blog/tags/theme/</link>
+    <description>Recent content in theme on Work From Dote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 06 May 2020 19:11:51 +0900</lastBuildDate>
+    
+	<atom:link href="https://dotechan.github.io/blog/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Androidのstyleとtheme</title>
+      <link>https://dotechan.github.io/blog/2020/05/06/android_style_theme/</link>
+      <pubDate>Wed, 06 May 2020 19:11:51 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/05/06/android_style_theme/</guid>
+      <description>Table of Contents はじめに 参考記事 Style Theme XMLからリソースへのアクセス はじめに Androidのstyleとthemeの使い分けについて調べた 参考記事 スタイ</description>
+    </item>
+    
+  </channel>
+</rss>
