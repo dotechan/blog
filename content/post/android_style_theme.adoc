@@ -1,0 +1,46 @@
+---
+title: "Androidのstyleとtheme"
+description: "Androidのstyleとthemeの概要"
+date: 2020-05-06T19:11:51+09:00
+categories: ["技術"]
+tags: ["Android", "theme", "style"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+
+Androidのstyleとthemeの使い分けについて調べた
+
+== 参考記事
+
+* https://developer.android.com/guide/topics/ui/themes?hl=ja[スタイルとテーマ]
+* https://developer.android.com/guide/topics/resources/accessing-resources.html#ReferencesToThemeAttributes[スタイル属性を参照する]
+
+
+== Style
+
+* Viewやウィンドウの外観や書式を指定するプロパティの集合
+* ウェブデザインにおけるCSSと同じようなもの
+* レイアウトを指定するXMLとは別のXMLで定義される
+* View単位で指定する(レイアウトのXMLのView要素にstyle属性を追加する)
+* ViewGroupにスタイルを適用しても子要素Viewにはスタイルが適用されない
+
+== Theme
+
+* Activityまたはアプリケーション全体に適用されるスタイルのこと
+* Activityまたはアプリケーション単位で指定する(AndroidManifestの<activity>要素または<application>要素にandroid:theme属性を追加する)
+
+== XMLからリソースへのアクセス
+
+* "`@``"を使用することでXMLで定義されているリソースにアクセスできる
+----
+@[<package_name>:]<resource_type>/<resource_name>
+----
+
+* "`?``"を使用することで現在適用されているテーマの属性の値を参照できる
+----
+?[<package_name>:][<resource_type>/]<resource_name>
+----
