@@ -1,0 +1,376 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - レガシーコードからの脱却 </title>
+
+    
+    
+    <meta content="書籍, 設計, TDD, 技術" name="keywords">
+    
+    <meta content="Work From Dote - 書籍を読んだ感想です" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>レガシーコードからの脱却</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-05-09</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/%e6%9b%b8%e7%b1%8d/">
+            <span class="layui-badge" style="vertical-align: 2px;">書籍</span>
+        </a>
+    
+        <a href="/blog/tags/%e8%a8%ad%e8%a8%88/">
+            <span class="layui-badge" style="vertical-align: 2px;">設計</span>
+        </a>
+    
+        <a href="/blog/tags/tdd/">
+            <span class="layui-badge" style="vertical-align: 2px;">TDD</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_参考文献">参考文献</a></li>
+<li><a href="#_感想">感想</a>
+<ul class="sectlevel2">
+<li><a href="#_第一部">第一部</a></li>
+<li><a href="#_第二部">第二部</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>書籍を読んだ感想です。要約ではないです。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考文献">参考文献</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>David Scott Bernstein (2019)『レガシーコードからの脱却 ソフトウェアの寿命を延ばし価値を高める9つのプラクティス』 株式会社オライリー・ジャパン,</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_感想">感想</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_第一部">第一部</h3>
+<div class="paragraph">
+<p>ウォーターフォールやレガシーコードが引き起こす問題点について記載されています。<br>
+心当たりのあることが多く、レガシーコードの問題を再認識することができました。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_第二部">第二部</h3>
+<div class="paragraph">
+<p>レガシーコードからの脱却というよりはレガシーコードを作らないために<br>
+実践すべきプラクティスがまとめられていました。<br>
+プラクティスの紹介の中で心に残った点をメモしておきます。<br>
+最近参加したTDDの勉強会でもありましたが、フィードバックサイクルを短くする<br>
+というのを念頭に置いてプラクティスの実践をしていきます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>(4章)内部品質を高めることで外部品質を高めることができる</p>
+<div class="literalblock">
+<div class="content">
+<pre>ユーザビリティや適切なタイミングでの更新といった外部品質は内部品質の表れである。
+価値があると認められたソフトはユーザーの声に応えるために変更が必要になる。
+そのため、変更可能で常に価値を提供できるようにしておく必要がある。
+レガシーコードは変更が難しく修正は慎重に行う必要があり時間がかかります。
+開発サイドの事情でユーザーの声に応えられないといった機会損失を避けるためにも
+内部品質に拘っていきたいです。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(5章)詳細ではなくストーリー単位で語る</p>
+<div class="literalblock">
+<div class="content">
+<pre>ストーリーとは「何が」「何のために」「誰のために存在する」を１文で表すものだ。
+開発者は"コードが実際にすべきこと"を知っていれば開発を始められる。
+詳細に意識が向くとやり方(コーディングの仕方)に気が向いてしまい、コンテキストに
+集中できなくなる。設計面でも新たな発見の妨げとなってしまいそうなので気を付ける。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(5章)作りこみすぎない</p>
+<div class="literalblock">
+<div class="content">
+<pre>機能がどのように使われるかを理解していないと、恐怖から必要以上に例外ケースなどの
+設計をしてしまい作りこんでしまう。
+限定的かつテスト可能なストーリー単位で作ることで作りこみすぎを回避することができる。
+作りこんでなんぼという所があったので意識を変える。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(6章)ソフトウェア開発のタスクは些細なものでも4時間はかかる</p>
+</li>
+<li>
+<p>(6章)生産性は計測できない</p>
+<div class="literalblock">
+<div class="content">
+<pre>ソフトウェアは形のある商品とは違うので計測の仕方も異なる。
+ベロシティは品質を犠牲にすれば上げられるので生産性の指標として使うのは誤り。
+7つのプラクティスの中でも「コーディングに使った時間を計測する」から
+始めてみようと思いました。私は1日に1時間もコーディングをする時間が取れていないので
+プロセスのどこかがおかしいので…。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(7章)素早く結合するためにブランチを避ける</p>
+<div class="literalblock">
+<div class="content">
+<pre>ブランチは分けずフィーチャーフラグを用いて準備できていない機能は無効にする。
+ブランチを分けてしまうと結合するのが遅くなる。結合は遅くなればなるほどリスクがある。
+現在のプロジェクトではブランチが多用されていて管理や結合に時間がかかっています。
+そもそもブランチを分けないという視点を持ち運用について考えていきます。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(8章)ペアプロはメンターにこそ効果がある</p>
+<div class="literalblock">
+<div class="content">
+<pre>"教える"という行為はとても価値がある。
+自分のタスクが進まなくなってしまうだとか、2人で1つのタスクを実施すると
+単純にスピードが半分になってしまうと思い込んでいました。
+しかし、実際は2人で1つのタスクを実施した方がアイデアも産まれ効率的に進むようです。
+何より教えることで身についたり新たな気付きがあるということでした。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(8章)コードレビューでは設計とその設計を採用した理由を問う</p>
+<div class="literalblock">
+<div class="content">
+<pre>コードスタイルは個人の好みもあり話が発散しやすいです。
+コードレビューでは設計と設計の採用理由を中心に確認することで
+レビューアーにも気付きがあると思いますし、必要以上に時間もかからないと思うので
+意識していきます。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(9章)他の開発者のやり方を学ぶ</p>
+<div class="literalblock">
+<div class="content">
+<pre>他の人のコードを読んで、他の人の書き方を学ぶ。
+他の開発者が問題をどのように扱っているのかOSSなどを眺めて学んでみます。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(10章)コードを書く前に書くユニットテストはテストではない</p>
+<div class="literalblock">
+<div class="content">
+<pre>TDDで書くテストは①仮説/ふるまいの仕様②コードが期待したように動いていることの検証
+といった2つの役割を果たすものになります。
+TDDを実践することで仕様の理解を深めたり、仕様の漏れに気付けたりします。
+すぐにコードが期待通りに動いているか検証しフィードバックを受けることで
+バグ改修のコストを著しく下げることができるのでやっていきます。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(11章)ふるまいの変化を引き起こす可能性があるものは全てテストする</p>
+<div class="literalblock">
+<div class="content">
+<pre>定数もふるまいの変化を引き起こすのでアサーションするのが望ましい。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(12章)ソースコードを読んだ時にわかりやすい変数名にリネームしておく</p>
+<div class="literalblock">
+<div class="content">
+<pre>調査用にシーケンス図を書き起こさなくても読めるようにしておくと良さそう。
+もちろん振る舞いを変える訳にはいかないので変数名のリネームから着手する。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(13章)レガシーコードは時限爆弾ではなく地雷</p>
+<div class="literalblock">
+<div class="content">
+<pre>コードが機能していて変更の必要がないならそのままにしておく。
+市場で使われている機能はユーザーの声に応えるために変更する機会があるので、
+変更が必要になった際は他のプラクティスを用いながら変更を行う。</pre>
+</div>
+</div>
+</li>
+<li>
+<p>(13章)2回目は適切に行う</p>
+<div class="literalblock">
+<div class="content">
+<pre>1回目から適切にできたと考えているのであればそれは間違い。
+1つの例だけで汎化するのは難しい。
+複数の具体例を探し汎化することで正しい抽象化ができる。
+最高のコード書いた～と思ってもバグっていることはザラにあるので心得ます。</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/05/04/tdd_study_mtg_1/">
+                                <h2 class="">テスト駆動設計(TDD)オンライン勉強会#1</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-05-04</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/tdd/">
+            <span class="layui-badge" style="vertical-align: 2px;">TDD</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
