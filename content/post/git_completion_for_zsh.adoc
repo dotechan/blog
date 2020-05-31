@@ -1,0 +1,59 @@
+---
+title: "zshでgitコマンドの補完をする"
+description: "Macbookに乗り換えた際にgitの補完が効かず困ったときの備忘録です"
+date: 2020-05-27T22:11:06+09:00
+categories: ["技術"]
+tags: ["zsh", "git"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+
+今までWindowsしか使ったことがなかったのですが +
+前から憧れていたMacbook Pro 13inchに乗り換えました。 +
+そしてJISキーボードの使用経験しかなかったのですが +
+ノリでUSキーボードにしてみました。 +
+そんな訳でブラインドタッチもできなくなり初々しい感じですが +
+Terminal周りの設定とかをやっているのでメモしておきます。
+
+== 環境
+
+* Mac OS X(10.15.4)
+
+== 参考記事
+* パッケージの管理
+** https://brew.sh/[Homebrew]
+
+* gitの補完を効かせる時に参照(後々不要に)
+** https://medium.com/@oliverspryn/adding-git-completion-to-zsh-60f3b0e7ffbc[Adding Git Completion to Zsh]
+
+* oh-my-zshの存在を知るキッカケ
+** https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh[A1.8 Appendix A: Git in Other Environments - Git in Zsh]
+
+* terminalのカスタマイズ
+** https://github.com/ohmyzsh/ohmyzsh[ohmyzsh]
+
+== 環境構築
+
+=== Homebrew
+Macのパッケージ管理ソフトのようです。 +
+Homebrewがデファクトスタンダードのようなのでインストールしておきました。
+
+=== Git
+Terminal起動して"git"と入力したらterminal上でgitをインストールしてと言われました。 +
+Terminalの指示通りにgitをインストールしましたが補完が効かなくて不便！ +
+ってことで次は補完のプラグインを入れました。 +
+git-completionなるパッケージをダウンロードしてきて.zshrcで読み込むように +
+指定していたのですが、ここで行った作業は現段階では不要でした。
+
+最終的にgitのreferenceを覗いてみたところ
+....
+Zsh also ships with a tab-completion library for Git. To use it, simply run autoload -Uz compinit && compinit in your .zshrc. Zsh’s interface is a bit more powerful than Bash’s:
+....
+というような記述があり.zshrcに1行追加するだけで実現できました。
+
+terminal上でのブランチの表示もかっちょよくしたいな。
+oh-my-zshでのカスタマイズについては後日試してみます。
