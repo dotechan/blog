@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DDD on Work From Dote</title>
+    <link>https://dotechan.github.io/blog/tags/ddd/</link>
+    <description>Recent content in DDD on Work From Dote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 03 Jun 2020 00:29:17 +0900</lastBuildDate>
+    
+	<atom:link href="https://dotechan.github.io/blog/tags/ddd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>わかる！ドメイン駆動設計〜もちこちゃんの大冒険〜</title>
+      <link>https://dotechan.github.io/blog/2020/06/03/techbooster_domain_mochico/</link>
+      <pubDate>Wed, 03 Jun 2020 00:29:17 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/06/03/techbooster_domain_mochico/</guid>
+      <description>Table of Contents はじめに 参考記事 感想 1.5 DDDの要素 2.1 ユビキタス言語 2.6 ユビキタス言語の確立 3.1 ドメインモデル 3.2 モデルの振る舞いを設計する 4.2 境界づけられたコ</description>
+    </item>
+    
+  </channel>
+</rss>
