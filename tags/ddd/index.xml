@@ -6,10 +6,19 @@
     <description>Recent content in DDD on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 03 Jun 2020 00:29:17 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 12:22:39 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/tags/ddd/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AndroidアプリにDDDを適応する-戦略的設計-</title>
+      <link>https://dotechan.github.io/blog/2020/06/06/droidkaigi_ddd/</link>
+      <pubDate>Sat, 06 Jun 2020 12:22:39 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/06/06/droidkaigi_ddd/</guid>
+      <description>Table of Contents はじめに 参考記事 作ろうとしているアプリ DDDの戦略的設計の流れ アプリのドメインについて考える ユビキタス言語を育てる 境界づけられたコンテ</description>
+    </item>
     
     <item>
       <title>わかる！ドメイン駆動設計〜もちこちゃんの大冒険〜</title>
