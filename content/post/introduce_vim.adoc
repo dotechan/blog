@@ -1,0 +1,39 @@
+---
+title: "はじめてのVim"
+description: "Vimを使い始めました"
+date: 2020-06-08T22:31:01+09:00
+categories: ["技術"]
+tags: ["Vim"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+
+Android StudioやVS codeを使うことが多いのです +
+エディタによってショートカットが異なり混乱することがしばしばありました。 +
+どちらのエディタにもVimキーバインド拡張が用意されていたので、 +
+操作感を統一するのにいいのでは？と思い導入してみました。
+
+まあ一番の理由はVimなんかカッケエなんですが😂
+
+== 環境
+
+* Mac OS X(10.15.4)
+
+== 参考記事
+
+* https://dev.classmethod.jp/articles/be-vimmer-by-trainings/[オンラインvimトレーニングで休日にvimmerへの一歩を進めてみよう]
+* https://nanasi.jp/articles/howto/editing/clipboard.html#id3[vimエディタからクリップボードを利用する。]
+
+== 基本操作
+
+*vimtutor* というコマンドを実行するとテキストベースで基本操作について確認することができます。 +
+チュートリアルを一通り流してでやってみてカーソルの移動やコピペといった基本動作を学びました。
+
+=== Vimとクリップボードを連携させる
+
+クリップボードのデータはVimエディタの「*レジスタ」を使用することで参照できる。 +
+yankやpasteの前に "* と入力することで*レジスタを使用することができるようです。
