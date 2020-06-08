@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dotechan.github.io/blog/categories/</loc>
+    <lastmod>2020-06-08T22:31:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/post/</loc>
+    <lastmod>2020-06-08T22:31:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/</loc>
+    <lastmod>2020-06-08T22:31:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/vim/</loc>
+    <lastmod>2020-06-08T22:31:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/</loc>
+    <lastmod>2020-06-08T22:31:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/2020/06/08/introduce_vim/</loc>
+    <lastmod>2020-06-08T22:31:01+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
+    <lastmod>2020-06-08T22:31:01+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dotechan.github.io/blog/tags/android/</loc>
     <lastmod>2020-06-06T12:22:39+09:00</lastmod>
   </url>
@@ -13,32 +48,7 @@
   </url>
   
   <url>
-    <loc>https://dotechan.github.io/blog/categories/</loc>
-    <lastmod>2020-06-06T12:22:39+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dotechan.github.io/blog/tags/ddd/</loc>
-    <lastmod>2020-06-06T12:22:39+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/post/</loc>
-    <lastmod>2020-06-06T12:22:39+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/tags/</loc>
-    <lastmod>2020-06-06T12:22:39+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/</loc>
-    <lastmod>2020-06-06T12:22:39+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
     <lastmod>2020-06-06T12:22:39+09:00</lastmod>
   </url>
   

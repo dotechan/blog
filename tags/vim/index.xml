@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on Work From Dote</title>
+    <link>https://dotechan.github.io/blog/tags/vim/</link>
+    <description>Recent content in Vim on Work From Dote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 08 Jun 2020 22:31:01 +0900</lastBuildDate>
+    
+	<atom:link href="https://dotechan.github.io/blog/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>はじめてのVim</title>
+      <link>https://dotechan.github.io/blog/2020/06/08/introduce_vim/</link>
+      <pubDate>Mon, 08 Jun 2020 22:31:01 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/06/08/introduce_vim/</guid>
+      <description>Table of Contents はじめに 環境 参考記事 基本操作 Vimとクリップボードを連携させる はじめに Android StudioやVS codeを使うことが多いのです エディタによっ</description>
+    </item>
+    
+  </channel>
+</rss>
