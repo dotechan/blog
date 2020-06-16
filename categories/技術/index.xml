@@ -6,10 +6,19 @@
     <description>Recent content in 技術 on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 08 Jun 2020 22:31:01 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 23:00:42 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Macのメニューに表示される記号</title>
+      <link>https://dotechan.github.io/blog/2020/06/16/mac_menu_sign/</link>
+      <pubDate>Tue, 16 Jun 2020 23:00:42 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/06/16/mac_menu_sign/</guid>
+      <description>Table of Contents 参考記事 修飾キーとの対応 参考記事 macOSユーザーガイド 修飾キーとの対応 [ヘルプ]の検索バーで「Macのメニューに表示される記号」と検</description>
+    </item>
     
     <item>
       <title>はじめてのVim</title>
