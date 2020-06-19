@@ -1,0 +1,31 @@
+---
+title: "Macでのpathの通し方"
+description: "pathの通し方やexportコマンドについて調べました"
+date: 2020-06-19T09:29:26+09:00
+categories: ["技術"]
+tags: ["Mac"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== 環境
+
+* Mac OS X(10.15.4)
+* zsh 5.7.1
+
+== 参考記事
+
+* https://qiita.com/k3ntar0/items/eb8cdbd8eba9da388def[macでPATHを通す方法 - zsh/bash]
+* https://www.geeksforgeeks.org/export-command-in-linux-with-examples/[export command in Linux with Examples]
+
+== PATHの通し方
+
+....
+export PATH=$PATH:want_to_add_path
+....
+
+want_to_add_pathには今回使用したいコマンドが配置されているpathを指定します。 +
+PATHという環境変数に追加しておくこという感じです。 +
+zshであれば起動時に読み込まれる~/.zshrcに追記しておくといいでしょう。
