@@ -3,20 +3,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Work From Dote - Mac </title>
+    <title>Work From Dote - Macでのpathの通し方 </title>
 
     
     
-    <meta content="Work From Dote" name="keywords">
+    <meta content="Mac, 技術" name="keywords">
     
-    <meta content="Work From Dote - A website called Work From Dote" name="description">
+    <meta content="Work From Dote - pathの通し方やexportコマンドについて調べました" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
 
-    
-        <link href="/blog/tags/mac/index.xml" rel="alternate" type="application/rss&#43;xml" title="Work From Dote" />
-        <link href="/blog/tags/mac/index.xml" rel="feed" type="application/rss&#43;xml" title="Work From Dote" />
     
 
     
@@ -80,29 +77,16 @@ layui.use('element', function(){
 </script>
 
         <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
 
-<main id="main">
-
-<div class="layui-fluid list-show" >
-    <div class="layui-row">
-        <div class="layui-col-md6 layui-col-sm12 layui-col-xs12">
-            <div class="list-show-title">
-                <h1>技術的なことから日常のことまで幅広く投稿していきます</h1>
-            </div>
-        </div>
-        <div class="layui-col-md6 layui-col-sm12 layui-col-xs12" style="text-align:center;">
-            <img src="https://dotechan.github.io/blog//self/img/undraw_chat_bot_kli5.png" class="list-title-pic">
-        </div>
-    </div>
-</div>
-
-<div class="layui-container">
-        
-            <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
-        <a href="/blog/2020/06/19/export_path_for_mac/">
-            <h2 class="">Macでのpathの通し方</h2>
-        </a>
-        <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>Macでのpathの通し方</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
     <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
     <span>2020-06-19</span>
 
@@ -114,19 +98,77 @@ layui.use('element', function(){
         </a>
     
 </h3>
-        <h3>
-        	
-				pathの通し方やexportコマンドについて調べました
-			 <a href="/blog/2020/06/19/export_path_for_mac/"><span style="color:#01AAED">Read More</span></a>
-        </h3>
-    </blockquote>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+<li><a href="#_pathの通し方">PATHの通し方</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Mac OS X(10.15.4)</p>
+</li>
+<li>
+<p>zsh 5.7.1</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://qiita.com/k3ntar0/items/eb8cdbd8eba9da388def">macでPATHを通す方法 - zsh/bash</a></p>
+</li>
+<li>
+<p><a href="https://www.geeksforgeeks.org/export-command-in-linux-with-examples/">export command in Linux with Examples</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pathの通し方">PATHの通し方</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>export PATH=$PATH:want_to_add_path</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>want_to_add_pathには今回使用したいコマンドが配置されているpathを指定します。<br>
+PATHという環境変数に追加しておくこという感じです。<br>
+zshであれば起動時に読み込まれる~/.zshrcに追記しておくといいでしょう。</p>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
 
-    
-            <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
-        <a href="/blog/2020/06/16/mac_menu_sign/">
-            <h2 class="">Macのメニューに表示される記号</h2>
-        </a>
-        <h3 style="margin-top:10px; margin-bottom:10px"> 
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/06/16/mac_menu_sign/">
+                                <h2 class="">Macのメニューに表示される記号</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
     <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
     <span>2020-06-16</span>
 
@@ -138,40 +180,16 @@ layui.use('element', function(){
         </a>
     
 </h3>
-        <h3>
-        	
-				Macのメニューに表示される記号と修飾キーの対応
-			 <a href="/blog/2020/06/16/mac_menu_sign/"><span style="color:#01AAED">Read More</span></a>
-        </h3>
-    </blockquote>
-
-    
-
-    
-<div class="pager">
-    <div class="layui-btn-group">
-        <button type="button" class="layui-btn layui-btn-primary layui-btn-sm">
-            <a href="/blog/tags/mac/"><i class="layui-icon">&#xe65a;</i></a>
-        </button>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
         
-        <button type="button" class="layui-btn layui-btn-disabled layui-btn-sm">
-            <i class="layui-icon">&#xe603;</i>
-        </button>
-        
-        
-        <button type="button" class="layui-btn layui-btn-disabled layui-btn-sm">
-            <i class="layui-icon">&#xe602;</i>
-        </button>
-        
-        <button type="button" class="layui-btn layui-btn-primary layui-btn-sm">
-            <a href="/blog/tags/mac/"><i class="layui-icon">&#xe65b;</i></a>
-        </button>
     </div>
 </div>
-
-</div>
-
-</main>
 
 
         </div><footer>

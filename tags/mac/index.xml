@@ -6,10 +6,19 @@
     <description>Recent content in Mac on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 16 Jun 2020 23:00:42 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2020 09:29:26 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Macでのpathの通し方</title>
+      <link>https://dotechan.github.io/blog/2020/06/19/export_path_for_mac/</link>
+      <pubDate>Fri, 19 Jun 2020 09:29:26 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/06/19/export_path_for_mac/</guid>
+      <description>Table of Contents 環境 参考記事 PATHの通し方 環境 Mac OS X(10.15.4) zsh 5.7.1 参考記事 macでPATHを通す方法 - zsh/bash export command in Linux with Examples PATHの通し方 export PATH=$PATH:want_to_add_path want_to_add</description>
+    </item>
     
     <item>
       <title>Macのメニューに表示される記号</title>
