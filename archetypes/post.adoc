@@ -14,7 +14,7 @@ draft: true
 
 == 環境
 
-* Windows 10 Home (1903)
+* Mac OS X(10.15.4)
 
 == 前提条件
 
