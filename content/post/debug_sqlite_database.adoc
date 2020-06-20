@@ -1,0 +1,67 @@
+---
+title: "SQLite Databaseの中身を確認する"
+description: "Android Qのエミュレーターでdatabaseの中身を確認する方法です"
+date: 2020-06-20T12:45:51+09:00
+categories: ["技術"]
+tags: ["Android", "adb", "SQLite"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+Android Qのエミュレーターでsqlite3を使用してDatabaseのdebugができるようになります。
+
+== 環境
+* Mac OS X(10.15.4)
+* Android 10.0(Q) 
+* SQLite version 3.28.0
+
+== 前提条件
+* Android/sdk/platform-toolsへのpathを通していること
+
+== 参考記事
+
+* https://akira-watson.com/android/sqlite-check-data.html[[Android\] SQLiteのデータを確認する方法]
+
+* https://stackoverflow.com/questions/18471780/retrieve-database-or-any-other-file-from-the-internal-storage-using-run-as[Retrieve database or any other file from the Internal Storage using run-as
+]
+** adb rootでrootが取得できないデバイスでアプリのdataを取得する方法
+
+* https://qiita.com/s_of_p/items/827f5b2074dcbff88876[もっと早く知りたかった今すぐ使える Android Tips]
+** adb exec-outの使い所について
+
+* https://www.sqlite.org/cli.html[Command Line Shell For SQLite]
+
+== 手順
+
+(1) 端末からdatabaseのファイルを取得する
+....
+adb exec-out run-as <package-name> cat databases/<database-name> > <database-name>.db
+....
+
+(2). sqlite3を使用してterminal上からdatabaseを操作できるようにする
+....
+sqlite3 <database-name>.db
+....
+
+(3). SQLを発行してdatabaseのdebugを行う +
+e.g.: テーブル名<table-name>の確認をする
+....
+.select * from <table-name>;
+....
+
+== adbのコマンド説明 
+....
+exec-out
+....
+端末の標準出力をローカルファイルに直接リダイレクトしたい時に使用する +
+NOTE: referenceに明記されていないようで、動作保証されているわけではなさそう
+
+....
+run-as
+....
+<package-name>で指定したプロセスでコマンドを実行する +
+NOTE: adb rootが取得できれば必要ないが、adb rootが取得できない端末だと
+アプリ配下のデータを閲覧する権限があるのはアプリ自身だけなので、run-asする必要がある
