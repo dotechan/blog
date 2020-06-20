@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 19 Jun 2020 09:29:26 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 12:45:51 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>adb</title>
+      <link>https://dotechan.github.io/blog/tags/adb/</link>
+      <pubDate>Sat, 20 Jun 2020 12:45:51 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/adb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android</title>
+      <link>https://dotechan.github.io/blog/tags/android/</link>
+      <pubDate>Sat, 20 Jun 2020 12:45:51 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQLite</title>
+      <link>https://dotechan.github.io/blog/tags/sqlite/</link>
+      <pubDate>Sat, 20 Jun 2020 12:45:51 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/sqlite/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Mac</title>
@@ -26,15 +53,6 @@
       <pubDate>Mon, 08 Jun 2020 22:31:01 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Android</title>
-      <link>https://dotechan.github.io/blog/tags/android/</link>
-      <pubDate>Sat, 06 Jun 2020 12:22:39 +0900</pubDate>
-      
-      <guid>https://dotechan.github.io/blog/tags/android/</guid>
       <description></description>
     </item>
     

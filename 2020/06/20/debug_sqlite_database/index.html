@@ -1,0 +1,345 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - SQLite Databaseの中身を確認する </title>
+
+    
+    
+    <meta content="Android, adb, SQLite, 技術" name="keywords">
+    
+    <meta content="Work From Dote - Android Qのエミュレーターでdatabaseの中身を確認する方法です" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>SQLite Databaseの中身を確認する</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-06-20</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/android/">
+            <span class="layui-badge" style="vertical-align: 2px;">Android</span>
+        </a>
+    
+        <a href="/blog/tags/adb/">
+            <span class="layui-badge" style="vertical-align: 2px;">adb</span>
+        </a>
+    
+        <a href="/blog/tags/sqlite/">
+            <span class="layui-badge" style="vertical-align: 2px;">SQLite</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_前提条件">前提条件</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+<li><a href="#_手順">手順</a></li>
+<li><a href="#_adbのコマンド説明">adbのコマンド説明</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Android Qのエミュレーターでsqlite3を使用してDatabaseのdebugができるようになります。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Mac OS X(10.15.4)</p>
+</li>
+<li>
+<p>Android 10.0(Q)</p>
+</li>
+<li>
+<p>SQLite version 3.28.0</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_前提条件">前提条件</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Android/sdk/platform-toolsへのpathを通していること</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://akira-watson.com/android/sqlite-check-data.html">[Android] SQLiteのデータを確認する方法</a></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/18471780/retrieve-database-or-any-other-file-from-the-internal-storage-using-run-as">Retrieve database or any other file from the Internal Storage using run-as
+</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>adb rootでrootが取得できないデバイスでアプリのdataを取得する方法</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://qiita.com/s_of_p/items/827f5b2074dcbff88876">もっと早く知りたかった今すぐ使える Android Tips</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>adb exec-outの使い所について</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://www.sqlite.org/cli.html">Command Line Shell For SQLite</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_手順">手順</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>(1) 端末からdatabaseのファイルを取得する</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>adb exec-out run-as &lt;package-name&gt; cat databases/&lt;database-name&gt; &gt; &lt;database-name&gt;.db</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(2). sqlite3を使用してterminal上からdatabaseを操作できるようにする</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sqlite3 &lt;database-name&gt;.db</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(3). SQLを発行してdatabaseのdebugを行う<br>
+e.g.: テーブル名&lt;table-name&gt;の確認をする</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>.select * from &lt;table-name&gt;;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adbのコマンド説明">adbのコマンド説明</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>exec-out</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>端末の標準出力をローカルファイルに直接リダイレクトしたい時に使用する<br>
+NOTE: referenceに明記されていないようで、動作保証されているわけではなさそう</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>run-as</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&lt;package-name&gt;で指定したプロセスでコマンドを実行する<br>
+NOTE: adb rootが取得できれば必要ないが、adb rootが取得できない端末だと
+アプリ配下のデータを閲覧する権限があるのはアプリ自身だけなので、run-asする必要がある</p>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/06/06/droidkaigi_ddd/">
+                                <h2 class="">AndroidアプリにDDDを適応する-戦略的設計-</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-06-06</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/android/">
+            <span class="layui-badge" style="vertical-align: 2px;">Android</span>
+        </a>
+    
+        <a href="/blog/tags/ddd/">
+            <span class="layui-badge" style="vertical-align: 2px;">DDD</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/05/06/android_style_theme/">
+                                <h2 class="">Androidのstyleとtheme</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-05-06</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/android/">
+            <span class="layui-badge" style="vertical-align: 2px;">Android</span>
+        </a>
+    
+        <a href="/blog/tags/theme/">
+            <span class="layui-badge" style="vertical-align: 2px;">theme</span>
+        </a>
+    
+        <a href="/blog/tags/style/">
+            <span class="layui-badge" style="vertical-align: 2px;">style</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
