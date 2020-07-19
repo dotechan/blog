@@ -1,0 +1,24 @@
+---
+title: "カラースキームであるICEBERGを使ってみた"
+description: "iTerm2の見た目をカッコよくしようとしてICEBERGを導入した備忘録"
+date: 2020-07-19T22:35:12+09:00
+categories: ["技術"]
+tags: ["iTerm2", "ICEBERG"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+ターミナルをカッコよくしたくてICEBERGというカラースキームを使ってみました。
+
+== 環境
+
+* Mac OS X(10.15.4)
+
+== 参考記事
+
+* https://cocopon.github.io/iceberg.vim/[ICEBERG]
+* https://www.ambitious-i.net/blog/vim_use_iceberg[Icebergを各所に導入]
+* https://qiita.com/harashoo/items/e63b8b60fad1cfd7ff2b[ターミナルのカラースキームを変更しても色が変わらない時の対処法]
