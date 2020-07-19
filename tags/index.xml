@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 20 Jun 2020 12:45:51 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 22:35:12 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ICEBERG</title>
+      <link>https://dotechan.github.io/blog/tags/iceberg/</link>
+      <pubDate>Sun, 19 Jul 2020 22:35:12 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/iceberg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iTerm2</title>
+      <link>https://dotechan.github.io/blog/tags/iterm2/</link>
+      <pubDate>Sun, 19 Jul 2020 22:35:12 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/iterm2/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>adb</title>
