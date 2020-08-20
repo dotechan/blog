@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 19 Jul 2020 22:35:12 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2020 20:29:58 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>賃貸物件を借りた時に10万円ぼったくられた話</title>
+      <link>https://dotechan.github.io/blog/2020/08/20/rent_home/</link>
+      <pubDate>Thu, 20 Aug 2020 20:29:58 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/08/20/rent_home/</guid>
+      <description>Table of Contents はじめに 参考動画 結論 動画の内容 良い業者を見つける 仲介手数料は家賃の0.525ヶ月分まで ハウスクリーニングは不要 火災保険は自分で選ぶ 安心</description>
+    </item>
     
     <item>
       <title>カラースキームであるICEBERGを使ってみた</title>

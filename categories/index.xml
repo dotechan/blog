@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 19 Jul 2020 22:35:12 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2020 20:29:58 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>教養</title>
+      <link>https://dotechan.github.io/blog/categories/%E6%95%99%E9%A4%8A/</link>
+      <pubDate>Thu, 20 Aug 2020 20:29:58 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/categories/%E6%95%99%E9%A4%8A/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>技術</title>
