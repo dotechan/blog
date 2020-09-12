@@ -1,0 +1,108 @@
+---
+title: "Android JetpackのNavigationコンポーネントを使ってみた"
+description: "個人開発アプリにNavigationコンポーネントを導入した時の備忘録"
+date: 2020-09-12T09:42:24+09:00
+categories: ["技術"]
+tags: ["Android", "Navigation"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== 環境
+
+* Mac OS X(10.15.4)
+* Android Studio 4.0.1
+* Navigationコンポーネント 2.3.0
+
+== 参考記事
+* https://developer.android.com/guide/navigation[(公式)ナビゲーション]
+* https://codelabs.developers.google.com/codelabs/android-navigation/index.html#0[コードラボ]
+
+== 用語
+Navigation Graph (New XML resource)
+
+    ナビゲーションに関わる全ての情報を集中管理しているXMLファイルのこと。
+
+NavHostFragment (Layout XML view)
+
+    Fragmentが追加されるコンテナみたいなもので特別なウィジェットのこと。
+
+NavController (Kotlin / Java object)
+
+    Navigation Graph内の現在位置を追跡するオブジェクト。
+    NavHostFragmentにDestination(後述)を表示する。
+
+Destination
+
+    アプリケーション内で移動できる場所のこと。
+    要は画面なので通常はFragmentやActivityに該当する。
+
+Navigation Editor
+
+    Android Studioの[Design]モードでNavigation Graphを編集できる。
+    Action(後述)を定義しておくことで画面遷移を静的に可視化できる。
+
+Action
+
+    遷移先のDestinationと画面遷移時のアニメーションをセットにしたもの。
+    Navigation Graph内でDestionationを結ぶ矢印に該当し、
+    <action>タブで定義される。
+
+Directions
+
+    safe argsプラグインを導入することで自動生成されるクラス。
+    Destinationのパラメータやアニメーション情報を保持している。
+
+== 使い方
+(例)BottomNavigationViewの画面遷移を指定する
+
+BottomNavigationViewに表示するItemのidとNavigation Graphで宣言した +
+Destinationのidを同じにしおきます。
+
+[source]
+--
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/first_dest"
+    <item
+        android:id="@+id/second_dest"
+</ menu>
+--
+
+[source]
+--
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    <fragment
+        android:id="@+id/first_dest" />
+    <fragment
+        android:id="@+id/second_dest" />
+--
+
+あとは下記のように記述するだけでBottomNavigationView選択時の画面遷移や +
+Itemの選択状態を管理してくれます。
+[source]
+--
+// ①NavHostFragmentを取得する
+val host: NavHostFragment = supportFragmentManager
+    .findFragmentById(R.id.nav_host_fragment) as NavHostFragment? ?: return
+
+// ②NavHostFragmentからNavControllerを取得する
+val navController = host.navController
+
+// ③BottomNavigationViewを取得する
+val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+// ④BottomNavigationViewにNavControllerを紐づける
+bottomNavigationView?.setupWithNavController(navController)
+--
+
+setupWithNavController()の先でクリックリスナーや画面が変わった時の +
+状態変更のリスナーのセットを行ってくれるためです。
+
+== 所感
+* 静的に画面遷移を確認できるのは設計において便利
+* FragmentTransactionの管理をAndroidSDK側で吸収してくれるので楽
+* BottomNavigationViewのようなコンポーネントとの親和性も高く使いやすい
+* アニメーションの指定やパラメータの受け渡しも楽になったかな
