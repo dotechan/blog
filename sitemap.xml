@@ -3,23 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dotechan.github.io/blog/tags/android/</loc>
+    <lastmod>2020-09-12T09:42:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/2020/09/12/introduction_navigation_component/</loc>
+    <lastmod>2020-09-12T09:42:24+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dotechan.github.io/blog/categories/</loc>
-    <lastmod>2020-08-28T18:40:11+09:00</lastmod>
+    <lastmod>2020-09-12T09:42:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/navigation/</loc>
+    <lastmod>2020-09-12T09:42:24+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/blog/post/</loc>
-    <lastmod>2020-08-28T18:40:11+09:00</lastmod>
+    <lastmod>2020-09-12T09:42:24+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/blog/tags/</loc>
-    <lastmod>2020-08-28T18:40:11+09:00</lastmod>
+    <lastmod>2020-09-12T09:42:24+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/blog/</loc>
-    <lastmod>2020-08-28T18:40:11+09:00</lastmod>
+    <lastmod>2020-09-12T09:42:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
+    <lastmod>2020-09-12T09:42:24+09:00</lastmod>
   </url>
   
   <url>
@@ -63,17 +83,7 @@
   </url>
   
   <url>
-    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
-    <lastmod>2020-07-19T22:35:12+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dotechan.github.io/blog/tags/adb/</loc>
-    <lastmod>2020-06-20T12:45:51+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/tags/android/</loc>
     <lastmod>2020-06-20T12:45:51+09:00</lastmod>
   </url>
   

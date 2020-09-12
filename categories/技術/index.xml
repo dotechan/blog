@@ -6,10 +6,19 @@
     <description>Recent content in 技術 on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 19 Jul 2020 22:35:12 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2020 09:42:24 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android JetpackのNavigationコンポーネントを使ってみた</title>
+      <link>https://dotechan.github.io/blog/2020/09/12/introduction_navigation_component/</link>
+      <pubDate>Sat, 12 Sep 2020 09:42:24 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/09/12/introduction_navigation_component/</guid>
+      <description>Table of Contents 環境 参考記事 用語 使い方 所感 環境 Mac OS X(10.15.4) Android Studio 4.0.1 Navigationコンポーネント 2.3.0 参考記事 (公式)ナビゲーション コードラボ 用語 Navigation Graph (New XML resource) ナ</description>
+    </item>
     
     <item>
       <title>カラースキームであるICEBERGを使ってみた</title>
