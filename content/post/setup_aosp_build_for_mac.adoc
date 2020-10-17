@@ -1,0 +1,82 @@
+---
+title: "macOSでのAOSPビルド環境の構築"
+description: "macOS"
+date: 2020-10-02T00:11:04+09:00
+categories: ["技術"]
+tags: ["AOSP", "macOS"]
+draft: true
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+AOSPのソースコードはCode SearchというWebサイトから確認できる。
+ただ、使い慣れているAndroid Studioで確認できた方が追いやすいだろう。
+
+== 環境
+
+* Mac OS X(10.15.6)
+
+== 参考記事
+* https://source.android.google.cn/setup/build/initializing?hl=ja#top_of_page[ビルド環境を構築する]
+* https://github.com/aosp-mirror/platform_development/tree/master/tools/idegen[github公式リポジトリ]
+* https://android.benigumo.com/tag/lsopenurlswithrole/[アイコン叩いても何も反応しない Android Studio]
+* https://developer.android.com/studio/intro/studio-config[Android Studio の設定]
+* http://effie.io/opening-aosp-with-intellij-part-3/[Opening AOSP with IntelliJ - part 3]
+* https://medium.com/@christopherney/building-android-o-with-a-mac-da07e8bd94f9[Building Android O with a Mac]
+* https://qiita.com/seri_k/items/e978c1339ce51f13e297[MacでのJAVA_HOME設定]
+
+== 順序
+
+=== ディスクイメージの作成
+ディスクイメージ(.dmgファイル)とは、マウント可能なディスクやボリュームのように表示され、動作するファイルのこと。 +
+ディスクユーティリティまたはhdiutilを使用して作成することができる。
+
+link:https://source.android.google.cn/setup/build/initializing?hl=ja#setting-up-a-mac-os-x-build-environment[reference]に従ってAOSPのソースコードをダウンロード先にあたる +
+大文字・小文字が区別されるファイルシステムを作成します。
+
+以下のコマンドでファイルシステムを作成します。 +
+[source]
+````
+hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 250g ~/android.dmg.sparseimage 
+````
+
+スパースイメージにしておくことで後からディスクイメージのサイズを変更することができます。
+
+ディスクイメージのマウント・アンマウントはヘルパー関数をbash_profileに追加しておくとよいでしょう。
+[source]
+````
+# mount the android file image
+mountAndroid() { hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android; }
+# unmount the android file image
+umountAndroid() { hdiutil detach /Volumes/android; }
+````
+
+=== AOSPのソースコードをダウンロード
+https://source.android.google.cn/setup/build/downloading?hl=ja
+
+
+=== jdk1.8をダウンロード
+MacOSにプリインストールされていたJDKのバージョンが14だったので以下から8をダウンロードしました。
+
+https://adoptopenjdk.net/archive.html?variant=openjdk8&jvmVariant=hotspot
+
+=== Android Studioの設定を変更
+RAMの量とか
+
+=== トラブルシューティング
+
+Android Studioのアイコンを押しても起動しない
+studio.vmoptionsの設定ファイルに不正な文字列が混ざっていたためAndroid Studioが読み込めず起動していませんでした。
+https://android.benigumo.com/tag/lsopenurlswithrole/
+
+
+ディスク容量が足りない
+....
+error: file write error (No space left on device)
+....
+dmgファイルの容量が不足している
+リファレンスにも空き容量を増やすには、ディレクトリを削除して作成しなおすとある。
+aosp用に作成したdmgファイルを削除する
+dmg上で作成したディレクトリをrmで削除しようとするとbusyで削除できなかったので、dmgを削除している。
