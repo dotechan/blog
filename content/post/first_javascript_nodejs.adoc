@@ -1,0 +1,98 @@
+---
+title: "Node.jsを使ってJavaScriptからOSの機能を利用する"
+description: "xmlファイルの情報を抜き出すためにJavaScriptをいじったときの備忘録"
+date: 2020-10-30T19:01:43+09:00
+categories: ["技術"]
+tags: ["JavaScript", "Node.js", "DOM"]
+draft: true
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+xmlファイルの加工をCLIから行いたくてJavaScriptとNode.jsをいじってみました。 +
+シェルスクリプトでもできると思いますが、高級言語で手っ取り早くDOM APIで操作できた方が楽だなと思い、JavaScriptでやることに決めました。 +
+構文自体はググればわかるのですが、実行環境やDOMが理解できておらず、つまずいたので備忘録として残します。
+
+== 環境
+* Mac OS X(10.15.4)
+* Node.js(V15.0.1)
+* npm(7.0.3)
+
+== 前提条件
+普段はAndroidエンジニアをしていてJavaScriptはドットインストールでブラウザ上で動くおみくじを作ったくらいのレベルです。
+
+== 参考記事
+* https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model/Introduction[DOM の紹介]
+* https://www.w3schools.com/xml/dom_intro.asp[XML DOM Tutorial]
+* https://qiita.com/non_cal/items/a8fee0b7ad96e67713eb[Node.jsとはなにか？なぜみんな使っているのか？]
+* https://www.w3schools.com/nodejs/default.asp[Node.js Tutorial]
+
+== 基礎知識
+=== DOMとは
+DOM(Document Object Model)のことで、ツリー構造として表されるHTMLやXMLをプログラムやスクリプトから動的に更新するためのインターフェースのこと。
+
+ツリー構造内の要素は全てNodeインターフェースを実装しており、共通の操作を提供しています。 +
+
+=== XML DOM
+XMLもDOM APIで操作することが可能です。
+```
+The entire document is a document node
+Every XML element is an element node
+The text in the XML elements are text nodes
+Every attribute is an attribute node
+Comments are comment nodes
+```
+NodeTypeは上記のようになっています。
+
+.XMLファイルとNodeの関係性
+[soource,xml]
+----
+<!--1-->
+<?xml version="1.0" encoding="UTF-8"?>
+<resource> <!--2-->
+  <string name="app_name">AppName</string> <!--3-->
+</resource>
+----
+<1> XML全体はDocumentオブジェクトを通して操作できます
+<2> XML内のタグで記載された要素はElement Nodeを通して操作できます
+<3> AppNameはText Node, nameはAttribute Nodeを通して操作できます
+
+=== Node.jsとは
+JavaScriptの実行環境のことです。 +
+JavaScriptはブラウザ上で動くことを前提に作られた言語のようで、標準のままではOSの機能を利用するにも制限が多く不便です。 +
+Node.jsを利用することでファイルシステムへのアクセスやネットワークI/Oを簡単に利用することができます。
+
+=== npmとは
+Node Package Managerのことです。 +
+Node.jsのパッケージ(要はJavaScriptのライブラリ)を管理するツールです。
+
+== 本題
+
+=== やりたいこと
+Androidアプリ内で使用される用語はstring.xmlというXMLファイルで管理されています。 +
+string.xmlファイルは言語毎に用意されています。 +
+AOSPのモジュールはstringタグ内のattributeのvalueが重複している用語があり、Android Studioでそのまま開こうとすると警告が出てビルドができません。 +
+そこでattributeのvalueが重複していたら、重複したstringタグを削除したいです。 +
+
+[soource,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+  <string name="app_name">Sample1</string>
+  <string name="app_name">Sample2</string>
+  <string name="app_name">Sample3</string>
+</resource>
+----
+attributeのvalueである"app_name"が重複している場合、最初の要素以外の重複した要素を削除したい。
+
+=== XMLファイルの加工
+xmldomというNode.jsのパッケージ(モジュール)を利用してxmlの情報を取得・操作できます。
+
+=== サンプルプログラム
+
+=== FAQ
+DOMオブジェクト内でremoveしたはずの要素が実際のXMLファイル上からは消えていない
+
+== まとめ
