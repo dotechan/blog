@@ -88,11 +88,19 @@ AOSPのモジュールはstringタグ内のattributeのvalueが重複してい�
 attributeのvalueである"app_name"が重複している場合、最初の要素以外の重複した要素を削除したい。
 
 === XMLファイルの加工
-xmldomというNode.jsのパッケージ(モジュール)を利用してxmlの情報を取得・操作できます。
+xmldomというNode.jsのパッケージ(モジュール)を利用してxmlの情報を取得・操作できます。 +
+ファイルシステムの操作はNode.jsにプリインストールされているfsモジュールを利用します。
 
 === サンプルプログラム
+https://github.com/dotechan/RemoveDuplicateString[github]
 
 === FAQ
-DOMオブジェクト内でremoveしたはずの要素が実際のXMLファイル上からは消えていない
+[qanda]
+DOMオブジェクト内でremoveしたはずの要素が実際のXMLファイル上からは消えていない::
+DOMからremoveしただけではメモリに展開したDOMを編集しただけで実態のXMLファイルは変更されない。 +
+修正したDOMをシリアライズしてXMLファイルを生成する必要がある。
 
 == まとめ
+XMLをDOMから簡単に編集することができました。 +
+とはいえJavaScriptを書き慣れていないのとJavaScriptやNode.jsのリファレンスの見方がしっくりこなくて時間がかかりました。 +
+改めてAndroidのリファレンスはよく整備されているなと感じました。
