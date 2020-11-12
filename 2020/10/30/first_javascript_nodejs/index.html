@@ -1,0 +1,359 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - JavaScriptでxmlファイルを加工するスクリプトを作る </title>
+
+    
+    
+    <meta content="JavaScript, Node.js, DOM, 技術" name="keywords">
+    
+    <meta content="Work From Dote - JavaScriptとNode.jsでxmlファイルを加工する際にDOMを学び直した時の備忘録" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>JavaScriptでxmlファイルを加工するスクリプトを作る</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-10-30</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/javascript/">
+            <span class="layui-badge" style="vertical-align: 2px;">JavaScript</span>
+        </a>
+    
+        <a href="/blog/tags/node.js/">
+            <span class="layui-badge" style="vertical-align: 2px;">Node.js</span>
+        </a>
+    
+        <a href="/blog/tags/dom/">
+            <span class="layui-badge" style="vertical-align: 2px;">DOM</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_前提条件">前提条件</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+<li><a href="#_基礎知識">基礎知識</a>
+<ul class="sectlevel2">
+<li><a href="#_domとは">DOMとは</a></li>
+<li><a href="#_xml_dom">XML DOM</a></li>
+<li><a href="#_node_jsとは">Node.jsとは</a></li>
+<li><a href="#_npmとは">npmとは</a></li>
+</ul>
+</li>
+<li><a href="#_本題">本題</a>
+<ul class="sectlevel2">
+<li><a href="#_やりたいこと">やりたいこと</a></li>
+<li><a href="#_xmlファイルの加工">XMLファイルの加工</a></li>
+<li><a href="#_サンプルプログラム">サンプルプログラム</a></li>
+<li><a href="#_faq">FAQ</a></li>
+</ul>
+</li>
+<li><a href="#_まとめ">まとめ</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>xmlファイルの加工をCLIから行いたくてJavaScriptとNode.jsをいじってみました。<br>
+シェルスクリプトでもできると思いますが、高級言語で手っ取り早くDOM APIで操作できた方が楽だなと思い、JavaScriptでやることに決めました。<br>
+構文自体はググればわかるのですが、実行環境やDOMが理解できておらず、つまずいたので備忘録として残します。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Mac OS X(10.15.4)</p>
+</li>
+<li>
+<p>Node.js(V15.0.1)</p>
+</li>
+<li>
+<p>npm(7.0.3)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_前提条件">前提条件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>普段はAndroidエンジニアをしていてJavaScriptはドットインストールでブラウザ上で動くおみくじを作ったくらいのレベルです。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model/Introduction">DOM の紹介</a></p>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/xml/dom_intro.asp">XML DOM Tutorial</a></p>
+</li>
+<li>
+<p><a href="https://qiita.com/non_cal/items/a8fee0b7ad96e67713eb">Node.jsとはなにか？なぜみんな使っているのか？</a></p>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/nodejs/default.asp">Node.js Tutorial</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_基礎知識">基礎知識</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_domとは">DOMとは</h3>
+<div class="paragraph">
+<p>DOM(Document Object Model)のことで、ツリー構造として表されるHTMLやXMLをプログラムやスクリプトから動的に更新するためのインターフェースのこと。</p>
+</div>
+<div class="paragraph">
+<p>ツリー構造内の要素は全てNodeインターフェースを実装しており、共通の操作を提供しています。<br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_xml_dom">XML DOM</h3>
+<div class="paragraph">
+<p>XMLもDOM APIで操作することが可能です。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>The entire document is a document node
+Every XML element is an element node
+The text in the XML elements are text nodes
+Every attribute is an attribute node
+Comments are comment nodes</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>NodeTypeは上記のようになっています。</p>
+</div>
+<div class="listingblock">
+<div class="title">XMLファイルとNodeの関係性</div>
+<div class="content">
+<pre><b class="conum">(1)</b>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;resource&gt; <b class="conum">(2)</b>
+  &lt;string name="app_name"&gt;AppName&lt;/string&gt; <b class="conum">(3)</b>
+&lt;/resource&gt;</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>XML全体はDocumentオブジェクトを通して操作できます</p>
+</li>
+<li>
+<p>XML内のタグで記載された要素はElement Nodeを通して操作できます</p>
+</li>
+<li>
+<p>AppNameはText Node, nameはAttribute Nodeを通して操作できます</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_node_jsとは">Node.jsとは</h3>
+<div class="paragraph">
+<p>JavaScriptの実行環境のことです。<br>
+JavaScriptはブラウザ上で動くことを前提に作られた言語のようで、標準のままではOSの機能を利用するにも制限が多く不便です。<br>
+Node.jsを利用することでファイルシステムへのアクセスやネットワークI/Oを簡単に利用することができます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_npmとは">npmとは</h3>
+<div class="paragraph">
+<p>Node Package Managerのことです。<br>
+Node.jsのパッケージ(要はJavaScriptのライブラリ)を管理するツールです。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_本題">本題</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_やりたいこと">やりたいこと</h3>
+<div class="paragraph">
+<p>Androidアプリ内で使用される用語はstring.xmlというXMLファイルで管理されています。<br>
+string.xmlファイルは言語毎に用意されています。<br>
+AOSPのモジュールはstringタグ内のattributeのvalueが重複している用語があり、Android Studioでそのまま開こうとすると警告が出てビルドができません。<br>
+そこでattributeのvalueが重複していたら、重複したstringタグを削除したいです。<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;resource&gt;
+  &lt;string name="app_name"&gt;Sample1&lt;/string&gt;
+  &lt;string name="app_name"&gt;Sample2&lt;/string&gt;
+  &lt;string name="app_name"&gt;Sample3&lt;/string&gt;
+&lt;/resource&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>attributeのvalueである"app_name"が重複している場合、最初の要素以外の重複した要素を削除したい。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_xmlファイルの加工">XMLファイルの加工</h3>
+<div class="paragraph">
+<p>xmldomというNode.jsのパッケージ(モジュール)を利用してxmlの情報を取得・操作できます。<br>
+ファイルシステムの操作はNode.jsにプリインストールされているfsモジュールを利用します。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_サンプルプログラム">サンプルプログラム</h3>
+<div class="paragraph">
+<p><a href="https://github.com/dotechan/RemoveDuplicateString">github</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_faq">FAQ</h3>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em>DOMオブジェクト内でremoveしたはずの要素が実際のXMLファイル上からは消えていない</em></p>
+<p>DOMからremoveしただけではメモリに展開したDOMを編集しただけで実態のXMLファイルは変更されない。<br>
+修正したDOMをシリアライズしてXMLファイルを生成する必要がある。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_まとめ">まとめ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>XMLをDOMから簡単に編集することができました。<br>
+とはいえJavaScriptを書き慣れていないのとJavaScriptやNode.jsのリファレンスの見方がしっくりこなくて時間がかかりました。<br>
+改めてAndroidのリファレンスはよく整備されているなと感じました。</p>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
