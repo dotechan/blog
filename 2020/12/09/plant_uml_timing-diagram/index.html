@@ -1,0 +1,250 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - PlantUMLでタイミング図を描く </title>
+
+    
+    
+    <meta content="タイミング図, PlantUML, 技術" name="keywords">
+    
+    <meta content="Work From Dote - 時間を軸にライフラインの発生時間や時間のスケールを表現する方法" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>PlantUMLでタイミング図を描く</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-12-09</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/%e3%82%bf%e3%82%a4%e3%83%9f%e3%83%b3%e3%82%b0%e5%9b%b3/">
+            <span class="layui-badge" style="vertical-align: 2px;">タイミング図</span>
+        </a>
+    
+        <a href="/blog/tags/plantuml/">
+            <span class="layui-badge" style="vertical-align: 2px;">PlantUML</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_モチベーション">モチベーション</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+<li><a href="#_タイミング図とは">タイミング図とは</a></li>
+<li><a href="#_例">例</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>システムテストの障害解析時に複数のモジュール担当者で合同でログ解析を行う機会がありました。<br>
+それぞれのモジュールは並列に処理が動き、あるタイミングでそれぞれの処理がバッティングすると問題が発生します。<br>
+障害発生ケースだけであればシーケンス図でまとめることでわかりやすくまとめることができます。<br>
+しかし、障害発生ケースと問題が発生しなかったケースの比較をしたい時、シーケンス図だと時間のスケールを表現が難しいです。<br>
+そこで時間のスケールを表現する手法やツールを調べていたところPlantUMLのタイミング図を見つけました。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_モチベーション">モチベーション</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>UMLのタイミング図の紹介です。<br>
+タイミング図を知らない人向けの記事になります。<br></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Mac OS X(10.15.4)</p>
+</li>
+<li>
+<p>PlantUML(2.14.0)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.itsenka.com/contents/development/uml/timing.html">IT専科</a> (2020/12/9 22:43)</p>
+</li>
+<li>
+<p><a href="https://plantuml.com/ja/timing-diagram">タイミング図</a> (2020/12/9 22:43)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_タイミング図とは">タイミング図とは</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>クラスやオブジェクトの状態を時系列で表す図です。<br>
+状態遷移を起こすタイミングや他のオブジェクトに対するメッセージなどを表現することができます。<br>
+タイミング図により、オブジェクトの状態が遷移する順番やタイミングが視覚的に表現できます。</p>
+</div>
+<div class="paragraph">
+<p>個人的には時間のスケールを表現したい時に有効な手段だと考えています。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_例">例</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>title 平日
+legend
+平日の顔を合わせる時間は3時間30分である。
+end legend
+
+concise "夫" as Husbasnd
+concise "妻" as Wife
+
+scale 3600 as 80 pixels
+
+@Husbasnd
+6:00:00 is 仕事前
+9:00:00 is 仕事
+20:00:00 is 仕事後
+0:00:00 is 睡眠
+Husbasnd@12:30:00 &lt;-&gt; @13:30:00 : {60 minutes rest}
+
+@Wife
+5:15:00 is 仕事前
+7:45:00 is 仕事
+18:00:00 is 仕事後
+22:30:00 is 睡眠
+Wife@12:00:00 &lt;-&gt; @12:30:00 : {30 minutes rest}
+
+highlight 6:00:00 to 7:00:00 #Gold;line:DimGray : 顔を合わせる時間
+highlight 20:00:00 to 22:30:00 #Gold;line:DimGray : 顔を合わせる時間</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PlantUML on Work From Dote</title>
+    <link>https://dotechan.github.io/blog/tags/plantuml/</link>
+    <description>Recent content in PlantUML on Work From Dote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 09 Dec 2020 22:01:34 +0900</lastBuildDate>
+    
+	<atom:link href="https://dotechan.github.io/blog/tags/plantuml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PlantUMLでタイミング図を描く</title>
+      <link>https://dotechan.github.io/blog/2020/12/09/plant_uml_timing-diagram/</link>
+      <pubDate>Wed, 09 Dec 2020 22:01:34 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2020/12/09/plant_uml_timing-diagram/</guid>
+      <description>Table of Contents はじめに モチベーション 環境 参考記事 タイミング図とは 例 はじめに システムテストの障害解析時に複数のモジュール担当者で合同でログ解析を行う機</description>
+    </item>
+    
+  </channel>
+</rss>

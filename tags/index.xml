@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 30 Oct 2020 19:01:43 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 09 Dec 2020 22:01:34 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PlantUML</title>
+      <link>https://dotechan.github.io/blog/tags/plantuml/</link>
+      <pubDate>Wed, 09 Dec 2020 22:01:34 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/plantuml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>タイミング図</title>
+      <link>https://dotechan.github.io/blog/tags/%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E5%9B%B3/</link>
+      <pubDate>Wed, 09 Dec 2020 22:01:34 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E5%9B%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ブログ</title>
+      <link>https://dotechan.github.io/blog/tags/%E3%83%96%E3%83%AD%E3%82%B0/</link>
+      <pubDate>Tue, 01 Dec 2020 16:31:15 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/%E3%83%96%E3%83%AD%E3%82%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>文書</title>
+      <link>https://dotechan.github.io/blog/tags/%E6%96%87%E6%9B%B8/</link>
+      <pubDate>Tue, 01 Dec 2020 16:31:15 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/%E6%96%87%E6%9B%B8/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DOM</title>
