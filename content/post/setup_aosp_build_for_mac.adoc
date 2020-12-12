@@ -1,6 +1,6 @@
 ---
 title: "macOSでのAOSPビルド環境の構築"
-description: "macOS"
+description: "macOSでAOSPのフルビルドからエミュレータでの実行までの記録"
 date: 2020-10-02T00:11:04+09:00
 categories: ["技術"]
 tags: ["AOSP", "macOS"]
@@ -11,8 +11,8 @@ draft: true
 :toc:
 
 == はじめに
-AOSPのソースコードはCode SearchというWebサイトから確認できる。
-ただ、使い慣れているAndroid Studioで確認できた方が追いやすいだろう。
+AOSPのソースコードはCode SearchというWebサイトから確認できます。 +
+ただ、使い慣れているAndroid Studioで確認できた方がソースコードを追いやすいだろうと考え、ローカルでAndroid Studioでソースコードを確認する方法を調べました。
 
 == 環境
 
@@ -80,3 +80,116 @@ dmgファイルの容量が不足している
 リファレンスにも空き容量を増やすには、ディレクトリを削除して作成しなおすとある。
 aosp用に作成したdmgファイルを削除する
 dmg上で作成したディレクトリをrmで削除しようとするとbusyで削除できなかったので、dmgを削除している。
+
+ito-hi@MacBook-Pro aosp % tar -zxvf google_devices-sargo-pd2a.190115.029-338f4e68.tgz
+x extract-google_devices-sargo.sh
+
+合意した後
+
+x vendor/
+x vendor/google_devices/
+x vendor/google_devices/sargo/
+x vendor/google_devices/sargo/BoardConfigPartial.mk
+x vendor/google_devices/sargo/device-partial.mk
+x vendor/google_devices/sargo/proprietary/
+x vendor/google_devices/sargo/proprietary/vendor.img
+x vendor/google_devices/sargo/android-info.txt
+x vendor/google_devices/bonito/
+x vendor/google_devices/bonito/proprietary/
+x vendor/google_devices/bonito/proprietary/device-vendor.mk
+x vendor/google_devices/bonito/proprietary/BoardConfigVendor.mk
+
+ito-hi@MacBook-Pro aosp % lunch aosp_sargo-eng
+
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=11
+TARGET_PRODUCT=aosp_sargo
+TARGET_BUILD_VARIANT=eng
+TARGET_BUILD_TYPE=release
+TARGET_ARCH=arm64
+TARGET_ARCH_VARIANT=armv8-a
+TARGET_CPU_VARIANT=generic
+TARGET_2ND_ARCH=arm
+TARGET_2ND_ARCH_VARIANT=armv8-a
+TARGET_2ND_CPU_VARIANT=generic
+HOST_ARCH=x86_64
+HOST_OS=darwin
+HOST_OS_EXTRA=Darwin-19.6.0-x86_64-10.15.7
+HOST_BUILD_TYPE=release
+BUILD_ID=RP1A.201105.002
+OUT_DIR=out
+PRODUCT_SOONG_NAMESPACES=device/google/bonito hardware/google/av hardware/google/camera hardware/google/interfaces hardware/google/pixel hardware/qcom/sdm845 vendor/google/camera vendor/qcom/sdm845 vendor/google/interfaces
+============================================
+
+
+https://e-tec-memo.herokuapp.com/article/192/
+https://linuxhint.com/linux_ulimit_command/
+
+手順書にはstack sizeは1024に変更とあるが、"glob: fcntl: too many open files"と警告が出たので8092に設定した
+ito-hi@MacBook-Pro ~ % ulimit -a
+-t: cpu time (seconds)              unlimited
+-f: file size (blocks)              unlimited
+-d: data seg size (kbytes)          unlimited
+-s: stack size (kbytes)             8192
+-c: core file size (blocks)         0
+-v: address space (kbytes)          unlimited
+-l: locked-in-memory size (kbytes)  unlimited
+-u: processes                       5568
+-n: file descriptors                8192
+
+
+
+FAILED:
+In file included from build/make/core/main.mk:1327:
+build/make/core/Makefile:49: error: VINTF metadata found in PRODUCT_COPY_FILES: vendor/qcom/sargo/proprietary/compatibility_matrix.xml:system/compatibility_matrix.xml:qcom, use vintf_fragments instead!.
+22:30:37 ckati failed with: exit status 1
+
+フレームワーク互換性マトリクス(vendor/qcom/sargo/proprietary/compatibility_matrix.xml)は存在するが、対応するプロダクト互換性マトリクス(system/compatibility_matrix.xml)が存在しないように見える
+
+PRODUCT_COPY_FILESをLOCAL_VINTF_FRAGMENTSに修正
+→成功
+(参考)https://source.android.google.cn/devices/architecture/vintf/objects?hl=ja#manifest-fragments
+
+
+エミュレータが立ち上がらない
+ito-hi@MacBook-Pro aosp % emulator
+emulator: WARNING: encryption is off
+qemu-system-aarch64: Could not open '/Volumes/android/aosp/out/target/product/sargo/userdata-qemu.img': No such file or directory
+
+https://developer.android.com/studio/run/emulator-commandline?hl=ja#system-filedir
+data/パーティションのイメージがないと言われている模様
+→userdata.imgも存在しないからuserdata-qemu.imgも作成されない？userdata.imgがない理由を調べて、わからなければuserdata-qemu.imgを作成してしまうか？
+→すでに存在する~/.android配下のuserdata.imgを利用してもいいかも？
+→パーティションのリサイズでダメだった
+````
+ito-hi@MacBook-Pro aosp % emulator -data ~/.android/avd/Pixel_3a_API_29.avd/userdata.img
+emulator: WARNING: userdata partition is resized from 1 M to 800 M
+
+ERROR: resizing partition e2fsck failed with exit code 8
+emulator: WARNING: encryption is off
+emulator: emulator window was out of view and was recentered
+````
+
+fatal error: error in backend: IO failure on output stream: No space left on device
+02:03:26 ninja failed with: exit status 1
+
+#### failed to build some targets (03:06:49 (hh:mm:ss)) ####
+
+hdiutil resize -size <new-size-you-want>g ~/android.dmg.sparseimage
+<new-size-you-want>を600にした
+
+
+
+#### build completed successfully (02:13:13 (hh:mm:ss)) ####
+
+ito-hi@MacBook-Pro aosp % emulator
+emulator: INFO: boot completed
+emulator: INFO: boot time 53902 ms
+emulator: Increasing screen off timeout, logcat buffer size to 2M.
+emulator: Revoking microphone permissions for Google App.
+emulator: WARNING: Not saving state: RAM not mapped as shared
+
+https://source.android.com/setup/create/avd?hl=ja
+x86 64ビットのAVDをビルドする
+lunch sdk_phone_x86_64
