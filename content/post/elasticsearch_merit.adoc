@@ -1,0 +1,55 @@
+---
+title: "Elasticsearchのメリット"
+description: "ELKスタックのE(Elasticsearch)の何がすごいのか調べてみた"
+date: 2020-12-20T10:55:59+09:00
+categories: ["技術"]
+tags: ["ELKスタック", "Elasticsearch"]
+draft: true
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+お仕事でシステムに蓄積されたデータをマネージャーが必要なデータだけ抽出したり、 +
+自動でレポートを作成したいという要望がありました。 +
+ElasticsearchとKibanaを使って実現できそうというのは見えてきたのですが、 +
+Elasticsearchを使うとどんないいことがあるのか理解できていなかったので整理しました。
+
+== まとめること
+* そもそもElasticsearchとは何か
+* Elasticsearchがシステムにもたらす恩恵
+
+== 環境
+
+* Mac OS X(10.15.4)
+
+== Elasticsearchとは
+
+RESTful 分散検索/分析エンジンである。 +
+≒ データストア？？？ +
+
+データストア自体のオリジナルは独立して存在する。
+データストアの得意/不得意を吸収して統一されたAPIで提供する。
+RDBMSだと大容量のクエリきたら遅くなる、キーバリューだとソートとか複雑なことができないけど、Elasticsearchはいいとこ取りで両方できるイメージ。
+
+RDBとの違い。
+https://qiita.com/rjkuro/items/95f71ad522226dc381c8
+
+== Elasticsearchのメリット
+
+=== 統一されたAPIで複数のデータストアに蓄積されたデータを検索・分析できる
+DBのデータを直接たたかず、高速検索できるようにElasticsearchがインデックスしたデータをクエリで検索・分析できる。
+
+=== 検索スピードが早い
+データをそのまま保存するのではなく高度に検索できるようにトークン単位でインデックスを作る。
+
+=== あらゆる規模に対応できる
+ElasticsearchのindexはNode（Server)に管理される。
+Node（Server)を増やすことで負荷分散し規模を拡張できる。
+
+=== 様々なデータ型を扱える
+String, Numericといった基本データ型だけでなくネスト構造のJSONなど
+
+== 参考記事
+* https://dev.classmethod.jp/articles/elasticsearch-getting-started-05/[第５回 Elasticsearch 入門 Elasticsearch の使いどころ]
