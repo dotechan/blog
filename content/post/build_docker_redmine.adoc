@@ -1,0 +1,79 @@
+---
+title: "DockerでRedmineを動かす"
+description: "公式のRedmine4のDockerイメージを使ってみた"
+date: 2020-12-27T23:34:57+09:00
+categories: ["技術"]
+tags: ["Docker", "Redmine"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+* Redmine4.1.1をDBにMariaDBを指定して動かす方法について書きます
+* Redmine, MariaDBともに公式のDockerイメージを利用します
+* docker-composeを利用してRedmine, MariadDBのDockerコンテナを起動します
+
+== 環境
+* Mac OS X(10.15.4)
+* Redmine(4.1.1)
+* MariaDB(10.4)
+
+== 前提条件
+* Dockerがインストール済み
+* Docker Composeがインストール済み
+
+== 参考記事
+* https://blog1.mammb.com/entry/2020/05/24/090000[Docker Compose で Redmine 公式イメージを起動する] 
+* https://github.com/compose-spec/compose-spec/blob/master/spec.md[The Compose Specification]
+* https://www.redmine.org/projects/redmine/wiki/RedmineInstall#Supported-database-back-ends[Supported database back-ends]
+* https://mariadb.com/kb/en/mariadb-vs-mysql-compatibility/#replication-compatibility[Replication Compatibility]
+
+
+== システム構成
+
+* RedmineはMySQL-5.7までをサポートしている
+* MySQL-5.7はMariaDB-10.4と互換性がある
+
+== docker-compose.ymlファイル
+
+[source,yml]
+----
+version: '3.8'
+
+services:
+  redmine:
+    image: redmine:4.1.1
+    container_name: redmine
+    ports:
+      - 3000:3000
+    volumes:
+      - ./data/plugins:/usr/src/redmine/plugins
+      - ./data/themes:/usr/src/redmine/public/themes
+    environment:
+      REDMINE_DB_MYSQL: redmine-db
+      REDMINE_DB_PASSWORD: redmine
+    depends_on:
+      - redmine-db
+    restart: always
+    
+  redmine-db:
+    image: mariadb
+    container_name: redmine-db
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: redmine
+      MYSQL_DATABASE: redmine
+    volumes:
+      - ./data/db:/var/lib/mysql
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    restart: always
+----
+
+== 説明
+
+* depends_onで指定することで"redmine"イメージより"redmine-db"イメージを先に起動する
+* ホストマシンのdataディレクトリ配下にDockerコンテナの永続化しておく必要があるファイルをマウントする
+* "restart"に"always"を指定することでDockerコンテナをremoveするまでサービスを起動する
