@@ -4,7 +4,42 @@
   
   <url>
     <loc>https://dotechan.github.io/blog/categories/</loc>
-    <lastmod>2020-12-09T22:01:34+09:00</lastmod>
+    <lastmod>2020-12-27T23:34:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/docker/</loc>
+    <lastmod>2020-12-27T23:34:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/2020/12/27/build_docker_redmine/</loc>
+    <lastmod>2020-12-27T23:34:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/post/</loc>
+    <lastmod>2020-12-27T23:34:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/redmine/</loc>
+    <lastmod>2020-12-27T23:34:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/</loc>
+    <lastmod>2020-12-27T23:34:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/</loc>
+    <lastmod>2020-12-27T23:34:57+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
+    <lastmod>2020-12-27T23:34:57+09:00</lastmod>
   </url>
   
   <url>
@@ -18,27 +53,7 @@
   </url>
   
   <url>
-    <loc>https://dotechan.github.io/blog/post/</loc>
-    <lastmod>2020-12-09T22:01:34+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/tags/</loc>
-    <lastmod>2020-12-09T22:01:34+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/</loc>
-    <lastmod>2020-12-09T22:01:34+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dotechan.github.io/blog/tags/%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E5%9B%B3/</loc>
-    <lastmod>2020-12-09T22:01:34+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
     <lastmod>2020-12-09T22:01:34+09:00</lastmod>
   </url>
   

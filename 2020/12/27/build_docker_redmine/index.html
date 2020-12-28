@@ -1,0 +1,296 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - DockerでRedmineを動かす </title>
+
+    
+    
+    <meta content="Docker, Redmine, 技術" name="keywords">
+    
+    <meta content="Work From Dote - 公式のRedmine4のDockerイメージを使ってみた" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>DockerでRedmineを動かす</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-12-27</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/docker/">
+            <span class="layui-badge" style="vertical-align: 2px;">Docker</span>
+        </a>
+    
+        <a href="/blog/tags/redmine/">
+            <span class="layui-badge" style="vertical-align: 2px;">Redmine</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_前提条件">前提条件</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+<li><a href="#_システム構成">システム構成</a></li>
+<li><a href="#_docker_compose_ymlファイル">docker-compose.ymlファイル</a></li>
+<li><a href="#_説明">説明</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Redmine4.1.1をDBにMariaDBを指定して動かす方法について書きます</p>
+</li>
+<li>
+<p>Redmine, MariaDBともに公式のDockerイメージを利用します</p>
+</li>
+<li>
+<p>docker-composeを利用してRedmine, MariadDBのDockerコンテナを起動します</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Mac OS X(10.15.4)</p>
+</li>
+<li>
+<p>Redmine(4.1.1)</p>
+</li>
+<li>
+<p>MariaDB(10.4)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_前提条件">前提条件</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Dockerがインストール済み</p>
+</li>
+<li>
+<p>Docker Composeがインストール済み</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog1.mammb.com/entry/2020/05/24/090000">Docker Compose で Redmine 公式イメージを起動する</a></p>
+</li>
+<li>
+<p><a href="https://github.com/compose-spec/compose-spec/blob/master/spec.md">The Compose Specification</a></p>
+</li>
+<li>
+<p><a href="https://www.redmine.org/projects/redmine/wiki/RedmineInstall#Supported-database-back-ends">Supported database back-ends</a></p>
+</li>
+<li>
+<p><a href="https://mariadb.com/kb/en/mariadb-vs-mysql-compatibility/#replication-compatibility">Replication Compatibility</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_システム構成">システム構成</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>RedmineはMySQL-5.7までをサポートしている</p>
+</li>
+<li>
+<p>MySQL-5.7はMariaDB-10.4と互換性がある</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_docker_compose_ymlファイル">docker-compose.ymlファイル</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yml" data-lang="yml">version: '3.8'
+
+services:
+  redmine:
+    image: redmine:4.1.1
+    container_name: redmine
+    ports:
+      - 3000:3000
+    volumes:
+      - ./data/plugins:/usr/src/redmine/plugins
+      - ./data/themes:/usr/src/redmine/public/themes
+    environment:
+      REDMINE_DB_MYSQL: redmine-db
+      REDMINE_DB_PASSWORD: redmine
+    depends_on:
+      - redmine-db
+    restart: always
+
+  redmine-db:
+    image: mariadb
+    container_name: redmine-db
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: redmine
+      MYSQL_DATABASE: redmine
+    volumes:
+      - ./data/db:/var/lib/mysql
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    restart: always</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_説明">説明</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>depends_onで指定することで"redmine"イメージより"redmine-db"イメージを先に起動する</p>
+</li>
+<li>
+<p>ホストマシンのdataディレクトリ配下にDockerコンテナの永続化しておく必要があるファイルをマウントする</p>
+</li>
+<li>
+<p>"restart"に"always"を指定することでDockerコンテナをremoveするまでサービスを起動する</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
