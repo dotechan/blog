@@ -6,10 +6,19 @@
     <description>Recent content in JavaScript on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 30 Oct 2020 19:01:43 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jan 2021 12:41:19 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>React入門</title>
+      <link>https://dotechan.github.io/blog/2021/01/01/react_tutorial/</link>
+      <pubDate>Fri, 01 Jan 2021 12:41:19 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2021/01/01/react_tutorial/</guid>
+      <description>Table of Contents はじめに 環境 私のスキルセット 参考記事 ロードマップ HTML CSS JavaScript React 基礎用語 実装解説 はじめに React.jsを利用してWebアプリ（Reactの公</description>
+    </item>
     
     <item>
       <title>JavaScriptでxmlファイルを加工するスクリプトを作る</title>

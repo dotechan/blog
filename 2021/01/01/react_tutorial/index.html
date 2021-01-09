@@ -1,0 +1,539 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - React入門 </title>
+
+    
+    
+    <meta content="React, JavaScript, Webアプリ, 技術" name="keywords">
+    
+    <meta content="Work From Dote - React公式のチュートリアル実施完了までの備忘録" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>React入門</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-01-01</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/react/">
+            <span class="layui-badge" style="vertical-align: 2px;">React</span>
+        </a>
+    
+        <a href="/blog/tags/javascript/">
+            <span class="layui-badge" style="vertical-align: 2px;">JavaScript</span>
+        </a>
+    
+        <a href="/blog/tags/web%e3%82%a2%e3%83%97%e3%83%aa/">
+            <span class="layui-badge" style="vertical-align: 2px;">Webアプリ</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_私のスキルセット">私のスキルセット</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+<li><a href="#_ロードマップ">ロードマップ</a></li>
+<li><a href="#_html">HTML</a></li>
+<li><a href="#_css">CSS</a></li>
+<li><a href="#_javascript">JavaScript</a></li>
+<li><a href="#_react">React</a>
+<ul class="sectlevel2">
+<li><a href="#_基礎用語">基礎用語</a></li>
+<li><a href="#_実装解説">実装解説</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>React.jsを利用してWebアプリ（Reactの公式サイトに掲載されているチュートリアル）を完了させるまでにやったことを記載しておきます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Mac OS X(10.15.4)</p>
+</li>
+<li>
+<p>React.js(v17.0.1)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_私のスキルセット">私のスキルセット</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>今までAndroidアプリの開発しかしたことがなくWebアプリを作成したことがない</p>
+</li>
+<li>
+<p>Webサイトの作成もしたことがなくHTMLやCSSの基礎も怪しい</p>
+</li>
+<li>
+<p>JavaScriptはNode.jsで簡単なスクリプトを書いたことがある</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://itnews.org/news_contents/reactjs-roadmap-for-developers-2824">開発者のためのReactJSロードマップ</a></p>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/html/">HTML Tutorial</a></p>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/css/">CSS Tutorial</a></p>
+</li>
+<li>
+<p><a href="https://ja.javascript.info/">現代の JavaScript チュートリアル</a></p>
+</li>
+<li>
+<p><a href="https://ja.reactjs.org/tutorial/tutorial.html">チュートリアル：React の導入</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>アクセス日：2020/12/30 ~ 2021/1/1</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ロードマップ">ロードマップ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>適当にググって引っかかったReactのロードマップを参考に学習を始めました。<br>
+今までAndroidアプリの開発しかしたことがなく、Webアプリ自体が初めての経験です。<br>
+そのため、いきなりReactのチュートリアルを実践したい気持ちを抑えて、避けてきたというか触れてこなかったHTML, CSS, JSの基礎から取り掛かることにしました。<br></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_html">HTML</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>w3schools.comのExercisesを全問（60問弱？）やりました。<br>
+穴埋め形式で解答もすぐに確認できるので、わからなければすぐに解答をみて、どういった要素があるのか確認しながら進めました。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_css">CSS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>HTMLと同じくw3schools.comのExercisesをやりました。<br>
+こちらは全問だと130問程あり、数が多く大変なので、CSSの指定方法を網羅した上で細かいスタイルの設定については適当にピックアップしてExercisesを進めました。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_javascript">JavaScript</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>まずは言語の登場背景を抑えることから始めました。<br>
+JSのコア機能はECMA Scriptとして標準化されていることなどもここで調べました。<br>
+基礎構文は、現代のJavaScriptチュートリアルというサイトがわかりやすかったので、こちらを参考に進めました。</p>
+</div>
+<div class="paragraph">
+<p>正直全部の基礎構文をなめるだけでも大変で途中で挫折（早くReactやりたい）となったので、途中飛ばし飛ばしで進めてます。<br>
+必要になった際にキャッチアップしていこうと思います。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_react">React</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>公式のチュートリアルから取り掛かりました。<br>
+チュートリアルはめちゃくちゃ丁寧で前提知識がない人向けに書かれていますが、それでもHTMLやCSS, JavaScriptの知識がない状態でチュートリアルを進めるのは難しいと感じたので基礎を学んでから取り組んでよかったです。</p>
+</div>
+<div class="paragraph">
+<p>以降、React部分だけ本記事の中で粒度が違い、チュートリアルの実装で使われている技術についてまで細かく書きますがあしからず。</p>
+</div>
+<div class="sect2">
+<h3 id="_基礎用語">基礎用語</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">JSX</dt>
+<dd>
+<p>描画すべきものの記述形式であるReact要素を記述する際に使用される構文のこと。<br>
+HTMLチックに記述できる。</p>
+</dd>
+<dt class="hdlist1">Props</dt>
+<dd>
+<p>Propertiesの略。コンポーネント間のデータの受け渡しに利用されるプロパティ。</p>
+</dd>
+<dt class="hdlist1">State</dt>
+<dd>
+<p>Reactコンポーネントのコンストラクタ内で設定することで、コンポーネントがstateに状態を保持できる。<br>
+コンポーネント内でsetStateを呼びだすとReactはその内部の子コンポーネントも自動的に更新する。</p>
+</dd>
+<dt class="hdlist1">Stateのリフトアップ</dt>
+<dd>
+<p>複数の子コンポーネントのstateを親コンポーネントで管理するようにリファクタリングすること。<br>
+子コンポーネント同士や親子間でstateを同期することができるようになる。<br>
+Reactを利用した開発では以下のようなケースでよく行われる模様。<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>複数の子要素からデータを集めたい</p>
+</li>
+<li>
+<p>2つの子コンポーネントを互いにやりとりさせたい</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_実装解説">実装解説</h3>
+<div class="sect3">
+<h4 id="_square">Square</h4>
+<div class="paragraph">
+<p>三目並べの1マスを表すコンポーネントです。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-JavaScript" data-lang="JavaScript">function Square(props) {
+  return (
+    &lt;button className="square" onClick={props.onClick}&gt;
+      {props.value}
+    &lt;/button&gt;
+  );
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>親コンポーネントからpropsで渡されたvalueプロパティを表示する</p>
+</li>
+<li>
+<p>クリックイベント発生時に親コンポーネントから渡されたonClickを呼び出す</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_board">Board</h4>
+<div class="paragraph">
+<p>三目並べのボード（3x3）を表すコンポーネントです。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-JavaScript" data-lang="JavaScript">class Board extends React.Component {
+  renderSquare(i) {
+    return (
+      &lt;Square
+        value={this.props.squares[i]}
+        onClick={() =&gt; this.props.onClick(i)}
+      /&gt;
+    );
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;div className="board-row"&gt;
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        &lt;/div&gt;
+        &lt;div className="board-row"&gt;
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        &lt;/div&gt;
+        &lt;div className="board-row"&gt;
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>親コンポーネントから渡されたsquaresの要素をSquareコンポーネントに渡す</p>
+</li>
+<li>
+<p>クリックイベント発生時に親コンポーネントのonClickを呼び出すように指定</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_game">Game</h4>
+<div class="paragraph">
+<p>Squareコンポーネントに描画するデータや履歴を管理する親コンポーネント。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-JavaScript" data-lang="JavaScript">class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      history: [{
+        squares: Array(9).fill(null),
+      }],
+      stepNumber: 0,
+      xIsNext: true,
+    };
+  }
+
+  handleClick(i) {
+    const history = this.state.history.slice(0, this.state.stepNumber + 1);
+    const current = history[history.length - 1];
+    const squares = current.squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    squares[i] = this.state.xIsNext ? 'X' : '0';
+    this.setState({
+      history: history.concat([
+        {
+          squares: squares,
+        }
+      ]),
+      stepNumber: history.length,
+      xIsNext: !this.state.xIsNext,
+    });
+  }
+
+  jumpTo(step) {
+    this.setState({
+      stepNumber: step,
+      xIsNext: (step % 2) === 0,
+    });
+  }
+
+  render() {
+    const history = this.state.history;
+    const current = history[this.state.stepNumber];
+    const winner = calculateWinner(current.squares);
+
+    const moves = history.map((step, move) =&gt; {
+      const desc = move ?
+        'Go to move #' + move :
+        'Go to game start';
+      return (
+        &lt;li key={move}&gt;
+          &lt;button onClick={() =&gt; this.jumpTo(move)}&gt;{desc}&lt;/button&gt;
+        &lt;/li&gt;
+      );
+    });
+
+    let status;
+    if (winner) {
+      status = 'Winner: ' + winner;
+    } else {
+      status = 'Next player: ' + (this.state.xIsNext ? 'X' : '0');
+    }
+
+    return (
+      &lt;div className="game"&gt;
+        &lt;div className="game-board"&gt;
+          &lt;Board
+            squares={current.squares}
+            onClick={(i) =&gt; this.handleClick(i)}
+          /&gt;
+        &lt;/div&gt;
+        &lt;div className="game-info"&gt;
+          &lt;div&gt;{status}&lt;/div&gt;
+          &lt;ol&gt;{moves}&lt;/ol&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stateで手番や三目並べのマスのデータを管理している</p>
+</li>
+<li>
+<p>子コンポーネントの描画に必要なデータを渡している</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/10/30/first_javascript_nodejs/">
+                                <h2 class="">JavaScriptでxmlファイルを加工するスクリプトを作る</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-10-30</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/javascript/">
+            <span class="layui-badge" style="vertical-align: 2px;">JavaScript</span>
+        </a>
+    
+        <a href="/blog/tags/node.js/">
+            <span class="layui-badge" style="vertical-align: 2px;">Node.js</span>
+        </a>
+    
+        <a href="/blog/tags/dom/">
+            <span class="layui-badge" style="vertical-align: 2px;">DOM</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
