@@ -1,0 +1,229 @@
+---
+title: "React入門"
+description: "React公式のチュートリアル実施完了までの備忘録"
+date: 2021-01-01T12:41:19+09:00
+categories: ["技術"]
+tags: ["React", "JavaScript", "Webアプリ"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+React.jsを利用してWebアプリ（Reactの公式サイトに掲載されているチュートリアル）を完了させるまでにやったことを記載しておきます。
+
+== 環境
+* Mac OS X(10.15.4)
+* React.js(v17.0.1)
+
+== 私のスキルセット
+* 今までAndroidアプリの開発しかしたことがなくWebアプリを作成したことがない
+* Webサイトの作成もしたことがなくHTMLやCSSの基礎も怪しい
+* JavaScriptはNode.jsで簡単なスクリプトを書いたことがある
+
+== 参考記事
+* https://itnews.org/news_contents/reactjs-roadmap-for-developers-2824[開発者のためのReactJSロードマップ]
+* https://www.w3schools.com/html/[HTML Tutorial]
+* https://www.w3schools.com/css/[CSS Tutorial]
+* https://ja.javascript.info/[現代の JavaScript チュートリアル]
+* https://ja.reactjs.org/tutorial/tutorial.html[チュートリアル：React の導入]
+
+アクセス日：2020/12/30 ~ 2021/1/1
+
+== ロードマップ
+適当にググって引っかかったReactのロードマップを参考に学習を始めました。 +
+今までAndroidアプリの開発しかしたことがなく、Webアプリ自体が初めての経験です。 +
+そのため、いきなりReactのチュートリアルを実践したい気持ちを抑えて、避けてきたというか触れてこなかったHTML, CSS, JSの基礎から取り掛かることにしました。 +
+
+== HTML
+w3schools.comのExercisesを全問（60問弱？）やりました。 +
+穴埋め形式で解答もすぐに確認できるので、わからなければすぐに解答をみて、どういった要素があるのか確認しながら進めました。
+
+== CSS
+HTMLと同じくw3schools.comのExercisesをやりました。 +
+こちらは全問だと130問程あり、数が多く大変なので、CSSの指定方法を網羅した上で細かいスタイルの設定については適当にピックアップしてExercisesを進めました。
+
+== JavaScript
+まずは言語の登場背景を抑えることから始めました。 +
+JSのコア機能はECMA Scriptとして標準化されていることなどもここで調べました。 +
+基礎構文は、現代のJavaScriptチュートリアルというサイトがわかりやすかったので、こちらを参考に進めました。
+
+正直全部の基礎構文をなめるだけでも大変で途中で挫折（早くReactやりたい）となったので、途中飛ばし飛ばしで進めてます。 +
+必要になった際にキャッチアップしていこうと思います。
+
+== React
+公式のチュートリアルから取り掛かりました。 +
+チュートリアルはめちゃくちゃ丁寧で前提知識がない人向けに書かれていますが、それでもHTMLやCSS, JavaScriptの知識がない状態でチュートリアルを進めるのは難しいと感じたので基礎を学んでから取り組んでよかったです。
+
+以降、React部分だけ本記事の中で粒度が違い、チュートリアルの実装で使われている技術についてまで細かく書きますがあしからず。
+
+=== 基礎用語
+JSX::
+描画すべきものの記述形式であるReact要素を記述する際に使用される構文のこと。 +
+HTMLチックに記述できる。 
+
+Props::
+Propertiesの略。コンポーネント間のデータの受け渡しに利用されるプロパティ。
+
+State::
+Reactコンポーネントのコンストラクタ内で設定することで、コンポーネントがstateに状態を保持できる。 +
+コンポーネント内でsetStateを呼びだすとReactはその内部の子コンポーネントも自動的に更新する。
+
+Stateのリフトアップ::
+複数の子コンポーネントのstateを親コンポーネントで管理するようにリファクタリングすること。 +
+子コンポーネント同士や親子間でstateを同期することができるようになる。 +
+Reactを利用した開発では以下のようなケースでよく行われる模様。 +
+* 複数の子要素からデータを集めたい
+* 2つの子コンポーネントを互いにやりとりさせたい
+
+=== 実装解説
+
+==== Square
+
+三目並べの1マスを表すコンポーネントです。
+
+[source, JavaScript]
+----
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
+}
+----
+
+* 親コンポーネントからpropsで渡されたvalueプロパティを表示する
+* クリックイベント発生時に親コンポーネントから渡されたonClickを呼び出す
+
+==== Board
+
+三目並べのボード（3x3）を表すコンポーネントです。
+
+[source, JavaScript]
+----
+class Board extends React.Component {
+  renderSquare(i) {
+    return (
+      <Square
+        value={this.props.squares[i]}
+        onClick={() => this.props.onClick(i)}
+      />
+    );
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="board-row">
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
+        </div>
+      </div>
+    );
+  }
+}
+----
+
+* 親コンポーネントから渡されたsquaresの要素をSquareコンポーネントに渡す
+* クリックイベント発生時に親コンポーネントのonClickを呼び出すように指定
+
+==== Game
+
+Squareコンポーネントに描画するデータや履歴を管理する親コンポーネント。
+
+[source, JavaScript]
+----
+class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      history: [{
+        squares: Array(9).fill(null),
+      }],
+      stepNumber: 0,
+      xIsNext: true,
+    };
+  }
+
+  handleClick(i) {
+    const history = this.state.history.slice(0, this.state.stepNumber + 1);
+    const current = history[history.length - 1];
+    const squares = current.squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    squares[i] = this.state.xIsNext ? 'X' : '0';
+    this.setState({
+      history: history.concat([
+        {
+          squares: squares,
+        }
+      ]),
+      stepNumber: history.length,
+      xIsNext: !this.state.xIsNext,
+    });
+  }
+
+  jumpTo(step) {
+    this.setState({
+      stepNumber: step,
+      xIsNext: (step % 2) === 0,
+    });
+  }
+
+  render() {
+    const history = this.state.history;
+    const current = history[this.state.stepNumber];
+    const winner = calculateWinner(current.squares);
+
+    const moves = history.map((step, move) => {
+      const desc = move ?
+        'Go to move #' + move :
+        'Go to game start';
+      return (
+        <li key={move}>
+          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+        </li>
+      );
+    });
+
+    let status;
+    if (winner) {
+      status = 'Winner: ' + winner;
+    } else {
+      status = 'Next player: ' + (this.state.xIsNext ? 'X' : '0');
+    }
+
+    return (
+      <div className="game">
+        <div className="game-board">
+          <Board
+            squares={current.squares}
+            onClick={(i) => this.handleClick(i)}
+          />
+        </div>
+        <div className="game-info">
+          <div>{status}</div>
+          <ol>{moves}</ol>
+        </div>
+      </div>
+    );
+  }
+}
+----
+
+* stateで手番や三目並べのマスのデータを管理している
+* 子コンポーネントの描画に必要なデータを渡している
