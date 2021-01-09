@@ -1,0 +1,113 @@
+---
+title: "2021年1月9日時点でのvimrcの設定"
+description: "複数のクライアントから自身のvimrcの設定が参照できるように記載しておく"
+date: 2021-01-09T13:50:27+09:00
+categories: ["技術"]
+tags: ["Vim"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== 環境
+
+* VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Nov 23 2020 06:06:21)
+
+== vimrcの内容
+
+[source,vimrc]
+----
+" 文字コード
+set fileencodings=utf-8,cp932
+
+" 行番号
+set number
+
+" カーソル
+set cursorline
+
+" シンタックス
+syntax enable
+
+" 検索ハイライト
+set hlsearch
+
+" Escを2回押すとハイライトを消す
+nnoremap <Esc><Esc> :nohlsearch<CR>
+
+" インクリメントサーチ
+set incsearch
+
+" Undoの永続化
+if has('persistent_undo')
+	let undo_path = expand('~/.vim/undo')
+	exe 'set undodir=' .. undo_path
+	set undofile
+endif
+
+" インデント
+set smartindent
+
+" クリップボート
+set clipboard+=unnamed
+
+" ステータスライン
+set laststatus=2
+
+" コマンドライン補完
+set wildmenu
+
+" ヘルプの日本語化
+set helplang=ja
+
+" Vimのプラグインを管理する
+" dein.vim settings {{{
+" install dir {{{
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" }}}
+
+" dein installation check {{{
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . s:dein_repo_dir
+endif
+" }}}
+
+" begin settings {{{
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  " .toml file
+  let s:rc_dir = expand('~/.vim')
+  if !isdirectory(s:rc_dir)
+    call mkdir(s:rc_dir, 'p')
+  endif
+  let s:toml = s:rc_dir . '/dein.toml'
+
+  " read toml and cache
+  call dein#load_toml(s:toml, {'lazy': 0})
+
+  " end settings
+  call dein#end()
+  call dein#save_state()
+endif
+" }}}
+
+" plugin installation check {{{
+if dein#check_install()
+  call dein#install()
+endif
+" }}}
+
+" plugin remove check {{{
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif
+" }}}
+----
