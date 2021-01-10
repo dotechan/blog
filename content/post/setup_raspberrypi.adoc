@@ -1,0 +1,68 @@
+---
+title: "RaspberryPiを初回起動した後に変更した設定"
+description: "セキュアな設定にしつつ別のクライアントからssh接続するまでの設定"
+date: 2021-01-10T11:34:32+09:00
+categories: ["技術"]
+tags: ["RaspberryPi", "ネットワーク"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+友達からOSのインストールまで完了したRaspberryPiをもらったので、手元のPCからセキュリティを担保しつつ、sshで接続できるように設定しました。
+
+== 環境
+
+* RaspberryPi
+
+== 前提条件
+
+== 参考記事
+アクセス日 2021/1/10（日）
+
+* https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md[Setting up a wireless LAN via the command line]
+** 無線LANの設定
+
+* https://www.raspberrypi.org/documentation/configuration/security.md[Securing your Raspberry Pi]
+* https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/[An Introduction to Uncomplicated Firewall (UFW)]
+* https://qiita.com/koara-local/items/35b999631b6ab41fdc9f[Ubuntu visudoのエディタをnanoからvimに変更する]
+** SSHで穴を開ける際に最低限必要なセキュリティの設定
+
+* https://www.raspberrypi.org/documentation/remote-access/ssh/README.md[SSH (Secure Shell)]
+* https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md#copy-your-public-key-to-your-raspberry-pi[Passwordless SSH access]
+** SSHでの接続方法
+
+* https://www.raspberrypi.org/forums/viewtopic.php?t=201604[Change auto login username]
+** デフォルトのpiユーザーでオートログインされてしまうのを変更
+
+* https://www.raspberrypi.org/documentation/configuration/tcpip/README.md[TCP/IP networking]
+* https://news.mynavi.jp/article/20190702-851850/[Linuxで使っているDNSサーバのIPアドレスを調べる方法]
+** 固定IPを割り当てる
+
+* https://iot-plus.net/make/raspi/extend-sdcard-lifetime-5plus1/[Raspberry PiのSDカードが壊れた！寿命を延ばす方法 5+1選!【運用編を追加】]
+** スワップを無効にしてマイクロSDの寿命を延ばす
+
+== 設定
+基本的にRaspberryPiの公式ドキュメントを参考に進めました。 +
+参照したページは参考記事のセクションに記載してあります。
+
+== メモ
+=== エディタ
+sudo実行時に必ずパスワードを求めるように設定するために/etc/sudoers.d/010_pi-nopasswdの内容を編集する必要がありました。 +
+sudoersファイルを編集するためのコマンド *visudo* を利用して編集するのですが、デフォルトのエディタがnanoになっていて使いにくかったのでVIMに変えました。 +
+参考記事の *Ubuntu visudoのエディタをnanoからvimに変更する* にならって変更しました。
+
+=== 固定IP
+ゲートウェイのアドレスを誤入力していたため外部ネットワークに繋がらなくなりました。 +
+その際にpingを利用してどこに問題があるか切り分ける方法です。 +
+
+1.「ping ゲートウェイのIPアドレス」::
+→ゲートウェイ（ルーター）が起動しているか確認
+
+2.「ping 8.8.8.8」::
+→ゲートウェイのアドレスが正しいか確認
+
+3.「ping google.com」::
+→DNSサーバの設定が正しいか確認
