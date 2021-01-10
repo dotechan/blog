@@ -1,0 +1,311 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - RaspberryPiを初回起動した後に変更した設定 </title>
+
+    
+    
+    <meta content="RaspberryPi, ネットワーク, 技術" name="keywords">
+    
+    <meta content="Work From Dote - セキュアな設定にしつつ別のクライアントからssh接続するまでの設定" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>RaspberryPiを初回起動した後に変更した設定</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-01-10</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/raspberrypi/">
+            <span class="layui-badge" style="vertical-align: 2px;">RaspberryPi</span>
+        </a>
+    
+        <a href="/blog/tags/%e3%83%8d%e3%83%83%e3%83%88%e3%83%af%e3%83%bc%e3%82%af/">
+            <span class="layui-badge" style="vertical-align: 2px;">ネットワーク</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_前提条件">前提条件</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+<li><a href="#_設定">設定</a></li>
+<li><a href="#_メモ">メモ</a>
+<ul class="sectlevel2">
+<li><a href="#_エディタ">エディタ</a></li>
+<li><a href="#_固定ip">固定IP</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>友達からOSのインストールまで完了したRaspberryPiをもらったので、手元のPCからセキュリティを担保しつつ、sshで接続できるように設定しました。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>RaspberryPi</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_前提条件">前提条件</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アクセス日 2021/1/10（日）</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md">Setting up a wireless LAN via the command line</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>無線LANの設定</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://www.raspberrypi.org/documentation/configuration/security.md">Securing your Raspberry Pi</a></p>
+</li>
+<li>
+<p><a href="https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/">An Introduction to Uncomplicated Firewall (UFW)</a></p>
+</li>
+<li>
+<p><a href="https://qiita.com/koara-local/items/35b999631b6ab41fdc9f">Ubuntu visudoのエディタをnanoからvimに変更する</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>SSHで穴を開ける際に最低限必要なセキュリティの設定</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://www.raspberrypi.org/documentation/remote-access/ssh/README.md">SSH (Secure Shell)</a></p>
+</li>
+<li>
+<p><a href="https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md#copy-your-public-key-to-your-raspberry-pi">Passwordless SSH access</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>SSHでの接続方法</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=201604">Change auto login username</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>デフォルトのpiユーザーでオートログインされてしまうのを変更</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://www.raspberrypi.org/documentation/configuration/tcpip/README.md">TCP/IP networking</a></p>
+</li>
+<li>
+<p><a href="https://news.mynavi.jp/article/20190702-851850/">Linuxで使っているDNSサーバのIPアドレスを調べる方法</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>固定IPを割り当てる</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://iot-plus.net/make/raspi/extend-sdcard-lifetime-5plus1/">Raspberry PiのSDカードが壊れた！寿命を延ばす方法 5+1選!【運用編を追加】</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>スワップを無効にしてマイクロSDの寿命を延ばす</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_設定">設定</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>基本的にRaspberryPiの公式ドキュメントを参考に進めました。<br>
+参照したページは参考記事のセクションに記載してあります。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_メモ">メモ</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_エディタ">エディタ</h3>
+<div class="paragraph">
+<p>sudo実行時に必ずパスワードを求めるように設定するために/etc/sudoers.d/010_pi-nopasswdの内容を編集する必要がありました。<br>
+sudoersファイルを編集するためのコマンド <strong>visudo</strong> を利用して編集するのですが、デフォルトのエディタがnanoになっていて使いにくかったのでVIMに変えました。<br>
+参考記事の <strong>Ubuntu visudoのエディタをnanoからvimに変更する</strong> にならって変更しました。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_固定ip">固定IP</h3>
+<div class="paragraph">
+<p>ゲートウェイのアドレスを誤入力していたため外部ネットワークに繋がらなくなりました。<br>
+その際にpingを利用してどこに問題があるか切り分ける方法です。<br></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">1.「ping ゲートウェイのIPアドレス」</dt>
+<dd>
+<p>→ゲートウェイ（ルーター）が起動しているか確認</p>
+</dd>
+<dt class="hdlist1">2.「ping 8.8.8.8」</dt>
+<dd>
+<p>→ゲートウェイのアドレスが正しいか確認</p>
+</dd>
+<dt class="hdlist1">3.「ping google.com」</dt>
+<dd>
+<p>→DNSサーバの設定が正しいか確認</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
