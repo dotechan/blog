@@ -4,12 +4,52 @@
   
   <url>
     <loc>https://dotechan.github.io/blog/categories/</loc>
-    <lastmod>2021-01-10T11:34:32+09:00</lastmod>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/blog/post/</loc>
-    <lastmod>2021-01-10T11:34:32+09:00</lastmod>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/readline/</loc>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/shell/</loc>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/</loc>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/terminal/</loc>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/vi/</loc>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/</loc>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/2021/01/17/use_vi_mode_on_shell/</loc>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
+    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
   </url>
   
   <url>
@@ -23,22 +63,7 @@
   </url>
   
   <url>
-    <loc>https://dotechan.github.io/blog/tags/</loc>
-    <lastmod>2021-01-10T11:34:32+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/</loc>
-    <lastmod>2021-01-10T11:34:32+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dotechan.github.io/blog/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/</loc>
-    <lastmod>2021-01-10T11:34:32+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
     <lastmod>2021-01-10T11:34:32+09:00</lastmod>
   </url>
   
