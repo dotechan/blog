@@ -1,0 +1,76 @@
+---
+title: "ターミナルのコマンドライン操作をviチックにする"
+description: "readlineパッケージの設定を変更してターミナルの操作感をviチックにする方法"
+date: 2021-01-17T11:24:40+09:00
+categories: ["技術"]
+tags: ["vi", "readline", "Terminal", "Shell"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+Emacsは使ったことがないので知らなかったのですが、TerminalのショートカットはEmacsがベースになっているようです。 +
+そして何やらViの操作感を実現できるようなので早速readlineの設定を変更して試してみました。
+
+== 環境
+
+* Raspbian GNU/Linux 9.13
+* Bash 4.4.12
+
+== 参考記事
+* https://wiki.archlinux.org/index.php/Readline[Readline]
+* https://www.trhrkmk.com/posts/setting-vi-mode-in-bash-comfortable/[BashをViモードに変更して快適になった話]
+* 番外編
+** https://qiita.com/tadsan/items/441dcd910537d3f408e5[シェル、ターミナル、コンソール、コマンドライン]
+
+== ~/.inputrcの設定
+bashは~/.inputrcというファイルを読み込みます。 +
+~/.inputrcではコマンドラインの操作感や補完について設定できます。 +
+設定の内容はコメント参照。
+
+----
+# シェルをviのショートカットで扱えるように変更（デフォルトはEmacs）
+set editing-mode vi
+
+# プロンプト上にviが現在何モードかわかるように表示
+set show-mode-in-prompt on
+# プロンプト上のモード表示を青色に変更
+set vi-ins-mode-string \1\e[34;1m\2(ins) \1\e[0m\2
+set vi-cmd-mode-string \1\e[34;1m\2(cmd) \1\e[0m\2
+
+# Tabキーで速く補完する
+set show-all-if-unmodified on
+set show-all-if-ambiguous on
+# 補完の際に大文字小文字を区別しない
+set completion-ignore-case on
+----
+
+exec $SHELL -lでシェルの再ログインを実行することで設定が反映されているか確認できます。
+
+insertとcommandモードが切り替えられるようになり、ターミナルの操作感がviチックになったので作業効率が上がりそうです。
+
+== 補足
+=== 用語
+ターミナルとシェルの意味を混同してしまうことがあったので、改めて調べたのでメモしておきます。
+
+* ターミナル
+
+標準出力を文字として表示したり、キーボード入力を取得するもの
+
+* シェル
+
+ターミナルに打ち込まれたコマンドを解釈して実行するもの +
+OSの操作をするためのインターフェースのこと
+
+* コマンドライン
+
+ターミナルにコマンドを打ち込む行
+
+=== zsh
+bashは何も設定せずに.inputrcの設定を読み込んでくれましたが、zshは勝手が違うようです。 +
+そのため、zshを利用しているMacだと.inputrcを用意しただけではターミナルの操作感が変わりませんでした。
+
+以下の記事を参考に別途設定してみようかと思います。 +
+https://qiita.com/b4b4r07/items/8db0257d2e6f6b19ecb9
