@@ -4,12 +4,42 @@
   
   <url>
     <loc>https://dotechan.github.io/blog/categories/</loc>
-    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+    <lastmod>2021-01-18T22:22:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/docker/</loc>
+    <lastmod>2021-01-18T22:22:25+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/blog/post/</loc>
-    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
+    <lastmod>2021-01-18T22:22:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/raspberrypi/</loc>
+    <lastmod>2021-01-18T22:22:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/2021/01/18/install_docker_for_raspberrypi/</loc>
+    <lastmod>2021-01-18T22:22:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/</loc>
+    <lastmod>2021-01-18T22:22:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/</loc>
+    <lastmod>2021-01-18T22:22:25+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
+    <lastmod>2021-01-18T22:22:25+09:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +49,6 @@
   
   <url>
     <loc>https://dotechan.github.io/blog/tags/shell/</loc>
-    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/tags/</loc>
     <lastmod>2021-01-17T11:24:40+09:00</lastmod>
   </url>
   
@@ -38,23 +63,8 @@
   </url>
   
   <url>
-    <loc>https://dotechan.github.io/blog/</loc>
-    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dotechan.github.io/blog/2021/01/17/use_vi_mode_on_shell/</loc>
     <lastmod>2021-01-17T11:24:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
-    <lastmod>2021-01-17T11:24:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/tags/raspberrypi/</loc>
-    <lastmod>2021-01-10T11:34:32+09:00</lastmod>
   </url>
   
   <url>
@@ -95,11 +105,6 @@
   <url>
     <loc>https://dotechan.github.io/blog/tags/web%E3%82%A2%E3%83%97%E3%83%AA/</loc>
     <lastmod>2021-01-01T12:41:19+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dotechan.github.io/blog/tags/docker/</loc>
-    <lastmod>2020-12-27T23:34:57+09:00</lastmod>
   </url>
   
   <url>

@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 17 Jan 2021 11:24:40 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 18 Jan 2021 22:22:25 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker</title>
+      <link>https://dotechan.github.io/blog/tags/docker/</link>
+      <pubDate>Mon, 18 Jan 2021 22:22:25 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RaspberryPi</title>
+      <link>https://dotechan.github.io/blog/tags/raspberrypi/</link>
+      <pubDate>Mon, 18 Jan 2021 22:22:25 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>readline</title>
@@ -44,15 +62,6 @@
       <pubDate>Sun, 17 Jan 2021 11:24:40 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/tags/vi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RaspberryPi</title>
-      <link>https://dotechan.github.io/blog/tags/raspberrypi/</link>
-      <pubDate>Sun, 10 Jan 2021 11:34:32 +0900</pubDate>
-      
-      <guid>https://dotechan.github.io/blog/tags/raspberrypi/</guid>
       <description></description>
     </item>
     
@@ -98,15 +107,6 @@
       <pubDate>Fri, 01 Jan 2021 12:41:19 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/tags/web%E3%82%A2%E3%83%97%E3%83%AA/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://dotechan.github.io/blog/tags/docker/</link>
-      <pubDate>Sun, 27 Dec 2020 23:34:57 +0900</pubDate>
-      
-      <guid>https://dotechan.github.io/blog/tags/docker/</guid>
       <description></description>
     </item>
     
