@@ -1,0 +1,72 @@
+---
+title: "RaspberryPiにDockerをインストールする"
+description: "タイトルの通りインストール時の備忘録です"
+date: 2021-01-18T22:22:25+09:00
+categories: ["技術"]
+tags: ["RaspberryPi", "Docker"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== 環境
+* Raspbian GNU/Linux 9.13 (stretch)
+
+== 前提条件
+OS requirementsを満たしているRaspbian OSでのDockerインストール手順です。
+https://docs.docker.com/engine/install/debian/#os-requirements
+
+> Using these scripts is not recommended for production environments, and you should understand the potential risks before you use them:
+
+Raspbianはインストール方法が他のOSとは異なること、プロダクトへの利用は推奨されていないので、あくまで個人の趣味になります。
+https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script
+
+== 参考記事
+* https://docs.docker.com/engine/install/debian/[Install Docker Engine on Debian]
+
+== 手順
+
+scriptを利用してDockerをインストール
+**get** 部分を **test** に変えるとテストされたバージョンのDockerがインストールできる。getのままだと最新のDockerがインストールされる。
+----
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+----
+
+インストールに成功するとターミナル上にバージョン情報などが出力される。
+----
+Client: Docker Engine - Community
+ Version:           19.03.14
+ API version:       1.40
+ Go version:        go1.13.15
+ Git commit:        5eb3275d40
+ Built:             Tue Dec  1 19:21:49 2020
+ OS/Arch:           linux/arm
+ Experimental:      false
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          19.03.14
+  API version:      1.40 (minimum version 1.12)
+  Go version:       go1.13.15
+  Git commit:       5eb3275d40
+  Built:            Tue Dec  1 19:19:32 2020
+  OS/Arch:          linux/arm
+  Experimental:     false
+ containerd:
+  Version:          1.4.3
+  GitCommit:        269548fa27e0089a8b8278fc4fc781d7f65a939b
+ runc:
+  Version:          1.0.0-rc92
+  GitCommit:        ff819c7e9184c13b7c2607fe6c30ae19403a7aff
+ docker-init:
+  Version:          0.18.0
+  GitCommit:        fec3683
+----
+
+システムが起動した後にDockerを立ち上げるように設定する。
+----
+$ sudo systemctl enable docker
+----
+
