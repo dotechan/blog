@@ -1,0 +1,326 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - データベースに入門してみた </title>
+
+    
+    
+    <meta content="DB, MySQL, MariaDB, SQL, Redmine, 技術" name="keywords">
+    
+    <meta content="Work From Dote - MySQLとMariaDBを簡単に触って見た時の備忘録" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>データベースに入門してみた</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-03-06</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/db/">
+            <span class="layui-badge" style="vertical-align: 2px;">DB</span>
+        </a>
+    
+        <a href="/blog/tags/mysql/">
+            <span class="layui-badge" style="vertical-align: 2px;">MySQL</span>
+        </a>
+    
+        <a href="/blog/tags/mariadb/">
+            <span class="layui-badge" style="vertical-align: 2px;">MariaDB</span>
+        </a>
+    
+        <a href="/blog/tags/sql/">
+            <span class="layui-badge" style="vertical-align: 2px;">SQL</span>
+        </a>
+    
+        <a href="/blog/tags/redmine/">
+            <span class="layui-badge" style="vertical-align: 2px;">Redmine</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_操作方法">操作方法</a>
+<ul class="sectlevel2">
+<li><a href="#_rootユーザでログイン">rootユーザでログイン</a></li>
+<li><a href="#_データベースの一覧を確認">データベースの一覧を確認</a></li>
+<li><a href="#_操作するデータベースを選択">操作するデータベースを選択</a></li>
+<li><a href="#_テーブル一覧を確認">テーブル一覧を確認</a></li>
+<li><a href="#_issuesテーブルのデータ構造を確認">issuesテーブルのデータ構造を確認</a></li>
+<li><a href="#_issuesテーブルのカラムとレコードを確認">issuesテーブルのカラムとレコードを確認</a></li>
+<li><a href="#_issuesテーブルからsubject絡むとupdated_onカラムのデータを確認">issuesテーブルからsubject絡むとupdated_onカラムのデータを確認</a></li>
+<li><a href="#_issuesテーブルからupdated_onカラムが2021年1月1日以降に更新のあったデータを確認">issuesテーブルからupdated_onカラムが2021年1月1日以降に更新のあったデータを確認</a></li>
+</ul>
+</li>
+<li><a href="#_参考記事">参考記事</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>データベース初心者がMySQLのチュートリアルのを実践した後にDockerでたてたRedmineのバックエンドとして動いているMariaDBの中身を覗いた時のメモです</p>
+</li>
+<li>
+<p>MySQLとMariaDBの違いについては互換性があるくらいしかわかっていないので書きません</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>macOS Big Sur(11.2.1)</p>
+</li>
+<li>
+<p>Redmine 4.1.1</p>
+</li>
+<li>
+<p>MariaDB 10.4</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_操作方法">操作方法</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Redmineのデータベースを確認する時の手順ベースで記載します。</p>
+</div>
+<div class="sect2">
+<h3 id="_rootユーザでログイン">rootユーザでログイン</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">root@xxxxxxxx:/# mysql -u root -p</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>"Enter password:"が表示されたらパスワードを入力する。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_データベースの一覧を確認">データベースの一覧を確認</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">MariaDB [(none)]&gt; show databases;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_操作するデータベースを選択">操作するデータベースを選択</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">MariaDB [(none)]&gt; use redmine;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_テーブル一覧を確認">テーブル一覧を確認</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">MariaDB [redmine]&gt; show tables;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_issuesテーブルのデータ構造を確認">issuesテーブルのデータ構造を確認</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">MariaDB [redmine]&gt; describe issues;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_issuesテーブルのカラムとレコードを確認">issuesテーブルのカラムとレコードを確認</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">MariaDB [redmine]&gt; select * from issues;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_issuesテーブルからsubject絡むとupdated_onカラムのデータを確認">issuesテーブルからsubject絡むとupdated_onカラムのデータを確認</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">MariaDB [redmine]&gt; select subject, updated_on from issues;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_issuesテーブルからupdated_onカラムが2021年1月1日以降に更新のあったデータを確認">issuesテーブルからupdated_onカラムが2021年1月1日以降に更新のあったデータを確認</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">MariaDB [redmine]&gt; select subject, updated_on from issues where updated_on &gt;= '20210101';</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://dev.mysql.com/doc/refman/5.6/ja/tutorial.html">チュートリアル</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/12/27/build_docker_redmine/">
+                                <h2 class="">DockerでRedmineを動かす</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-12-27</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/docker/">
+            <span class="layui-badge" style="vertical-align: 2px;">Docker</span>
+        </a>
+    
+        <a href="/blog/tags/redmine/">
+            <span class="layui-badge" style="vertical-align: 2px;">Redmine</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

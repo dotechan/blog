@@ -6,10 +6,55 @@
     <description>Recent content in Tags on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 20 Feb 2021 12:38:36 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 Mar 2021 17:26:49 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DB</title>
+      <link>https://dotechan.github.io/blog/tags/db/</link>
+      <pubDate>Sat, 06 Mar 2021 17:26:49 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MariaDB</title>
+      <link>https://dotechan.github.io/blog/tags/mariadb/</link>
+      <pubDate>Sat, 06 Mar 2021 17:26:49 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/mariadb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://dotechan.github.io/blog/tags/mysql/</link>
+      <pubDate>Sat, 06 Mar 2021 17:26:49 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redmine</title>
+      <link>https://dotechan.github.io/blog/tags/redmine/</link>
+      <pubDate>Sat, 06 Mar 2021 17:26:49 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/redmine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://dotechan.github.io/blog/tags/sql/</link>
+      <pubDate>Sat, 06 Mar 2021 17:26:49 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/sql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>React</title>
@@ -116,15 +161,6 @@
       <pubDate>Fri, 01 Jan 2021 12:41:19 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/tags/web%E3%82%A2%E3%83%97%E3%83%AA/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redmine</title>
-      <link>https://dotechan.github.io/blog/tags/redmine/</link>
-      <pubDate>Sun, 27 Dec 2020 23:34:57 +0900</pubDate>
-      
-      <guid>https://dotechan.github.io/blog/tags/redmine/</guid>
       <description></description>
     </item>
     
