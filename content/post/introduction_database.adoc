@@ -1,0 +1,69 @@
+---
+title: "データベースに入門してみた"
+description: "MySQLとMariaDBを簡単に触って見た時の備忘録"
+date: 2021-03-06T17:26:49+09:00
+categories: ["技術"]
+tags: ["DB", "MySQL", "MariaDB", "SQL", "Redmine"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+* データベース初心者がMySQLのチュートリアルのを実践した後にDockerでたてたRedmineのバックエンドとして動いているMariaDBの中身を覗いた時のメモです
+* MySQLとMariaDBの違いについては互換性があるくらいしかわかっていないので書きません
+
+== 環境
+
+* macOS Big Sur(11.2.1)
+* Redmine 4.1.1
+* MariaDB 10.4
+
+== 操作方法
+Redmineのデータベースを確認する時の手順ベースで記載します。
+
+=== rootユーザでログイン
+```shell
+root@xxxxxxxx:/# mysql -u root -p
+```
+"Enter password:"が表示されたらパスワードを入力する。
+
+=== データベースの一覧を確認
+```sql
+MariaDB [(none)]> show databases;
+```
+
+=== 操作するデータベースを選択
+```sql
+MariaDB [(none)]> use redmine;
+```
+
+=== テーブル一覧を確認
+```sql
+MariaDB [redmine]> show tables;
+```
+
+=== issuesテーブルのデータ構造を確認
+```sql
+MariaDB [redmine]> describe issues;
+```
+
+=== issuesテーブルのカラムとレコードを確認
+```sql
+MariaDB [redmine]> select * from issues;
+```
+
+=== issuesテーブルからsubject絡むとupdated_onカラムのデータを確認
+```sql
+MariaDB [redmine]> select subject, updated_on from issues;
+```
+
+=== issuesテーブルからupdated_onカラムが2021年1月1日以降に更新のあったデータを確認
+```sql
+MariaDB [redmine]> select subject, updated_on from issues where updated_on >= '20210101';
+```
+
+== 参考記事
+
+* https://dev.mysql.com/doc/refman/5.6/ja/tutorial.html[チュートリアル]
