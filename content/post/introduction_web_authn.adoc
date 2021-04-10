@@ -1,0 +1,56 @@
+---
+title: "はじめてのWebAuthn"
+description: "Google CodelabsのWebAuthnのコースを実施してみて"
+date: 2021-04-10T09:57:58+09:00
+categories: ["技術"]
+tags: ["WebAuthn"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== 環境
+
+* macOS Big Sur(11.2.3)
+* Google Chrome(89.0.4389.114)
+
+== 用語
+
+=== FIDO
+* Fast Identity Online
+* セキュリティキーと呼ばれる専用デバイスを使った認証の仕組みを標準化したもの
+** 広い意味では認証器、登録時に新しい公開鍵ペアを作り、秘密鍵を安全に保管、公開鍵だけを返す、ログイン時に署名を返す機能を持っている
+
+=== FIDO2
+* FIDO2では仕様が洗練され、ブラウザやプラットフォームに標準実装された
+** 専用デバイスだけでなく手元のスマホを認証器として利用することで専用デバイスが不要になり普及すると推測されている
+
+=== WebAuthn
+* Web Authentication API
+* FIDOをブラウザから利用できるようにするもの
+* 公開鍵ベースのユーザ認証を実現することができる
+* Codelabs内で扱うユーザが指紋や画面ロックを使用して認証できるPlatform Authenticatorの使用をサポートしている
+
+=== UVPA
+* User Verifying Platform Authenticator
+* Platform Authenticatorはデバイスに組み込まれた認証器のこと
+* User Verifyingは認証器そのものがユーザを認証する機能、例えば指紋や顔認証などを持っていること
+
+=== Glitch
+* ブラウザのみでWebアプリの作成からデプロイまでできるツール
+* CodelabsのベースとなるコードがGlitchで公開されているので今回使用した
+
+== 感想
+* Codelabs通りに進めていけば詰まるところはなかった
+* ブラウザでも指紋認証が利用できるのはUXが向上すると感じた
+* ブラウザからサーバにユーザの生体情報を送るわけではないので受け入れやすそう
+* セキュアにするためにサーバ側の実装が重要ということだったので、ライブラリ等調べていきたい
+
+== 参考記事
+* Google Codelabs
+** https://codelabs.developers.google.com/codelabs/webauthn-reauth/#0[はじめての WebAuthn]
+* YouTube
+** https://www.youtube.com/watch?v=8ren54IMSf4[Build your first WebAuthn app (Japanese with English subtitles)]
+* FIDO2とWebAuthnの基本
+** https://blog.agektmr.com/2019/03/fido-webauthn.html[パスワードの不要な世界はいかにして実現されるのか - FIDO2 と WebAuthn の基本を知る]
