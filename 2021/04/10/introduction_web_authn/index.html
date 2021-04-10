@@ -1,0 +1,318 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - はじめてのWebAuthn </title>
+
+    
+    
+    <meta content="WebAuthn, 技術" name="keywords">
+    
+    <meta content="Work From Dote - Google CodelabsのWebAuthnのコースを実施してみて" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>はじめてのWebAuthn</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-04-10</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/webauthn/">
+            <span class="layui-badge" style="vertical-align: 2px;">WebAuthn</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_用語">用語</a>
+<ul class="sectlevel2">
+<li><a href="#_fido">FIDO</a></li>
+<li><a href="#_fido2">FIDO2</a></li>
+<li><a href="#_webauthn">WebAuthn</a></li>
+<li><a href="#_uvpa">UVPA</a></li>
+<li><a href="#_glitch">Glitch</a></li>
+</ul>
+</li>
+<li><a href="#_感想">感想</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>macOS Big Sur(11.2.3)</p>
+</li>
+<li>
+<p>Google Chrome(89.0.4389.114)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_用語">用語</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_fido">FIDO</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Fast Identity Online</p>
+</li>
+<li>
+<p>セキュリティキーと呼ばれる専用デバイスを使った認証の仕組みを標準化したもの</p>
+<div class="ulist">
+<ul>
+<li>
+<p>広い意味では認証器、登録時に新しい公開鍵ペアを作り、秘密鍵を安全に保管、公開鍵だけを返す、ログイン時に署名を返す機能を持っている</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fido2">FIDO2</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>FIDO2では仕様が洗練され、ブラウザやプラットフォームに標準実装された</p>
+<div class="ulist">
+<ul>
+<li>
+<p>専用デバイスだけでなく手元のスマホを認証器として利用することで専用デバイスが不要になり普及すると推測されている</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_webauthn">WebAuthn</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Web Authentication API</p>
+</li>
+<li>
+<p>FIDOをブラウザから利用できるようにするもの</p>
+</li>
+<li>
+<p>公開鍵ベースのユーザ認証を実現することができる</p>
+</li>
+<li>
+<p>Codelabs内で扱うユーザが指紋や画面ロックを使用して認証できるPlatform Authenticatorの使用をサポートしている</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_uvpa">UVPA</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>User Verifying Platform Authenticator</p>
+</li>
+<li>
+<p>Platform Authenticatorはデバイスに組み込まれた認証器のこと</p>
+</li>
+<li>
+<p>User Verifyingは認証器そのものがユーザを認証する機能、例えば指紋や顔認証などを持っていること</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_glitch">Glitch</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>ブラウザのみでWebアプリの作成からデプロイまでできるツール</p>
+</li>
+<li>
+<p>CodelabsのベースとなるコードがGlitchで公開されているので今回使用した</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_感想">感想</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Codelabs通りに進めていけば詰まるところはなかった</p>
+</li>
+<li>
+<p>ブラウザでも指紋認証が利用できるのはUXが向上すると感じた</p>
+</li>
+<li>
+<p>ブラウザからサーバにユーザの生体情報を送るわけではないので受け入れやすそう</p>
+</li>
+<li>
+<p>セキュアにするためにサーバ側の実装が重要ということだったので、ライブラリ等調べていきたい</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Google Codelabs</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://codelabs.developers.google.com/codelabs/webauthn-reauth/#0">はじめての WebAuthn</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>YouTube</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=8ren54IMSf4">Build your first WebAuthn app (Japanese with English subtitles)</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>FIDO2とWebAuthnの基本</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog.agektmr.com/2019/03/fido-webauthn.html">パスワードの不要な世界はいかにして実現されるのか - FIDO2 と WebAuthn の基本を知る</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

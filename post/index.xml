@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Mar 2021 17:26:49 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Apr 2021 09:57:58 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>はじめてのWebAuthn</title>
+      <link>https://dotechan.github.io/blog/2021/04/10/introduction_web_authn/</link>
+      <pubDate>Sat, 10 Apr 2021 09:57:58 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2021/04/10/introduction_web_authn/</guid>
+      <description>Table of Contents 環境 用語 FIDO FIDO2 WebAuthn UVPA Glitch 感想 参考記事 環境 macOS Big Sur(11.2.3) Google Chrome(89.0.4389.114) 用語 FIDO Fast Identity Online セキュリティキーと呼ばれる専用デバイスを使った認証の仕組みを標準化したもの 広い</description>
+    </item>
     
     <item>
       <title>データベースに入門してみた</title>
