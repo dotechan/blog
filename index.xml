@@ -6,10 +6,19 @@
     <description>Recent content on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Apr 2021 09:57:58 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Jul 2021 08:52:42 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2021年7月時点のスキル棚卸し</title>
+      <link>https://dotechan.github.io/blog/2021/07/02/20210702_inventory_skill/</link>
+      <pubDate>Fri, 02 Jul 2021 08:52:42 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2021/07/02/20210702_inventory_skill/</guid>
+      <description>Table of Contents はじめに スキル棚卸し 業務履歴 強み 弱み 振り返り やりたいこと・なりたい姿 先月のテーマ 今月のテーマ はじめに 先月の振り返りを後回しにしているう</description>
+    </item>
     
     <item>
       <title>はじめてのWebAuthn</title>
