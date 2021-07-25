@@ -1,0 +1,67 @@
+---
+title: "DockerでMySQLのデータベースを用意する"
+description: "MySQLの勉強用にDockerで環境構築した時の備忘録"
+date: 2021-07-25T10:09:51+09:00
+categories: ["技術"]
+tags: ["MySQL", "Docker"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== 環境
+
+* MacOS Big Sur(11.4)
+* MySQL(8.0)
+* docker desktop(3.3.1)
+
+== 前提条件
+* Dockerをインストール済み
+
+== 手順
+=== 1. Docker HubのMySQL公式イメージを使用してMySQLのコンテナを作成する
+
+```
+docker run --name world-db -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:8.0
+```
+
+=== 2. MySQL公式からサンプルデータを取得してローカルに解凍する
+
+手順1で指定したMySQLのバージョンにあったサンプルデータをgzip形式でダウンロードして解凍する。
+```
+tar -zxvf world-db.tar.gz
+```
+
+=== 3. MySQLのコンテナに対してsqlを実行することでサンプルデータのデータベースを構築する
+
+```
+docker exec -i world-db sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < ./world-db/world.sql
+```
+
+=== 4. データベースを確認する
+
+```
+docker exec -it world-db bash
+
+mysql -u root -p
+Enter password:
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| world              |
++--------------------+
+5 rows in set (0.00 sec)
+```
+
+== 参考記事
+* Docker HubのMySQL公式でsqlの実行方法を参照した
+** https://hub.docker.com/_/mysql
+* MySQL公式が配布しているサンプルデータを取得した
+** https://dev.mysql.com/doc/index-other.html
