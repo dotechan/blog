@@ -6,10 +6,19 @@
     <description>Recent content on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 25 Jul 2021 10:09:51 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Aug 2021 23:49:06 +0900</lastBuildDate>
     
 	<atom:link href="https://dotechan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2021年8月時点のスキル棚卸し</title>
+      <link>https://dotechan.github.io/blog/2021/08/01/20210801_inventory_skill/</link>
+      <pubDate>Sun, 01 Aug 2021 23:49:06 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2021/08/01/20210801_inventory_skill/</guid>
+      <description>Table of Contents スキル棚卸し 業務履歴 振り返り スキル棚卸し 業務履歴 Androidアプリ開発4年6ヶ月 Webアプリケーション開発7ヶ月 振り返り やりたいこと</description>
+    </item>
     
     <item>
       <title>DockerでMySQLのデータベースを用意する</title>
