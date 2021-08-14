@@ -1,0 +1,45 @@
+---
+title: "personal access tokenでGithubの認証を通す"
+description: "2021/08/13から従来のパスワード認証でGithubの認証が通らなくなったので対応"
+date: 2021-08-15T01:12:02+09:00
+categories: ["技術"]
+tags: ["Github", "macOS"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+以前からアナウンスされていたが日本時間の8/14にGitHubの認証に従来のパスワード認証が使えなくなったので推奨されているトークンを発行して認証する方法に切り替えたので手順を残しておく
+
+== 環境
+* macOS Big Sur(11.5.1)
+
+== 背景
+リモートリポジトリにpushしようとしたら怒られた
+```
+> git push origin main
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: unable to access 'https://github.com/{REPOSITORY_NAME}.git/': The requested URL returned error: 403
+```
+
+== 切り替え手順
+ブログ(*1)にHTTPSでpersonal access token(以下PAT)を使用するのがオススメって書いてあったので言うことを聞いておく。
+
+(*2)のドキュメントを参照してPATを発行する。  
+発行したPATは二度と表示されないらしいのでローカルに控えておく。
+
+macOSでcredential.helperをosxkeychain(*3)に設定しているとキーチェーンアクセスアプリでGitHubと従来のパスワードが紐づけられてままなので(*4)を参考に情報を削除する。
+
+後はgit pushなりするとパスワードが聞かれるので控えておいたPATを入力すればOK。
+
+== 参考記事
+* (*1)Matthew Langlois, 「Token authentication requirements for Git operations」, 2020-12-15, https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/, （2021-08-15閲覧）.
+
+* (*2)GitHub Docs, 「Creating a personal access token」, 不明, https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token, （2021-08-15閲覧）.
+
+* (*3)git, 「7.14 Git のさまざまなツール - 認証情報の保存」, 不明, https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E8%AA%8D%E8%A8%BC%E6%83%85%E5%A0%B1%E3%81%AE%E4%BF%9D%E5%AD%98, （2021-08-15閲覧）.
+
+* (*4)GitHub Docs, 「https://docs.github.com/en/get-started/getting-started-with-git/updating-credentials-from-the-macos-keychain」, 不明, https://docs.github.com/en/get-started/getting-started-with-git/updating-credentials-from-the-macos-keychain, （2021-08-15閲覧）.
