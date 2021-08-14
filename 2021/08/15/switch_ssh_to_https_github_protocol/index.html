@@ -1,0 +1,225 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - personal access tokenでGithubの認証を通す </title>
+
+    
+    
+    <meta content="Github, macOS, 技術" name="keywords">
+    
+    <meta content="Work From Dote - 2021/08/13から従来のパスワード認証でGithubの認証が通らなくなったので対応" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>personal access tokenでGithubの認証を通す</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-08-15</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/github/">
+            <span class="layui-badge" style="vertical-align: 2px;">Github</span>
+        </a>
+    
+        <a href="/blog/tags/macos/">
+            <span class="layui-badge" style="vertical-align: 2px;">macOS</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_背景">背景</a></li>
+<li><a href="#_切り替え手順">切り替え手順</a></li>
+<li><a href="#_参考記事">参考記事</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以前からアナウンスされていたが日本時間の8/14にGitHubの認証に従来のパスワード認証が使えなくなったので推奨されているトークンを発行して認証する方法に切り替えたので手順を残しておく</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>macOS Big Sur(11.5.1)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_背景">背景</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>リモートリポジトリにpushしようとしたら怒られた</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>&gt; git push origin main
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: unable to access 'https://github.com/{REPOSITORY_NAME}.git/': The requested URL returned error: 403</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_切り替え手順">切り替え手順</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ブログ(*1)にHTTPSでpersonal access token(以下PAT)を使用するのがオススメって書いてあったので言うことを聞いておく。</p>
+</div>
+<div class="paragraph">
+<p>(*2)のドキュメントを参照してPATを発行する。
+発行したPATは二度と表示されないらしいのでローカルに控えておく。</p>
+</div>
+<div class="paragraph">
+<p>macOSでcredential.helperをosxkeychain(*3)に設定しているとキーチェーンアクセスアプリでGitHubと従来のパスワードが紐づけられてままなので(*4)を参考に情報を削除する。</p>
+</div>
+<div class="paragraph">
+<p>後はgit pushなりするとパスワードが聞かれるので控えておいたPATを入力すればOK。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>(*1)Matthew Langlois, 「Token authentication requirements for Git operations」, 2020-12-15, <a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/" class="bare">https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/</a>, （2021-08-15閲覧）.</p>
+</li>
+<li>
+<p>(*2)GitHub Docs, 「Creating a personal access token」, 不明, <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token" class="bare">https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token</a>, （2021-08-15閲覧）.</p>
+</li>
+<li>
+<p>(*3)git, 「7.14 Git のさまざまなツール - 認証情報の保存」, 不明, <a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E8%AA%8D%E8%A8%BC%E6%83%85%E5%A0%B1%E3%81%AE%E4%BF%9D%E5%AD%98" class="bare">https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%81%95%E3%81%BE%E3%81%96%E3%81%BE%E3%81%AA%E3%83%84%E3%83%BC%E3%83%AB-%E8%AA%8D%E8%A8%BC%E6%83%85%E5%A0%B1%E3%81%AE%E4%BF%9D%E5%AD%98</a>, （2021-08-15閲覧）.</p>
+</li>
+<li>
+<p>(*4)GitHub Docs, 「https://docs.github.com/en/get-started/getting-started-with-git/updating-credentials-from-the-macos-keychain」, 不明, <a href="https://docs.github.com/en/get-started/getting-started-with-git/updating-credentials-from-the-macos-keychain" class="bare">https://docs.github.com/en/get-started/getting-started-with-git/updating-credentials-from-the-macos-keychain</a>, （2021-08-15閲覧）.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

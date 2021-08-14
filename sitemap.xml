@@ -3,32 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://dotechan.github.io/blog/2021/08/01/20210801_inventory_skill/</loc>
-    <lastmod>2021-08-01T23:49:06+09:00</lastmod>
+    <loc>https://dotechan.github.io/blog/categories/</loc>
+    <lastmod>2021-08-15T01:12:02+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dotechan.github.io/blog/categories/</loc>
-    <lastmod>2021-08-01T23:49:06+09:00</lastmod>
+    <loc>https://dotechan.github.io/blog/tags/github/</loc>
+    <lastmod>2021-08-15T01:12:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/tags/macos/</loc>
+    <lastmod>2021-08-15T01:12:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/2021/08/15/switch_ssh_to_https_github_protocol/</loc>
+    <lastmod>2021-08-15T01:12:02+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/blog/post/</loc>
-    <lastmod>2021-08-01T23:49:06+09:00</lastmod>
+    <lastmod>2021-08-15T01:12:02+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/blog/tags/</loc>
-    <lastmod>2021-08-01T23:49:06+09:00</lastmod>
+    <lastmod>2021-08-15T01:12:02+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/blog/</loc>
-    <lastmod>2021-08-01T23:49:06+09:00</lastmod>
+    <lastmod>2021-08-15T01:12:02+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</loc>
+    <lastmod>2021-08-15T01:12:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dotechan.github.io/blog/2021/08/01/20210801_inventory_skill/</loc>
     <lastmod>2021-08-01T23:49:06+09:00</lastmod>
   </url>
   
