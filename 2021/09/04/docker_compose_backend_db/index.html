@@ -1,0 +1,696 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - Docker Composeとexpress.jsとMySQLでバックエンド環境を用意する </title>
+
+    
+    
+    <meta content="Docker, Docker Compose, express.js, MySQL, 技術" name="keywords">
+    
+    <meta content="Work From Dote - express.jsで作成したバックエンドとMySQL8系で構築したDBをDocker Composeで統合する手順" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>Docker Composeとexpress.jsとMySQLでバックエンド環境を用意する</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-09-04</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/docker/">
+            <span class="layui-badge" style="vertical-align: 2px;">Docker</span>
+        </a>
+    
+        <a href="/blog/tags/docker-compose/">
+            <span class="layui-badge" style="vertical-align: 2px;">Docker Compose</span>
+        </a>
+    
+        <a href="/blog/tags/express.js/">
+            <span class="layui-badge" style="vertical-align: 2px;">express.js</span>
+        </a>
+    
+        <a href="/blog/tags/mysql/">
+            <span class="layui-badge" style="vertical-align: 2px;">MySQL</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_はじめに">はじめに</a></li>
+<li><a href="#_環境">環境</a></li>
+<li><a href="#_システム構成のイメージ">システム構成のイメージ</a></li>
+<li><a href="#_ディレクトリ構成記事の内容と関係ないものは省略">ディレクトリ構成(記事の内容と関係ないものは省略)</a></li>
+<li><a href="#_環境構築手順">環境構築手順</a>
+<ul class="sectlevel2">
+<li><a href="#_node_jsコンテナのdockfileを作成">Node.jsコンテナのDockfileを作成</a></li>
+<li><a href="#_環境変数を定義する_envを作成">環境変数を定義する.envを作成</a></li>
+<li><a href="#_docker_compose_ymlを作成">docker-compose.ymlを作成</a></li>
+<li><a href="#_express_jsのソースコードを用意">express.jsのソースコードを用意</a></li>
+<li><a href="#_トラブルシューティング">トラブルシューティング</a></li>
+</ul>
+</li>
+<li><a href="#_参考記事">参考記事</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Docker Composeとexpress.jsとMySQLで開発用のHTTPサーバを立てて、ホストPCから送ったHTTPリクエストにレスポンスが返せるようになるところまで実施した際の備忘録です。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>macOS Big Sur(11.5.2)</p>
+</li>
+<li>
+<p>docker-compose(1.29.0)</p>
+</li>
+<li>
+<p>Docker image</p>
+<div class="ulist">
+<ul>
+<li>
+<p>node(16.0.1)</p>
+</li>
+<li>
+<p>MySQL(8.0)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_システム構成のイメージ">システム構成のイメージ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<figure>
+    <img src="/blog/images/f-budget_system_image.drawio.svg"
+         alt="システム構成図"/> 
+</figure>
+
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ホストマシンの8000ポートでNode.jsコンテナの8000ポートをマッピングすることでホストマシンの8000ポートへの要求がNode.jsコンテナにも届く</p>
+</li>
+<li>
+<p>Docker ComposeプロジェクトとしてNode.jsコンテナとMySQLコンテナを用意する</p>
+</li>
+<li>
+<p>ホストマシンのソースコード置き場のディレクトリとNode.jsコンテナのワーキングディレクトリをバインドすることでソースコードの変更をリアルタイムでコンテナに反映する</p>
+</li>
+<li>
+<p>MySQLのデータをホストマシンのボリュームとバインドすることでコンテナのデータを永続化する</p>
+</li>
+<li>
+<p>ホストマシンの3308ポートとMySQLコンテナの3306ポートをマッピングすることでNode.jsコンテナを経由せずにホストマシンから直接データベースが編集できる</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ディレクトリ構成記事の内容と関係ないものは省略">ディレクトリ構成(記事の内容と関係ないものは省略)</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>.
+├── .dockerignore
+├── .env
+├── Dockerfile
+├── docker-compose.yml
+├── initdb.d
+│   └── ddl.sql
+├── nodemon.json
+├── package-lock.json
+├── package.json
+├── src
+│   ├── index.ts
+└── tsconfig.json</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境構築手順">環境構築手順</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_node_jsコンテナのdockfileを作成">Node.jsコンテナのDockfileを作成</h3>
+<div class="listingblock">
+<div class="title">Dockerfile</div>
+<div class="content">
+<pre># syntax=docker/dockerfile:1 // <b class="conum">(1)</b>
+FROM node:16.1.0 as base // <b class="conum">(2)</b>
+
+WORKDIR /app // <b class="conum">(3)</b>
+
+COPY ["package.json", "package-lock.json", "./"] // <b class="conum">(4)</b>
+
+FROM base as test // <b class="conum">(5)</b>
+RUN npm ci
+COPY . .
+RUN npm run test
+
+FROM base as prod // <b class="conum">(6)</b>
+RUN npm ci --production
+COPY . .
+CMD ["npm", "start"]</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Dockerfileのパーサを指定することでDocker Engineを更新しなくても最新のstable版の構文が利用できる</p>
+</li>
+<li>
+<p>公式のNode.jsの16.1.0のイメージを利用してbaseイメージを作成する</p>
+</li>
+<li>
+<p>コンテナの作業ディレクトリを/appに設定しておくことで以降のコマンドが/appで実行される</p>
+</li>
+<li>
+<p>Dockerfileと同階層にあるpackage.jsonとpackage-lock.jsonをコンテナの作業ディレクトリにコピーする</p>
+</li>
+<li>
+<p>UnitTest実行用のtestイメージを作成する</p>
+</li>
+<li>
+<p>Production版のprodイメージを作成する</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_環境変数を定義する_envを作成">環境変数を定義する.envを作成</h3>
+<div class="listingblock">
+<div class="title">env</div>
+<div class="content">
+<pre>COMPOSE_PROJECT_NAME=project_name // <b class="conum">(1)</b>
+SERVER_PORT=8000 // <b class="conum">(2)</b>
+MYSQL_ROOT_PASSWORD=admin
+MYSQL_HOST=db
+MYSQL_USER=express
+MYSQL_PASSWORD=express
+MYSQL_DATABASE=database</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Docker Composeはデフォルトでdocker-compose.ymlが置かれたディレクトリ名をプロジェクト名に指定するので任意のプロジェクト名にしたい場合は指定する</p>
+</li>
+<li>
+<p>Node.jsコンテナのポート</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>MySQL関連の環境変数については <a href="https://hub.docker.com/_/mysql">MySQL公式のDockerイメージのページ</a> を参照</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_compose_ymlを作成">docker-compose.ymlを作成</h3>
+<div class="listingblock">
+<div class="title">docker-compose.yml</div>
+<div class="content">
+<pre>version: "3.9"
+
+services:
+  backend:
+    container_name: backend
+    build:
+      context: .
+      target: prod // <b class="conum">(1)</b>
+    command: npm start
+    depends_on:
+      - db
+    ports:
+      - 8000:8000 // <b class="conum">(2)</b>
+      - 9229:9229 // <b class="conum">(3)</b>
+    environment: // <b class="conum">(4)</b>
+      - SERVER_PORT=${SERVER_PORT}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    volumes:
+      - ./:/app // <b class="conum">(5)</b>
+    networks:
+      - backend
+
+  db:
+    container_name: db
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password // <b class="conum">(6)</b>
+    restart: always
+    ports:
+      - 3308:3306 // <b class="conum">(7)</b>
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    volumes:
+      - mysql:/var/lib/mysql
+      - ./initdb.d:/docker-entrypoint-initdb.d // <b class="conum">(8)</b>
+    networks:
+      - backend
+
+volumes:
+  mysql: // <b class="conum">(9)</b>
+
+networks:
+  backend:</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Node.jsコンテナのビルドターゲットにDockerfileで宣言したprodイメージを指定する</p>
+</li>
+<li>
+<p>ホストマシンの8000ポートとNode.jsコンテナの8000ポートをマッピングする</p>
+</li>
+<li>
+<p>同上。9229ポートをマッピングしているのはデバッガをアタッチするため</p>
+</li>
+<li>
+<p>.envで宣言した環境変数を使用してDBへの接続情報をexpress.jsを実行するプロセスに渡す</p>
+</li>
+<li>
+<p>Node.jsコンテナの作業ディレクトリ/appとバインドすることでソースコードの反映をコンテナ側に反映できる</p>
+</li>
+<li>
+<p>使用しているMySQLクライアントのモジュール"mysql"がMySQL8系でデフォルト設定されている認証に対応していないため5.7系のデフォルト設定の値を指定する</p>
+</li>
+<li>
+<p>ホストマシンで3306と3307が使用済みだったので3308とマッピングしているだけ</p>
+</li>
+<li>
+<p>MySQLコンテナが作成されたタイミングで実行したいSQLをinitdb.dに格納してある</p>
+</li>
+<li>
+<p>ホストマシンに名前付きボリューム"mysql"を作成しMySQLコンテナのデータを永続化する</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_express_jsのソースコードを用意">express.jsのソースコードを用意</h3>
+<div class="paragraph">
+<p>アプリケーションによって変わるのでソースコードは一部抜粋</p>
+</div>
+<div class="listingblock">
+<div class="title">index.ts</div>
+<div class="content">
+<pre>import mysql from "mysql";
+import express from "express";
+
+// 環境変数を使用してDBにアクセスする
+const pool = mysql.createPool({
+  port: 3306, // <b class="conum">(1)</b>
+  host: process.env.MYSQL_HOST, // <b class="conum">(2)</b>
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+});
+
+// HTTPサーバを起動する
+const port = process.env.SERVER_PORT || 8000;
+const app = express();
+app.listen(port, () =&gt; {
+  console.log(`Example app listening at http://localhost:${port}`);
+});</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>MySQLのポートはデフォルトは3306</p>
+</li>
+<li>
+<p>Docker Composeプロジェクトで同じnetworks"mysql"に所属しているのでコンテナ名でNode.jsコンテナからMySQLコンテナを見つけられる</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="title">packge.json</div>
+<div class="content">
+<pre>{
+  "scripts": {
+    "start": "nodemon", // <b class="conum">(1)</b>
+    "debug": "nodemon --inspect=0.0.0.0:9229",
+    "test": "jest",
+  },
+}</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>nodemonモジュールを使用してホストマシンのソースコード変更時にNode.jsコンテナのHTTPサーバを再起動する</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>後はdocker compose upすれば環境を立ち上げることができる。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_トラブルシューティング">トラブルシューティング</h3>
+<div class="sect3">
+<h4 id="_node_jsコンテナからmysqlに繋がらない">Node.jsコンテナからMySQLに繋がらない</h4>
+<div class="sect4">
+<h5 id="_econnrefused">ECONNREFUSED</h5>
+<div class="paragraph">
+<p>MySQLコンテナが起動していないか接続情報が誤っている可能性がある。<br>
+後者は環境変数が正しく指定できてNode.jsコンテナのプロセスで正しく受け取れているか確認する。</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_er_not_supported_auth_mode">ER_NOT_SUPPORTED_AUTH_MODE</h5>
+<div class="paragraph">
+<p><a href="https://www.npmjs.com/package/mysql">mysqlモジュール</a> を利用している場合、MySQL8系からデフォルトになっている認証のプラグインに対応していないため繋がらない。</p>
+</div>
+<div class="paragraph">
+<p>認証のプラグインに対応している <a href="https://www.npmjs.com/package/mysql2">mysql2モジュール</a> を利用することも考えたが、TypeScriptの型が提供されていないようだったのでdocker-compose.ymlで「command: --default-authentication-plugin=mysql_native_password」を指定することで認証プラグインを変更して繋がるようにした。</p>
+</div>
+<div class="paragraph">
+<p>DBにアクセスするuserのpluginが"mysql_native_password"になっていれば設定変更できている。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>mysql&gt; select user, host, plugin from mysql.user;
++------------------+-----------+-----------------------+
+| user             | host      | plugin                |
++------------------+-----------+-----------------------+
+| root             | %         | mysql_native_password |
+| express          | %         | mysql_native_password |
+| mysql.infoschema | localhost | caching_sha2_password |
+| mysql.session    | localhost | caching_sha2_password |
+| mysql.sys        | localhost | caching_sha2_password |
+| root             | localhost | mysql_native_password |
++------------------+-----------+-----------------------+
+6 rows in set (0.01 sec)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>DBの設定変更を指示したはずなのにコンテナ実行後に前回実行時から設定が変更されていない場合は名前付きボリューム"mysql"のデータを破棄できているか確認する。<br>
+Docker Composeプロジェクト終了時にボリュームも破棄したい場合は-vオプションを付与する。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Node.jsのDockerイメージの作成からUnitTest実行のためのコンテナ起動方法など</p>
+<div class="ulist">
+<ul>
+<li>
+<p>docker docs, 「What will you learn in this module?」, 2021-09-04, <a href="https://docs.docker.com/language/nodejs/" class="bare">https://docs.docker.com/language/nodejs/</a>, (2021-09-04閲覧)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>DockerのMySQL公式イメージで環境変数やコンテナ実行時のDDLの実行方法など</p>
+<div class="ulist">
+<ul>
+<li>
+<p>docker hub, 「mysql」、 2021-09-04, <a href="https://hub.docker.com/_/mysql" class="bare">https://hub.docker.com/_/mysql</a>, (2021-09-04閲覧)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>docker-compose.ymlで環境変数を利用方法</p>
+<div class="ulist">
+<ul>
+<li>
+<p>docker docs, 「Environment variables in Compose」, 2021-09-04, <a href="https://docs.docker.com/compose/environment-variables/" class="bare">https://docs.docker.com/compose/environment-variables/</a>, (2021-09-04閲覧)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>MySQL8.0での認証方式の変更方法</p>
+<div class="ulist">
+<ul>
+<li>
+<p>わくわくBank、　「DockerでMySQL8.0の環境構築 &amp; 認証方式変更」、 2021-09-04、 <a href="https://www.wakuwakubank.com/posts/596-mysql-8-with-docker/、" class="bare">https://www.wakuwakubank.com/posts/596-mysql-8-with-docker/、</a> (2021-09-04閲覧)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2021/07/25/prepare_mysql_docker/">
+                                <h2 class="">DockerでMySQLのデータベースを用意する</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-07-25</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/mysql/">
+            <span class="layui-badge" style="vertical-align: 2px;">MySQL</span>
+        </a>
+    
+        <a href="/blog/tags/docker/">
+            <span class="layui-badge" style="vertical-align: 2px;">Docker</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2021/03/06/introduction_database/">
+                                <h2 class="">データベースに入門してみた</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-03-06</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/db/">
+            <span class="layui-badge" style="vertical-align: 2px;">DB</span>
+        </a>
+    
+        <a href="/blog/tags/mysql/">
+            <span class="layui-badge" style="vertical-align: 2px;">MySQL</span>
+        </a>
+    
+        <a href="/blog/tags/mariadb/">
+            <span class="layui-badge" style="vertical-align: 2px;">MariaDB</span>
+        </a>
+    
+        <a href="/blog/tags/sql/">
+            <span class="layui-badge" style="vertical-align: 2px;">SQL</span>
+        </a>
+    
+        <a href="/blog/tags/redmine/">
+            <span class="layui-badge" style="vertical-align: 2px;">Redmine</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2021/01/18/install_docker_for_raspberrypi/">
+                                <h2 class="">RaspberryPiにDockerをインストールする</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-01-18</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/raspberrypi/">
+            <span class="layui-badge" style="vertical-align: 2px;">RaspberryPi</span>
+        </a>
+    
+        <a href="/blog/tags/docker/">
+            <span class="layui-badge" style="vertical-align: 2px;">Docker</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/12/27/build_docker_redmine/">
+                                <h2 class="">DockerでRedmineを動かす</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-12-27</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/docker/">
+            <span class="layui-badge" style="vertical-align: 2px;">Docker</span>
+        </a>
+    
+        <a href="/blog/tags/redmine/">
+            <span class="layui-badge" style="vertical-align: 2px;">Redmine</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
