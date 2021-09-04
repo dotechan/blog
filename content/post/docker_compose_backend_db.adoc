@@ -1,0 +1,247 @@
+---
+title: "Docker Composeとexpress.jsとMySQLでバックエンド環境を用意する"
+description: "express.jsで作成したバックエンドとMySQL8系で構築したDBをDocker Composeで統合する手順"
+date: 2021-09-04T16:21:33+09:00
+categories: ["技術"]
+tags: ["Docker", "Docker Compose", "express.js", "MySQL"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+
+Docker Composeとexpress.jsとMySQLで開発用のHTTPサーバを立てて、ホストPCから送ったHTTPリクエストにレスポンスが返せるようになるところまで実施した際の備忘録です。
+
+== 環境
+
+* macOS Big Sur(11.5.2)
+* docker-compose(1.29.0)
+* Docker image
+** node(16.0.1)
+** MySQL(8.0)
+
+== システム構成のイメージ
+
+{{<figure src="/blog/images/f-budget_system_image.drawio.svg" alt="システム構成図">}}
+
+* ホストマシンの8000ポートでNode.jsコンテナの8000ポートをマッピングすることでホストマシンの8000ポートへの要求がNode.jsコンテナにも届く
+* Docker ComposeプロジェクトとしてNode.jsコンテナとMySQLコンテナを用意する
+* ホストマシンのソースコード置き場のディレクトリとNode.jsコンテナのワーキングディレクトリをバインドすることでソースコードの変更をリアルタイムでコンテナに反映する
+* MySQLのデータをホストマシンのボリュームとバインドすることでコンテナのデータを永続化する
+* ホストマシンの3308ポートとMySQLコンテナの3306ポートをマッピングすることでNode.jsコンテナを経由せずにホストマシンから直接データベースが編集できる
+
+== ディレクトリ構成(記事の内容と関係ないものは省略)
+
+----
+.
+├── .dockerignore
+├── .env
+├── Dockerfile
+├── docker-compose.yml
+├── initdb.d
+│   └── ddl.sql
+├── nodemon.json
+├── package-lock.json
+├── package.json
+├── src
+│   ├── index.ts
+└── tsconfig.json
+----
+
+== 環境構築手順
+=== Node.jsコンテナのDockfileを作成
+
+.Dockerfile
+----
+# syntax=docker/dockerfile:1 // <1>
+FROM node:16.1.0 as base // <2>
+
+WORKDIR /app // <3>
+
+COPY ["package.json", "package-lock.json", "./"] // <4>
+
+FROM base as test // <5>
+RUN npm ci
+COPY . .
+RUN npm run test
+
+FROM base as prod // <6>
+RUN npm ci --production
+COPY . .
+CMD ["npm", "start"]
+----
+<1> Dockerfileのパーサを指定することでDocker Engineを更新しなくても最新のstable版の構文が利用できる
+<2> 公式のNode.jsの16.1.0のイメージを利用してbaseイメージを作成する
+<3> コンテナの作業ディレクトリを/appに設定しておくことで以降のコマンドが/appで実行される
+<4> Dockerfileと同階層にあるpackage.jsonとpackage-lock.jsonをコンテナの作業ディレクトリにコピーする
+<5> UnitTest実行用のtestイメージを作成する
+<6> Production版のprodイメージを作成する
+
+=== 環境変数を定義する.envを作成
+
+.env
+----
+COMPOSE_PROJECT_NAME=project_name // <1>
+SERVER_PORT=8000 // <2>
+MYSQL_ROOT_PASSWORD=admin
+MYSQL_HOST=db
+MYSQL_USER=express
+MYSQL_PASSWORD=express
+MYSQL_DATABASE=database
+----
+<1> Docker Composeはデフォルトでdocker-compose.ymlが置かれたディレクトリ名をプロジェクト名に指定するので任意のプロジェクト名にしたい場合は指定する
+<2> Node.jsコンテナのポート
+
+MySQL関連の環境変数については https://hub.docker.com/_/mysql[MySQL公式のDockerイメージのページ] を参照
+
+=== docker-compose.ymlを作成
+
+.docker-compose.yml
+----
+version: "3.9"
+
+services:
+  backend:
+    container_name: backend
+    build:
+      context: .
+      target: prod // <1>
+    command: npm start
+    depends_on:
+      - db
+    ports:
+      - 8000:8000 // <2>
+      - 9229:9229 // <3>
+    environment: // <4>
+      - SERVER_PORT=${SERVER_PORT}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    volumes:
+      - ./:/app // <5>
+    networks:
+      - backend
+
+  db:
+    container_name: db
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password // <6>
+    restart: always
+    ports:
+      - 3308:3306 // <7>
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    volumes:
+      - mysql:/var/lib/mysql
+      - ./initdb.d:/docker-entrypoint-initdb.d // <8>
+    networks:
+      - backend
+
+volumes:
+  mysql: // <9>
+
+networks:
+  backend:
+----
+<1> Node.jsコンテナのビルドターゲットにDockerfileで宣言したprodイメージを指定する
+<2> ホストマシンの8000ポートとNode.jsコンテナの8000ポートをマッピングする
+<3> 同上。9229ポートをマッピングしているのはデバッガをアタッチするため
+<4> .envで宣言した環境変数を使用してDBへの接続情報をexpress.jsを実行するプロセスに渡す
+<5> Node.jsコンテナの作業ディレクトリ/appとバインドすることでソースコードの反映をコンテナ側に反映できる
+<6> 使用しているMySQLクライアントのモジュール"mysql"がMySQL8系でデフォルト設定されている認証に対応していないため5.7系のデフォルト設定の値を指定する
+<7> ホストマシンで3306と3307が使用済みだったので3308とマッピングしているだけ
+<8> MySQLコンテナが作成されたタイミングで実行したいSQLをinitdb.dに格納してある
+<9> ホストマシンに名前付きボリューム"mysql"を作成しMySQLコンテナのデータを永続化する
+
+=== express.jsのソースコードを用意
+
+アプリケーションによって変わるのでソースコードは一部抜粋
+
+.index.ts
+----
+import mysql from "mysql";
+import express from "express";
+
+// 環境変数を使用してDBにアクセスする
+const pool = mysql.createPool({
+  port: 3306, // <1>
+  host: process.env.MYSQL_HOST, // <2>
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+});
+
+// HTTPサーバを起動する
+const port = process.env.SERVER_PORT || 8000;
+const app = express();
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+----
+<1> MySQLのポートはデフォルトは3306
+<2> Docker Composeプロジェクトで同じnetworks"mysql"に所属しているのでコンテナ名でNode.jsコンテナからMySQLコンテナを見つけられる
+
+.packge.json
+----
+{
+  "scripts": {
+    "start": "nodemon", // <1>
+    "debug": "nodemon --inspect=0.0.0.0:9229",
+    "test": "jest",
+  },
+}
+----
+<1> nodemonモジュールを使用してホストマシンのソースコード変更時にNode.jsコンテナのHTTPサーバを再起動する
+
+後はdocker compose upすれば環境を立ち上げることができる。
+
+=== トラブルシューティング
+
+==== Node.jsコンテナからMySQLに繋がらない
+===== ECONNREFUSED
+MySQLコンテナが起動していないか接続情報が誤っている可能性がある。 +
+後者は環境変数が正しく指定できてNode.jsコンテナのプロセスで正しく受け取れているか確認する。
+
+===== ER_NOT_SUPPORTED_AUTH_MODE
+https://www.npmjs.com/package/mysql[mysqlモジュール] を利用している場合、MySQL8系からデフォルトになっている認証のプラグインに対応していないため繋がらない。
+
+認証のプラグインに対応している https://www.npmjs.com/package/mysql2[mysql2モジュール] を利用することも考えたが、TypeScriptの型が提供されていないようだったのでdocker-compose.ymlで「command: --default-authentication-plugin=mysql_native_password」を指定することで認証プラグインを変更して繋がるようにした。
+
+DBにアクセスするuserのpluginが"mysql_native_password"になっていれば設定変更できている。
+----
+mysql> select user, host, plugin from mysql.user;
++------------------+-----------+-----------------------+
+| user             | host      | plugin                |
++------------------+-----------+-----------------------+
+| root             | %         | mysql_native_password |
+| express          | %         | mysql_native_password |
+| mysql.infoschema | localhost | caching_sha2_password |
+| mysql.session    | localhost | caching_sha2_password |
+| mysql.sys        | localhost | caching_sha2_password |
+| root             | localhost | mysql_native_password |
++------------------+-----------+-----------------------+
+6 rows in set (0.01 sec)
+----
+
+DBの設定変更を指示したはずなのにコンテナ実行後に前回実行時から設定が変更されていない場合は名前付きボリューム"mysql"のデータを破棄できているか確認する。 +
+Docker Composeプロジェクト終了時にボリュームも破棄したい場合は-vオプションを付与する。
+
+== 参考記事
+* Node.jsのDockerイメージの作成からUnitTest実行のためのコンテナ起動方法など
+** docker docs, 「What will you learn in this module?」, 2021-09-04, https://docs.docker.com/language/nodejs/, (2021-09-04閲覧)
+
+* DockerのMySQL公式イメージで環境変数やコンテナ実行時のDDLの実行方法など
+** docker hub, 「mysql」、 2021-09-04, https://hub.docker.com/_/mysql, (2021-09-04閲覧)
+
+* docker-compose.ymlで環境変数を利用方法
+** docker docs, 「Environment variables in Compose」, 2021-09-04, https://docs.docker.com/compose/environment-variables/, (2021-09-04閲覧)
+
+* MySQL8.0での認証方式の変更方法
+** わくわくBank、　「DockerでMySQL8.0の環境構築 & 認証方式変更」、 2021-09-04、 https://www.wakuwakubank.com/posts/596-mysql-8-with-docker/、 (2021-09-04閲覧)
