@@ -6,18 +6,14 @@
     <description>Recent content in Mac on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 19 Jun 2020 09:29:26 +0900</lastBuildDate>
-    
-	<atom:link href="https://dotechan.github.io/blog/tags/mac/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 19 Jun 2020 09:29:26 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Macでのpathの通し方</title>
       <link>https://dotechan.github.io/blog/2020/06/19/export_path_for_mac/</link>
       <pubDate>Fri, 19 Jun 2020 09:29:26 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2020/06/19/export_path_for_mac/</guid>
-      <description>Table of Contents 環境 参考記事 PATHの通し方 環境 Mac OS X(10.15.4) zsh 5.7.1 参考記事 macでPATHを通す方法 - zsh/bash export command in Linux with Examples PATHの通し方 export PATH=$PATH:want_to_add_path want_to_add</description>
+      <description>環境 Mac OS X(10.15.4) zsh 5.7.1 参考記事 macでPATHを通す方法 - zsh/bash export command in Linux with Examples PATHの通し方 export PATH=$PATH:want_to_add_path want_to_add_pathには今回使用したいコマン</description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@
       <pubDate>Tue, 16 Jun 2020 23:00:42 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2020/06/16/mac_menu_sign/</guid>
-      <description>Table of Contents 参考記事 修飾キーとの対応 参考記事 macOSユーザーガイド 修飾キーとの対応 [ヘルプ]の検索バーで「Macのメニューに表示される記号」と検</description>
+      <description>参考記事 macOSユーザーガイド 修飾キーとの対応 [ヘルプ]の検索バーで「Macのメニューに表示される記号」と検索すると * 記号と修飾キーとの対</description>
     </item>
     
   </channel>

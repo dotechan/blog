@@ -1,0 +1,364 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - 2022年10月26日時点でのvimrcの設定 </title>
+
+    
+    
+    <meta content="技術, Vim, 日常, 教養" name="keywords">
+    
+    <meta content="Work From Dote - description" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>2022年10月26日時点でのvimrcの設定</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2022-10-26</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/%e6%8a%80%e8%a1%93/">
+            <span class="layui-badge" style="vertical-align: 2px;">技術</span>
+        </a>
+    
+        <a href="/blog/tags/vim/">
+            <span class="layui-badge" style="vertical-align: 2px;">Vim</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>macOS Monterey(12.6)</p>
+</li>
+<li>
+<p>VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Aug 17 2022 21:20:29</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vimrcの内容">vimrcの内容</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-vimscript" data-lang="vimscript">&#34; 文字コード
+set fileencodings=utf-8,cp932
+
+&#34; 行番号
+set number
+
+&#34; 相対行番号
+set relativenumber
+
+&#34; カーソル
+set cursorline
+
+&#34; シンタックス
+syntax enable
+
+&#34; 検索ハイライト
+set hlsearch
+
+&#34; Escを2回押すとハイライトを消す
+nnoremap &lt;Esc&gt;&lt;Esc&gt; :nohlsearch&lt;CR&gt;
+
+&#34; インクリメントサーチ
+set incsearch
+
+&#34; Undoの永続化
+if has(&#39;persistent_undo&#39;)
+	let undo_path = expand(&#39;~/.vim/undo&#39;)
+	exe &#39;set undodir=&#39; .. undo_path
+	set undofile
+endif
+
+&#34; インデント
+set smartindent
+
+&#34; クリップボート
+set clipboard+=unnamed
+
+&#34; ステータスライン
+set laststatus=2
+
+&#34; コマンドライン補完
+set wildmenu
+
+&#34; ヘルプの日本語化
+set helplang=ja
+
+&#34; Vimのプラグインを管理する
+&#34; dein.vim settings {{{
+&#34; install dir {{{
+let s:dein_dir = expand(&#39;~/.cache/dein&#39;)
+let s:dein_repo_dir = s:dein_dir . &#39;/repos/github.com/Shougo/dein.vim&#39;
+&#34; }}}
+
+&#34; dein installation check {{{
+if &amp;runtimepath !~# &#39;/dein.vim&#39;
+  if !isdirectory(s:dein_repo_dir)
+    execute &#39;!git clone https://github.com/Shougo/dein.vim&#39; s:dein_repo_dir
+  endif
+  execute &#39;set runtimepath^=&#39; . s:dein_repo_dir
+endif
+&#34; }}}
+
+&#34; begin settings {{{
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  &#34; .toml file
+  let s:rc_dir = expand(&#39;~/.vim&#39;)
+  if !isdirectory(s:rc_dir)
+    call mkdir(s:rc_dir, &#39;p&#39;)
+  endif
+  let s:toml = s:rc_dir . &#39;/dein.toml&#39;
+
+  &#34; read toml and cache
+  call dein#load_toml(s:toml, {&#39;lazy&#39;: 0})
+
+  &#34; end settings
+  call dein#end()
+  call dein#save_state()
+endif
+&#34; }}}
+
+&#34; plugin installation check {{{
+if dein#check_install()
+  call dein#install()
+endif
+&#34; }}}
+
+&#34; plugin remove check {{{
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) &gt; 0
+  call map(s:removed_plugins, &#34;delete(v:val, &#39;rf&#39;)&#34;)
+  call dein#recache_runtimepath()
+endif
+&#34; }}}
+
+
+&#34; TABキーを押した際にタブ文字の代わりにスペースを入れる
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
+&#34; (参照)https://missing-semester-jp.github.io/2020/editors/
+&#34; TODO: ステータスライン
+set laststatus=2
+
+&#34; By default, Vim doesn&#39;t let you hide a buffer (i.e. have a buffer that isn&#39;t
+&#34; shown in any window) that has unsaved changes. This is to prevent you from &#34;
+&#34; forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find
+&#34; hidden buffers helpful enough to di
+set hidden
+
+&#34; This setting makes search case-insensitive when all characters in the string
+&#34; being searched are lowercase. However, the search becomes case-sensitive if
+&#34; it contains any capital letters. This makes searching more convenient.
+set ignorecase
+set smartcase
+
+&#34; Unbind some useless/annoying default key bindings.
+nmap Q &lt;Nop&gt; &#34; &#39;Q&#39; in normal mode enters Ex mode. You almost never want this.
+
+&#34; Disable audible bell because it&#39;s annoying.
+set noerrorbells visualbell t_vb=
+
+&#34; Enable mouse support. You should avoid relying on this too much, but it can
+&#34; sometimes be convenient.
+set mouse+=a
+
+&#34; Try to prevent bad habits like using the arrow keys for movement. This is
+&#34; not the only possible bad habit. For example, holding down the h/j/k/l keys
+&#34; for movement, rather than using more efficient movement commands, is also a
+&#34; bad habit. The former is enforceable through a .vimrc, while we don&#39;t know
+&#34; how to prevent the latter.
+&#34; Do this in normal mode...
+nnoremap &lt;Left&gt;  :echoe &#34;Use h&#34;&lt;CR&gt;
+nnoremap &lt;Right&gt; :echoe &#34;Use l&#34;&lt;CR&gt;
+nnoremap &lt;Up&gt;    :echoe &#34;Use k&#34;&lt;CR&gt;
+nnoremap &lt;Down&gt;  :echoe &#34;Use j&#34;&lt;CR&gt;
+&#34; ...and in insert mode
+inoremap &lt;Left&gt;  &lt;ESC&gt;:echoe &#34;Use h&#34;&lt;CR&gt;
+inoremap &lt;Right&gt; &lt;ESC&gt;:echoe &#34;Use l&#34;&lt;CR&gt;
+inoremap &lt;Up&gt;    &lt;ESC&gt;:echoe &#34;Use k&#34;&lt;CR&gt;
+inoremap &lt;Down&gt;  &lt;ESC&gt;:echoe &#34;Use j&#34;&lt;CR&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2021/01/09/vimrc_settings_at_20210109/">
+                                <h2 class="">2021年1月9日時点でのvimrcの設定</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-01-09</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/vim/">
+            <span class="layui-badge" style="vertical-align: 2px;">Vim</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/06/08/introduce_vim/">
+                                <h2 class="">はじめてのVim</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-06-08</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/vim/">
+            <span class="layui-badge" style="vertical-align: 2px;">Vim</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

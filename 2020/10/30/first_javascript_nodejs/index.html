@@ -108,38 +108,13 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_前提条件">前提条件</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-<li><a href="#_基礎知識">基礎知識</a>
-<ul class="sectlevel2">
-<li><a href="#_domとは">DOMとは</a></li>
-<li><a href="#_xml_dom">XML DOM</a></li>
-<li><a href="#_node_jsとは">Node.jsとは</a></li>
-<li><a href="#_npmとは">npmとは</a></li>
-</ul>
-</li>
-<li><a href="#_本題">本題</a>
-<ul class="sectlevel2">
-<li><a href="#_やりたいこと">やりたいこと</a></li>
-<li><a href="#_xmlファイルの加工">XMLファイルの加工</a></li>
-<li><a href="#_サンプルプログラム">サンプルプログラム</a></li>
-<li><a href="#_faq">FAQ</a></li>
-</ul>
-</li>
-<li><a href="#_まとめ">まとめ</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>xmlファイルの加工をCLIから行いたくてJavaScriptとNode.jsをいじってみました。<br>
-シェルスクリプトでもできると思いますが、高級言語で手っ取り早くDOM APIで操作できた方が楽だなと思い、JavaScriptでやることに決めました。<br>
+<p>xmlファイルの加工をCLIから行いたくてJavaScriptとNode.jsをいじってみました。<br/>
+シェルスクリプトでもできると思いますが、高級言語で手っ取り早くDOM APIで操作できた方が楽だなと思い、JavaScriptでやることに決めました。<br/>
 構文自体はググればわかるのですが、実行環境やDOMが理解できておらず、つまずいたので備忘録として残します。</p>
 </div>
 </div>
@@ -200,7 +175,7 @@ layui.use('element', function(){
 <p>DOM(Document Object Model)のことで、ツリー構造として表されるHTMLやXMLをプログラムやスクリプトから動的に更新するためのインターフェースのこと。</p>
 </div>
 <div class="paragraph">
-<p>ツリー構造内の要素は全てNodeインターフェースを実装しており、共通の操作を提供しています。<br></p>
+<p>ツリー構造内の要素は全てNodeインターフェースを実装しており、共通の操作を提供しています。<br/></p>
 </div>
 </div>
 <div class="sect2">
@@ -223,10 +198,10 @@ Comments are comment nodes</code></pre>
 <div class="listingblock">
 <div class="title">XMLファイルとNodeの関係性</div>
 <div class="content">
-<pre><b class="conum">(1)</b>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;resource&gt; <b class="conum">(2)</b>
-  &lt;string name="app_name"&gt;AppName&lt;/string&gt; <b class="conum">(3)</b>
+<pre>&lt;!--<b class="conum">(1)</b>--&gt;
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;resource&gt; &lt;!--<b class="conum">(2)</b>--&gt;
+  &lt;string name=&#34;app_name&#34;&gt;AppName&lt;/string&gt; &lt;!--<b class="conum">(3)</b>--&gt;
 &lt;/resource&gt;</pre>
 </div>
 </div>
@@ -247,15 +222,15 @@ Comments are comment nodes</code></pre>
 <div class="sect2">
 <h3 id="_node_jsとは">Node.jsとは</h3>
 <div class="paragraph">
-<p>JavaScriptの実行環境のことです。<br>
-JavaScriptはブラウザ上で動くことを前提に作られた言語のようで、標準のままではOSの機能を利用するにも制限が多く不便です。<br>
+<p>JavaScriptの実行環境のことです。<br/>
+JavaScriptはブラウザ上で動くことを前提に作られた言語のようで、標準のままではOSの機能を利用するにも制限が多く不便です。<br/>
 Node.jsを利用することでファイルシステムへのアクセスやネットワークI/Oを簡単に利用することができます。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_npmとは">npmとは</h3>
 <div class="paragraph">
-<p>Node Package Managerのことです。<br>
+<p>Node Package Managerのことです。<br/>
 Node.jsのパッケージ(要はJavaScriptのライブラリ)を管理するツールです。</p>
 </div>
 </div>
@@ -267,29 +242,29 @@ Node.jsのパッケージ(要はJavaScriptのライブラリ)を管理するツ�
 <div class="sect2">
 <h3 id="_やりたいこと">やりたいこと</h3>
 <div class="paragraph">
-<p>Androidアプリ内で使用される用語はstring.xmlというXMLファイルで管理されています。<br>
-string.xmlファイルは言語毎に用意されています。<br>
-AOSPのモジュールはstringタグ内のattributeのvalueが重複している用語があり、Android Studioでそのまま開こうとすると警告が出てビルドができません。<br>
-そこでattributeのvalueが重複していたら、重複したstringタグを削除したいです。<br></p>
+<p>Androidアプリ内で使用される用語はstring.xmlというXMLファイルで管理されています。<br/>
+string.xmlファイルは言語毎に用意されています。<br/>
+AOSPのモジュールはstringタグ内のattributeのvalueが重複している用語があり、Android Studioでそのまま開こうとすると警告が出てビルドができません。<br/>
+そこでattributeのvalueが重複していたら、重複したstringタグを削除したいです。<br/></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<pre>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
 &lt;resource&gt;
-  &lt;string name="app_name"&gt;Sample1&lt;/string&gt;
-  &lt;string name="app_name"&gt;Sample2&lt;/string&gt;
-  &lt;string name="app_name"&gt;Sample3&lt;/string&gt;
+  &lt;string name=&#34;app_name&#34;&gt;Sample1&lt;/string&gt;
+  &lt;string name=&#34;app_name&#34;&gt;Sample2&lt;/string&gt;
+  &lt;string name=&#34;app_name&#34;&gt;Sample3&lt;/string&gt;
 &lt;/resource&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>attributeのvalueである"app_name"が重複している場合、最初の要素以外の重複した要素を削除したい。</p>
+<p>attributeのvalueである&#34;app_name&#34;が重複している場合、最初の要素以外の重複した要素を削除したい。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_xmlファイルの加工">XMLファイルの加工</h3>
 <div class="paragraph">
-<p>xmldomというNode.jsのパッケージ(モジュール)を利用してxmlの情報を取得・操作できます。<br>
+<p>xmldomというNode.jsのパッケージ(モジュール)を利用してxmlの情報を取得・操作できます。<br/>
 ファイルシステムの操作はNode.jsにプリインストールされているfsモジュールを利用します。</p>
 </div>
 </div>
@@ -305,7 +280,7 @@ AOSPのモジュールはstringタグ内のattributeのvalueが重複してい�
 <ol>
 <li>
 <p><em>DOMオブジェクト内でremoveしたはずの要素が実際のXMLファイル上からは消えていない</em></p>
-<p>DOMからremoveしただけではメモリに展開したDOMを編集しただけで実態のXMLファイルは変更されない。<br>
+<p>DOMからremoveしただけではメモリに展開したDOMを編集しただけで実態のXMLファイルは変更されない。<br/>
 修正したDOMをシリアライズしてXMLファイルを生成する必要がある。</p>
 </li>
 </ol>
@@ -317,8 +292,8 @@ AOSPのモジュールはstringタグ内のattributeのvalueが重複してい�
 <h2 id="_まとめ">まとめ</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>XMLをDOMから簡単に編集することができました。<br>
-とはいえJavaScriptを書き慣れていないのとJavaScriptやNode.jsのリファレンスの見方がしっくりこなくて時間がかかりました。<br>
+<p>XMLをDOMから簡単に編集することができました。<br/>
+とはいえJavaScriptを書き慣れていないのとJavaScriptやNode.jsのリファレンスの見方がしっくりこなくて時間がかかりました。<br/>
 改めてAndroidのリファレンスはよく整備されているなと感じました。</p>
 </div>
 </div>

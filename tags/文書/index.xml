@@ -6,18 +6,14 @@
     <description>Recent content in 文書 on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 01 Dec 2020 16:31:15 +0900</lastBuildDate>
-    
-	<atom:link href="https://dotechan.github.io/blog/tags/%E6%96%87%E6%9B%B8/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 01 Dec 2020 16:31:15 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/%E6%96%87%E6%9B%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>伝わる技術文書の書き方</title>
       <link>https://dotechan.github.io/blog/2020/12/01/method_write_tech_blog/</link>
       <pubDate>Tue, 01 Dec 2020 16:31:15 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2020/12/01/method_write_tech_blog/</guid>
-      <description>Table of Contents はじめに 参考記事 メモ 注意点 「はじめに」の重要性 文章のフレームワーク 対象読者と期待値のコントロール 正確性とわかりやすさの関係 結論から述べ</description>
+      <description>はじめに merpay Tech Talkの「伝わる技術文書の書き方」をオンラインで視聴した際のメモです。 自分で見直す用です。 参考記事 merpay Tech Talk 伝わる技術文書の書き方</description>
     </item>
     
   </channel>

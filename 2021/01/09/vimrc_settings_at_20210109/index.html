@@ -100,13 +100,7 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_vimrcの内容">vimrcの内容</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_環境">環境</h2>
 <div class="sectionbody">
@@ -124,98 +118,98 @@ layui.use('element', function(){
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-vimrc" data-lang="vimrc">" 文字コード
+<pre class="highlight"><code class="language-vimrc" data-lang="vimrc">&#34; 文字コード
 set fileencodings=utf-8,cp932
 
-" 行番号
+&#34; 行番号
 set number
 
-" カーソル
+&#34; カーソル
 set cursorline
 
-" シンタックス
+&#34; シンタックス
 syntax enable
 
-" 検索ハイライト
+&#34; 検索ハイライト
 set hlsearch
 
-" Escを2回押すとハイライトを消す
+&#34; Escを2回押すとハイライトを消す
 nnoremap &lt;Esc&gt;&lt;Esc&gt; :nohlsearch&lt;CR&gt;
 
-" インクリメントサーチ
+&#34; インクリメントサーチ
 set incsearch
 
-" Undoの永続化
-if has('persistent_undo')
-	let undo_path = expand('~/.vim/undo')
-	exe 'set undodir=' .. undo_path
+&#34; Undoの永続化
+if has(&#39;persistent_undo&#39;)
+	let undo_path = expand(&#39;~/.vim/undo&#39;)
+	exe &#39;set undodir=&#39; .. undo_path
 	set undofile
 endif
 
-" インデント
+&#34; インデント
 set smartindent
 
-" クリップボート
+&#34; クリップボート
 set clipboard+=unnamed
 
-" ステータスライン
+&#34; ステータスライン
 set laststatus=2
 
-" コマンドライン補完
+&#34; コマンドライン補完
 set wildmenu
 
-" ヘルプの日本語化
+&#34; ヘルプの日本語化
 set helplang=ja
 
-" Vimのプラグインを管理する
-" dein.vim settings {{{
-" install dir {{{
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-" }}}
+&#34; Vimのプラグインを管理する
+&#34; dein.vim settings {{{
+&#34; install dir {{{
+let s:dein_dir = expand(&#39;~/.cache/dein&#39;)
+let s:dein_repo_dir = s:dein_dir . &#39;/repos/github.com/Shougo/dein.vim&#39;
+&#34; }}}
 
-" dein installation check {{{
-if &amp;runtimepath !~# '/dein.vim'
+&#34; dein installation check {{{
+if &amp;runtimepath !~# &#39;/dein.vim&#39;
   if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    execute &#39;!git clone https://github.com/Shougo/dein.vim&#39; s:dein_repo_dir
   endif
-  execute 'set runtimepath^=' . s:dein_repo_dir
+  execute &#39;set runtimepath^=&#39; . s:dein_repo_dir
 endif
-" }}}
+&#34; }}}
 
-" begin settings {{{
+&#34; begin settings {{{
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  " .toml file
-  let s:rc_dir = expand('~/.vim')
+  &#34; .toml file
+  let s:rc_dir = expand(&#39;~/.vim&#39;)
   if !isdirectory(s:rc_dir)
-    call mkdir(s:rc_dir, 'p')
+    call mkdir(s:rc_dir, &#39;p&#39;)
   endif
-  let s:toml = s:rc_dir . '/dein.toml'
+  let s:toml = s:rc_dir . &#39;/dein.toml&#39;
 
-  " read toml and cache
-  call dein#load_toml(s:toml, {'lazy': 0})
+  &#34; read toml and cache
+  call dein#load_toml(s:toml, {&#39;lazy&#39;: 0})
 
-  " end settings
+  &#34; end settings
   call dein#end()
   call dein#save_state()
 endif
-" }}}
+&#34; }}}
 
-" plugin installation check {{{
+&#34; plugin installation check {{{
 if dein#check_install()
   call dein#install()
 endif
-" }}}
+&#34; }}}
 
-" plugin remove check {{{
+&#34; plugin remove check {{{
 let s:removed_plugins = dein#check_clean()
 if len(s:removed_plugins) &gt; 0
-  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call map(s:removed_plugins, &#34;delete(v:val, &#39;rf&#39;)&#34;)
   call dein#recache_runtimepath()
 endif
-" }}}</code></pre>
+&#34; }}}</code></pre>
 </div>
 </div>
 </div>

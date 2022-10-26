@@ -100,27 +100,12 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-<li><a href="#_所感">所感</a></li>
-<li><a href="#_使い方">使い方</a>
-<ul class="sectlevel2">
-<li><a href="#_サブモジュールの作り方">サブモジュールの作り方</a></li>
-<li><a href="#_サブモジュールを含むプロジェクトのクローン">サブモジュールを含むプロジェクトのクローン</a></li>
-<li><a href="#_サブモジュールの紐づけを解除">サブモジュールの紐づけを解除</a></li>
-</ul>
-</li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Hugoでブログを生成する時にgit-submoduleというコマンドを知ったので<br>
+<p>Hugoでブログを生成する時にgit-submoduleというコマンドを知ったので<br/>
 軽く使い方について調べたのでメモしておきます。</p>
 </div>
 </div>
@@ -136,7 +121,7 @@ layui.use('element', function(){
 </ul>
 </div>
 <div class="paragraph">
-<p>リファレンスを元にgit-submoduleの理解に利用したrepositoryは以下になります。<br></p>
+<p>リファレンスを元にgit-submoduleの理解に利用したrepositoryは以下になります。<br/></p>
 </div>
 <div class="ulist">
 <ul>
@@ -162,9 +147,9 @@ layui.use('element', function(){
 <h2 id="_所感">所感</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>メインのプロジェクト内でライブラリといったサブのプロジェクトを扱いたい場合に使用すると便利です。<br>
-submoduleとして取り込んだプロジェクトの変更をメインのプロジェクトの特定のブランチに紐づけることができます。<br>
-メインとサブのプロジェクトでバージョンの組み合わせを意識しなくても正しく動作することが保証できるといった<br>
+<p>メインのプロジェクト内でライブラリといったサブのプロジェクトを扱いたい場合に使用すると便利です。<br/>
+submoduleとして取り込んだプロジェクトの変更をメインのプロジェクトの特定のブランチに紐づけることができます。<br/>
+メインとサブのプロジェクトでバージョンの組み合わせを意識しなくても正しく動作することが保証できるといった<br/>
 メリットがありそうです。</p>
 </div>
 </div>
@@ -193,29 +178,29 @@ git submodule update</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>cloneするだけではサブモジュールの中身は空っぽです。<br>
-initとupdateすることでサブモジュールの最新の情報を取得することができます。<br>
-cloneのオプションに&#8212;&#8203;recursiveを付与することで同様の操作を行うことができます。</p>
+<p>cloneするだけではサブモジュールの中身は空っぽです。<br/>
+initとupdateすることでサブモジュールの最新の情報を取得することができます。<br/>
+cloneのオプションに—​recursiveを付与することで同様の操作を行うことができます。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_サブモジュールの紐づけを解除">サブモジュールの紐づけを解除</h3>
 <div class="paragraph">
-<p><a href="https://git-scm.com/docs/gitsubmodules" class="bare">https://git-scm.com/docs/gitsubmodules</a><br>
+<p><a href="https://git-scm.com/docs/gitsubmodules" class="bare">https://git-scm.com/docs/gitsubmodules</a><br/>
 上記のドキュメントを見てみると、どうやら二種類の方法がありそうです。</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">①Deinitialized submodule</dt>
 <dd>
-<p>git submodule deinitを利用することでメインとサブの紐づけを解くことができます。<br>
+<p>git submodule deinitを利用することでメインとサブの紐づけを解くことができます。<br/>
 git submodule initを利用することで、再度メインとサブの紐づけを行うことができます。</p>
 </dd>
 <dt class="hdlist1">②Deleted submodule</dt>
 <dd>
-<p>git rmを利用することでメインとサブの紐づけを解くことができます。<br>
-git rm した時点で.gitmodulesからサブモジュールののデータが削除されます。<br>
-完全にサブモジュールのデータを削除したい場合は.git/modules/に残っている<br>
+<p>git rmを利用することでメインとサブの紐づけを解くことができます。<br/>
+git rm した時点で.gitmodulesからサブモジュールののデータが削除されます。<br/>
+完全にサブモジュールのデータを削除したい場合は.git/modules/に残っている<br/>
 サブモジュールのデータを手動で削除する必要があります。</p>
 </dd>
 </dl>

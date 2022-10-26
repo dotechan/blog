@@ -6,10 +6,15 @@
     <description>Recent content in 教養 on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 Oct 2020 08:38:37 +0900</lastBuildDate>
-    
-	<atom:link href="https://dotechan.github.io/blog/categories/%E6%95%99%E9%A4%8A/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 26 Oct 2022 23:33:58 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/categories/%E6%95%99%E9%A4%8A/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022年10月26日時点でのvimrcの設定</title>
+      <link>https://dotechan.github.io/blog/2022/10/26/20221026_vimrc/</link>
+      <pubDate>Wed, 26 Oct 2022 23:33:58 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2022/10/26/20221026_vimrc/</guid>
+      <description>はじめに 環境 macOS Monterey(12.6) VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Aug 17 2022 21:20:29 vimrcの内容 &amp;#34; 文字コード set fileencodings=utf-8,cp932 &amp;#34; 行番号 set number &amp;#34; 相対行番号 set relativenumber &amp;#34; カーソル set cursorline &amp;#34; シンタックス syntax enable &amp;#34; 検索</description>
+    </item>
     
     <item>
       <title>NISAとは</title>
@@ -17,7 +22,7 @@
       <pubDate>Fri, 16 Oct 2020 08:38:37 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2020/10/16/nisa_outline/</guid>
-      <description>Table of Contents はじめに 参考記事 NISAとは NISAとつみたてNISAの比較 疑問 NISAとつみたてNISAをそれぞれ開設できるか 1人に対して1NISA</description>
+      <description>はじめに インデックス投資を始めるにあたり、お得になると言われているNISAについて調べました。 小額から始めるインデックス投資であれば、つみた</description>
     </item>
     
     <item>
@@ -26,7 +31,7 @@
       <pubDate>Mon, 21 Sep 2020 16:20:03 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2020/09/21/furusato_tax_payment/</guid>
-      <description>Table of Contents はじめに 参考記事 ふるさと納税とは ふるさと納税の手順 控除とは まとめ はじめに ふるさと納税でどれくらいお得になるのか？ そもそも控除って何？を</description>
+      <description>はじめに ふるさと納税でどれくらいお得になるのか？ そもそも控除って何？を調べ直してまとめました。 参考記事 ふるさと納税のしくみ そもそも「控除」っ</description>
     </item>
     
     <item>
@@ -35,7 +40,7 @@
       <pubDate>Fri, 28 Aug 2020 18:40:11 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2020/08/28/move_out_rent_home/</guid>
-      <description>Table of Contents はじめに 参考 結論 内容 契約締結時の注意 ガイドライン 特約の効力 専門家への相談 まとめ はじめに 入居時にボラれたのを機に退去時にボラれないように</description>
+      <description>はじめに 入居時にボラれたのを機に退去時にボラれないように知識武装している最中です。 退去時に不当な金額を請求されないためにも、退去時の注意点を</description>
     </item>
     
     <item>
@@ -44,7 +49,7 @@
       <pubDate>Thu, 20 Aug 2020 20:29:58 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2020/08/20/rent_home/</guid>
-      <description>Table of Contents はじめに 参考動画 結論 動画の内容 良い業者を見つける 仲介手数料は家賃の0.525ヶ月分まで ハウスクリーニングは不要 火災保険は自分で選ぶ 安心</description>
+      <description>はじめに 人生二回目の引越しを決意し賃貸物件を借りたのですがボラれました。 今回は勉強料だと割り切って次回の引越しで同じ過ちを犯さないように 備忘</description>
     </item>
     
   </channel>

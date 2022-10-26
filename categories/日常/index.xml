@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日常 on Work From Dote</title>
+    <link>https://dotechan.github.io/blog/categories/%E6%97%A5%E5%B8%B8/</link>
+    <description>Recent content in 日常 on Work From Dote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 26 Oct 2022 23:33:58 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/categories/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022年10月26日時点でのvimrcの設定</title>
+      <link>https://dotechan.github.io/blog/2022/10/26/20221026_vimrc/</link>
+      <pubDate>Wed, 26 Oct 2022 23:33:58 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2022/10/26/20221026_vimrc/</guid>
+      <description>はじめに 環境 macOS Monterey(12.6) VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Aug 17 2022 21:20:29 vimrcの内容 &amp;#34; 文字コード set fileencodings=utf-8,cp932 &amp;#34; 行番号 set number &amp;#34; 相対行番号 set relativenumber &amp;#34; カーソル set cursorline &amp;#34; シンタックス syntax enable &amp;#34; 検索</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -104,32 +104,12 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-<li><a href="#_your_first_coroutine_with_kotlin">Your first coroutine with Kotlin</a></li>
-<li><a href="#_asynchronous_programming_techniques">Asynchronous Programming Techniques</a>
-<ul class="sectlevel2">
-<li><a href="#_threading">Threading</a></li>
-<li><a href="#_callbacks">Callbacks</a></li>
-<li><a href="#_futures_promises_et_al">Futures, Promises et. al</a></li>
-<li><a href="#_reactive_extensions">Reactive Extensions</a></li>
-<li><a href="#_coroutines">Coroutines</a></li>
-</ul>
-</li>
-<li><a href="#_introduction_to_coroutines_and_channels">Introduction to Coroutines and Channels</a></li>
-<li><a href="#_use_kotlin_coroutines_in_your_android_app">Use Kotlin Coroutines in your Android App</a></li>
-<li><a href="#_感想">感想</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>公式とGoogle Codelabsを参考にKotlinのcoroutineについて学習したので<br>
+<p>公式とGoogle Codelabsを参考にKotlinのcoroutineについて学習したので<br/>
 メモとして残しておきます。</p>
 </div>
 </div>
@@ -209,7 +189,7 @@ layui.use('element', function(){
 
 runBlocking {
     val sum = deferred.map { it.await().toLong() }.sum() // <b class="conum">(2)</b>
-    println("Sum: $sum")
+    println(&#34;Sum: $sum&#34;)
 }</code></pre>
 </div>
 </div>
@@ -371,8 +351,8 @@ runBlocking {
 <pre class="highlight"><code class="language-kotlin" data-lang="kotlin">@Test
 fun whenRefreshTitleSuccess_insertsRows() {
    val subject = TitleRepository(
-       MainNetworkFake("OK"),
-       TitleDaoFake("title")
+       MainNetworkFake(&#34;OK&#34;),
+       TitleDaoFake(&#34;title&#34;)
    )
 
    // launch starts a coroutine then immediately returns
@@ -381,7 +361,7 @@ fun whenRefreshTitleSuccess_insertsRows() {
        subject.refreshTitle()
    }
    // test function returns immediately, and
-   // doesn't see the results of refreshTitle
+   // doesn&#39;t see the results of refreshTitle
 }</code></pre>
 </div>
 </div>
@@ -407,8 +387,8 @@ fun whenRefreshTitleSuccess_insertsRows() {
 <h2 id="_感想">感想</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Coroutineを利用することでアプリのパフォーマンスが向上するだけでなく<br>
-可読性も大幅に上がるので、これを機に利用していこうと思います。<br></p>
+<p>Coroutineを利用することでアプリのパフォーマンスが向上するだけでなく<br/>
+可読性も大幅に上がるので、これを機に利用していこうと思います。<br/></p>
 </div>
 </div>
 </div>

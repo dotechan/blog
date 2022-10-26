@@ -112,26 +112,12 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-<li><a href="#_inputrcの設定">~/.inputrcの設定</a></li>
-<li><a href="#_補足">補足</a>
-<ul class="sectlevel2">
-<li><a href="#_用語">用語</a></li>
-<li><a href="#_zsh">zsh</a></li>
-</ul>
-</li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Emacsは使ったことがないので知らなかったのですが、TerminalのショートカットはEmacsがベースになっているようです。<br>
+<p>Emacsは使ったことがないので知らなかったのですが、TerminalのショートカットはEmacsがベースになっているようです。<br/>
 そして何やらViの操作感を実現できるようなので早速readlineの設定を変更して試してみました。</p>
 </div>
 </div>
@@ -180,8 +166,8 @@ layui.use('element', function(){
 <h2 id="_inputrcの設定">~/.inputrcの設定</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>bashは~/.inputrcというファイルを読み込みます。<br>
-~/.inputrcではコマンドラインの操作感や補完について設定できます。<br>
+<p>bashは~/.inputrcというファイルを読み込みます。<br/>
+~/.inputrcではコマンドラインの操作感や補完について設定できます。<br/>
 設定の内容はコメント参照。</p>
 </div>
 <div class="listingblock">
@@ -236,7 +222,7 @@ set completion-ignore-case on</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>ターミナルに打ち込まれたコマンドを解釈して実行するもの<br>
+<p>ターミナルに打ち込まれたコマンドを解釈して実行するもの<br/>
 OSの操作をするためのインターフェースのこと</p>
 </div>
 <div class="ulist">
@@ -253,11 +239,11 @@ OSの操作をするためのインターフェースのこと</p>
 <div class="sect2">
 <h3 id="_zsh">zsh</h3>
 <div class="paragraph">
-<p>bashは何も設定せずに.inputrcの設定を読み込んでくれましたが、zshは勝手が違うようです。<br>
+<p>bashは何も設定せずに.inputrcの設定を読み込んでくれましたが、zshは勝手が違うようです。<br/>
 そのため、zshを利用しているMacだと.inputrcを用意しただけではターミナルの操作感が変わりませんでした。</p>
 </div>
 <div class="paragraph">
-<p>以下の記事を参考に別途設定してみようかと思います。<br>
+<p>以下の記事を参考に別途設定してみようかと思います。<br/>
 <a href="https://qiita.com/b4b4r07/items/8db0257d2e6f6b19ecb9" class="bare">https://qiita.com/b4b4r07/items/8db0257d2e6f6b19ecb9</a></p>
 </div>
 </div>

@@ -104,18 +104,7 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_前提条件">前提条件</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-<li><a href="#_システム構成">システム構成</a></li>
-<li><a href="#_docker_compose_ymlファイル">docker-compose.ymlファイル</a></li>
-<li><a href="#_説明">説明</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
@@ -208,7 +197,7 @@ layui.use('element', function(){
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-yml" data-lang="yml">version: '3.8'
+<pre class="highlight"><code class="language-yml" data-lang="yml">version: &#39;3.8&#39;
 
 services:
   redmine:
@@ -248,13 +237,13 @@ services:
 <div class="ulist">
 <ul>
 <li>
-<p>depends_onで指定することで"redmine"イメージより"redmine-db"イメージを先に起動する</p>
+<p>depends_onで指定することで&#34;redmine&#34;イメージより&#34;redmine-db&#34;イメージを先に起動する</p>
 </li>
 <li>
 <p>ホストマシンのdataディレクトリ配下にDockerコンテナの永続化しておく必要があるファイルをマウントする</p>
 </li>
 <li>
-<p>"restart"に"always"を指定することでDockerコンテナをremoveするまでサービスを起動する</p>
+<p>&#34;restart&#34;に&#34;always&#34;を指定することでDockerコンテナをremoveするまでサービスを起動する</p>
 </li>
 </ul>
 </div>

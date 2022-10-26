@@ -6,18 +6,14 @@
     <description>Recent content in Redmine on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Mar 2021 17:26:49 +0900</lastBuildDate>
-    
-	<atom:link href="https://dotechan.github.io/blog/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 06 Mar 2021 17:26:49 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>データベースに入門してみた</title>
       <link>https://dotechan.github.io/blog/2021/03/06/introduction_database/</link>
       <pubDate>Sat, 06 Mar 2021 17:26:49 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2021/03/06/introduction_database/</guid>
-      <description>Table of Contents はじめに 環境 操作方法 rootユーザでログイン データベースの一覧を確認 操作するデータベースを選択 テーブル一覧を確認 issuesテーブルの</description>
+      <description>はじめに データベース初心者がMySQLのチュートリアルのを実践した後にDockerでたてたRedmineのバックエンドとして動いているMar</description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@
       <pubDate>Sun, 27 Dec 2020 23:34:57 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2020/12/27/build_docker_redmine/</guid>
-      <description>Table of Contents はじめに 環境 前提条件 参考記事 システム構成 docker-compose.ymlファイル 説明 はじめに Redmine4.1.1をDBにMar</description>
+      <description>はじめに Redmine4.1.1をDBにMariaDBを指定して動かす方法について書きます Redmine, MariaDBともに公式のDockerイメージを</description>
     </item>
     
   </channel>

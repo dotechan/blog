@@ -116,26 +116,7 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_操作方法">操作方法</a>
-<ul class="sectlevel2">
-<li><a href="#_rootユーザでログイン">rootユーザでログイン</a></li>
-<li><a href="#_データベースの一覧を確認">データベースの一覧を確認</a></li>
-<li><a href="#_操作するデータベースを選択">操作するデータベースを選択</a></li>
-<li><a href="#_テーブル一覧を確認">テーブル一覧を確認</a></li>
-<li><a href="#_issuesテーブルのデータ構造を確認">issuesテーブルのデータ構造を確認</a></li>
-<li><a href="#_issuesテーブルのカラムとレコードを確認">issuesテーブルのカラムとレコードを確認</a></li>
-<li><a href="#_issuesテーブルからsubject絡むとupdated_onカラムのデータを確認">issuesテーブルからsubject絡むとupdated_onカラムのデータを確認</a></li>
-<li><a href="#_issuesテーブルからupdated_onカラムが2021年1月1日以降に更新のあったデータを確認">issuesテーブルからupdated_onカラムが2021年1月1日以降に更新のあったデータを確認</a></li>
-</ul>
-</li>
-<li><a href="#_参考記事">参考記事</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
@@ -183,7 +164,7 @@ layui.use('element', function(){
 </div>
 </div>
 <div class="paragraph">
-<p>"Enter password:"が表示されたらパスワードを入力する。</p>
+<p>&#34;Enter password:&#34;が表示されたらパスワードを入力する。</p>
 </div>
 </div>
 <div class="sect2">
@@ -238,7 +219,7 @@ layui.use('element', function(){
 <h3 id="_issuesテーブルからupdated_onカラムが2021年1月1日以降に更新のあったデータを確認">issuesテーブルからupdated_onカラムが2021年1月1日以降に更新のあったデータを確認</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-sql" data-lang="sql">MariaDB [redmine]&gt; select subject, updated_on from issues where updated_on &gt;= '20210101';</code></pre>
+<pre class="highlight"><code class="language-sql" data-lang="sql">MariaDB [redmine]&gt; select subject, updated_on from issues where updated_on &gt;= &#39;20210101&#39;;</code></pre>
 </div>
 </div>
 </div>

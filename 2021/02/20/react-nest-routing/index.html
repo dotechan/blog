@@ -104,16 +104,7 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_react_router_domとは">react-router-domとは</a></li>
-<li><a href="#_routeコンポーネントをネストしてurlにマッチングさせる実装">RouteコンポーネントをネストしてURLにマッチングさせる実装</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
@@ -173,7 +164,7 @@ layui.use('element', function(){
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-js" data-lang="js">import React from "react";
+<pre class="highlight"><code class="language-js" data-lang="js">import React from &#34;react&#34;;
 import {
   BrowserRouter as Router,
   Switch,
@@ -181,13 +172,13 @@ import {
   Link,
   useParams,
   useRouteMatch
-} from "react-router-dom";
+} from &#34;react-router-dom&#34;;
 
 // Since routes are regular React components, they
 // may be rendered anywhere in the app, including in
 // child elements.
 //
-// This helps when it's time to code-split your app
+// This helps when it&#39;s time to code-split your app
 // into multiple bundles because code-splitting a
 // React Router app is the same as code-splitting
 // any other React app.
@@ -198,21 +189,21 @@ export default function NestingExample() {
       &lt;div&gt;
         &lt;ul&gt;
           &lt;li&gt;
-            &lt;Link to="/"&gt;Home&lt;/Link&gt;
+            &lt;Link to=&#34;/&#34;&gt;Home&lt;/Link&gt;
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;Link to="/topics"&gt;Topics&lt;/Link&gt;
+            &lt;Link to=&#34;/topics&#34;&gt;Topics&lt;/Link&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
 
         &lt;hr /&gt;
 
         &lt;Switch&gt;
-          &lt;Route exact path="/"&gt;
+          &lt;Route exact path=&#34;/&#34;&gt;
             &lt;Home /&gt;
           &lt;/Route&gt;
           {/* ポイント1 */}
-          &lt;Route path="/topics"&gt;
+          &lt;Route path=&#34;/topics&#34;&gt;
             &lt;Topics /&gt;
           &lt;/Route&gt;
         &lt;/Switch&gt;

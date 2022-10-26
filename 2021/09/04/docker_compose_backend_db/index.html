@@ -112,25 +112,7 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_システム構成のイメージ">システム構成のイメージ</a></li>
-<li><a href="#_ディレクトリ構成記事の内容と関係ないものは省略">ディレクトリ構成(記事の内容と関係ないものは省略)</a></li>
-<li><a href="#_環境構築手順">環境構築手順</a>
-<ul class="sectlevel2">
-<li><a href="#_node_jsコンテナのdockfileを作成">Node.jsコンテナのDockfileを作成</a></li>
-<li><a href="#_環境変数を定義する_envを作成">環境変数を定義する.envを作成</a></li>
-<li><a href="#_docker_compose_ymlを作成">docker-compose.ymlを作成</a></li>
-<li><a href="#_express_jsのソースコードを用意">express.jsのソースコードを用意</a></li>
-<li><a href="#_トラブルシューティング">トラブルシューティング</a></li>
-</ul>
-</li>
-<li><a href="#_参考記事">参考記事</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
@@ -171,9 +153,8 @@ layui.use('element', function(){
 <h2 id="_システム構成のイメージ">システム構成のイメージ</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<figure>
-    <img src="/blog/images/f-budget_system_image.drawio.svg"
-         alt="システム構成図"/> 
+<figure><img src="/blog/images/f-budget_system_image.drawio.svg"
+         alt="システム構成図"/>
 </figure>
 
 </div>
@@ -233,7 +214,7 @@ FROM node:16.1.0 as base // <b class="conum">(2)</b>
 
 WORKDIR /app // <b class="conum">(3)</b>
 
-COPY ["package.json", "package-lock.json", "./"] // <b class="conum">(4)</b>
+COPY [&#34;package.json&#34;, &#34;package-lock.json&#34;, &#34;./&#34;] // <b class="conum">(4)</b>
 
 FROM base as test // <b class="conum">(5)</b>
 RUN npm ci
@@ -243,7 +224,7 @@ RUN npm run test
 FROM base as prod // <b class="conum">(6)</b>
 RUN npm ci --production
 COPY . .
-CMD ["npm", "start"]</pre>
+CMD [&#34;npm&#34;, &#34;start&#34;]</pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -302,7 +283,7 @@ MYSQL_DATABASE=database</pre>
 <div class="listingblock">
 <div class="title">docker-compose.yml</div>
 <div class="content">
-<pre>version: "3.9"
+<pre>version: &#34;3.9&#34;
 
 services:
   backend:
@@ -371,7 +352,7 @@ networks:
 <p>Node.jsコンテナの作業ディレクトリ/appとバインドすることでソースコードの反映をコンテナ側に反映できる</p>
 </li>
 <li>
-<p>使用しているMySQLクライアントのモジュール"mysql"がMySQL8系でデフォルト設定されている認証に対応していないため5.7系のデフォルト設定の値を指定する</p>
+<p>使用しているMySQLクライアントのモジュール&#34;mysql&#34;がMySQL8系でデフォルト設定されている認証に対応していないため5.7系のデフォルト設定の値を指定する</p>
 </li>
 <li>
 <p>ホストマシンで3306と3307が使用済みだったので3308とマッピングしているだけ</p>
@@ -380,7 +361,7 @@ networks:
 <p>MySQLコンテナが作成されたタイミングで実行したいSQLをinitdb.dに格納してある</p>
 </li>
 <li>
-<p>ホストマシンに名前付きボリューム"mysql"を作成しMySQLコンテナのデータを永続化する</p>
+<p>ホストマシンに名前付きボリューム&#34;mysql&#34;を作成しMySQLコンテナのデータを永続化する</p>
 </li>
 </ol>
 </div>
@@ -393,8 +374,8 @@ networks:
 <div class="listingblock">
 <div class="title">index.ts</div>
 <div class="content">
-<pre>import mysql from "mysql";
-import express from "express";
+<pre>import mysql from &#34;mysql&#34;;
+import express from &#34;express&#34;;
 
 // 環境変数を使用してDBにアクセスする
 const pool = mysql.createPool({
@@ -419,7 +400,7 @@ app.listen(port, () =&gt; {
 <p>MySQLのポートはデフォルトは3306</p>
 </li>
 <li>
-<p>Docker Composeプロジェクトで同じnetworks"mysql"に所属しているのでコンテナ名でNode.jsコンテナからMySQLコンテナを見つけられる</p>
+<p>Docker Composeプロジェクトで同じnetworks&#34;mysql&#34;に所属しているのでコンテナ名でNode.jsコンテナからMySQLコンテナを見つけられる</p>
 </li>
 </ol>
 </div>
@@ -427,10 +408,10 @@ app.listen(port, () =&gt; {
 <div class="title">packge.json</div>
 <div class="content">
 <pre>{
-  "scripts": {
-    "start": "nodemon", // <b class="conum">(1)</b>
-    "debug": "nodemon --inspect=0.0.0.0:9229",
-    "test": "jest",
+  &#34;scripts&#34;: {
+    &#34;start&#34;: &#34;nodemon&#34;, // <b class="conum">(1)</b>
+    &#34;debug&#34;: &#34;nodemon --inspect=0.0.0.0:9229&#34;,
+    &#34;test&#34;: &#34;jest&#34;,
   },
 }</pre>
 </div>
@@ -453,7 +434,7 @@ app.listen(port, () =&gt; {
 <div class="sect4">
 <h5 id="_econnrefused">ECONNREFUSED</h5>
 <div class="paragraph">
-<p>MySQLコンテナが起動していないか接続情報が誤っている可能性がある。<br>
+<p>MySQLコンテナが起動していないか接続情報が誤っている可能性がある。<br/>
 後者は環境変数が正しく指定できてNode.jsコンテナのプロセスで正しく受け取れているか確認する。</p>
 </div>
 </div>
@@ -466,7 +447,7 @@ app.listen(port, () =&gt; {
 <p>認証のプラグインに対応している <a href="https://www.npmjs.com/package/mysql2">mysql2モジュール</a> を利用することも考えたが、TypeScriptの型が提供されていないようだったのでdocker-compose.ymlで「command: --default-authentication-plugin=mysql_native_password」を指定することで認証プラグインを変更して繋がるようにした。</p>
 </div>
 <div class="paragraph">
-<p>DBにアクセスするuserのpluginが"mysql_native_password"になっていれば設定変更できている。</p>
+<p>DBにアクセスするuserのpluginが&#34;mysql_native_password&#34;になっていれば設定変更できている。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -485,7 +466,7 @@ app.listen(port, () =&gt; {
 </div>
 </div>
 <div class="paragraph">
-<p>DBの設定変更を指示したはずなのにコンテナ実行後に前回実行時から設定が変更されていない場合は名前付きボリューム"mysql"のデータを破棄できているか確認する。<br>
+<p>DBの設定変更を指示したはずなのにコンテナ実行後に前回実行時から設定が変更されていない場合は名前付きボリューム&#34;mysql&#34;のデータを破棄できているか確認する。<br/>
 Docker Composeプロジェクト終了時にボリュームも破棄したい場合は-vオプションを付与する。</p>
 </div>
 </div>

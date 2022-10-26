@@ -104,22 +104,7 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_前提条件">前提条件</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-<li><a href="#_設定">設定</a></li>
-<li><a href="#_メモ">メモ</a>
-<ul class="sectlevel2">
-<li><a href="#_エディタ">エディタ</a></li>
-<li><a href="#_固定ip">固定IP</a></li>
-</ul>
-</li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
@@ -234,7 +219,7 @@ layui.use('element', function(){
 <h2 id="_設定">設定</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>基本的にRaspberryPiの公式ドキュメントを参考に進めました。<br>
+<p>基本的にRaspberryPiの公式ドキュメントを参考に進めました。<br/>
 参照したページは参考記事のセクションに記載してあります。</p>
 </div>
 </div>
@@ -245,16 +230,16 @@ layui.use('element', function(){
 <div class="sect2">
 <h3 id="_エディタ">エディタ</h3>
 <div class="paragraph">
-<p>sudo実行時に必ずパスワードを求めるように設定するために/etc/sudoers.d/010_pi-nopasswdの内容を編集する必要がありました。<br>
-sudoersファイルを編集するためのコマンド <strong>visudo</strong> を利用して編集するのですが、デフォルトのエディタがnanoになっていて使いにくかったのでVIMに変えました。<br>
+<p>sudo実行時に必ずパスワードを求めるように設定するために/etc/sudoers.d/010_pi-nopasswdの内容を編集する必要がありました。<br/>
+sudoersファイルを編集するためのコマンド <strong>visudo</strong> を利用して編集するのですが、デフォルトのエディタがnanoになっていて使いにくかったのでVIMに変えました。<br/>
 参考記事の <strong>Ubuntu visudoのエディタをnanoからvimに変更する</strong> にならって変更しました。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_固定ip">固定IP</h3>
 <div class="paragraph">
-<p>ゲートウェイのアドレスを誤入力していたため外部ネットワークに繋がらなくなりました。<br>
-その際にpingを利用してどこに問題があるか切り分ける方法です。<br></p>
+<p>ゲートウェイのアドレスを誤入力していたため外部ネットワークに繋がらなくなりました。<br/>
+その際にpingを利用してどこに問題があるか切り分ける方法です。<br/></p>
 </div>
 <div class="dlist">
 <dl>

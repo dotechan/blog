@@ -6,18 +6,14 @@
     <description>Recent content in 書籍 on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 09 May 2020 23:05:53 +0900</lastBuildDate>
-    
-	<atom:link href="https://dotechan.github.io/blog/tags/%E6%9B%B8%E7%B1%8D/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 09 May 2020 23:05:53 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/%E6%9B%B8%E7%B1%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>レガシーコードからの脱却</title>
       <link>https://dotechan.github.io/blog/2020/05/09/break_away_legacy_code/</link>
       <pubDate>Sat, 09 May 2020 23:05:53 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2020/05/09/break_away_legacy_code/</guid>
-      <description>Table of Contents はじめに 参考文献 感想 第一部 第二部 はじめに 書籍を読んだ感想です。要約ではないです。 参考文献 David Scott Bernstein (2019)『レガシーコードからの脱却 ソ</description>
+      <description>はじめに 書籍を読んだ感想です。要約ではないです。 参考文献 David Scott Bernstein (2019)『レガシーコードからの脱却 ソフトウェアの寿命を延ばし価値を高める9</description>
     </item>
     
   </channel>

@@ -112,34 +112,12 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_前提条件">前提条件</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-<li><a href="#_ブログ公開までの流れ">ブログ公開までの流れ</a>
-<ul class="sectlevel2">
-<li><a href="#_1_chocolateyをインストール">1. Chocolateyをインストール</a></li>
-<li><a href="#_2_hugoをインストール">2. Hugoをインストール</a></li>
-<li><a href="#_3_hugoのquick_startを実施">3. HugoのQuick Startを実施</a></li>
-<li><a href="#_4_github_pagesのリポジトリを作成">4. GitHub Pagesのリポジトリを作成</a></li>
-<li><a href="#_5_github_user_pagesからquick_startで生成したコンテンツを公開">5. GitHub User PagesからQuick Startで生成したコンテンツを公開</a></li>
-<li><a href="#_6_hugoで生成する静的サイトのテーマを変更する">6. Hugoで生成する静的サイトのテーマを変更する</a></li>
-<li><a href="#_7_github_project_pagesからコンテンツを公開">7. GitHub Project Pagesからコンテンツを公開</a></li>
-<li><a href="#_8_asciidoctorのインストールおまけ">8. Asciidoctorのインストール(おまけ)</a></li>
-<li><a href="#_9_go_templatesのカスタマイズおまけ">9. Go Templatesのカスタマイズ(おまけ)</a></li>
-</ul>
-</li>
-<li><a href="#_最後に">最後に</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。<br>
+<p>Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。<br/>
 ブログを公開するまでの流れを備忘録として残しておきます。</p>
 </div>
 </div>
@@ -261,7 +239,7 @@ layui.use('element', function(){
 <div class="sect2">
 <h3 id="_1_chocolateyをインストール">1. Chocolateyをインストール</h3>
 <div class="paragraph">
-<p>Windowsのパッケージ管理ツールとしてchocolateyをインストールします。<br>
+<p>Windowsのパッケージ管理ツールとしてchocolateyをインストールします。<br/>
 <a href="https://chocolatey.org/install" class="bare">https://chocolatey.org/install</a></p>
 </div>
 <div class="paragraph">
@@ -271,17 +249,17 @@ layui.use('element', function(){
 <div class="sect2">
 <h3 id="_2_hugoをインストール">2. Hugoをインストール</h3>
 <div class="paragraph">
-<p>静的サイトジェネレーターとしてHugoをインストールします。<br>
+<p>静的サイトジェネレーターとしてHugoをインストールします。<br/>
 <a href="https://gohugo.io/getting-started/installing#windows" class="bare">https://gohugo.io/getting-started/installing#windows</a></p>
 </div>
 <div class="paragraph">
-<p>私自身、静的サイトジェネレーターの使用経験もなければ、HTMLやCSSも<br>
+<p>私自身、静的サイトジェネレーターの使用経験もなければ、HTMLやCSSも<br/>
 ドットインストールでチュートリアルを実施したことがあるくらいで書けません。</p>
 </div>
 <div class="paragraph">
-<p>そのため、どの静的サイトジェネレーターを使用するか悩みましたが、<br>
-参考記事にあげた"静的サイトジェネレーターの比較とHugoに決めた理由"を参考にして<br>
-他の静的サイトジェネレーターと比べても"爆速"というところに惹かれ、Hugoを採用した。</p>
+<p>そのため、どの静的サイトジェネレーターを使用するか悩みましたが、<br/>
+参考記事にあげた&#34;静的サイトジェネレーターの比較とHugoに決めた理由&#34;を参考にして<br/>
+他の静的サイトジェネレーターと比べても&#34;爆速&#34;というところに惹かれ、Hugoを採用した。</p>
 </div>
 <div class="paragraph">
 <p>後はGoってなんか面白そうっていう単純な理由もあります😂</p>
@@ -290,8 +268,8 @@ layui.use('element', function(){
 <div class="sect2">
 <h3 id="_3_hugoのquick_startを実施">3. HugoのQuick Startを実施</h3>
 <div class="paragraph">
-<p>ブログ公開にあたってMustではないですが、Hugoで簡単かつ爆速に静的サイトを<br>
-生成できるというのが体験できるので実施しました。<br>
+<p>ブログ公開にあたってMustではないですが、Hugoで簡単かつ爆速に静的サイトを<br/>
+生成できるというのが体験できるので実施しました。<br/>
 <a href="https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site" class="bare">https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site</a></p>
 </div>
 <div class="paragraph">
@@ -301,19 +279,19 @@ layui.use('element', function(){
 <div class="sect2">
 <h3 id="_4_github_pagesのリポジトリを作成">4. GitHub Pagesのリポジトリを作成</h3>
 <div class="paragraph">
-<p>GitHub Pagesは自前でサーバを用意せずに、GitHubのリポジトリから<br>
+<p>GitHub Pagesは自前でサーバを用意せずに、GitHubのリポジトリから<br/>
 直接Webサイトを公開できる静的なサイトホスティングサービスです。</p>
 </div>
 <div class="paragraph">
-<p>リポジトリの推奨上限は1GBのようですが、ブログといった使用用途であれば<br>
-雑に計算して、1つの記事が10Kbだとしても200,000記事は書けるので<br>
+<p>リポジトリの推奨上限は1GBのようですが、ブログといった使用用途であれば<br/>
+雑に計算して、1つの記事が10Kbだとしても200,000記事は書けるので<br/>
 容量の大きい画像さえ載せなければスケーラビリティの問題はないでしょう。</p>
 </div>
 <div class="paragraph">
 <p>もっとも、スケーラビリティを心配するほどブログの更新が続くかは怪しいですが😂</p>
 </div>
 <div class="paragraph">
-<p>このタイミングではGitHub User Pagesとしてリポジトリを作成しました。<br>
+<p>このタイミングではGitHub User Pagesとしてリポジトリを作成しました。<br/>
 <a href="https://help.github.com/ja/github/working-with-github-pagescreating-a-github-pages-site" class="bare">https://help.github.com/ja/github/working-with-github-pagescreating-a-github-pages-site</a></p>
 </div>
 <div class="paragraph">
@@ -323,30 +301,30 @@ layui.use('element', function(){
 <div class="sect2">
 <h3 id="_5_github_user_pagesからquick_startで生成したコンテンツを公開">5. GitHub User PagesからQuick Startで生成したコンテンツを公開</h3>
 <div class="paragraph">
-<p>GitHub Pagesのリポジトリに生成したWebサイト(以降、コンテンツ)を格納するだけ<br>
+<p>GitHub Pagesのリポジトリに生成したWebサイト(以降、コンテンツ)を格納するだけ<br/>
 <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github#github-user-or-organization-pages" class="bare">https://gohugo.io/hosting-and-deployment/hosting-on-github#github-user-or-organization-pages</a></p>
 </div>
 <div class="paragraph">
-<p>Youtubeにチュートリアルもありわかりやすかったです。<br>
+<p>Youtubeにチュートリアルもありわかりやすかったです。<br/>
 <a href="https://www.youtube.com/watch?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3v=qtIqKaDlqXo" class="bare">https://www.youtube.com/watch?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3v=qtIqKaDlqXo</a></p>
 </div>
 <div class="paragraph">
-<p>git-submoduleコマンドは初めて使ったが便利でした。<br>
+<p>git-submoduleコマンドは初めて使ったが便利でした。<br/>
 他にもworktreeなど便利なコマンドもあったので、ここらへんは後日まとめます。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_6_hugoで生成する静的サイトのテーマを変更する">6. Hugoで生成する静的サイトのテーマを変更する</h3>
 <div class="paragraph">
-<p>テーマの一覧から自分が使いたいテーマを探して取り込みます。<br>
+<p>テーマの一覧から自分が使いたいテーマを探して取り込みます。<br/>
 <a href="https://themes.gohugo.io/" class="bare">https://themes.gohugo.io/</a></p>
 </div>
 <div class="paragraph">
-<p>今回は見た目と色合いがシンプルで気に入ったのでErblogというテーマを使用することにしました。<br>
+<p>今回は見た目と色合いがシンプルで気に入ったのでErblogというテーマを使用することにしました。<br/>
 <a href="https://themes.gohugo.io/erblog/" class="bare">https://themes.gohugo.io/erblog/</a></p>
 </div>
 <div class="paragraph">
-<p>テーマの設定はconfig.tomlファイルに記述します。<br>
+<p>テーマの設定はconfig.tomlファイルに記述します。<br/>
 今回はportraitなどテーマのREADMEを参考にカスタマイズしました。</p>
 </div>
 <div class="paragraph">
@@ -356,67 +334,67 @@ layui.use('element', function(){
 <div class="sect2">
 <h3 id="_7_github_project_pagesからコンテンツを公開">7. GitHub Project Pagesからコンテンツを公開</h3>
 <div class="paragraph">
-<p>Github User Pagesとしてコンテンツを公開していたため、<br>
-コンテンツ生成前のファイルやdeploy用のシェルスクリプトと<br>
+<p>Github User Pagesとしてコンテンツを公開していたため、<br/>
+コンテンツ生成前のファイルやdeploy用のシェルスクリプトと<br/>
 公開するコンテンツが別々のリポジトリで管理していました。</p>
 </div>
 <div class="paragraph">
-<p>今回はブログに必要なファイルを1つのリポジトリでまとめて管理したかったので<br>
-blogというリポジトリを新規で作成し、GitHub Project Pagesの作法にならって<br>
-gh-pagesブランチからコンテンツを公開するように変更しました。<br>
+<p>今回はブログに必要なファイルを1つのリポジトリでまとめて管理したかったので<br/>
+blogというリポジトリを新規で作成し、GitHub Project Pagesの作法にならって<br/>
+gh-pagesブランチからコンテンツを公開するように変更しました。<br/>
 <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github#deployment-of-project-pages-from-your-gh-pages-branch" class="bare">https://gohugo.io/hosting-and-deployment/hosting-on-github#deployment-of-project-pages-from-your-gh-pages-branch</a></p>
 </div>
 <div class="paragraph">
-<p>gh-pagesブランチにはコンテンツを格納するpublicディレクトリのみをpushします。<br>
-ここらへんはgit-worktreeを使用することで1つのリポジトリに対して<br>
+<p>gh-pagesブランチにはコンテンツを格納するpublicディレクトリのみをpushします。<br/>
+ここらへんはgit-worktreeを使用することで1つのリポジトリに対して<br/>
 複数のワークツリーを紐づけることができて、少ない手間で実行することができます。</p>
 </div>
 <div class="paragraph">
-<p>これでHugoでブログのコンテンツを生成し、GitHub Pagesでインターネットに<br>
+<p>これでHugoでブログのコンテンツを生成し、GitHub Pagesでインターネットに<br/>
 公開することができました。👏</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_8_asciidoctorのインストールおまけ">8. Asciidoctorのインストール(おまけ)</h3>
 <div class="paragraph">
-<p>今のところmarkdownでも問題ないのだが、今後技術情報をまとめる上でUMLだったりを<br>
-掲載することもあると考え、Asciidoctorとdiagramのプラグインを入れおきました。<br>
-AsciidoctorはAsciidocファイルをHTMLファイルにコンバートしてくれます。<br>
+<p>今のところmarkdownでも問題ないのだが、今後技術情報をまとめる上でUMLだったりを<br/>
+掲載することもあると考え、Asciidoctorとdiagramのプラグインを入れおきました。<br/>
+AsciidoctorはAsciidocファイルをHTMLファイルにコンバートしてくれます。<br/>
 <a href="https://asciidoctor.org/" class="bare">https://asciidoctor.org/</a></p>
 </div>
 <div class="paragraph">
-<p>Hugoでは元々asciidocをサポートしています。<br>
+<p>Hugoでは元々asciidocをサポートしています。<br/>
 <a href="https://gohugo.io/content-management/formats/#external-helpers" class="bare">https://gohugo.io/content-management/formats/#external-helpers</a></p>
 </div>
 <div class="paragraph">
-<p>なおパフォーマンスの関係からAsciidoctor呼び出し時のオプションに<br>
-「--no-header-footer --safe --trace」を指定しているようで<br>
+<p>なおパフォーマンスの関係からAsciidoctor呼び出し時のオプションに<br/>
+「--no-header-footer --safe --trace」を指定しているようで<br/>
 Asciidocの脚注といった表現を利用することができないようだ。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_9_go_templatesのカスタマイズおまけ">9. Go Templatesのカスタマイズ(おまけ)</h3>
 <div class="paragraph">
-<p>Recent Postsから投稿した記事へ飛ぼうとしたら404 Not Foundとなってしまいます…。<br>
-ブラウザのURLを見ると生成されたリンクが正しくありません。URLの設定周りがおかしそうです。<br>
+<p>Recent Postsから投稿した記事へ飛ぼうとしたら404 Not Foundとなってしまいます…。<br/>
+ブラウザのURLを見ると生成されたリンクが正しくありません。URLの設定周りがおかしそうです。<br/>
 同様にCategoriesやtagsも正しいURLにリンクされていないことがわかりました。</p>
 </div>
 <div class="paragraph">
 <p>結局、今回はerblogで使用しているPartial Templateを自前で用意したものに置き換える形で解決しました。</p>
 </div>
 <div class="paragraph">
-<p>erblogで用意されていたPartial Templateのうち、いくつかファイルで<br>
+<p>erblogで用意されていたPartial Templateのうち、いくつかファイルで<br/>
 jsやcssファイルが正しくロードされていませんでした。</p>
 </div>
 <div class="paragraph">
 <p><a href="https://gohugo.io/templates/partials/">Partial Templates</a>
-上記を参考にlayouts/partials/配下に同名のhtmlファイルを用意します。<br>
-自前で用意したhtmlファイルでは正しくjsファイルがロードできるように<br>
-href属性を"{{.RelPermalink}}/jsファイルのpath"といった形式に書き換えます。<br>
+上記を参考にlayouts/partials/配下に同名のhtmlファイルを用意します。<br/>
+自前で用意したhtmlファイルでは正しくjsファイルがロードできるように<br/>
+href属性を&#34;{{.RelPermalink}}/jsファイルのpath&#34;といった形式に書き換えます。<br/>
 こうすることで正しくjsファイルの読み込みができ、レイアウトの崩れが発生するなど防ぐことができました。</p>
 </div>
 <div class="paragraph">
-<p>HTMLで記述されたGo Templates内では"{{ }}"からHugoのvariablesやfunctionsを使用できます。<br>
+<p>HTMLで記述されたGo Templates内では&#34;{{ }}&#34;からHugoのvariablesやfunctionsを使用できます。<br/>
 <a href="https://gohugo.io/templates/introduction/#basic-syntax">Basic Syntax</a>
 今後、自身でtemplatesをカスタマイズしたくなったらイジってみます。</p>
 </div>

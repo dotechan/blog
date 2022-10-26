@@ -6,18 +6,14 @@
     <description>Recent content in 振り返り on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 31 Dec 2021 22:12:09 +0900</lastBuildDate>
-    
-	<atom:link href="https://dotechan.github.io/blog/tags/%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 31 Dec 2021 22:12:09 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2021年の振り返り</title>
       <link>https://dotechan.github.io/blog/2021/12/31/2021_retrospective/</link>
       <pubDate>Fri, 31 Dec 2021 22:12:09 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2021/12/31/2021_retrospective/</guid>
-      <description>Table of Contents スキル棚卸し 業務履歴 振り返り 来年の抱負 スキル棚卸し 業務履歴 Androidアプリ開発4年6ヶ月 Webアプリケーション開発12ヶ月 振り返り</description>
+      <description>スキル棚卸し 業務履歴 Androidアプリ開発4年6ヶ月 Webアプリケーション開発12ヶ月 振り返り 今年やったこと 月毎に新しく触り始めた技術や注</description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@
       <pubDate>Sun, 01 Aug 2021 23:49:06 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2021/08/01/20210801_inventory_skill/</guid>
-      <description>Table of Contents スキル棚卸し 業務履歴 振り返り スキル棚卸し 業務履歴 Androidアプリ開発4年6ヶ月 Webアプリケーション開発7ヶ月 振り返り やりたいこと</description>
+      <description>スキル棚卸し 業務履歴 Androidアプリ開発4年6ヶ月 Webアプリケーション開発7ヶ月 振り返り やりたいこと・なりたい姿 課題を見つけ本質的な解</description>
     </item>
     
     <item>
@@ -35,7 +31,7 @@
       <pubDate>Fri, 02 Jul 2021 08:52:42 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/2021/07/02/20210702_inventory_skill/</guid>
-      <description>Table of Contents はじめに スキル棚卸し 業務履歴 強み 弱み 振り返り やりたいこと・なりたい姿 先月のテーマ 今月のテーマ はじめに 先月の振り返りを後回しにしているう</description>
+      <description>はじめに 先月の振り返りを後回しにしているうちに月を跨いでしまった。 習慣にできないのは目標がないから継続的に進める気にならないのかな。 振り返り</description>
     </item>
     
   </channel>

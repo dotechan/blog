@@ -104,25 +104,15 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_はじめに">はじめに</a></li>
-<li><a href="#_モチベーション">モチベーション</a></li>
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-<li><a href="#_タイミング図とは">タイミング図とは</a></li>
-<li><a href="#_例">例</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_はじめに">はじめに</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>システムテストの障害解析時に複数のモジュール担当者で合同でログ解析を行う機会がありました。<br>
-それぞれのモジュールは並列に処理が動き、あるタイミングでそれぞれの処理がバッティングすると問題が発生します。<br>
-障害発生ケースだけであればシーケンス図でまとめることでわかりやすくまとめることができます。<br>
-しかし、障害発生ケースと問題が発生しなかったケースの比較をしたい時、シーケンス図だと時間のスケールを表現が難しいです。<br>
+<p>システムテストの障害解析時に複数のモジュール担当者で合同でログ解析を行う機会がありました。<br/>
+それぞれのモジュールは並列に処理が動き、あるタイミングでそれぞれの処理がバッティングすると問題が発生します。<br/>
+障害発生ケースだけであればシーケンス図でまとめることでわかりやすくまとめることができます。<br/>
+しかし、障害発生ケースと問題が発生しなかったケースの比較をしたい時、シーケンス図だと時間のスケールを表現が難しいです。<br/>
 そこで時間のスケールを表現する手法やツールを調べていたところPlantUMLのタイミング図を見つけました。</p>
 </div>
 </div>
@@ -131,8 +121,8 @@ layui.use('element', function(){
 <h2 id="_モチベーション">モチベーション</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>UMLのタイミング図の紹介です。<br>
-タイミング図を知らない人向けの記事になります。<br></p>
+<p>UMLのタイミング図の紹介です。<br/>
+タイミング図を知らない人向けの記事になります。<br/></p>
 </div>
 </div>
 </div>
@@ -170,8 +160,8 @@ layui.use('element', function(){
 <h2 id="_タイミング図とは">タイミング図とは</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>クラスやオブジェクトの状態を時系列で表す図です。<br>
-状態遷移を起こすタイミングや他のオブジェクトに対するメッセージなどを表現することができます。<br>
+<p>クラスやオブジェクトの状態を時系列で表す図です。<br/>
+状態遷移を起こすタイミングや他のオブジェクトに対するメッセージなどを表現することができます。<br/>
 タイミング図により、オブジェクトの状態が遷移する順番やタイミングが視覚的に表現できます。</p>
 </div>
 <div class="paragraph">
@@ -189,8 +179,8 @@ legend
 平日の顔を合わせる時間は3時間30分である。
 end legend
 
-concise "夫" as Husbasnd
-concise "妻" as Wife
+concise &#34;夫&#34; as Husbasnd
+concise &#34;妻&#34; as Wife
 
 scale 3600 as 80 pixels
 

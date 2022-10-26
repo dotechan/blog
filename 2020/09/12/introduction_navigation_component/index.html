@@ -104,16 +104,7 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_参考記事">参考記事</a></li>
-<li><a href="#_用語">用語</a></li>
-<li><a href="#_使い方">使い方</a></li>
-<li><a href="#_所感">所感</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_環境">環境</h2>
 <div class="sectionbody">
@@ -221,30 +212,30 @@ Destinationのパラメータやアニメーション情報を保持している
 <p>(例)BottomNavigationViewの画面遷移を指定する</p>
 </div>
 <div class="paragraph">
-<p>BottomNavigationViewに表示するItemのidとNavigation Graphで宣言した<br>
+<p>BottomNavigationViewに表示するItemのidとNavigation Graphで宣言した<br/>
 Destinationのidを同じにしおきます。</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>&lt;menu xmlns:android="http://schemas.android.com/apk/res/android"&gt;
+<pre class="highlight"><code>&lt;menu xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;&gt;
     &lt;item
-        android:id="@+id/first_dest"
+        android:id=&#34;@+id/first_dest&#34;
     &lt;item
-        android:id="@+id/second_dest"
+        android:id=&#34;@+id/second_dest&#34;
 &lt;/ menu&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>&lt;navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<pre class="highlight"><code>&lt;navigation xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;
     &lt;fragment
-        android:id="@+id/first_dest" /&gt;
+        android:id=&#34;@+id/first_dest&#34; /&gt;
     &lt;fragment
-        android:id="@+id/second_dest" /&gt;</code></pre>
+        android:id=&#34;@+id/second_dest&#34; /&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>あとは下記のように記述するだけでBottomNavigationView選択時の画面遷移や<br>
+<p>あとは下記のように記述するだけでBottomNavigationView選択時の画面遷移や<br/>
 Itemの選択状態を管理してくれます。</p>
 </div>
 <div class="listingblock">
@@ -264,7 +255,7 @@ bottomNavigationView?.setupWithNavController(navController)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>setupWithNavController()の先でクリックリスナーや画面が変わった時の<br>
+<p>setupWithNavController()の先でクリックリスナーや画面が変わった時の<br/>
 状態変更のリスナーのセットを行ってくれるためです。</p>
 </div>
 </div>

@@ -104,22 +104,7 @@ layui.use('element', function(){
 </h3>
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_環境">環境</a></li>
-<li><a href="#_前提条件">前提条件</a></li>
-<li><a href="#_手順">手順</a>
-<ul class="sectlevel2">
-<li><a href="#_1_docker_hubのmysql公式イメージを使用してmysqlのコンテナを作成する">1. Docker HubのMySQL公式イメージを使用してMySQLのコンテナを作成する</a></li>
-<li><a href="#_2_mysql公式からサンプルデータを取得してローカルに解凍する">2. MySQL公式からサンプルデータを取得してローカルに解凍する</a></li>
-<li><a href="#_3_mysqlのコンテナに対してsqlを実行することでサンプルデータのデータベースを構築する">3. MySQLのコンテナに対してsqlを実行することでサンプルデータのデータベースを構築する</a></li>
-<li><a href="#_4_データベースを確認する">4. データベースを確認する</a></li>
-</ul>
-</li>
-<li><a href="#_参考記事">参考記事</a></li>
-</ul>
-</div>
+                    
 <div class="sect1">
 <h2 id="_環境">環境</h2>
 <div class="sectionbody">
@@ -176,7 +161,7 @@ layui.use('element', function(){
 <h3 id="_3_mysqlのコンテナに対してsqlを実行することでサンプルデータのデータベースを構築する">3. MySQLのコンテナに対してsqlを実行することでサンプルデータのデータベースを構築する</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>docker exec -i world-db sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' &lt; ./world-db/world.sql</code></pre>
+<pre class="highlight"><code>docker exec -i world-db sh -c &#39;exec mysql -uroot -p&#34;$MYSQL_ROOT_PASSWORD&#34;&#39; &lt; ./world-db/world.sql</code></pre>
 </div>
 </div>
 </div>
