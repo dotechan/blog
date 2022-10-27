@@ -6,7 +6,16 @@
     <description>Recent content on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 26 Oct 2022 23:33:58 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Oct 2022 23:38:36 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022年10月27日時点でのzshrcの設定</title>
+      <link>https://dotechan.github.io/blog/2022/10/27/20221027_zshrc/</link>
+      <pubDate>Thu, 27 Oct 2022 23:38:36 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2022/10/27/20221027_zshrc/</guid>
+      <description>はじめに 環境 macOS Monterey(12.6) zshrcの内容 # 環境変数 export LANG=ja_JP.UTF-8 ## 色を使用出来るようにする autoload -Uz colors colors ## ターミナルの操作感をviチックに変更 bindkey -v ## 補完機能を有効に</description>
+    </item>
+    
     <item>
       <title>2022年10月26日時点でのvimrcの設定</title>
       <link>https://dotechan.github.io/blog/2022/10/26/20221026_vimrc/</link>
