@@ -1,3 +1,4 @@
 # .gitignoreが置いてあるディレクトリをカレントディレクトリとしてpublic/を無視する
 /public/
 
+.hugo_build.lock
