@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenIDConnect on Work From Dote</title>
+    <link>https://dotechan.github.io/blog/tags/openidconnect/</link>
+    <description>Recent content in OpenIDConnect on Work From Dote</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 29 Oct 2022 11:28:03 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/openidconnect/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OAuth/OpenIDConnect入門</title>
+      <link>https://dotechan.github.io/blog/2022/10/29/20221029_oauth_intro/</link>
+      <pubDate>Sat, 29 Oct 2022 11:28:03 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2022/10/29/20221029_oauth_intro/</guid>
+      <description>はじめに 環境 macOS Big Sur(11.5.2) 前提条件 本文 OAuthとは、OpenID Connectとは OAuthとは APIの利用可否を実行時にアクセストークンの提示を</description>
+    </item>
+    
+  </channel>
+</rss>

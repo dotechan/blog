@@ -1,0 +1,248 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - OAuth/OpenIDConnect入門 </title>
+
+    
+    
+    <meta content="OAuth, OpenIDConnect, 技術" name="keywords">
+    
+    <meta content="Work From Dote - Software Design 10月号のOAuth/OpenIDConnect入門を読んでのまとめ" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>OAuth/OpenIDConnect入門</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2022-10-29</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/oauth/">
+            <span class="layui-badge" style="vertical-align: 2px;">OAuth</span>
+        </a>
+    
+        <a href="/blog/tags/openidconnect/">
+            <span class="layui-badge" style="vertical-align: 2px;">OpenIDConnect</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>macOS Big Sur(11.5.2)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_前提条件">前提条件</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_本文">本文</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_oauthとはopenid_connectとは">OAuthとは、OpenID Connectとは</h3>
+<div class="sect3">
+<h4 id="_oauthとは">OAuthとは</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>APIの利用可否を実行時にアクセストークンの提示を要求する方法がOAuth2.0という技術仕様で定義されている</p>
+</li>
+<li>
+<p>アクセストークンを発行するサーバをOAuth2.0では認可サーバと呼んでいる</p>
+</li>
+<li>
+<p>ユーザーが許可した場合のみプログラムはAPI利用に必要なアクセストークンの発行ができる、事前にアクセストークンを受け取っておく必要があるのがOAuth2.0の特徴</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_openid_connectとは">OpenID Connectとは</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>SSOでユーザー認証の結果と同時にユーザー情報もサービス間で伝播させるようなしくみをID連携と呼ぶ</p>
+</li>
+<li>
+<p>ID連携の実現方法のうちOpenID Connectという技術仕様がある</p>
+</li>
+<li>
+<p>OpenID Connectはユーザー認証方法については仕様の範囲対象外と明記している</p>
+</li>
+<li>
+<p>ユーザー認証の結果やユーザー属性情報の表現方法について規定しており、そのデータ形式をIDトークンと呼ぶ</p>
+</li>
+<li>
+<p>ユーザー認証を行い、IDトークンを発行するサーバをOpenID ConnectではOpenIDプロバイダと呼ぶ</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_まとめ">まとめ</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>APIの機能提供時に利用されるのがアクセストークン</p>
+</li>
+<li>
+<p>サービス間でのユーザーの認証結果や情報の連携に利用されるのがIDトークン</p>
+</li>
+<li>
+<p>役割は違うもののアクセストークンとIDトークンは同一サーバで一連の流れの中で発行されることが多い</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_知っておきたい仕様と規格">知っておきたい仕様と規格</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>トークン発行処理の流れにはいくつかのバリエーションがあり、そのうちの一つに認可コードフローがある</p>
+</li>
+<li>
+<p>OAuth2.0の目的が、クライアントをユーザー認証に介在させることなくクライアントにAPIアクセス権限を与えることにあるので、Webブラウザを介した間接的なやりとりはOAuth2.0の設計として意図したもの</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>川﨑貴彦、 「挫折しないOAuth/OpenIDConnect入門」、 2021/10</p>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

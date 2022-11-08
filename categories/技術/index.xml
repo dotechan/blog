@@ -6,7 +6,16 @@
     <description>Recent content in 技術 on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 27 Oct 2022 23:38:36 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Oct 2022 11:28:03 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OAuth/OpenIDConnect入門</title>
+      <link>https://dotechan.github.io/blog/2022/10/29/20221029_oauth_intro/</link>
+      <pubDate>Sat, 29 Oct 2022 11:28:03 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2022/10/29/20221029_oauth_intro/</guid>
+      <description>はじめに 環境 macOS Big Sur(11.5.2) 前提条件 本文 OAuthとは、OpenID Connectとは OAuthとは APIの利用可否を実行時にアクセストークンの提示を</description>
+    </item>
+    
     <item>
       <title>2022年10月27日時点でのzshrcの設定</title>
       <link>https://dotechan.github.io/blog/2022/10/27/20221027_zshrc/</link>
