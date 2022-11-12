@@ -6,7 +6,16 @@
     <description>Recent content in JavaScript on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 01 Jan 2021 12:41:19 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Nov 2022 00:03:01 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bookmarkletの活用術</title>
+      <link>https://dotechan.github.io/blog/2022/11/13/20221113_bookmarklet/</link>
+      <pubDate>Sun, 13 Nov 2022 00:03:01 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2022/11/13/20221113_bookmarklet/</guid>
+      <description>環境 macOS Monterey(12.6) Google Chrome(107.0.5304.87) 前提条件 JavaScriptの経験がありDOMの操作ができる人向け 本題 bookmarkletとは 即時関数として記述したJavaS</description>
+    </item>
+    
     <item>
       <title>React入門</title>
       <link>https://dotechan.github.io/blog/2021/01/01/react_tutorial/</link>

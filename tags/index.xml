@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 29 Oct 2022 11:28:03 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Nov 2022 00:03:01 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bookmarklet</title>
+      <link>https://dotechan.github.io/blog/tags/bookmarklet/</link>
+      <pubDate>Sun, 13 Nov 2022 00:03:01 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/bookmarklet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://dotechan.github.io/blog/tags/javascript/</link>
+      <pubDate>Sun, 13 Nov 2022 00:03:01 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>OAuth</title>
       <link>https://dotechan.github.io/blog/tags/oauth/</link>
@@ -229,15 +247,6 @@
       <pubDate>Sun, 10 Jan 2021 11:34:32 +0900</pubDate>
       
       <guid>https://dotechan.github.io/blog/tags/%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://dotechan.github.io/blog/tags/javascript/</link>
-      <pubDate>Fri, 01 Jan 2021 12:41:19 +0900</pubDate>
-      
-      <guid>https://dotechan.github.io/blog/tags/javascript/</guid>
       <description></description>
     </item>
     

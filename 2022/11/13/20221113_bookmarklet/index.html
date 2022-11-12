@@ -1,0 +1,297 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - bookmarkletの活用術 </title>
+
+    
+    
+    <meta content="bookmarklet, JavaScript, 技術" name="keywords">
+    
+    <meta content="Work From Dote - bookmarkletを利用してGithubのダッシュボードからリポジトリ名を抽出する方法" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>bookmarkletの活用術</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2022-11-13</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/bookmarklet/">
+            <span class="layui-badge" style="vertical-align: 2px;">bookmarklet</span>
+        </a>
+    
+        <a href="/blog/tags/javascript/">
+            <span class="layui-badge" style="vertical-align: 2px;">JavaScript</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>macOS Monterey(12.6)</p>
+</li>
+<li>
+<p>Google Chrome(107.0.5304.87)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_前提条件">前提条件</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>JavaScriptの経験がありDOMの操作ができる人向け</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_本題">本題</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_bookmarkletとは">bookmarkletとは</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>即時関数として記述したJavaScriptのソースコードをブックマークから呼び出すことができる技術</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_例_githubのダッシュボードからリポジトリ名を抽出する">例.Githubのダッシュボードからリポジトリ名を抽出する</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">javascript: (() =&gt; {
+  /* リポジトリ名を抽出する */
+  const repoUlElement = document.querySelector(
+    &#34;#dashboard-repositories-box &gt; div &gt; div &gt; div &gt; ul&#34;
+  );
+  const repoLiElements = repoUlElement.getElementsByTagName(&#34;li&#34;);
+  const repoNameList = [];
+  for (const repoLiElement of repoLiElements) {
+    const repoName = repoLiElement.querySelector(&#34;div &gt; div &gt; a&#34;).textContent;
+    repoNameList.push(repoName);
+  }
+
+  /* 抽出したリポジトリ名の配列を改行文字をセパレータにして一つの文字列に結合する */
+  const result = repoNameList.join(&#34;&#34;);
+
+  /* クリップボードにリポジトリ名をコピーする */
+  navigator.clipboard
+    .writeText(`${result}`)
+    .then(() =&gt; {
+      alert(&#34;success&#34;);
+    })
+    .catch(() =&gt; {
+      alert(&#34;failed&#34;);
+    });
+})();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_注意点">注意点</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>&#34;javascript:&#34;を関数の前に付与する</p>
+</li>
+<li>
+<p>即時関数として記述する</p>
+</li>
+<li>
+<p>bookmarkletは1行にコンパイルされるので&#34;//&#34;を使用していると以降のソースコードがコメントと認識されてしまうためコメントは&#34;//&#34;ではなく&#34;/* */&#34;を使用する</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2021/01/01/react_tutorial/">
+                                <h2 class="">React入門</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2021-01-01</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/react/">
+            <span class="layui-badge" style="vertical-align: 2px;">React</span>
+        </a>
+    
+        <a href="/blog/tags/javascript/">
+            <span class="layui-badge" style="vertical-align: 2px;">JavaScript</span>
+        </a>
+    
+        <a href="/blog/tags/web%e3%82%a2%e3%83%97%e3%83%aa/">
+            <span class="layui-badge" style="vertical-align: 2px;">Webアプリ</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/10/30/first_javascript_nodejs/">
+                                <h2 class="">JavaScriptでxmlファイルを加工するスクリプトを作る</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-10-30</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/javascript/">
+            <span class="layui-badge" style="vertical-align: 2px;">JavaScript</span>
+        </a>
+    
+        <a href="/blog/tags/node.js/">
+            <span class="layui-badge" style="vertical-align: 2px;">Node.js</span>
+        </a>
+    
+        <a href="/blog/tags/dom/">
+            <span class="layui-badge" style="vertical-align: 2px;">DOM</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
