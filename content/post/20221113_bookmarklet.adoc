@@ -1,0 +1,58 @@
+---
+title: "bookmarkletの活用術"
+description: "bookmarkletを利用してGithubのダッシュボードからリポジトリ名を抽出する方法"
+date: 2022-11-13T00:03:01+09:00
+categories: ["技術"]
+tags: ["bookmarklet", "JavaScript"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== 環境
+
+* macOS Monterey(12.6)
+* Google Chrome(107.0.5304.87)
+
+== 前提条件
+* JavaScriptの経験がありDOMの操作ができる人向け
+
+== 本題
+
+=== bookmarkletとは
+* 即時関数として記述したJavaScriptのソースコードをブックマークから呼び出すことができる技術
+
+=== 例.Githubのダッシュボードからリポジトリ名を抽出する
+```js
+javascript: (() => {
+  /* リポジトリ名を抽出する */
+  const repoUlElement = document.querySelector(
+    "#dashboard-repositories-box > div > div > div > ul"
+  );
+  const repoLiElements = repoUlElement.getElementsByTagName("li");
+  const repoNameList = [];
+  for (const repoLiElement of repoLiElements) {
+    const repoName = repoLiElement.querySelector("div > div > a").textContent;
+    repoNameList.push(repoName);
+  }
+
+  /* 抽出したリポジトリ名の配列を改行文字をセパレータにして一つの文字列に結合する */
+  const result = repoNameList.join("");
+
+  /* クリップボードにリポジトリ名をコピーする */
+  navigator.clipboard
+    .writeText(`${result}`)
+    .then(() => {
+      alert("success");
+    })
+    .catch(() => {
+      alert("failed");
+    });
+})();
+```
+
+=== 注意点
+* "javascript:"を関数の前に付与する
+* 即時関数として記述する
+* bookmarkletは1行にコンパイルされるので"//"を使用していると以降のソースコードがコメントと認識されてしまうためコメントは"//"ではなく"/* */"を使用する
