@@ -385,5 +385,14 @@
       <description>はじめに Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。 ブログを公開するまでの流れを備忘録として残しておきます。 環</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://dotechan.github.io/blog/1/01/01/20230312_tax_return/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/1/01/01/20230312_tax_return/</guid>
+      <description>*-- title: &amp;#34;確定申告の手順&amp;#34; description: &amp;#34;マイナンバーカード連携を利用して確定申告をe*taxから行った時のメモ&amp;#34; date: 2023*03-12T13:37:34+09:00 categories: [&amp;</description>
+    </item>
+    
   </channel>
 </rss>
