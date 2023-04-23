@@ -1,0 +1,107 @@
+---
+title: "Node.js製のCLIツールからプッシュ通知を送信する"
+description: "FCMのコンソールからではなくCLIからAPIを叩いてプッシュ通知を送信するCLIを作成した時の備忘録"
+date: 2023-04-23T11:35:03+09:00
+categories: ["技術"]
+tags: ["FCM", "Node.js", "CLI"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+
+プッシュ通知を受け取るクライアントのアプリ開発には触れずプッシュ通知を送るサーバ側の実装内容に触れる。
+
+== 環境
+
+* macOS Monterey(12.6)
+* Node.js(16.13.0)
+* chalk(5.2.0)
+* commander(10.0.1)
+* firebase-admin(11.7.0)
+
+== 本題
+
+=== 手順
+1. Firebaseコンソールから秘密鍵を入手する
+2. クライアントの端末にFCMから払い出されたtokenを入手する
+3. Node.jsのCLIツールを作成する
+
+=== ソースコード
+```javascript
+#!/usr/bin/env node
+
+// @ts-check
+import { program } from "commander";
+import chalk from "chalk";
+
+import admin from "firebase-admin";
+
+// WARN: FirebaseコンソールからダウンロードしたFirebaseの秘密鍵はインターネット上に公開しないこと
+async function initializeFirebase() {
+  const SecretKey = await import(
+    "<JSONファイルのPath>"
+  );
+  const serviceAccount = SecretKey.default;
+
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
+}
+
+/**
+ *
+ * @param {string} registrationToken
+ * @returns {object}
+ */
+function buildMessage(registrationToken) {
+  // TODO: CLIのOptionでメッセージ内容を渡せるようにしてもいいかも;
+  return {
+    data: {
+      score: "850",
+      time: "2:45",
+    },
+    token: registrationToken,
+  };
+}
+
+/**
+ *
+ * @param {object} message
+ */
+async function sendMessage(message) {
+  const messaging = admin.messaging();
+  try {
+    const response = await messaging.send(message);
+    console.log(chalk.green(`Successfully sent message: ${response}`));
+  } catch (error) {
+    console.log(chalk.red(`Error sending message: ${error}`));
+  }
+}
+
+program
+  .version("1.0.0")
+  .description("Send push notifications to one specified device.")
+  .argument("<token>", "token registered in FCM")
+  .action(async (token) => {
+    console.log(chalk.blue(`token = ${token}`));
+    await initializeFirebase();
+    const message = buildMessage(token);
+    await sendMessage(message);
+  })
+  .parse(process.argv);
+```
+
+=== 気をつけること
+
+* Firebaseの秘密鍵を直接ソースコード上から読み込む方式を取っているのでリモートリポジトリへのプッシュはしないこと
+* Node.jsでESModuleと認識させるためにpackage.jsonでtype:moduleを指定している
+* Firebaseの秘密鍵のJSONファイルをdynamic importするためにexperimental-json-moduleフラグをONにする
+
+== 参考記事
+
+* Google Developers、 「アプリサーバーからの送信リクエストを作成する」、 2023-04-18、 https://firebase.google.com/docs/cloud-messaging/send-message?hl=ja、 (2023-04-23)
+* Google Developers、 「サーバーに Firebase Admin SDK を追加する」、 2023-04-15、 https://firebase.google.com/docs/admin/setup?hl=ja、 (2023-04-23)
+* Google Developers、 「Admin SDK Reference」、 2023-04-11、 https://firebase.google.com/docs/reference/admin?hl=ja、 (2023-04-23)
