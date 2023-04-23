@@ -1,0 +1,338 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Work From Dote - Node.js製のCLIツールからプッシュ通知を送信する </title>
+
+    
+    
+    <meta content="FCM, Node.js, CLI, 技術" name="keywords">
+    
+    <meta content="Work From Dote - FCMのコンソールからではなくCLIからAPIを叩いてプッシュ通知を送信するCLIを作成した時の備忘録" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" async
+        src="https://dotechan.github.io/blog//mathjax-3.0.0/tex-mml-chtml.js">
+    </script>
+    
+
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//layui/css/layui.css">
+    <link rel="stylesheet" href="https://dotechan.github.io/blog//self/css/default.css">
+    <script src="https://dotechan.github.io/blog//layui/layui.js"></script>
+
+
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/markdown.min.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//self/css/gallery.css">
+    <link rel="stylesheet" async href="https://dotechan.github.io/blog//font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://dotechan.github.io/blog//self/js/lazysizes.min.js" async></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="https://dotechan.github.io/blog/">
+        Work From Dote
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="https://dotechan.github.io/blog//post/">Posts</a></li>
+        
+
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="https://dotechan.github.io/blog//post/">Posts</a></dd>
+                
+
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="layui-elem-quote markdown-body single-title" >
+                    <h1>Node.js製のCLIツールからプッシュ通知を送信する</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2023-04-23</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/fcm/">
+            <span class="layui-badge" style="vertical-align: 2px;">FCM</span>
+        </a>
+    
+        <a href="/blog/tags/node.js/">
+            <span class="layui-badge" style="vertical-align: 2px;">Node.js</span>
+        </a>
+    
+        <a href="/blog/tags/cli/">
+            <span class="layui-badge" style="vertical-align: 2px;">CLI</span>
+        </a>
+    
+</h3>
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    
+<div class="sect1">
+<h2 id="_はじめに">はじめに</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プッシュ通知を受け取るクライアントのアプリ開発には触れずプッシュ通知を送るサーバ側の実装内容に触れる。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_環境">環境</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>macOS Monterey(12.6)</p>
+</li>
+<li>
+<p>Node.js(16.13.0)</p>
+</li>
+<li>
+<p>chalk(5.2.0)</p>
+</li>
+<li>
+<p>commander(10.0.1)</p>
+</li>
+<li>
+<p>firebase-admin(11.7.0)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_本題">本題</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_手順">手順</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Firebaseコンソールから秘密鍵を入手する</p>
+</li>
+<li>
+<p>クライアントの端末にFCMから払い出されたtokenを入手する</p>
+</li>
+<li>
+<p>Node.jsのCLIツールを作成する</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ソースコード">ソースコード</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">#!/usr/bin/env node
+
+// @ts-check
+import { program } from &#34;commander&#34;;
+import chalk from &#34;chalk&#34;;
+
+import admin from &#34;firebase-admin&#34;;
+
+// WARN: FirebaseコンソールからダウンロードしたFirebaseの秘密鍵はインターネット上に公開しないこと
+async function initializeFirebase() {
+  const SecretKey = await import(
+    &#34;&lt;JSONファイルのPath&gt;&#34;
+  );
+  const serviceAccount = SecretKey.default;
+
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
+}
+
+/**
+ *
+ * @param {string} registrationToken
+ * @returns {object}
+ */
+function buildMessage(registrationToken) {
+  // TODO: CLIのOptionでメッセージ内容を渡せるようにしてもいいかも;
+  return {
+    data: {
+      score: &#34;850&#34;,
+      time: &#34;2:45&#34;,
+    },
+    token: registrationToken,
+  };
+}
+
+/**
+ *
+ * @param {object} message
+ */
+async function sendMessage(message) {
+  const messaging = admin.messaging();
+  try {
+    const response = await messaging.send(message);
+    console.log(chalk.green(`Successfully sent message: ${response}`));
+  } catch (error) {
+    console.log(chalk.red(`Error sending message: ${error}`));
+  }
+}
+
+program
+  .version(&#34;1.0.0&#34;)
+  .description(&#34;Send push notifications to one specified device.&#34;)
+  .argument(&#34;&lt;token&gt;&#34;, &#34;token registered in FCM&#34;)
+  .action(async (token) =&gt; {
+    console.log(chalk.blue(`token = ${token}`));
+    await initializeFirebase();
+    const message = buildMessage(token);
+    await sendMessage(message);
+  })
+  .parse(process.argv);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_気をつけること">気をつけること</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Firebaseの秘密鍵を直接ソースコード上から読み込む方式を取っているのでリモートリポジトリへのプッシュはしないこと</p>
+</li>
+<li>
+<p>Node.jsでESModuleと認識させるためにpackage.jsonでtype:moduleを指定している</p>
+</li>
+<li>
+<p>Firebaseの秘密鍵のJSONファイルをdynamic importするためにexperimental-json-moduleフラグをONにする</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_参考記事">参考記事</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Google Developers、 「アプリサーバーからの送信リクエストを作成する」、 2023-04-18、 <a href="https://firebase.google.com/docs/cloud-messaging/send-message?hl=ja、" class="bare">https://firebase.google.com/docs/cloud-messaging/send-message?hl=ja、</a> (2023-04-23)</p>
+</li>
+<li>
+<p>Google Developers、 「サーバーに Firebase Admin SDK を追加する」、 2023-04-15、 <a href="https://firebase.google.com/docs/admin/setup?hl=ja、" class="bare">https://firebase.google.com/docs/admin/setup?hl=ja、</a> (2023-04-23)</p>
+</li>
+<li>
+<p>Google Developers、 「Admin SDK Reference」、 2023-04-11、 <a href="https://firebase.google.com/docs/reference/admin?hl=ja、" class="bare">https://firebase.google.com/docs/reference/admin?hl=ja、</a> (2023-04-23)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+
+        
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <h1 class="single-title">Relevant Topics</h1>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="layui-elem-quote" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/blog/2020/10/30/first_javascript_nodejs/">
+                                <h2 class="">JavaScriptでxmlファイルを加工するスクリプトを作る</h2>
+                            </a>
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 24px; vertical-align: -2px;"></i>
+    <span>2020-10-30</span>
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 0px;"></i>
+    
+        <a href="/blog/tags/javascript/">
+            <span class="layui-badge" style="vertical-align: 2px;">JavaScript</span>
+        </a>
+    
+        <a href="/blog/tags/node.js/">
+            <span class="layui-badge" style="vertical-align: 2px;">Node.js</span>
+        </a>
+    
+        <a href="/blog/tags/dom/">
+            <span class="layui-badge" style="vertical-align: 2px;">DOM</span>
+        </a>
+    
+</h3>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+        </div><footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href=""><p class="footer-url">home</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

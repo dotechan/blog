@@ -6,7 +6,16 @@
     <description>Recent content on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 12 Mar 2023 13:37:34 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Apr 2023 11:35:03 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node.js製のCLIツールからプッシュ通知を送信する</title>
+      <link>https://dotechan.github.io/blog/2023/04/23/20230423_send_push_notification_from_cli/</link>
+      <pubDate>Sun, 23 Apr 2023 11:35:03 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2023/04/23/20230423_send_push_notification_from_cli/</guid>
+      <description>はじめに プッシュ通知を受け取るクライアントのアプリ開発には触れずプッシュ通知を送るサーバ側の実装内容に触れる。 環境 macOS Monterey(12.6) Node.js(16.13.0) chalk(5.2.0) commander(10.0.1) firebase-admin(11.7.0) 本題 手順 Fir</description>
+    </item>
+    
     <item>
       <title>確定申告の手順</title>
       <link>https://dotechan.github.io/blog/2023/03/12/20230312_tax_return/</link>

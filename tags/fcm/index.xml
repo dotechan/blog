@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Node.js on Work From Dote</title>
-    <link>https://dotechan.github.io/blog/tags/node.js/</link>
-    <description>Recent content in Node.js on Work From Dote</description>
+    <title>FCM on Work From Dote</title>
+    <link>https://dotechan.github.io/blog/tags/fcm/</link>
+    <description>Recent content in FCM on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 23 Apr 2023 11:35:03 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Apr 2023 11:35:03 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/fcm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Node.js製のCLIツールからプッシュ通知を送信する</title>
       <link>https://dotechan.github.io/blog/2023/04/23/20230423_send_push_notification_from_cli/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://dotechan.github.io/blog/2023/04/23/20230423_send_push_notification_from_cli/</guid>
       <description>はじめに プッシュ通知を受け取るクライアントのアプリ開発には触れずプッシュ通知を送るサーバ側の実装内容に触れる。 環境 macOS Monterey(12.6) Node.js(16.13.0) chalk(5.2.0) commander(10.0.1) firebase-admin(11.7.0) 本題 手順 Fir</description>
-    </item>
-    
-    <item>
-      <title>JavaScriptでxmlファイルを加工するスクリプトを作る</title>
-      <link>https://dotechan.github.io/blog/2020/10/30/first_javascript_nodejs/</link>
-      <pubDate>Fri, 30 Oct 2020 19:01:43 +0900</pubDate>
-      
-      <guid>https://dotechan.github.io/blog/2020/10/30/first_javascript_nodejs/</guid>
-      <description>はじめに xmlファイルの加工をCLIから行いたくてJavaScriptとNode.jsをいじってみました。 シェルスクリプトでもできると思いま</description>
     </item>
     
   </channel>
