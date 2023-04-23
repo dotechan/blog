@@ -6,7 +6,16 @@
     <description>Recent content on Work From Dote</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Nov 2022 00:03:01 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 13:37:34 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>確定申告の手順</title>
+      <link>https://dotechan.github.io/blog/2023/03/12/20230312_tax_return/</link>
+      <pubDate>Sun, 12 Mar 2023 13:37:34 +0900</pubDate>
+      
+      <guid>https://dotechan.github.io/blog/2023/03/12/20230312_tax_return/</guid>
+      <description>確定申告とは 「所得金額」とそれに対する「所得税（復興特別所得税を含む）」の額を計算し納税する 必要なもの [確定申告書 B](https://www.nta.go.jp/taxes/shiraberu/shinkoku/syotoku/r03.htm) マイナンバーカード 銀行口</description>
+    </item>
+    
     <item>
       <title>bookmarkletの活用術</title>
       <link>https://dotechan.github.io/blog/2022/11/13/20221113_bookmarklet/</link>
@@ -383,15 +392,6 @@
       
       <guid>https://dotechan.github.io/blog/2020/04/29/building_blog/</guid>
       <description>はじめに Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。 ブログを公開するまでの流れを備忘録として残しておきます。 環</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://dotechan.github.io/blog/1/01/01/20230312_tax_return/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dotechan.github.io/blog/1/01/01/20230312_tax_return/</guid>
-      <description>*-- title: &amp;#34;確定申告の手順&amp;#34; description: &amp;#34;マイナンバーカード連携を利用して確定申告をe*taxから行った時のメモ&amp;#34; date: 2023*03-12T13:37:34+09:00 categories: [&amp;</description>
     </item>
     
   </channel>
