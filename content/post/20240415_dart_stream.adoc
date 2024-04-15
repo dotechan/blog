@@ -1,0 +1,111 @@
+---
+title: "DartのStreamの基礎"
+description: "DartのStreamの使い方について学んだ時のメモ"
+date: 2024-04-15T22:45:41+09:00
+categories: ["技術"]
+tags: ["Dart"]
+draft: false
+---
+
+= AsciiDoc Writer's Guide
+:toc:
+
+== はじめに
+
+== 環境
+
+* macOS Sonoma (14.1.2)
+* Dart SDK version: 3.3.0
+
+== 本題
+
+- Stream を返す関数 countStream は main 関数から呼び出された直後では関数内の処理が実行されず sumStream 関数で await for を使用して Stream を処理した時に Stream を返す関数 countStream 内の処理が実行されている
+  - 試しに Stream を処理する関数 sumStream を呼び出さないように変更した時に Stream を返す関数 countStream 内の処理が実行されなかった
+- yield(生じる)によって発生した値を await for で処理している
+- yield によって値が発生しなくなり Stream を返す関数の処理が終わった時点で await for の処理も終了する
+
+=== 実行プログラム
+
+```dart
+Future<int> sumStream(Stream<int> stream) async {
+  print('sumStream - start');
+
+  var sum = 0;
+  await for (final value in stream) {
+    print('await for - start : ${value}');
+    sum += value;
+    print('await for - end : ${value}');
+  }
+
+  print('sumStream - end');
+  return sum;
+}
+
+Stream<int> countStream(int to) async* {
+  print('countStream - start');
+
+  for (int i = 1; i <= to; i++) {
+    print('yield - start : ${i}');
+    yield i;
+    print('yield - end : ${i}');
+  }
+
+  print('countStream - end');
+}
+
+void main() async {
+  print('call countStream');
+  var stream = countStream(3);
+  print('call sumStream');
+  var sum = await sumStream(stream);
+  print(sum); // 55
+}
+```
+
+=== 出力結果
+
+```txt
+call countStream
+call sumStream
+sumStream - start
+countStream - start
+yield - start : 1
+await for - start : 1
+await for - end : 1
+yield - end : 1
+yield - start : 2
+await for - start : 2
+await for - end : 2
+yield - end : 2
+yield - start : 3
+await for - start : 3
+await for - end : 3
+yield - end : 3
+countStream - end
+sumStream - end
+6
+```
+
+=== Stream は 2 種類
+
+==== Single subscription streams
+
+ファイル読み込みや Web リクエストを表していて最初から最後まで欠損なく chunk を読み出す必要がある。途中から購読しても意味が無くて一度のみ購読できる。
+
+==== Broadcast streams
+
+マウスイベントなどを表す。途中から購読するこもとできる。
+
+==== 引っかかった箇所
+
+[firstWhere method](https://api.flutter.dev/flutter/dart-async/Stream/firstWhere.html)は最初に test にマッチする要素が見つかった時に Stream の購読をキャンセルする。いわゆる、Single subscription streams であり、以後、参照元の Stream に変更があっても変更を通知しなくなるので注意が必要になる。
+
+=== Stream の再生成
+
+- map や where といった備え付けの関数を使用して既存の Stream を新たな Stream に変換できる
+- 用途に合う変換ヘルパーがなかった場合でも 変換関数 を自前で実装できる
+  - await for で既存の Stream を処理しつつ yeild で Stream を返せば自前で実装できる
+
+== 参考記事
+
+dart.dev、 「Asynchronous programming: Streams」、 2024/04/15、 https://dart.dev/tutorials/language/streams、 (2024/04/15)
