@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iceberg article template</title>
+  <link rel="stylesheet" href="iceberg.css">
+  <style>
+    body {
+      margin: 0;
+      background: #c5c8d4;
+      color: #33374c;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0b0c10; color: #c6c8d1; }
+    }
+    .kit-note, .kit-swatches {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .kit-note { margin-top: 1.25rem; font-size: 0.95rem; }
+    .kit-swatches { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.7rem; }
+    .kit-swatches span {
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <p class="kit-note">部品カタログです。記事本体は下の <code>article</code> だけを投稿に使います。配色は OS のダーク／ライトに追従します。<code>data-theme="dark"</code> または <code>data-theme="light"</code> を article に付けると固定できます。</p>
+  <div class="kit-swatches" aria-hidden="true">
+    <span style="background:#161821;color:#c6c8d1">dark #161821</span>
+    <span style="background:#1e2132;color:#84a0c6">blue #84a0c6</span>
+    <span style="background:#1e2132;color:#89b8c2">lblue #89b8c2</span>
+    <span style="background:#1e2132;color:#b4be82">green #b4be82</span>
+    <span style="background:#1e2132;color:#e2a478">orange #e2a478</span>
+    <span style="background:#1e2132;color:#e27878">red #e27878</span>
+    <span style="background:#1e2132;color:#a093c7">purple #a093c7</span>
+    <span style="background:#e8e9ec;color:#33374c">light #e8e9ec</span>
+  </div>
+
+  <!-- 差し込み: 記事全体。class="ib-article" は必須。data-theme は投稿側で付ける -->
+  <article class="ib-article">
+    <header class="ib-header">
+      <!-- 差し込み: 記事タイトル -->
+      <h1 class="ib-title">記事タイトル</h1>
+      <!-- 差し込み: 日付、著者、カテゴリ -->
+      <p class="ib-meta">2026-10-03 · 技術 · 著者名</p>
+      <ul class="ib-tags">
+        <!-- 差し込み: タグを li で繰り返す -->
+        <li class="ib-tag">iceberg</li>
+        <li class="ib-tag">HTML</li>
+      </ul>
+    </header>
+
+    <aside class="ib-tldr">
+      <p class="ib-callout-label">まとめ</p>
+      <!-- 差し込み: 2〜3文の要約 -->
+      <p>この記事で伝えたいことを、先に短く書きます。</p>
+    </aside>
+
+    <nav class="ib-toc" aria-label="目次">
+      <p class="ib-toc-title">目次</p>
+      <ol>
+        <li><a href="#section">見出しへのリンク</a></li>
+        <li><a href="#steps">手順</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="section">見出し</h2>
+    <p>本文です。強調は <strong>strong</strong>、用語は <code>inline code</code>、操作キーは <kbd class="ib-kbd">Ctrl</kbd> + <kbd class="ib-kbd">L</kbd> です。</p>
+    <h3>小見出し</h3>
+    <ul>
+      <li>箇条書き</li>
+      <li>もう一つ</li>
+    </ul>
+
+    <aside class="ib-callout ib-callout-note">
+      <p class="ib-callout-label">補足</p>
+      <p>前提や定義。読み飛ばしても本筋は追えます。</p>
+    </aside>
+    <aside class="ib-callout ib-callout-tip">
+      <p class="ib-callout-label">推奨</p>
+      <p>うまくいくやり方。リンクは <a href="https://github.com/cocopon/iceberg.vim">iceberg.vim</a> のように書きます。</p>
+    </aside>
+    <aside class="ib-callout ib-callout-warn">
+      <p class="ib-callout-label">注意</p>
+      <p>見落としやすい点。破壊的ではない注意に使います。</p>
+    </aside>
+    <aside class="ib-callout ib-callout-danger">
+      <p class="ib-callout-label">危険</p>
+      <p>戻しにくい操作や、機密に触れる警告に使います。</p>
+    </aside>
+
+    <h2 id="code">コード</h2>
+    <div class="ib-code">
+      <p class="ib-code-label">vim</p>
+      <pre class="ib-pre"><code><span class="ib-tok-com">" ~/.vimrc</span>
+<span class="ib-tok-kw">colorscheme</span> iceberg
+<span class="ib-tok-kw">let</span> <span class="ib-tok-fn">g:loaded</span> = <span class="ib-tok-num">1</span>
+<span class="ib-tok-kw">echo</span> <span class="ib-tok-str">"iceberg"</span>
+<span class="ib-tok-type">String</span></code></pre>
+    </div>
+
+    <h3>差分</h3>
+    <pre class="ib-diff"><code><span class="ib-diff-del">- colorscheme default</span>
+<span class="ib-diff-add">+ colorscheme iceberg</span>
+<span class="ib-diff-chg">  syntax enable</span></code></pre>
+
+    <h2 id="table">表</h2>
+    <div class="ib-table-wrap">
+      <table class="ib-table">
+        <thead>
+          <tr><th>項目</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>背景</td><td>ダーク <code>#161821</code> / ライト <code>#e8e9ec</code></td></tr>
+          <tr><td>文字</td><td>ダーク <code>#c6c8d1</code> / ライト <code>#33374c</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>引用</h2>
+    <blockquote class="ib-quote">
+      <p>引用文をここに置きます。</p>
+    </blockquote>
+
+    <h2>図</h2>
+    <figure class="ib-figure">
+      <!-- 差し込み: SVG は使わない。png / jpg / gif / webp -->
+      <img class="ib-img" src="../static/self/image/kichi_obusu.JPG" alt="画像の差し込み例" width="320">
+      <figcaption class="ib-figcaption">図: キャプション</figcaption>
+    </figure>
+
+    <h2 id="steps">手順</h2>
+    <ol class="ib-steps">
+      <li class="ib-step">
+        <span class="ib-step-num">1</span>
+        <div class="ib-step-body"><p>下書きをプレーンテキストで書く。</p></div>
+      </li>
+      <li class="ib-step">
+        <span class="ib-step-num">2</span>
+        <div class="ib-step-body"><p>このカタログにある部品だけを使って HTML 断片にする。</p></div>
+      </li>
+      <li class="ib-step">
+        <span class="ib-step-num">3</span>
+        <div class="ib-step-body"><p><code>build.mjs</code> で検証し、投稿用 HTML を出す。</p></div>
+      </li>
+    </ol>
+
+    <h2>比較</h2>
+    <div class="ib-cards">
+      <section class="ib-card">
+        <h3 class="ib-card-title">毎回その場で HTML 化</h3>
+        <p>見た目が記事ごとに変わります。</p>
+      </section>
+      <section class="ib-card">
+        <h3 class="ib-card-title">テンプレートに当てはめる</h3>
+        <p>クラスの選択だけが揺れます。色は CSS が決めます。</p>
+      </section>
+    </div>
+
+    <h2>流れ</h2>
+    <!-- SVG の代わり。矢印は文字 -->
+    <div class="ib-flow">
+      <div class="ib-flow-step">原稿</div>
+      <div class="ib-flow-arrow">→</div>
+      <div class="ib-flow-step">HTML 断片</div>
+      <div class="ib-flow-arrow">→</div>
+      <div class="ib-flow-step">検証と結合</div>
+    </div>
+
+    <section class="ib-refs">
+      <h2>参考</h2>
+      <ul>
+        <li><a href="https://github.com/cocopon/iceberg.vim">cocopon/iceberg.vim</a></li>
+      </ul>
+    </section>
+
+    <footer class="ib-footer">
+      <p>フッター。所属や連絡先を書きます。</p>
+    </footer>
+  </article>
+</body>
+</html>

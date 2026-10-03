@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>カラースキームであるICEBERGを使ってみた</title>
+  <link rel="stylesheet" href="../iceberg.css">
+  <style>
+    body { margin: 0; background: #c5c8d4; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0b0c10; }
+    }
+  </style>
+</head>
+<body>
+  <article class="ib-article">
+    <header class="ib-header">
+      <h1 class="ib-title">カラースキームであるICEBERGを使ってみた</h1>
+      <p class="ib-meta">2020-07-19 · 技術</p>
+      <ul class="ib-tags">
+        <li class="ib-tag">iTerm2</li>
+        <li class="ib-tag">ICEBERG</li>
+      </ul>
+    </header>
+
+    <aside class="ib-tldr">
+      <p class="ib-callout-label">まとめ</p>
+      <p>iTerm2 の見た目を整えるために、カラースキーム ICEBERG を導入したときの記録です。</p>
+    </aside>
+
+    <nav class="ib-toc" aria-label="目次">
+      <p class="ib-toc-title">目次</p>
+      <ol>
+        <li><a href="#intro">はじめに</a></li>
+        <li><a href="#env">環境</a></li>
+        <li><a href="#refs">参考記事</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="intro">はじめに</h2>
+    <p>ターミナルをカッコよくしたくて ICEBERG というカラースキームを使ってみました。</p>
+    <aside class="ib-callout ib-callout-tip">
+      <p class="ib-callout-label">公式</p>
+      <p>配色の定義は <a href="https://cocopon.github.io/iceberg.vim/">ICEBERG</a> で公開されています。</p>
+    </aside>
+    <p>vim では次のように指定します。</p>
+    <div class="ib-code">
+      <p class="ib-code-label">vim</p>
+      <pre class="ib-pre"><code><span class="ib-tok-com">" ~/.vimrc</span>
+<span class="ib-tok-kw">colorscheme</span> iceberg</code></pre>
+    </div>
+
+    <h2 id="env">環境</h2>
+    <ul>
+      <li>Mac OS X (10.15.4)</li>
+    </ul>
+
+    <section class="ib-refs">
+      <h2 id="refs">参考記事</h2>
+      <ul>
+        <li><a href="https://cocopon.github.io/iceberg.vim/">ICEBERG</a></li>
+        <li><a href="https://www.ambitious-i.net/blog/vim_use_iceberg">Icebergを各所に導入</a></li>
+        <li><a href="https://qiita.com/harashoo/items/e63b8b60fad1cfd7ff2b">ターミナルのカラースキームを変更しても色が変わらない時の対処法</a></li>
+      </ul>
+    </section>
+
+    <footer class="ib-footer">
+      <p>Work From Dote</p>
+    </footer>
+  </article>
+</body>
+</html>

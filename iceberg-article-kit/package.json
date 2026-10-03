@@ -1,0 +1,11 @@
+{
+  "name": "iceberg-article-kit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs samples/sample.html"
+  },
+  "dependencies": {
+    "juice": "^11.0.1"
+  }
+}

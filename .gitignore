@@ -2,3 +2,8 @@
 /public/
 
 .hugo_build.lock
+
+iceberg-article-kit/node_modules/
+iceberg-article-kit/dist/
+
+.cursor/

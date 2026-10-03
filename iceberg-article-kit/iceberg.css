@@ -1,0 +1,592 @@
+/*
+  Iceberg article kit
+  Palette from iceberg.vim (MIT, cocopon): colors/iceberg.vim
+  https://github.com/cocopon/iceberg.vim
+
+  Text tokens that fail WCAG AA (4.5:1) are adjusted. Borders, surfaces,
+  and diff backgrounds keep the original hex values.
+  Light text adjustments (original -> used):
+    muted   #8389a3 -> #5c6072
+    lblue   #3f83a6 -> #326985
+    green   #668e3d -> #4d6b2e
+    orange  #c57339 -> #8f5329
+    red     #cc517a -> #a34162
+    purple  #7759b4 -> #7053a9
+  Dark text adjustment:
+    muted   #6b7089 -> #9094a7
+*/
+
+/* @ib-tokens light */
+.ib-article {
+  --ib-scheme: light;
+  --ib-bg: #e8e9ec;
+  --ib-surface: #dcdfe7;
+  --ib-surface-2: #cad0de;
+  --ib-border: #bec0c9;
+  --ib-fg: #33374c;
+  --ib-muted: #5c6072;
+  --ib-blue: #2d539e;
+  --ib-lblue: #326985;
+  --ib-green: #4d6b2e;
+  --ib-orange: #8f5329;
+  --ib-red: #a34162;
+  --ib-purple: #7053a9;
+  --ib-mark-blue: #2d539e;
+  --ib-mark-lblue: #3f83a6;
+  --ib-mark-green: #668e3d;
+  --ib-mark-orange: #c57339;
+  --ib-mark-red: #cc517a;
+  --ib-mark-purple: #7759b4;
+  --ib-diff-add-bg: #d4dbd1;
+  --ib-diff-add-fg: #475946;
+  --ib-diff-del-bg: #e3d2da;
+  --ib-diff-del-fg: #70415e;
+  --ib-diff-chg-bg: #ced9e1;
+  --ib-diff-chg-fg: #375570;
+  --ib-code-bg: #dcdfe7;
+}
+/* @ib-tokens-end */
+
+/* @ib-tokens light */
+.ib-article[data-theme="light"] {
+  --ib-scheme: light;
+  --ib-bg: #e8e9ec;
+  --ib-surface: #dcdfe7;
+  --ib-surface-2: #cad0de;
+  --ib-border: #bec0c9;
+  --ib-fg: #33374c;
+  --ib-muted: #5c6072;
+  --ib-blue: #2d539e;
+  --ib-lblue: #326985;
+  --ib-green: #4d6b2e;
+  --ib-orange: #8f5329;
+  --ib-red: #a34162;
+  --ib-purple: #7053a9;
+  --ib-mark-blue: #2d539e;
+  --ib-mark-lblue: #3f83a6;
+  --ib-mark-green: #668e3d;
+  --ib-mark-orange: #c57339;
+  --ib-mark-red: #cc517a;
+  --ib-mark-purple: #7759b4;
+  --ib-diff-add-bg: #d4dbd1;
+  --ib-diff-add-fg: #475946;
+  --ib-diff-del-bg: #e3d2da;
+  --ib-diff-del-fg: #70415e;
+  --ib-diff-chg-bg: #ced9e1;
+  --ib-diff-chg-fg: #375570;
+  --ib-code-bg: #dcdfe7;
+}
+/* @ib-tokens-end */
+
+/* @ib-tokens dark */
+@media (prefers-color-scheme: dark) {
+  .ib-article:not([data-theme="light"]) {
+    --ib-scheme: dark;
+    --ib-bg: #161821;
+    --ib-surface: #1e2132;
+    --ib-surface-2: #272c42;
+    --ib-border: #3e445e;
+    --ib-fg: #c6c8d1;
+    --ib-muted: #9094a7;
+    --ib-blue: #84a0c6;
+    --ib-lblue: #89b8c2;
+    --ib-green: #b4be82;
+    --ib-orange: #e2a478;
+    --ib-red: #e27878;
+    --ib-purple: #a093c7;
+    --ib-mark-blue: #84a0c6;
+    --ib-mark-lblue: #89b8c2;
+    --ib-mark-green: #b4be82;
+    --ib-mark-orange: #e2a478;
+    --ib-mark-red: #e27878;
+    --ib-mark-purple: #a093c7;
+    --ib-diff-add-bg: #45493e;
+    --ib-diff-add-fg: #c0c5b9;
+    --ib-diff-del-bg: #53343b;
+    --ib-diff-del-fg: #ceb0b6;
+    --ib-diff-chg-bg: #384851;
+    --ib-diff-chg-fg: #b3c3cc;
+    --ib-code-bg: #1e2132;
+  }
+}
+/* @ib-tokens-end */
+
+/* @ib-tokens dark */
+.ib-article[data-theme="dark"] {
+  --ib-scheme: dark;
+  --ib-bg: #161821;
+  --ib-surface: #1e2132;
+  --ib-surface-2: #272c42;
+  --ib-border: #3e445e;
+  --ib-fg: #c6c8d1;
+  --ib-muted: #9094a7;
+  --ib-blue: #84a0c6;
+  --ib-lblue: #89b8c2;
+  --ib-green: #b4be82;
+  --ib-orange: #e2a478;
+  --ib-red: #e27878;
+  --ib-purple: #a093c7;
+  --ib-mark-blue: #84a0c6;
+  --ib-mark-lblue: #89b8c2;
+  --ib-mark-green: #b4be82;
+  --ib-mark-orange: #e2a478;
+  --ib-mark-red: #e27878;
+  --ib-mark-purple: #a093c7;
+  --ib-diff-add-bg: #45493e;
+  --ib-diff-add-fg: #c0c5b9;
+  --ib-diff-del-bg: #53343b;
+  --ib-diff-del-fg: #ceb0b6;
+  --ib-diff-chg-bg: #384851;
+  --ib-diff-chg-fg: #b3c3cc;
+  --ib-code-bg: #1e2132;
+}
+/* @ib-tokens-end */
+
+.ib-article {
+  box-sizing: border-box;
+  max-width: 42rem;
+  margin: 1.5rem auto;
+  padding: 2rem 1.5rem 1.75rem;
+  border: 1px solid var(--ib-border);
+  border-radius: 12px;
+  background: var(--ib-bg);
+  color: var(--ib-fg);
+  color-scheme: var(--ib-scheme);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.ib-article * {
+  box-sizing: border-box;
+}
+
+.ib-article *::before,
+.ib-article *::after {
+  box-sizing: border-box;
+}
+
+.ib-article ::selection {
+  background: var(--ib-mark-orange);
+  color: var(--ib-bg);
+}
+
+.ib-article h1,
+.ib-article h2,
+.ib-article h3 {
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.ib-article h1 {
+  margin: 0 0 0.45rem;
+  color: var(--ib-orange);
+  font-size: 1.75rem;
+}
+
+.ib-article h2 {
+  margin: 2rem 0 0.65rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--ib-border);
+  color: var(--ib-blue);
+  font-size: 1.35rem;
+}
+
+.ib-article h3 {
+  margin: 1.5rem 0 0.4rem;
+  color: var(--ib-blue);
+  font-size: 1.1rem;
+}
+
+.ib-article p {
+  margin: 0.75rem 0;
+}
+
+.ib-article a {
+  color: var(--ib-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  overflow-wrap: anywhere;
+}
+
+.ib-article a:hover {
+  color: var(--ib-lblue);
+}
+
+.ib-article a:focus-visible {
+  outline: 2px solid var(--ib-blue);
+  outline-offset: 2px;
+}
+
+.ib-article ul,
+.ib-article ol {
+  margin: 0.75rem 0;
+  padding-left: 1.3rem;
+}
+
+.ib-article li + li {
+  margin-top: 0.28rem;
+}
+
+.ib-article strong {
+  font-weight: 700;
+}
+
+.ib-article hr {
+  margin: 1.6rem 0;
+  border: 0;
+  border-top: 1px solid var(--ib-border);
+}
+
+.ib-article .ib-header {
+  margin-bottom: 1.3rem;
+}
+
+.ib-article .ib-meta {
+  margin: 0.2rem 0;
+  color: var(--ib-muted);
+  font-size: 0.92rem;
+}
+
+.ib-article ul.ib-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ib-article li.ib-tag {
+  display: inline-block;
+  margin: 0;
+  padding: 0.08em 0.7em;
+  border-radius: 999px;
+  background: var(--ib-surface-2);
+  color: var(--ib-fg);
+  font-size: 0.85rem;
+}
+
+.ib-article .ib-tldr,
+.ib-article .ib-toc,
+.ib-article .ib-callout {
+  margin: 1.2rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--ib-border);
+  border-radius: 8px;
+  background: var(--ib-surface);
+}
+
+.ib-article .ib-tldr {
+  border-left: 4px solid var(--ib-mark-purple);
+}
+
+.ib-article .ib-toc-title,
+.ib-article .ib-callout-label,
+.ib-article .ib-code-label {
+  margin: 0 0 0.3rem;
+  font-weight: 700;
+}
+
+.ib-article .ib-tldr .ib-callout-label {
+  color: var(--ib-purple);
+}
+
+.ib-article .ib-toc ol {
+  margin: 0.35rem 0 0;
+}
+
+.ib-article .ib-callout {
+  border-left-width: 4px;
+}
+
+.ib-article .ib-callout p:last-child,
+.ib-article .ib-tldr p:last-child {
+  margin-bottom: 0;
+}
+
+.ib-article .ib-callout-note {
+  border-left-color: var(--ib-mark-lblue);
+}
+
+.ib-article .ib-callout-note .ib-callout-label {
+  color: var(--ib-lblue);
+}
+
+.ib-article .ib-callout-tip {
+  border-left-color: var(--ib-mark-green);
+}
+
+.ib-article .ib-callout-tip .ib-callout-label {
+  color: var(--ib-green);
+}
+
+.ib-article .ib-callout-warn {
+  border-left-color: var(--ib-mark-orange);
+}
+
+.ib-article .ib-callout-warn .ib-callout-label {
+  color: var(--ib-orange);
+}
+
+.ib-article .ib-callout-danger {
+  border-left-color: var(--ib-mark-red);
+}
+
+.ib-article .ib-callout-danger .ib-callout-label {
+  color: var(--ib-red);
+}
+
+.ib-article .ib-code {
+  margin: 1.15rem 0;
+}
+
+.ib-article .ib-code-label {
+  margin: 0;
+  padding: 0.32rem 0.85rem;
+  border: 1px solid var(--ib-border);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  background: var(--ib-surface-2);
+  color: var(--ib-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ib-article pre {
+  margin: 1.15rem 0;
+  padding: 0.95rem 1rem;
+  overflow-x: auto;
+  border: 1px solid var(--ib-border);
+  border-radius: 8px;
+  background: var(--ib-code-bg);
+  color: var(--ib-fg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  tab-size: 2;
+}
+
+.ib-article .ib-code .ib-pre,
+.ib-article .ib-code pre {
+  margin-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.ib-article pre code {
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+.ib-article :not(pre) > code {
+  padding: 0.08em 0.35em;
+  border-radius: 4px;
+  background: var(--ib-surface);
+  color: var(--ib-lblue);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.ib-article .ib-tok-kw {
+  color: var(--ib-blue);
+}
+
+.ib-article .ib-tok-fn {
+  color: var(--ib-blue);
+  font-weight: 700;
+}
+
+.ib-article .ib-tok-type {
+  color: var(--ib-blue);
+  font-style: italic;
+}
+
+.ib-article .ib-tok-str {
+  color: var(--ib-lblue);
+}
+
+.ib-article .ib-tok-num {
+  color: var(--ib-purple);
+}
+
+.ib-article .ib-tok-com {
+  color: var(--ib-muted);
+  font-style: italic;
+}
+
+.ib-article pre.ib-diff {
+  padding: 0.4rem 0;
+  background: var(--ib-bg);
+}
+
+.ib-article .ib-diff-add,
+.ib-article .ib-diff-del,
+.ib-article .ib-diff-chg {
+  display: block;
+  padding: 0 1rem;
+}
+
+.ib-article .ib-diff-add {
+  background: var(--ib-diff-add-bg);
+  color: var(--ib-diff-add-fg);
+}
+
+.ib-article .ib-diff-del {
+  background: var(--ib-diff-del-bg);
+  color: var(--ib-diff-del-fg);
+}
+
+.ib-article .ib-diff-chg {
+  background: var(--ib-diff-chg-bg);
+  color: var(--ib-diff-chg-fg);
+}
+
+.ib-article .ib-table-wrap {
+  margin: 1.15rem 0;
+  overflow-x: auto;
+}
+
+.ib-article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.ib-article th,
+.ib-article td {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--ib-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.ib-article th {
+  background: var(--ib-surface);
+  font-weight: 700;
+}
+
+.ib-article .ib-quote {
+  margin: 1.2rem 0;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 4px solid var(--ib-mark-purple);
+}
+
+.ib-article .ib-quote p {
+  margin: 0.4rem 0;
+}
+
+.ib-kbd,
+.ib-article kbd {
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--ib-border);
+  border-radius: 4px;
+  background: var(--ib-surface-2);
+  box-shadow: inset 0 -1px 0 var(--ib-border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+}
+
+.ib-figure {
+  margin: 1.2rem 0;
+}
+
+.ib-article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.ib-figcaption {
+  margin-top: 0.4rem;
+  color: var(--ib-muted);
+  font-size: 0.9rem;
+}
+
+.ib-article ol.ib-steps {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.ib-article li.ib-step {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 0.75rem 0;
+}
+
+.ib-step-num {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-top: 0.15rem;
+  border-radius: 999px;
+  background: var(--ib-surface-2);
+  color: var(--ib-blue);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ib-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.75rem;
+  margin: 1.1rem 0;
+}
+
+.ib-card {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--ib-border);
+  border-radius: 8px;
+  background: var(--ib-surface);
+}
+
+.ib-article .ib-card-title {
+  margin: 0 0 0.35rem;
+  color: var(--ib-orange);
+  font-size: 1rem;
+}
+
+.ib-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.1rem 0;
+}
+
+.ib-flow-step {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--ib-border);
+  border-radius: 8px;
+  background: var(--ib-surface);
+}
+
+.ib-flow-arrow {
+  color: var(--ib-muted);
+  font-weight: 700;
+}
+
+.ib-refs {
+  margin-top: 1.6rem;
+}
+
+.ib-footer {
+  margin-top: 2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--ib-border);
+  color: var(--ib-muted);
+  font-size: 0.9rem;
+}
+
+.ib-article .ib-footer p {
+  margin: 0.3rem 0;
+}
