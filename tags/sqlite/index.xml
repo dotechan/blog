@@ -4,17 +4,16 @@
     <title>SQLite on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/sqlite/</link>
     <description>Recent content in SQLite on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 20 Jun 2020 12:45:51 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Jun 2020 12:45:51 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQLite Databaseの中身を確認する</title>
       <link>https://dotechan.github.io/blog/2020/06/20/debug_sqlite_database/</link>
       <pubDate>Sat, 20 Jun 2020 12:45:51 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/06/20/debug_sqlite_database/</guid>
-      <description>はじめに Android Qのエミュレーターでsqlite3を使用してDatabaseのdebugができるようになります。 環境 Mac OS X(10.15.4) Android 10.0(Q) SQLite version 3.28.0 前提条件 And</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Android Qのエミュレーターでsqlite3を使用してDatabaseのdebugができるようになります。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mac OS X(10.15.4)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Android 10.0(Q)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SQLite version 3.28.0&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_前提条件&#34;&gt;前提条件&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Android/sdk/platform-toolsへのpathを通していること&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

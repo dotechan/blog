@@ -4,26 +4,23 @@
     <title>React on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/react/</link>
     <description>Recent content in React on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 20 Feb 2021 12:38:36 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Feb 2021 12:38:36 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>react-router-domのRouteコンポーネントをネストしてコンポーネントを切り替える</title>
       <link>https://dotechan.github.io/blog/2021/02/20/react-nest-routing/</link>
       <pubDate>Sat, 20 Feb 2021 12:38:36 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/02/20/react-nest-routing/</guid>
-      <description>はじめに react-router-domのRouteコンポーネントをネストしてコンポーネントを切り替える方法について書きます react-ro</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;react-router-domのRouteコンポーネントをネストしてコンポーネントを切り替える方法について書きます&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;react-router-domの基本的な使い方についても書きます&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>React入門</title>
       <link>https://dotechan.github.io/blog/2021/01/01/react_tutorial/</link>
       <pubDate>Fri, 01 Jan 2021 12:41:19 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/01/01/react_tutorial/</guid>
-      <description>はじめに React.jsを利用してWebアプリ（Reactの公式サイトに掲載されているチュートリアル）を完了させるまでにやったことを記載して</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;React.jsを利用してWebアプリ（Reactの公式サイトに掲載されているチュートリアル）を完了させるまでにやったことを記載しておきます。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

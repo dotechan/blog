@@ -4,17 +4,16 @@
     <title>OAuth on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/oauth/</link>
     <description>Recent content in OAuth on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 29 Oct 2022 11:28:03 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/oauth/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Oct 2022 11:28:03 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/oauth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OAuth/OpenIDConnect入門</title>
       <link>https://dotechan.github.io/blog/2022/10/29/20221029_oauth_intro/</link>
       <pubDate>Sat, 29 Oct 2022 11:28:03 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2022/10/29/20221029_oauth_intro/</guid>
-      <description>はじめに 環境 macOS Big Sur(11.5.2) 前提条件 本文 OAuthとは、OpenID Connectとは OAuthとは APIの利用可否を実行時にアクセストークンの提示を</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Big Sur(11.5.2)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_前提条件&#34;&gt;前提条件&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_本文&#34;&gt;本文&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_oauthとはopenid_connectとは&#34;&gt;OAuthとは、OpenID Connectとは&lt;/h3&gt;&#xA;&lt;div class=&#34;sect3&#34;&gt;&#xA;&lt;h4 id=&#34;_oauthとは&#34;&gt;OAuthとは&lt;/h4&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;APIの利用可否を実行時にアクセストークンの提示を要求する方法がOAuth2.0という技術仕様で定義されている&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;アクセストークンを発行するサーバをOAuth2.0では認可サーバと呼んでいる&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ユーザーが許可した場合のみプログラムはAPI利用に必要なアクセストークンの発行ができる、事前にアクセストークンを受け取っておく必要があるのがOAuth2.0の特徴&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

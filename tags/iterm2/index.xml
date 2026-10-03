@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iTerm2 on Work From Dote</title>
+    <title>ITerm2 on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/iterm2/</link>
-    <description>Recent content in iTerm2 on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in ITerm2 on Work From Dote</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 19 Jul 2020 22:35:12 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Jul 2020 22:35:12 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/iterm2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>カラースキームであるICEBERGを使ってみた</title>
       <link>https://dotechan.github.io/blog/2020/07/19/use_iceberg/</link>
       <pubDate>Sun, 19 Jul 2020 22:35:12 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/07/19/use_iceberg/</guid>
-      <description>はじめに ターミナルをカッコよくしたくてICEBERGというカラースキームを使ってみました。 環境 Mac OS X(10.15.4) 参考記事 ICEBERG Icebergを各所に導入 ター</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;ターミナルをカッコよくしたくてICEBERGというカラースキームを使ってみました。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mac OS X(10.15.4)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cocopon.github.io/iceberg.vim/&#34;&gt;ICEBERG&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.ambitious-i.net/blog/vim_use_iceberg&#34;&gt;Icebergを各所に導入&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://qiita.com/harashoo/items/e63b8b60fad1cfd7ff2b&#34;&gt;ターミナルのカラースキームを変更しても色が変わらない時の対処法&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

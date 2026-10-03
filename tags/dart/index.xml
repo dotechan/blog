@@ -4,17 +4,16 @@
     <title>Dart on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/dart/</link>
     <description>Recent content in Dart on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 15 Apr 2024 22:45:41 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/dart/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Apr 2024 22:45:41 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/dart/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DartのStreamの基礎</title>
       <link>https://dotechan.github.io/blog/2024/04/15/20240415_dart_stream/</link>
       <pubDate>Mon, 15 Apr 2024 22:45:41 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2024/04/15/20240415_dart_stream/</guid>
-      <description>はじめに 環境 macOS Sonoma (14.1.2) Dart SDK version: 3.3.0 本題 Stream を返す関数 countStream は main 関数から呼び出された直後では関数内の処理が実行されず sumStream 関数で await for を使用して Stream を処理した時に Stream</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Sonoma (14.1.2)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Dart SDK version: 3.3.0&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_本題&#34;&gt;本題&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Stream を返す関数 countStream は main 関数から呼び出された直後では関数内の処理が実行されず sumStream 関数で await for を使用して Stream を処理した時に Stream を返す関数 countStream 内の処理が実行されている&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;試しに Stream を処理する関数 sumStream を呼び出さないように変更した時に Stream を返す関数 countStream 内の処理が実行されなかった&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;yield(生じる)によって発生した値を await for で処理している&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;yield によって値が発生しなくなり Stream を返す関数の処理が終わった時点で await for の処理も終了する&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

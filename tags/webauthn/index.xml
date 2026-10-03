@@ -4,17 +4,16 @@
     <title>WebAuthn on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/webauthn/</link>
     <description>Recent content in WebAuthn on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Apr 2021 09:57:58 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/webauthn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Apr 2021 09:57:58 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/webauthn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>はじめてのWebAuthn</title>
       <link>https://dotechan.github.io/blog/2021/04/10/introduction_web_authn/</link>
       <pubDate>Sat, 10 Apr 2021 09:57:58 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/04/10/introduction_web_authn/</guid>
-      <description>環境 macOS Big Sur(11.2.3) Google Chrome(89.0.4389.114) 用語 FIDO Fast Identity Online セキュリティキーと呼ばれる専用デバイスを使った認証の仕組みを標準化したもの 広い意味では認証器、登録時に新しい公開鍵</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Big Sur(11.2.3)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Google Chrome(89.0.4389.114)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_用語&#34;&gt;用語&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_fido&#34;&gt;FIDO&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Fast Identity Online&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;セキュリティキーと呼ばれる専用デバイスを使った認証の仕組みを標準化したもの&lt;/p&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;広い意味では認証器、登録時に新しい公開鍵ペアを作り、秘密鍵を安全に保管、公開鍵だけを返す、ログイン時に署名を返す機能を持っている&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

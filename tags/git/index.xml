@@ -4,35 +4,30 @@
     <title>Git on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/git/</link>
     <description>Recent content in Git on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 27 May 2020 22:11:06 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 May 2020 22:11:06 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>zshでgitコマンドの補完をする</title>
       <link>https://dotechan.github.io/blog/2020/05/27/git_completion_for_zsh/</link>
       <pubDate>Wed, 27 May 2020 22:11:06 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/27/git_completion_for_zsh/</guid>
-      <description>はじめに 今までWindowsしか使ったことがなかったのですが 前から憧れていたMacbook Pro 13inchに乗り換えました。 そしてJISキーボ</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;今までWindowsしか使ったことがなかったのですが&lt;br/&gt;&#xA;前から憧れていたMacbook Pro 13inchに乗り換えました。&lt;br/&gt;&#xA;そしてJISキーボードの使用経験しかなかったのですが&lt;br/&gt;&#xA;ノリでUSキーボードにしてみました。&lt;br/&gt;&#xA;そんな訳でブラインドタッチもできなくなり初々しい感じですが&lt;br/&gt;&#xA;Terminal周りの設定とかをやっているのでメモしておきます。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Git-submoduleを使いこなす</title>
       <link>https://dotechan.github.io/blog/2020/05/03/git-submodule/</link>
       <pubDate>Sun, 03 May 2020 16:34:57 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/03/git-submodule/</guid>
-      <description>はじめに Hugoでブログを生成する時にgit-submoduleというコマンドを知ったので 軽く使い方について調べたのでメモしておきます。 環境</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Hugoでブログを生成する時にgit-submoduleというコマンドを知ったので&lt;br/&gt;&#xA;軽く使い方について調べたのでメモしておきます。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Git for Windows (v2.26.2)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Hugoで生成した静的サイトをGitHub Pagesで公開する</title>
       <link>https://dotechan.github.io/blog/2020/04/29/building_blog/</link>
       <pubDate>Wed, 29 Apr 2020 22:32:23 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/04/29/building_blog/</guid>
-      <description>はじめに Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。 ブログを公開するまでの流れを備忘録として残しておきます。 環</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。&lt;br/&gt;&#xA;ブログを公開するまでの流れを備忘録として残しておきます。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Windows 10 Home (1903)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Git for Windows (v2.26.2)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Chocolatey (v0.1015)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ruby (2.7.1p83)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Asciidoctor (2.0.10)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,17 +4,16 @@
     <title>Navigation on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/navigation/</link>
     <description>Recent content in Navigation on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Sep 2020 09:42:24 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/navigation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Sep 2020 09:42:24 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/navigation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android JetpackのNavigationコンポーネントを使ってみた</title>
       <link>https://dotechan.github.io/blog/2020/09/12/introduction_navigation_component/</link>
       <pubDate>Sat, 12 Sep 2020 09:42:24 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/09/12/introduction_navigation_component/</guid>
-      <description>環境 Mac OS X(10.15.4) Android Studio 4.0.1 Navigationコンポーネント 2.3.0 参考記事 (公式)ナビゲーション コードラボ 用語 Navigation Graph (New XML resource) ナビゲーションに関わる全ての情報を</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mac OS X(10.15.4)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Android Studio 4.0.1&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Navigationコンポーネント 2.3.0&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/navigation&#34;&gt;(公式)ナビゲーション&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://codelabs.developers.google.com/codelabs/android-navigation/index.html#0&#34;&gt;コードラボ&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_用語&#34;&gt;用語&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Navigation Graph (New XML resource)&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;literalblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;ナビゲーションに関わる全ての情報を集中管理しているXMLファイルのこと。&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

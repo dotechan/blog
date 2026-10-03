@@ -4,26 +4,23 @@
     <title>Redmine on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/redmine/</link>
     <description>Recent content in Redmine on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Mar 2021 17:26:49 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Mar 2021 17:26:49 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/redmine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>データベースに入門してみた</title>
       <link>https://dotechan.github.io/blog/2021/03/06/introduction_database/</link>
       <pubDate>Sat, 06 Mar 2021 17:26:49 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/03/06/introduction_database/</guid>
-      <description>はじめに データベース初心者がMySQLのチュートリアルのを実践した後にDockerでたてたRedmineのバックエンドとして動いているMar</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;データベース初心者がMySQLのチュートリアルのを実践した後にDockerでたてたRedmineのバックエンドとして動いているMariaDBの中身を覗いた時のメモです&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;MySQLとMariaDBの違いについては互換性があるくらいしかわかっていないので書きません&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>DockerでRedmineを動かす</title>
       <link>https://dotechan.github.io/blog/2020/12/27/build_docker_redmine/</link>
       <pubDate>Sun, 27 Dec 2020 23:34:57 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/12/27/build_docker_redmine/</guid>
-      <description>はじめに Redmine4.1.1をDBにMariaDBを指定して動かす方法について書きます Redmine, MariaDBともに公式のDockerイメージを</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Redmine4.1.1をDBにMariaDBを指定して動かす方法について書きます&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Redmine, MariaDBともに公式のDockerイメージを利用します&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;docker-composeを利用してRedmine, MariadDBのDockerコンテナを起動します&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

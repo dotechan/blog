@@ -4,368 +4,296 @@
     <title>技術 on Work From Dote</title>
     <link>https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/</link>
     <description>Recent content in 技術 on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 15 Apr 2024 22:45:41 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Oct 2026 22:44:00 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/categories/%E6%8A%80%E8%A1%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>icebergの配色で記事HTMLのテンプレートを作った</title>
+      <link>https://dotechan.github.io/blog/2026/10/03/20261003_iceberg_article_kit/</link>
+      <pubDate>Sat, 03 Oct 2026 22:44:00 +0900</pubDate>
+      <guid>https://dotechan.github.io/blog/2026/10/03/20261003_iceberg_article_kit/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;社内のブログを、プレーンテキストではなく HTML で投稿することが増えた。&#xA;原稿を生成 AI に渡して HTML にしてもらうと、その場で CSS まで書かれてしまい、記事ごとに色も余白も変わる。&#xA;デザインの決まりがないので、再現性がなく、自分の色も残らない。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>DartのStreamの基礎</title>
       <link>https://dotechan.github.io/blog/2024/04/15/20240415_dart_stream/</link>
       <pubDate>Mon, 15 Apr 2024 22:45:41 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2024/04/15/20240415_dart_stream/</guid>
-      <description>はじめに 環境 macOS Sonoma (14.1.2) Dart SDK version: 3.3.0 本題 Stream を返す関数 countStream は main 関数から呼び出された直後では関数内の処理が実行されず sumStream 関数で await for を使用して Stream を処理した時に Stream</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Sonoma (14.1.2)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Dart SDK version: 3.3.0&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_本題&#34;&gt;本題&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Stream を返す関数 countStream は main 関数から呼び出された直後では関数内の処理が実行されず sumStream 関数で await for を使用して Stream を処理した時に Stream を返す関数 countStream 内の処理が実行されている&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;試しに Stream を処理する関数 sumStream を呼び出さないように変更した時に Stream を返す関数 countStream 内の処理が実行されなかった&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;yield(生じる)によって発生した値を await for で処理している&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;yield によって値が発生しなくなり Stream を返す関数の処理が終わった時点で await for の処理も終了する&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Node.js製のCLIツールからプッシュ通知を送信する</title>
       <link>https://dotechan.github.io/blog/2023/04/23/20230423_send_push_notification_from_cli/</link>
       <pubDate>Sun, 23 Apr 2023 11:35:03 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2023/04/23/20230423_send_push_notification_from_cli/</guid>
-      <description>はじめに プッシュ通知を受け取るクライアントのアプリ開発には触れずプッシュ通知を送るサーバ側の実装内容に触れる。 環境 macOS Monterey(12.6) Node.js(16.13.0) chalk(5.2.0) commander(10.0.1) firebase-admin(11.7.0) 本題 手順 Fir</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;プッシュ通知を受け取るクライアントのアプリ開発には触れずプッシュ通知を送るサーバ側の実装内容に触れる。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Monterey(12.6)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Node.js(16.13.0)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;chalk(5.2.0)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;commander(10.0.1)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;firebase-admin(11.7.0)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_本題&#34;&gt;本題&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_手順&#34;&gt;手順&lt;/h3&gt;&#xA;&lt;div class=&#34;olist arabic&#34;&gt;&#xA;&lt;ol class=&#34;arabic&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Firebaseコンソールから秘密鍵を入手する&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;クライアントの端末にFCMから払い出されたtokenを入手する&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Node.jsのCLIツールを作成する&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>bookmarkletの活用術</title>
       <link>https://dotechan.github.io/blog/2022/11/13/20221113_bookmarklet/</link>
       <pubDate>Sun, 13 Nov 2022 00:03:01 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2022/11/13/20221113_bookmarklet/</guid>
-      <description>環境 macOS Monterey(12.6) Google Chrome(107.0.5304.87) 前提条件 JavaScriptの経験がありDOMの操作ができる人向け 本題 bookmarkletとは 即時関数として記述したJavaS</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Monterey(12.6)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Google Chrome(107.0.5304.87)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_前提条件&#34;&gt;前提条件&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;JavaScriptの経験がありDOMの操作ができる人向け&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_本題&#34;&gt;本題&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_bookmarkletとは&#34;&gt;bookmarkletとは&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;即時関数として記述したJavaScriptのソースコードをブックマークから呼び出すことができる技術&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>OAuth/OpenIDConnect入門</title>
       <link>https://dotechan.github.io/blog/2022/10/29/20221029_oauth_intro/</link>
       <pubDate>Sat, 29 Oct 2022 11:28:03 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2022/10/29/20221029_oauth_intro/</guid>
-      <description>はじめに 環境 macOS Big Sur(11.5.2) 前提条件 本文 OAuthとは、OpenID Connectとは OAuthとは APIの利用可否を実行時にアクセストークンの提示を</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Big Sur(11.5.2)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_前提条件&#34;&gt;前提条件&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_本文&#34;&gt;本文&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_oauthとはopenid_connectとは&#34;&gt;OAuthとは、OpenID Connectとは&lt;/h3&gt;&#xA;&lt;div class=&#34;sect3&#34;&gt;&#xA;&lt;h4 id=&#34;_oauthとは&#34;&gt;OAuthとは&lt;/h4&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;APIの利用可否を実行時にアクセストークンの提示を要求する方法がOAuth2.0という技術仕様で定義されている&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;アクセストークンを発行するサーバをOAuth2.0では認可サーバと呼んでいる&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ユーザーが許可した場合のみプログラムはAPI利用に必要なアクセストークンの発行ができる、事前にアクセストークンを受け取っておく必要があるのがOAuth2.0の特徴&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>2022年10月27日時点でのzshrcの設定</title>
       <link>https://dotechan.github.io/blog/2022/10/27/20221027_zshrc/</link>
       <pubDate>Thu, 27 Oct 2022 23:38:36 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2022/10/27/20221027_zshrc/</guid>
-      <description>はじめに 環境 macOS Monterey(12.6) zshrcの内容 # 環境変数 export LANG=ja_JP.UTF-8 ## 色を使用出来るようにする autoload -Uz colors colors ## ターミナルの操作感をviチックに変更 bindkey -v ## 補完機能を有効に</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Monterey(12.6)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_zshrcの内容&#34;&gt;zshrcの内容&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-zshrc&#34; data-lang=&#34;zshrc&#34;&gt;# 環境変数&#xA;export LANG=ja_JP.UTF-8&#xA;&#xA;## 色を使用出来るようにする&#xA;autoload -Uz colors&#xA;colors&#xA;&#xA;## ターミナルの操作感をviチックに変更&#xA;bindkey -v&#xA;&#xA;## 補完機能を有効にする&#xA;## https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh&#xA;autoload -Uz compinit &amp;amp;&amp;amp; compinit&#xA;&#xA;## タブ補完時に大文字小文字を区別しない&#xA;zstyle &amp;#39;:completion:*&amp;#39; matcher-list &amp;#39;m:{a-z}={A-Z}&amp;#39;&#xA;&#xA;## Icebergのthemeを反映するためにlsコマンドを自動でls -Gの挙動にする&#xA;export CLICOLOR=1&#xA;&#xA;## エイリアス&#xA;alias ll=&amp;#39;ls -l&amp;#39;&#xA;alias tree=&amp;#39;tree -a -I &amp;#34;\.DS_Store|\.git|node_modules&amp;#34; -N&amp;#39;&#xA;alias f=&amp;#34;fvm flutter&amp;#34;&#xA;alias d=&amp;#34;fvm dart&amp;#34;&#xA;&#xA;## プロンプトのカスタマイズ&#xA;## https://dev.macha795.com/zsh-prompt-customize/&#xA;function left-prompt {&#xA;  name_t=&amp;#39;179m%}&amp;#39;      # user name text clolr&#xA;  name_b=&amp;#39;000m%}&amp;#39;    # user name background color&#xA;  path_t=&amp;#39;255m%}&amp;#39;     # path text clolr&#xA;  path_b=&amp;#39;031m%}&amp;#39;   # path background color&#xA;  arrow=&amp;#39;087m%}&amp;#39;   # arrow color&#xA;  text_color=&amp;#39;%{\e[38;5;&amp;#39;    # set text color&#xA;  back_color=&amp;#39;%{\e[30;48;5;&amp;#39; # set background color&#xA;  reset=&amp;#39;%{\e[0m%}&amp;#39;   # reset&#xA;  sharp=&amp;#34;\uE0B0&amp;#34;      # triangle&#xA;&#xA;  user=&amp;#34;${back_color}${name_b}${text_color}${name_t}&amp;#34;&#xA;  dir=&amp;#34;${back_color}${path_b}${text_color}${path_t}&amp;#34;&#xA;  echo &amp;#34;${user}%n%#@%m${back_color}${path_b}${text_color}${name_b}${sharp} ${dir}%~${reset}${text_color}${path_b}${sharp}${reset}\n${text_color}${arrow}&amp;gt; ${reset}&amp;#34;&#xA;}&#xA;&#xA;PROMPT=`left-prompt`&#xA;&#xA;# コマンドの実行ごとに改行&#xA;function precmd() {&#xA;  # Print a newline before the prompt, unless it&amp;#39;s the&#xA;  # first prompt in the process.&#xA;  if [ -z &amp;#34;$NEW_LINE_BEFORE_PROMPT&amp;#34; ]; then&#xA;      NEW_LINE_BEFORE_PROMPT=1&#xA;  elif [ &amp;#34;$NEW_LINE_BEFORE_PROMPT&amp;#34; -eq 1 ]; then&#xA;      echo &amp;#34;&amp;#34;&#xA;  fi&#xA;}&#xA;&#xA;# git ブランチ名を色付きで表示させるメソッド&#xA;function rprompt-git-current-branch {&#xA;  local branch_name st branch_status&#xA;&#xA;  branch=&amp;#39;\ue0a0&amp;#39;&#xA;  color=&amp;#39;%{\e[38;5;&amp;#39; #  文字色を設定&#xA;  green=&amp;#39;114m%}&amp;#39;&#xA;  red=&amp;#39;001m%}&amp;#39;&#xA;  yellow=&amp;#39;227m%}&amp;#39;&#xA;  blue=&amp;#39;033m%}&amp;#39;&#xA;  reset=&amp;#39;%{\e[0m%}&amp;#39;   # reset&#xA;&#xA;  color=&amp;#39;%{\e[38;5;&amp;#39; #  文字色を設定&#xA;  green=&amp;#39;114m%}&amp;#39;&#xA;&#xA;  # ブランチマーク&#xA;  if [ ! -e  &amp;#34;.git&amp;#34; ]; then&#xA;    # git 管理されていないディレクトリは何も返さない&#xA;    return&#xA;  fi&#xA;    branch_name=`git rev-parse --abbrev-ref HEAD 2&amp;gt; /dev/null`&#xA;    st=`git status 2&amp;gt; /dev/null`&#xA;  if [[ -n `echo &amp;#34;$st&amp;#34; | grep &amp;#34;^nothing to&amp;#34;` ]]; then&#xA;    # 全て commit されてクリーンな状態&#xA;    branch_status=&amp;#34;${color}${green}${branch}&amp;#34;&#xA;  elif [[ -n `echo &amp;#34;$st&amp;#34; | grep &amp;#34;^Untracked files&amp;#34;` ]]; then&#xA;    # git 管理されていないファイルがある状態&#xA;    branch_status=&amp;#34;${color}${red}${branch}?&amp;#34;&#xA;  elif [[ -n `echo &amp;#34;$st&amp;#34; | grep &amp;#34;^Changes not staged for commit&amp;#34;` ]]; then&#xA;    # git add されていないファイルがある状態&#xA;    branch_status=&amp;#34;${color}${red}${branch}+&amp;#34;&#xA;  elif [[ -n `echo &amp;#34;$st&amp;#34; | grep &amp;#34;^Changes to be committed&amp;#34;` ]]; then&#xA;    # git commit されていないファイルがある状態&#xA;    branch_status=&amp;#34;${color}${yellow}${branch}!&amp;#34;&#xA;  elif [[ -n `echo &amp;#34;$st&amp;#34; | grep &amp;#34;^rebase in progress&amp;#34;` ]]; then&#xA;    # コンフリクトが起こった状態&#xA;    echo &amp;#34;${color}${red}${branch}!(no branch)${reset}&amp;#34;&#xA;    return&#xA;  else&#xA;    # 上記以外の状態の場合&#xA;    branch_status=&amp;#34;${color}${blue}${branch}&amp;#34;&#xA;  fi&#xA;&#xA;  # ブランチ名を色付きで表示する&#xA;  echo &amp;#34;${branch_status}$branch_name${reset}&amp;#34;&#xA;}&#xA;&#xA;# プロンプトが表示されるたびにプロンプト文字列を評価、置換する&#xA;setopt prompt_subst&#xA;&#xA;# プロンプトの右側にメソッドの結果を表示させる&#xA;RPROMPT=&amp;#39;`rprompt-git-current-branch`&amp;#39;&#xA;&#xA;# The next line updates PATH for flutter.&#xA;export PATH=&amp;#34;$PATH&amp;#34;:&amp;#34;$HOME/fvm/default/bin&amp;#34;&#xA;export PATH=&amp;#34;$PATH&amp;#34;:&amp;#34;$HOME/.pub-cache/bin&amp;#34;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>2022年10月26日時点でのvimrcの設定</title>
       <link>https://dotechan.github.io/blog/2022/10/26/20221026_vimrc/</link>
       <pubDate>Wed, 26 Oct 2022 23:33:58 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2022/10/26/20221026_vimrc/</guid>
-      <description>はじめに 環境 macOS Monterey(12.6) VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Aug 17 2022 21:20:29 vimrcの内容 &amp;#34; 文字コード set fileencodings=utf-8,cp932 &amp;#34; 行番号 set number &amp;#34; 相対行番号 set relativenumber &amp;#34; カーソル set cursorline &amp;#34; シンタックス syntax enable &amp;#34; 検索</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Monterey(12.6)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Aug 17 2022 21:20:29&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_vimrcの内容&#34;&gt;vimrcの内容&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-vimscript&#34; data-lang=&#34;vimscript&#34;&gt;&amp;#34; 文字コード&#xA;set fileencodings=utf-8,cp932&#xA;&#xA;&amp;#34; 行番号&#xA;set number&#xA;&#xA;&amp;#34; 相対行番号&#xA;set relativenumber&#xA;&#xA;&amp;#34; カーソル&#xA;set cursorline&#xA;&#xA;&amp;#34; シンタックス&#xA;syntax enable&#xA;&#xA;&amp;#34; 検索ハイライト&#xA;set hlsearch&#xA;&#xA;&amp;#34; Escを2回押すとハイライトを消す&#xA;nnoremap &amp;lt;Esc&amp;gt;&amp;lt;Esc&amp;gt; :nohlsearch&amp;lt;CR&amp;gt;&#xA;&#xA;&amp;#34; インクリメントサーチ&#xA;set incsearch&#xA;&#xA;&amp;#34; Undoの永続化&#xA;if has(&amp;#39;persistent_undo&amp;#39;)&#xA;&#x9;let undo_path = expand(&amp;#39;~/.vim/undo&amp;#39;)&#xA;&#x9;exe &amp;#39;set undodir=&amp;#39; .. undo_path&#xA;&#x9;set undofile&#xA;endif&#xA;&#xA;&amp;#34; インデント&#xA;set smartindent&#xA;&#xA;&amp;#34; クリップボート&#xA;set clipboard+=unnamed&#xA;&#xA;&amp;#34; ステータスライン&#xA;set laststatus=2&#xA;&#xA;&amp;#34; コマンドライン補完&#xA;set wildmenu&#xA;&#xA;&amp;#34; ヘルプの日本語化&#xA;set helplang=ja&#xA;&#xA;&amp;#34; Vimのプラグインを管理する&#xA;&amp;#34; dein.vim settings {{{&#xA;&amp;#34; install dir {{{&#xA;let s:dein_dir = expand(&amp;#39;~/.cache/dein&amp;#39;)&#xA;let s:dein_repo_dir = s:dein_dir . &amp;#39;/repos/github.com/Shougo/dein.vim&amp;#39;&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; dein installation check {{{&#xA;if &amp;amp;runtimepath !~# &amp;#39;/dein.vim&amp;#39;&#xA;  if !isdirectory(s:dein_repo_dir)&#xA;    execute &amp;#39;!git clone https://github.com/Shougo/dein.vim&amp;#39; s:dein_repo_dir&#xA;  endif&#xA;  execute &amp;#39;set runtimepath^=&amp;#39; . s:dein_repo_dir&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; begin settings {{{&#xA;if dein#load_state(s:dein_dir)&#xA;  call dein#begin(s:dein_dir)&#xA;&#xA;  &amp;#34; .toml file&#xA;  let s:rc_dir = expand(&amp;#39;~/.vim&amp;#39;)&#xA;  if !isdirectory(s:rc_dir)&#xA;    call mkdir(s:rc_dir, &amp;#39;p&amp;#39;)&#xA;  endif&#xA;  let s:toml = s:rc_dir . &amp;#39;/dein.toml&amp;#39;&#xA;&#xA;  &amp;#34; read toml and cache&#xA;  call dein#load_toml(s:toml, {&amp;#39;lazy&amp;#39;: 0})&#xA;&#xA;  &amp;#34; end settings&#xA;  call dein#end()&#xA;  call dein#save_state()&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; plugin installation check {{{&#xA;if dein#check_install()&#xA;  call dein#install()&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; plugin remove check {{{&#xA;let s:removed_plugins = dein#check_clean()&#xA;if len(s:removed_plugins) &amp;gt; 0&#xA;  call map(s:removed_plugins, &amp;#34;delete(v:val, &amp;#39;rf&amp;#39;)&amp;#34;)&#xA;  call dein#recache_runtimepath()&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&#xA;&amp;#34; TABキーを押した際にタブ文字の代わりにスペースを入れる&#xA;set expandtab&#xA;set tabstop=2&#xA;set shiftwidth=2&#xA;&#xA;&amp;#34; (参照)https://missing-semester-jp.github.io/2020/editors/&#xA;&amp;#34; TODO: ステータスライン&#xA;set laststatus=2&#xA;&#xA;&amp;#34; By default, Vim doesn&amp;#39;t let you hide a buffer (i.e. have a buffer that isn&amp;#39;t&#xA;&amp;#34; shown in any window) that has unsaved changes. This is to prevent you from &amp;#34;&#xA;&amp;#34; forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find&#xA;&amp;#34; hidden buffers helpful enough to di&#xA;set hidden&#xA;&#xA;&amp;#34; This setting makes search case-insensitive when all characters in the string&#xA;&amp;#34; being searched are lowercase. However, the search becomes case-sensitive if&#xA;&amp;#34; it contains any capital letters. This makes searching more convenient.&#xA;set ignorecase&#xA;set smartcase&#xA;&#xA;&amp;#34; Unbind some useless/annoying default key bindings.&#xA;nmap Q &amp;lt;Nop&amp;gt; &amp;#34; &amp;#39;Q&amp;#39; in normal mode enters Ex mode. You almost never want this.&#xA;&#xA;&amp;#34; Disable audible bell because it&amp;#39;s annoying.&#xA;set noerrorbells visualbell t_vb=&#xA;&#xA;&amp;#34; Enable mouse support. You should avoid relying on this too much, but it can&#xA;&amp;#34; sometimes be convenient.&#xA;set mouse+=a&#xA;&#xA;&amp;#34; Try to prevent bad habits like using the arrow keys for movement. This is&#xA;&amp;#34; not the only possible bad habit. For example, holding down the h/j/k/l keys&#xA;&amp;#34; for movement, rather than using more efficient movement commands, is also a&#xA;&amp;#34; bad habit. The former is enforceable through a .vimrc, while we don&amp;#39;t know&#xA;&amp;#34; how to prevent the latter.&#xA;&amp;#34; Do this in normal mode...&#xA;nnoremap &amp;lt;Left&amp;gt;  :echoe &amp;#34;Use h&amp;#34;&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;Right&amp;gt; :echoe &amp;#34;Use l&amp;#34;&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;Up&amp;gt;    :echoe &amp;#34;Use k&amp;#34;&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;Down&amp;gt;  :echoe &amp;#34;Use j&amp;#34;&amp;lt;CR&amp;gt;&#xA;&amp;#34; ...and in insert mode&#xA;inoremap &amp;lt;Left&amp;gt;  &amp;lt;ESC&amp;gt;:echoe &amp;#34;Use h&amp;#34;&amp;lt;CR&amp;gt;&#xA;inoremap &amp;lt;Right&amp;gt; &amp;lt;ESC&amp;gt;:echoe &amp;#34;Use l&amp;#34;&amp;lt;CR&amp;gt;&#xA;inoremap &amp;lt;Up&amp;gt;    &amp;lt;ESC&amp;gt;:echoe &amp;#34;Use k&amp;#34;&amp;lt;CR&amp;gt;&#xA;inoremap &amp;lt;Down&amp;gt;  &amp;lt;ESC&amp;gt;:echoe &amp;#34;Use j&amp;#34;&amp;lt;CR&amp;gt;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>2021年の振り返り</title>
       <link>https://dotechan.github.io/blog/2021/12/31/2021_retrospective/</link>
       <pubDate>Fri, 31 Dec 2021 22:12:09 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/12/31/2021_retrospective/</guid>
-      <description>スキル棚卸し 業務履歴 Androidアプリ開発4年6ヶ月 Webアプリケーション開発12ヶ月 振り返り 今年やったこと 月毎に新しく触り始めた技術や注</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_スキル棚卸し&#34;&gt;スキル棚卸し&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_業務履歴&#34;&gt;業務履歴&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Androidアプリ開発4年6ヶ月&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Webアプリケーション開発12ヶ月&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_振り返り&#34;&gt;振り返り&lt;/h3&gt;&#xA;&lt;div class=&#34;sect3&#34;&gt;&#xA;&lt;h4 id=&#34;_今年やったこと&#34;&gt;今年やったこと&lt;/h4&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;月毎に新しく触り始めた技術や注力した技術をTwitterやブログから拾ってきてまとめてみた。&lt;br/&gt;&#xA;並べてみると広く浅く新しいことを始めていた。一方で相変わらず継続できていることはない。&lt;br/&gt;&#xA;このまま行き当たりばったりで何も成し遂げられない、残せずに日々を過ごしていっていいのか？時間は有限であるためそろそろ戦略が必要な気がしている。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Docker Composeとexpress.jsとMySQLでバックエンド環境を用意する</title>
       <link>https://dotechan.github.io/blog/2021/09/04/docker_compose_backend_db/</link>
       <pubDate>Sat, 04 Sep 2021 16:21:33 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/09/04/docker_compose_backend_db/</guid>
-      <description>はじめに Docker Composeとexpress.jsとMySQLで開発用のHTTPサーバを立てて、ホストPCから送ったHTTPリクエストにレスポン</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Docker Composeとexpress.jsとMySQLで開発用のHTTPサーバを立てて、ホストPCから送ったHTTPリクエストにレスポンスが返せるようになるところまで実施した際の備忘録です。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>personal access tokenでGithubの認証を通す</title>
       <link>https://dotechan.github.io/blog/2021/08/15/switch_ssh_to_https_github_protocol/</link>
       <pubDate>Sun, 15 Aug 2021 01:12:02 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/08/15/switch_ssh_to_https_github_protocol/</guid>
-      <description>はじめに 以前からアナウンスされていたが日本時間の8/14にGitHubの認証に従来のパスワード認証が使えなくなったので推奨されているトークン</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;以前からアナウンスされていたが日本時間の8/14にGitHubの認証に従来のパスワード認証が使えなくなったので推奨されているトークンを発行して認証する方法に切り替えたので手順を残しておく&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>2021年8月時点のスキル棚卸し</title>
       <link>https://dotechan.github.io/blog/2021/08/01/20210801_inventory_skill/</link>
       <pubDate>Sun, 01 Aug 2021 23:49:06 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/08/01/20210801_inventory_skill/</guid>
-      <description>スキル棚卸し 業務履歴 Androidアプリ開発4年6ヶ月 Webアプリケーション開発7ヶ月 振り返り やりたいこと・なりたい姿 課題を見つけ本質的な解</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_スキル棚卸し&#34;&gt;スキル棚卸し&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_業務履歴&#34;&gt;業務履歴&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Androidアプリ開発4年6ヶ月&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Webアプリケーション開発7ヶ月&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_振り返り&#34;&gt;振り返り&lt;/h3&gt;&#xA;&lt;div class=&#34;sect3&#34;&gt;&#xA;&lt;h4 id=&#34;_やりたいことなりたい姿&#34;&gt;やりたいこと・なりたい姿&lt;/h4&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;課題を見つけ本質的な解決策の仮説を立ててプロダクトを作成し検証できる&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;業務効率化に役立つツールやスクリプトを簡単に実装できる&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>DockerでMySQLのデータベースを用意する</title>
       <link>https://dotechan.github.io/blog/2021/07/25/prepare_mysql_docker/</link>
       <pubDate>Sun, 25 Jul 2021 10:09:51 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/07/25/prepare_mysql_docker/</guid>
-      <description>環境 MacOS Big Sur(11.4) MySQL(8.0) docker desktop(3.3.1) 前提条件 Dockerをインストール済み 手順 1. Docker HubのMySQL公式イメージを使用してMySQLのコンテナを作成する docker run --name world-db</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;MacOS Big Sur(11.4)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;MySQL(8.0)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;docker desktop(3.3.1)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_前提条件&#34;&gt;前提条件&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Dockerをインストール済み&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_手順&#34;&gt;手順&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_1_docker_hubのmysql公式イメージを使用してmysqlのコンテナを作成する&#34;&gt;1. Docker HubのMySQL公式イメージを使用してMySQLのコンテナを作成する&lt;/h3&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code&gt;docker run --name world-db -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:8.0&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_2_mysql公式からサンプルデータを取得してローカルに解凍する&#34;&gt;2. MySQL公式からサンプルデータを取得してローカルに解凍する&lt;/h3&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;手順1で指定したMySQLのバージョンにあったサンプルデータをgzip形式でダウンロードして解凍する。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>2021年7月時点のスキル棚卸し</title>
       <link>https://dotechan.github.io/blog/2021/07/02/20210702_inventory_skill/</link>
       <pubDate>Fri, 02 Jul 2021 08:52:42 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/07/02/20210702_inventory_skill/</guid>
-      <description>はじめに 先月の振り返りを後回しにしているうちに月を跨いでしまった。 習慣にできないのは目標がないから継続的に進める気にならないのかな。 振り返り</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;先月の振り返りを後回しにしているうちに月を跨いでしまった。&lt;br/&gt;&#xA;習慣にできないのは目標がないから継続的に進める気にならないのかな。&lt;br/&gt;&#xA;振り返りもドラフト記事として非公開にしていたが公開することで自分に少しだけプレッシャーをかけてみる。&lt;br/&gt;&#xA;まあ誰もみていないだろうとは思うのでプレッシャーがかかるかと言われると全然かからないのだが。。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>はじめてのWebAuthn</title>
       <link>https://dotechan.github.io/blog/2021/04/10/introduction_web_authn/</link>
       <pubDate>Sat, 10 Apr 2021 09:57:58 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/04/10/introduction_web_authn/</guid>
-      <description>環境 macOS Big Sur(11.2.3) Google Chrome(89.0.4389.114) 用語 FIDO Fast Identity Online セキュリティキーと呼ばれる専用デバイスを使った認証の仕組みを標準化したもの 広い意味では認証器、登録時に新しい公開鍵</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Big Sur(11.2.3)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Google Chrome(89.0.4389.114)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_用語&#34;&gt;用語&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_fido&#34;&gt;FIDO&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Fast Identity Online&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;セキュリティキーと呼ばれる専用デバイスを使った認証の仕組みを標準化したもの&lt;/p&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;広い意味では認証器、登録時に新しい公開鍵ペアを作り、秘密鍵を安全に保管、公開鍵だけを返す、ログイン時に署名を返す機能を持っている&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>データベースに入門してみた</title>
       <link>https://dotechan.github.io/blog/2021/03/06/introduction_database/</link>
       <pubDate>Sat, 06 Mar 2021 17:26:49 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/03/06/introduction_database/</guid>
-      <description>はじめに データベース初心者がMySQLのチュートリアルのを実践した後にDockerでたてたRedmineのバックエンドとして動いているMar</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;データベース初心者がMySQLのチュートリアルのを実践した後にDockerでたてたRedmineのバックエンドとして動いているMariaDBの中身を覗いた時のメモです&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;MySQLとMariaDBの違いについては互換性があるくらいしかわかっていないので書きません&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>react-router-domのRouteコンポーネントをネストしてコンポーネントを切り替える</title>
       <link>https://dotechan.github.io/blog/2021/02/20/react-nest-routing/</link>
       <pubDate>Sat, 20 Feb 2021 12:38:36 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/02/20/react-nest-routing/</guid>
-      <description>はじめに react-router-domのRouteコンポーネントをネストしてコンポーネントを切り替える方法について書きます react-ro</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;react-router-domのRouteコンポーネントをネストしてコンポーネントを切り替える方法について書きます&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;react-router-domの基本的な使い方についても書きます&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>RaspberryPiにDockerをインストールする</title>
       <link>https://dotechan.github.io/blog/2021/01/18/install_docker_for_raspberrypi/</link>
       <pubDate>Mon, 18 Jan 2021 22:22:25 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/01/18/install_docker_for_raspberrypi/</guid>
-      <description>環境 Raspbian GNU/Linux 9.13 (stretch) 前提条件 OS requirementsを満たしているRaspbian OSでのDockerインストール手順です。 https://docs.docker.com/engine/install/debian/#os-requirements Using these scripts is not recommended for production environments, and</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Raspbian GNU/Linux 9.13 (stretch)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_前提条件&#34;&gt;前提条件&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;OS requirementsを満たしているRaspbian OSでのDockerインストール手順です。&#xA;&lt;a href=&#34;https://docs.docker.com/engine/install/debian/#os-requirements&#34; class=&#34;bare&#34;&gt;https://docs.docker.com/engine/install/debian/#os-requirements&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;quoteblock&#34;&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Using these scripts is not recommended for production environments, and you should understand the potential risks before you use them:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>ターミナルのコマンドライン操作をviチックにする</title>
       <link>https://dotechan.github.io/blog/2021/01/17/use_vi_mode_on_shell/</link>
       <pubDate>Sun, 17 Jan 2021 11:24:40 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/01/17/use_vi_mode_on_shell/</guid>
-      <description>はじめに Emacsは使ったことがないので知らなかったのですが、TerminalのショートカットはEmacsがベースになっているようです。 そし</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Emacsは使ったことがないので知らなかったのですが、TerminalのショートカットはEmacsがベースになっているようです。&lt;br/&gt;&#xA;そして何やらViの操作感を実現できるようなので早速readlineの設定を変更して試してみました。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>RaspberryPiを初回起動した後に変更した設定</title>
       <link>https://dotechan.github.io/blog/2021/01/10/setup_raspberrypi/</link>
       <pubDate>Sun, 10 Jan 2021 11:34:32 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/01/10/setup_raspberrypi/</guid>
-      <description>はじめに 友達からOSのインストールまで完了したRaspberryPiをもらったので、手元のPCからセキュリティを担保しつつ、sshで接続でき</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;友達からOSのインストールまで完了したRaspberryPiをもらったので、手元のPCからセキュリティを担保しつつ、sshで接続できるように設定しました。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>2021年1月9日時点でのvimrcの設定</title>
       <link>https://dotechan.github.io/blog/2021/01/09/vimrc_settings_at_20210109/</link>
       <pubDate>Sat, 09 Jan 2021 13:50:27 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/01/09/vimrc_settings_at_20210109/</guid>
-      <description>環境 VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Nov 23 2020 06:06:21) vimrcの内容 &amp;#34; 文字コード set fileencodings=utf-8,cp932 &amp;#34; 行番号 set number &amp;#34; カーソル set cursorline &amp;#34; シンタックス syntax enable &amp;#34; 検索ハイライト set hlsearch &amp;#34; Escを2回</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Nov 23 2020 06:06:21)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_vimrcの内容&#34;&gt;vimrcの内容&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-vimrc&#34; data-lang=&#34;vimrc&#34;&gt;&amp;#34; 文字コード&#xA;set fileencodings=utf-8,cp932&#xA;&#xA;&amp;#34; 行番号&#xA;set number&#xA;&#xA;&amp;#34; カーソル&#xA;set cursorline&#xA;&#xA;&amp;#34; シンタックス&#xA;syntax enable&#xA;&#xA;&amp;#34; 検索ハイライト&#xA;set hlsearch&#xA;&#xA;&amp;#34; Escを2回押すとハイライトを消す&#xA;nnoremap &amp;lt;Esc&amp;gt;&amp;lt;Esc&amp;gt; :nohlsearch&amp;lt;CR&amp;gt;&#xA;&#xA;&amp;#34; インクリメントサーチ&#xA;set incsearch&#xA;&#xA;&amp;#34; Undoの永続化&#xA;if has(&amp;#39;persistent_undo&amp;#39;)&#xA;&#x9;let undo_path = expand(&amp;#39;~/.vim/undo&amp;#39;)&#xA;&#x9;exe &amp;#39;set undodir=&amp;#39; .. undo_path&#xA;&#x9;set undofile&#xA;endif&#xA;&#xA;&amp;#34; インデント&#xA;set smartindent&#xA;&#xA;&amp;#34; クリップボート&#xA;set clipboard+=unnamed&#xA;&#xA;&amp;#34; ステータスライン&#xA;set laststatus=2&#xA;&#xA;&amp;#34; コマンドライン補完&#xA;set wildmenu&#xA;&#xA;&amp;#34; ヘルプの日本語化&#xA;set helplang=ja&#xA;&#xA;&amp;#34; Vimのプラグインを管理する&#xA;&amp;#34; dein.vim settings {{{&#xA;&amp;#34; install dir {{{&#xA;let s:dein_dir = expand(&amp;#39;~/.cache/dein&amp;#39;)&#xA;let s:dein_repo_dir = s:dein_dir . &amp;#39;/repos/github.com/Shougo/dein.vim&amp;#39;&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; dein installation check {{{&#xA;if &amp;amp;runtimepath !~# &amp;#39;/dein.vim&amp;#39;&#xA;  if !isdirectory(s:dein_repo_dir)&#xA;    execute &amp;#39;!git clone https://github.com/Shougo/dein.vim&amp;#39; s:dein_repo_dir&#xA;  endif&#xA;  execute &amp;#39;set runtimepath^=&amp;#39; . s:dein_repo_dir&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; begin settings {{{&#xA;if dein#load_state(s:dein_dir)&#xA;  call dein#begin(s:dein_dir)&#xA;&#xA;  &amp;#34; .toml file&#xA;  let s:rc_dir = expand(&amp;#39;~/.vim&amp;#39;)&#xA;  if !isdirectory(s:rc_dir)&#xA;    call mkdir(s:rc_dir, &amp;#39;p&amp;#39;)&#xA;  endif&#xA;  let s:toml = s:rc_dir . &amp;#39;/dein.toml&amp;#39;&#xA;&#xA;  &amp;#34; read toml and cache&#xA;  call dein#load_toml(s:toml, {&amp;#39;lazy&amp;#39;: 0})&#xA;&#xA;  &amp;#34; end settings&#xA;  call dein#end()&#xA;  call dein#save_state()&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; plugin installation check {{{&#xA;if dein#check_install()&#xA;  call dein#install()&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; plugin remove check {{{&#xA;let s:removed_plugins = dein#check_clean()&#xA;if len(s:removed_plugins) &amp;gt; 0&#xA;  call map(s:removed_plugins, &amp;#34;delete(v:val, &amp;#39;rf&amp;#39;)&amp;#34;)&#xA;  call dein#recache_runtimepath()&#xA;endif&#xA;&amp;#34; }}}&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>React入門</title>
       <link>https://dotechan.github.io/blog/2021/01/01/react_tutorial/</link>
       <pubDate>Fri, 01 Jan 2021 12:41:19 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/01/01/react_tutorial/</guid>
-      <description>はじめに React.jsを利用してWebアプリ（Reactの公式サイトに掲載されているチュートリアル）を完了させるまでにやったことを記載して</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;React.jsを利用してWebアプリ（Reactの公式サイトに掲載されているチュートリアル）を完了させるまでにやったことを記載しておきます。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>DockerでRedmineを動かす</title>
       <link>https://dotechan.github.io/blog/2020/12/27/build_docker_redmine/</link>
       <pubDate>Sun, 27 Dec 2020 23:34:57 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/12/27/build_docker_redmine/</guid>
-      <description>はじめに Redmine4.1.1をDBにMariaDBを指定して動かす方法について書きます Redmine, MariaDBともに公式のDockerイメージを</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Redmine4.1.1をDBにMariaDBを指定して動かす方法について書きます&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Redmine, MariaDBともに公式のDockerイメージを利用します&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;docker-composeを利用してRedmine, MariadDBのDockerコンテナを起動します&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>PlantUMLでタイミング図を描く</title>
       <link>https://dotechan.github.io/blog/2020/12/09/plant_uml_timing-diagram/</link>
       <pubDate>Wed, 09 Dec 2020 22:01:34 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/12/09/plant_uml_timing-diagram/</guid>
-      <description>はじめに システムテストの障害解析時に複数のモジュール担当者で合同でログ解析を行う機会がありました。 それぞれのモジュールは並列に処理が動き、あ</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;システムテストの障害解析時に複数のモジュール担当者で合同でログ解析を行う機会がありました。&lt;br/&gt;&#xA;それぞれのモジュールは並列に処理が動き、あるタイミングでそれぞれの処理がバッティングすると問題が発生します。&lt;br/&gt;&#xA;障害発生ケースだけであればシーケンス図でまとめることでわかりやすくまとめることができます。&lt;br/&gt;&#xA;しかし、障害発生ケースと問題が発生しなかったケースの比較をしたい時、シーケンス図だと時間のスケールを表現が難しいです。&lt;br/&gt;&#xA;そこで時間のスケールを表現する手法やツールを調べていたところPlantUMLのタイミング図を見つけました。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>伝わる技術文書の書き方</title>
       <link>https://dotechan.github.io/blog/2020/12/01/method_write_tech_blog/</link>
       <pubDate>Tue, 01 Dec 2020 16:31:15 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/12/01/method_write_tech_blog/</guid>
-      <description>はじめに merpay Tech Talkの「伝わる技術文書の書き方」をオンラインで視聴した際のメモです。 自分で見直す用です。 参考記事 merpay Tech Talk 伝わる技術文書の書き方</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;merpay Tech Talkの「伝わる技術文書の書き方」をオンラインで視聴した際のメモです。&lt;br/&gt;&#xA;自分で見直す用です。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=GvjScPO3OcA&amp;amp;feature=youtu.be&#34;&gt;merpay Tech Talk &lt;sub&gt;伝わる技術文書の書き方&lt;/sub&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_メモ&#34;&gt;メモ&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_注意点&#34;&gt;注意点&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;言葉の揺れ&lt;/p&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;「あらたに」と「新たに」が混在&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>JavaScriptでxmlファイルを加工するスクリプトを作る</title>
       <link>https://dotechan.github.io/blog/2020/10/30/first_javascript_nodejs/</link>
       <pubDate>Fri, 30 Oct 2020 19:01:43 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/10/30/first_javascript_nodejs/</guid>
-      <description>はじめに xmlファイルの加工をCLIから行いたくてJavaScriptとNode.jsをいじってみました。 シェルスクリプトでもできると思いま</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;xmlファイルの加工をCLIから行いたくてJavaScriptとNode.jsをいじってみました。&lt;br/&gt;&#xA;シェルスクリプトでもできると思いますが、高級言語で手っ取り早くDOM APIで操作できた方が楽だなと思い、JavaScriptでやることに決めました。&lt;br/&gt;&#xA;構文自体はググればわかるのですが、実行環境やDOMが理解できておらず、つまずいたので備忘録として残します。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Android JetpackのNavigationコンポーネントを使ってみた</title>
       <link>https://dotechan.github.io/blog/2020/09/12/introduction_navigation_component/</link>
       <pubDate>Sat, 12 Sep 2020 09:42:24 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/09/12/introduction_navigation_component/</guid>
-      <description>環境 Mac OS X(10.15.4) Android Studio 4.0.1 Navigationコンポーネント 2.3.0 参考記事 (公式)ナビゲーション コードラボ 用語 Navigation Graph (New XML resource) ナビゲーションに関わる全ての情報を</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mac OS X(10.15.4)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Android Studio 4.0.1&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Navigationコンポーネント 2.3.0&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/navigation&#34;&gt;(公式)ナビゲーション&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://codelabs.developers.google.com/codelabs/android-navigation/index.html#0&#34;&gt;コードラボ&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_用語&#34;&gt;用語&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Navigation Graph (New XML resource)&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;literalblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;ナビゲーションに関わる全ての情報を集中管理しているXMLファイルのこと。&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>カラースキームであるICEBERGを使ってみた</title>
       <link>https://dotechan.github.io/blog/2020/07/19/use_iceberg/</link>
       <pubDate>Sun, 19 Jul 2020 22:35:12 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/07/19/use_iceberg/</guid>
-      <description>はじめに ターミナルをカッコよくしたくてICEBERGというカラースキームを使ってみました。 環境 Mac OS X(10.15.4) 参考記事 ICEBERG Icebergを各所に導入 ター</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;ターミナルをカッコよくしたくてICEBERGというカラースキームを使ってみました。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mac OS X(10.15.4)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cocopon.github.io/iceberg.vim/&#34;&gt;ICEBERG&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.ambitious-i.net/blog/vim_use_iceberg&#34;&gt;Icebergを各所に導入&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://qiita.com/harashoo/items/e63b8b60fad1cfd7ff2b&#34;&gt;ターミナルのカラースキームを変更しても色が変わらない時の対処法&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>SQLite Databaseの中身を確認する</title>
       <link>https://dotechan.github.io/blog/2020/06/20/debug_sqlite_database/</link>
       <pubDate>Sat, 20 Jun 2020 12:45:51 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/06/20/debug_sqlite_database/</guid>
-      <description>はじめに Android Qのエミュレーターでsqlite3を使用してDatabaseのdebugができるようになります。 環境 Mac OS X(10.15.4) Android 10.0(Q) SQLite version 3.28.0 前提条件 And</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Android Qのエミュレーターでsqlite3を使用してDatabaseのdebugができるようになります。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mac OS X(10.15.4)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Android 10.0(Q)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SQLite version 3.28.0&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_前提条件&#34;&gt;前提条件&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Android/sdk/platform-toolsへのpathを通していること&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Macでのpathの通し方</title>
       <link>https://dotechan.github.io/blog/2020/06/19/export_path_for_mac/</link>
       <pubDate>Fri, 19 Jun 2020 09:29:26 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/06/19/export_path_for_mac/</guid>
-      <description>環境 Mac OS X(10.15.4) zsh 5.7.1 参考記事 macでPATHを通す方法 - zsh/bash export command in Linux with Examples PATHの通し方 export PATH=$PATH:want_to_add_path want_to_add_pathには今回使用したいコマン</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Mac OS X(10.15.4)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;zsh 5.7.1&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://qiita.com/k3ntar0/items/eb8cdbd8eba9da388def&#34;&gt;macでPATHを通す方法 - zsh/bash&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.geeksforgeeks.org/export-command-in-linux-with-examples/&#34;&gt;export command in Linux with Examples&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_pathの通し方&#34;&gt;PATHの通し方&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;literalblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre&gt;export PATH=$PATH:want_to_add_path&lt;/pre&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;want_to_add_pathには今回使用したいコマンドが配置されているpathを指定します。&lt;br/&gt;&#xA;PATHという環境変数に追加しておくこという感じです。&lt;br/&gt;&#xA;zshであれば起動時に読み込まれる~/.zshrcに追記しておくといいでしょう。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Macのメニューに表示される記号</title>
       <link>https://dotechan.github.io/blog/2020/06/16/mac_menu_sign/</link>
       <pubDate>Tue, 16 Jun 2020 23:00:42 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/06/16/mac_menu_sign/</guid>
-      <description>参考記事 macOSユーザーガイド 修飾キーとの対応 [ヘルプ]の検索バーで「Macのメニューに表示される記号」と検索すると * 記号と修飾キーとの対</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOSユーザーガイド&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_修飾キーとの対応&#34;&gt;修飾キーとの対応&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;[ヘルプ]の検索バーで「Macのメニューに表示される記号」と検索すると *&#xA;記号と修飾キーとの対応一覧が確認できます。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>はじめてのVim</title>
       <link>https://dotechan.github.io/blog/2020/06/08/introduce_vim/</link>
       <pubDate>Mon, 08 Jun 2020 22:31:01 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/06/08/introduce_vim/</guid>
-      <description>はじめに Android StudioやVS codeを使うことが多いのです エディタによってショートカットが異なり混乱することがしばしばありました。 どちらのエ</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Android StudioやVS codeを使うことが多いのです&lt;br/&gt;&#xA;エディタによってショートカットが異なり混乱することがしばしばありました。&lt;br/&gt;&#xA;どちらのエディタにもVimキーバインド拡張が用意されていたので、&lt;br/&gt;&#xA;操作感を統一するのにいいのでは？と思い導入してみました。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>AndroidアプリにDDDを適応する-戦略的設計-</title>
       <link>https://dotechan.github.io/blog/2020/06/06/droidkaigi_ddd/</link>
       <pubDate>Sat, 06 Jun 2020 12:22:39 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/06/06/droidkaigi_ddd/</guid>
-      <description>はじめに ビジネスに適応するソフトウェアを作るにはどうすればいいのか模索している中でDDDの存在を知りました。 勉強がてら個人のAndroidア</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;ビジネスに適応するソフトウェアを作るにはどうすればいいのか模索している中でDDDの存在を知りました。&lt;br/&gt;&#xA;勉強がてら個人のAndroidアプリ開発でDDDを実践しようとしましたが、技術的なパターンを取り入れてはいるものの&lt;br/&gt;&#xA;どこかしっくりこず、DDDへの理解が深まらない中でアプリ開発を進めている状況でした。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>わかる！ドメイン駆動設計〜もちこちゃんの大冒険〜</title>
       <link>https://dotechan.github.io/blog/2020/06/03/techbooster_domain_mochico/</link>
       <pubDate>Wed, 03 Jun 2020 00:29:17 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/06/03/techbooster_domain_mochico/</guid>
-      <description>はじめに DDDに興味があって本読んだりオンライン勉強会に参加するなりして ちょいちょいDDDの勉強はしています。 DDD自体は概念が大事っぽいの</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;DDDに興味があって本読んだりオンライン勉強会に参加するなりして&lt;br/&gt;&#xA;ちょいちょいDDDの勉強はしています。&lt;br/&gt;&#xA;DDD自体は概念が大事っぽいので、具体的な題材はなんだっていいのですが、&lt;br/&gt;&#xA;それにしてもWebアプリベースの話が多いかなという感触です。&lt;br/&gt;&#xA;Androidベースの話の方がわかりやすいかなと思い表題の書籍を読んでみました。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>zshでgitコマンドの補完をする</title>
       <link>https://dotechan.github.io/blog/2020/05/27/git_completion_for_zsh/</link>
       <pubDate>Wed, 27 May 2020 22:11:06 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/27/git_completion_for_zsh/</guid>
-      <description>はじめに 今までWindowsしか使ったことがなかったのですが 前から憧れていたMacbook Pro 13inchに乗り換えました。 そしてJISキーボ</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;今までWindowsしか使ったことがなかったのですが&lt;br/&gt;&#xA;前から憧れていたMacbook Pro 13inchに乗り換えました。&lt;br/&gt;&#xA;そしてJISキーボードの使用経験しかなかったのですが&lt;br/&gt;&#xA;ノリでUSキーボードにしてみました。&lt;br/&gt;&#xA;そんな訳でブラインドタッチもできなくなり初々しい感じですが&lt;br/&gt;&#xA;Terminal周りの設定とかをやっているのでメモしておきます。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>レガシーコードからの脱却</title>
       <link>https://dotechan.github.io/blog/2020/05/09/break_away_legacy_code/</link>
       <pubDate>Sat, 09 May 2020 23:05:53 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/09/break_away_legacy_code/</guid>
-      <description>はじめに 書籍を読んだ感想です。要約ではないです。 参考文献 David Scott Bernstein (2019)『レガシーコードからの脱却 ソフトウェアの寿命を延ばし価値を高める9</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;書籍を読んだ感想です。要約ではないです。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考文献&#34;&gt;参考文献&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;David Scott Bernstein (2019)『レガシーコードからの脱却 ソフトウェアの寿命を延ばし価値を高める9つのプラクティス』 株式会社オライリー・ジャパン,&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Androidのstyleとtheme</title>
       <link>https://dotechan.github.io/blog/2020/05/06/android_style_theme/</link>
       <pubDate>Wed, 06 May 2020 19:11:51 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/06/android_style_theme/</guid>
-      <description>はじめに Androidのstyleとthemeの使い分けについて調べた 参考記事 スタイルとテーマ スタイル属性を参照する Style Viewやウィンドウの</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Androidのstyleとthemeの使い分けについて調べた&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/ui/themes?hl=ja&#34;&gt;スタイルとテーマ&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/resources/accessing-resources.html#ReferencesToThemeAttributes&#34;&gt;スタイル属性を参照する&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_style&#34;&gt;Style&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Viewやウィンドウの外観や書式を指定するプロパティの集合&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ウェブデザインにおけるCSSと同じようなもの&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;レイアウトを指定するXMLとは別のXMLで定義される&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;View単位で指定する(レイアウトのXMLのView要素にstyle属性を追加する)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ViewGroupにスタイルを適用しても子要素Viewにはスタイルが適用されない&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>テスト駆動設計(TDD)オンライン勉強会#1</title>
       <link>https://dotechan.github.io/blog/2020/05/04/tdd_study_mtg_1/</link>
       <pubDate>Mon, 04 May 2020 20:05:44 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/04/tdd_study_mtg_1/</guid>
-      <description>動画 TDDオンライン勉強会 #1「ライブコーディングで体感する TDD基礎 」(講義編) 内容 定義 自動化されたテストが失敗した時のみ新しいコードを書</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_動画&#34;&gt;動画&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=UhHdnLTxOjE&#34;&gt;TDDオンライン勉強会 #1「ライブコーディングで体感する TDD基礎 」(講義編)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_内容&#34;&gt;内容&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_定義&#34;&gt;定義&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;自動化されたテストが失敗した時のみ新しいコードを書く&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;重複を除去する&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_tddのゴール&#34;&gt;TDDのゴール&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;動作するきれいなコード(Clean code that works)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>KotlinのCoroutineを使ってみたい</title>
       <link>https://dotechan.github.io/blog/2020/05/04/coroutine_with_kotlin/</link>
       <pubDate>Mon, 04 May 2020 06:23:29 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/04/coroutine_with_kotlin/</guid>
-      <description>はじめに 公式とGoogle Codelabsを参考にKotlinのcoroutineについて学習したので メモとして残しておきます。 環境 Windows 10 Home (1903)</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;公式とGoogle Codelabsを参考にKotlinのcoroutineについて学習したので&lt;br/&gt;&#xA;メモとして残しておきます。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Windows 10 Home (1903)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;kotlin (1.3.72)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;kotlinx-coroutines-core (1.3.4)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>シェルスクリプトの実行方法は大きく分けて2つある</title>
       <link>https://dotechan.github.io/blog/2020/05/03/execute_pattern_shell_scripts/</link>
       <pubDate>Sun, 03 May 2020 18:15:09 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/03/execute_pattern_shell_scripts/</guid>
-      <description>はじめに ブログの記事を作成するにあたってhugoコマンドやdeployするまでの gitコマンドの実行を自動化するためにシェルスクリプトを書く</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;ブログの記事を作成するにあたってhugoコマンドやdeployするまでの&lt;br/&gt;&#xA;gitコマンドの実行を自動化するためにシェルスクリプトを書く機会がありました。&lt;br/&gt;&#xA;その中でシェルスクリプトの実行方法に種類があることがわかったので調べた結果をまとめます。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Git-submoduleを使いこなす</title>
       <link>https://dotechan.github.io/blog/2020/05/03/git-submodule/</link>
       <pubDate>Sun, 03 May 2020 16:34:57 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/03/git-submodule/</guid>
-      <description>はじめに Hugoでブログを生成する時にgit-submoduleというコマンドを知ったので 軽く使い方について調べたのでメモしておきます。 環境</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Hugoでブログを生成する時にgit-submoduleというコマンドを知ったので&lt;br/&gt;&#xA;軽く使い方について調べたのでメモしておきます。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Git for Windows (v2.26.2)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Hugoで生成した静的サイトをGitHub Pagesで公開する</title>
       <link>https://dotechan.github.io/blog/2020/04/29/building_blog/</link>
       <pubDate>Wed, 29 Apr 2020 22:32:23 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/04/29/building_blog/</guid>
-      <description>はじめに Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。 ブログを公開するまでの流れを備忘録として残しておきます。 環</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。&lt;br/&gt;&#xA;ブログを公開するまでの流れを備忘録として残しておきます。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Windows 10 Home (1903)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Git for Windows (v2.26.2)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Chocolatey (v0.1015)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ruby (2.7.1p83)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Asciidoctor (2.0.10)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

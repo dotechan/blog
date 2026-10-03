@@ -4,62 +4,51 @@
     <title>教養 on Work From Dote</title>
     <link>https://dotechan.github.io/blog/categories/%E6%95%99%E9%A4%8A/</link>
     <description>Recent content in 教養 on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 12 Mar 2023 13:37:34 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/categories/%E6%95%99%E9%A4%8A/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 13:37:34 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/categories/%E6%95%99%E9%A4%8A/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>確定申告の手順</title>
       <link>https://dotechan.github.io/blog/2023/03/12/20230312_tax_return/</link>
       <pubDate>Sun, 12 Mar 2023 13:37:34 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2023/03/12/20230312_tax_return/</guid>
-      <description>確定申告とは 「所得金額」とそれに対する「所得税（復興特別所得税を含む）」の額を計算し納税する 必要なもの [確定申告書 B](https://www.nta.go.jp/taxes/shiraberu/shinkoku/syotoku/r03.htm) マイナンバーカード 銀行口</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_確定申告とは&#34;&gt;確定申告とは&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;「所得金額」とそれに対する「所得税（復興特別所得税を含む）」の額を計算し納税する&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_必要なもの&#34;&gt;必要なもの&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;[確定申告書 B](&lt;a href=&#34;https://www.nta.go.jp/taxes/shiraberu/shinkoku/syotoku/r03.htm&#34; class=&#34;bare&#34;&gt;https://www.nta.go.jp/taxes/shiraberu/shinkoku/syotoku/r03.htm&lt;/a&gt;)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;マイナンバーカード&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;銀行口座がわかるもの&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;所得を明らかにできるもの&lt;/p&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;源泉徴収票 ※源泉徴収税額の記入時に必要になる&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;所得の内容を証明する書類&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>2022年10月26日時点でのvimrcの設定</title>
       <link>https://dotechan.github.io/blog/2022/10/26/20221026_vimrc/</link>
       <pubDate>Wed, 26 Oct 2022 23:33:58 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2022/10/26/20221026_vimrc/</guid>
-      <description>はじめに 環境 macOS Monterey(12.6) VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Aug 17 2022 21:20:29 vimrcの内容 &amp;#34; 文字コード set fileencodings=utf-8,cp932 &amp;#34; 行番号 set number &amp;#34; 相対行番号 set relativenumber &amp;#34; カーソル set cursorline &amp;#34; シンタックス syntax enable &amp;#34; 検索</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;macOS Monterey(12.6)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Aug 17 2022 21:20:29&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_vimrcの内容&#34;&gt;vimrcの内容&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;listingblock&#34;&gt;&#xA;&lt;div class=&#34;content&#34;&gt;&#xA;&lt;pre class=&#34;highlight&#34;&gt;&lt;code class=&#34;language-vimscript&#34; data-lang=&#34;vimscript&#34;&gt;&amp;#34; 文字コード&#xA;set fileencodings=utf-8,cp932&#xA;&#xA;&amp;#34; 行番号&#xA;set number&#xA;&#xA;&amp;#34; 相対行番号&#xA;set relativenumber&#xA;&#xA;&amp;#34; カーソル&#xA;set cursorline&#xA;&#xA;&amp;#34; シンタックス&#xA;syntax enable&#xA;&#xA;&amp;#34; 検索ハイライト&#xA;set hlsearch&#xA;&#xA;&amp;#34; Escを2回押すとハイライトを消す&#xA;nnoremap &amp;lt;Esc&amp;gt;&amp;lt;Esc&amp;gt; :nohlsearch&amp;lt;CR&amp;gt;&#xA;&#xA;&amp;#34; インクリメントサーチ&#xA;set incsearch&#xA;&#xA;&amp;#34; Undoの永続化&#xA;if has(&amp;#39;persistent_undo&amp;#39;)&#xA;&#x9;let undo_path = expand(&amp;#39;~/.vim/undo&amp;#39;)&#xA;&#x9;exe &amp;#39;set undodir=&amp;#39; .. undo_path&#xA;&#x9;set undofile&#xA;endif&#xA;&#xA;&amp;#34; インデント&#xA;set smartindent&#xA;&#xA;&amp;#34; クリップボート&#xA;set clipboard+=unnamed&#xA;&#xA;&amp;#34; ステータスライン&#xA;set laststatus=2&#xA;&#xA;&amp;#34; コマンドライン補完&#xA;set wildmenu&#xA;&#xA;&amp;#34; ヘルプの日本語化&#xA;set helplang=ja&#xA;&#xA;&amp;#34; Vimのプラグインを管理する&#xA;&amp;#34; dein.vim settings {{{&#xA;&amp;#34; install dir {{{&#xA;let s:dein_dir = expand(&amp;#39;~/.cache/dein&amp;#39;)&#xA;let s:dein_repo_dir = s:dein_dir . &amp;#39;/repos/github.com/Shougo/dein.vim&amp;#39;&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; dein installation check {{{&#xA;if &amp;amp;runtimepath !~# &amp;#39;/dein.vim&amp;#39;&#xA;  if !isdirectory(s:dein_repo_dir)&#xA;    execute &amp;#39;!git clone https://github.com/Shougo/dein.vim&amp;#39; s:dein_repo_dir&#xA;  endif&#xA;  execute &amp;#39;set runtimepath^=&amp;#39; . s:dein_repo_dir&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; begin settings {{{&#xA;if dein#load_state(s:dein_dir)&#xA;  call dein#begin(s:dein_dir)&#xA;&#xA;  &amp;#34; .toml file&#xA;  let s:rc_dir = expand(&amp;#39;~/.vim&amp;#39;)&#xA;  if !isdirectory(s:rc_dir)&#xA;    call mkdir(s:rc_dir, &amp;#39;p&amp;#39;)&#xA;  endif&#xA;  let s:toml = s:rc_dir . &amp;#39;/dein.toml&amp;#39;&#xA;&#xA;  &amp;#34; read toml and cache&#xA;  call dein#load_toml(s:toml, {&amp;#39;lazy&amp;#39;: 0})&#xA;&#xA;  &amp;#34; end settings&#xA;  call dein#end()&#xA;  call dein#save_state()&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; plugin installation check {{{&#xA;if dein#check_install()&#xA;  call dein#install()&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&amp;#34; plugin remove check {{{&#xA;let s:removed_plugins = dein#check_clean()&#xA;if len(s:removed_plugins) &amp;gt; 0&#xA;  call map(s:removed_plugins, &amp;#34;delete(v:val, &amp;#39;rf&amp;#39;)&amp;#34;)&#xA;  call dein#recache_runtimepath()&#xA;endif&#xA;&amp;#34; }}}&#xA;&#xA;&#xA;&amp;#34; TABキーを押した際にタブ文字の代わりにスペースを入れる&#xA;set expandtab&#xA;set tabstop=2&#xA;set shiftwidth=2&#xA;&#xA;&amp;#34; (参照)https://missing-semester-jp.github.io/2020/editors/&#xA;&amp;#34; TODO: ステータスライン&#xA;set laststatus=2&#xA;&#xA;&amp;#34; By default, Vim doesn&amp;#39;t let you hide a buffer (i.e. have a buffer that isn&amp;#39;t&#xA;&amp;#34; shown in any window) that has unsaved changes. This is to prevent you from &amp;#34;&#xA;&amp;#34; forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find&#xA;&amp;#34; hidden buffers helpful enough to di&#xA;set hidden&#xA;&#xA;&amp;#34; This setting makes search case-insensitive when all characters in the string&#xA;&amp;#34; being searched are lowercase. However, the search becomes case-sensitive if&#xA;&amp;#34; it contains any capital letters. This makes searching more convenient.&#xA;set ignorecase&#xA;set smartcase&#xA;&#xA;&amp;#34; Unbind some useless/annoying default key bindings.&#xA;nmap Q &amp;lt;Nop&amp;gt; &amp;#34; &amp;#39;Q&amp;#39; in normal mode enters Ex mode. You almost never want this.&#xA;&#xA;&amp;#34; Disable audible bell because it&amp;#39;s annoying.&#xA;set noerrorbells visualbell t_vb=&#xA;&#xA;&amp;#34; Enable mouse support. You should avoid relying on this too much, but it can&#xA;&amp;#34; sometimes be convenient.&#xA;set mouse+=a&#xA;&#xA;&amp;#34; Try to prevent bad habits like using the arrow keys for movement. This is&#xA;&amp;#34; not the only possible bad habit. For example, holding down the h/j/k/l keys&#xA;&amp;#34; for movement, rather than using more efficient movement commands, is also a&#xA;&amp;#34; bad habit. The former is enforceable through a .vimrc, while we don&amp;#39;t know&#xA;&amp;#34; how to prevent the latter.&#xA;&amp;#34; Do this in normal mode...&#xA;nnoremap &amp;lt;Left&amp;gt;  :echoe &amp;#34;Use h&amp;#34;&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;Right&amp;gt; :echoe &amp;#34;Use l&amp;#34;&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;Up&amp;gt;    :echoe &amp;#34;Use k&amp;#34;&amp;lt;CR&amp;gt;&#xA;nnoremap &amp;lt;Down&amp;gt;  :echoe &amp;#34;Use j&amp;#34;&amp;lt;CR&amp;gt;&#xA;&amp;#34; ...and in insert mode&#xA;inoremap &amp;lt;Left&amp;gt;  &amp;lt;ESC&amp;gt;:echoe &amp;#34;Use h&amp;#34;&amp;lt;CR&amp;gt;&#xA;inoremap &amp;lt;Right&amp;gt; &amp;lt;ESC&amp;gt;:echoe &amp;#34;Use l&amp;#34;&amp;lt;CR&amp;gt;&#xA;inoremap &amp;lt;Up&amp;gt;    &amp;lt;ESC&amp;gt;:echoe &amp;#34;Use k&amp;#34;&amp;lt;CR&amp;gt;&#xA;inoremap &amp;lt;Down&amp;gt;  &amp;lt;ESC&amp;gt;:echoe &amp;#34;Use j&amp;#34;&amp;lt;CR&amp;gt;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>NISAとは</title>
       <link>https://dotechan.github.io/blog/2020/10/16/nisa_outline/</link>
       <pubDate>Fri, 16 Oct 2020 08:38:37 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/10/16/nisa_outline/</guid>
-      <description>はじめに インデックス投資を始めるにあたり、お得になると言われているNISAについて調べました。 小額から始めるインデックス投資であれば、つみた</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;インデックス投資を始めるにあたり、お得になると言われているNISAについて調べました。&lt;br/&gt;&#xA;小額から始めるインデックス投資であれば、つみたてNISAを利用することで&lt;br/&gt;&#xA;節税できることがわかったので利用していこうと思います。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>ふるさと納税はお得なのか</title>
       <link>https://dotechan.github.io/blog/2020/09/21/furusato_tax_payment/</link>
       <pubDate>Mon, 21 Sep 2020 16:20:03 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/09/21/furusato_tax_payment/</guid>
-      <description>はじめに ふるさと納税でどれくらいお得になるのか？ そもそも控除って何？を調べ直してまとめました。 参考記事 ふるさと納税のしくみ そもそも「控除」っ</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;ふるさと納税でどれくらいお得になるのか？&lt;br/&gt;&#xA;そもそも控除って何？を調べ直してまとめました。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/mechanism/&#34;&gt;ふるさと納税のしくみ&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://advisors-freee.jp/article/category/cat-big-05/cat-small-13/6431/&#34;&gt;そもそも「控除」って何？節税になる所得控除、税額控除とは&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://biz.moneyforward.com/payroll/basic/difference-resident-tax-income-tax/&#34;&gt;所得税と住民税の違いとは？&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dc.daiwa.jp/ideco/column/article_039/&#34;&gt;今さら聞けない、ふるさと納税／（3）所得控除と税額控除の違い&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.furusato-tax.jp/about/onestop&#34;&gt;ワンストップ特例制度&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_ふるさと納税とは&#34;&gt;ふるさと納税とは&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;自分の選んだ自治体に寄付を行った場合に、寄付金額のうち2,000円を越える部分については&lt;br/&gt;&#xA;上限の範囲内で所得税と住民税から全額が控除される制度です。&lt;br/&gt;&#xA;イメージとしては2,000円で返礼品を手に入れることができるので、返礼品が2,000円以上の価値であれば&lt;br/&gt;&#xA;お得と言うことができます。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>賃貸物件の退去時にぼったくられないように</title>
       <link>https://dotechan.github.io/blog/2020/08/28/move_out_rent_home/</link>
       <pubDate>Fri, 28 Aug 2020 18:40:11 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/08/28/move_out_rent_home/</guid>
-      <description>はじめに 入居時にボラれたのを機に退去時にボラれないように知識武装している最中です。 退去時に不当な金額を請求されないためにも、退去時の注意点を</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;入居時にボラれたのを機に退去時にボラれないように知識武装している最中です。&lt;br/&gt;&#xA;退去時に不当な金額を請求されないためにも、退去時の注意点をまとめておきます。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>賃貸物件を借りた時に10万円ぼったくられた話</title>
       <link>https://dotechan.github.io/blog/2020/08/20/rent_home/</link>
       <pubDate>Thu, 20 Aug 2020 20:29:58 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/08/20/rent_home/</guid>
-      <description>はじめに 人生二回目の引越しを決意し賃貸物件を借りたのですがボラれました。 今回は勉強料だと割り切って次回の引越しで同じ過ちを犯さないように 備忘</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;人生二回目の引越しを決意し賃貸物件を借りたのですがボラれました。&lt;br/&gt;&#xA;今回は勉強料だと割り切って次回の引越しで同じ過ちを犯さないように&lt;br/&gt;&#xA;備忘録として記事を残しておきます。&lt;br/&gt;&#xA;誰かの参考になると嬉しいけど、このブログは誰も見てないか😂&lt;br/&gt;&#xA;土手から引っ越しちゃうしブログのタイトルも変えないとだな😂&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

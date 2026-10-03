@@ -4,17 +4,16 @@
     <title>Github on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/github/</link>
     <description>Recent content in Github on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 15 Aug 2021 01:12:02 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Aug 2021 01:12:02 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>personal access tokenでGithubの認証を通す</title>
       <link>https://dotechan.github.io/blog/2021/08/15/switch_ssh_to_https_github_protocol/</link>
       <pubDate>Sun, 15 Aug 2021 01:12:02 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/08/15/switch_ssh_to_https_github_protocol/</guid>
-      <description>はじめに 以前からアナウンスされていたが日本時間の8/14にGitHubの認証に従来のパスワード認証が使えなくなったので推奨されているトークン</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;以前からアナウンスされていたが日本時間の8/14にGitHubの認証に従来のパスワード認証が使えなくなったので推奨されているトークンを発行して認証する方法に切り替えたので手順を残しておく&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

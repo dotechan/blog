@@ -4,17 +4,16 @@
     <title>ブログ on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/%E3%83%96%E3%83%AD%E3%82%B0/</link>
     <description>Recent content in ブログ on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 01 Dec 2020 16:31:15 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/%E3%83%96%E3%83%AD%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Dec 2020 16:31:15 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/%E3%83%96%E3%83%AD%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>伝わる技術文書の書き方</title>
       <link>https://dotechan.github.io/blog/2020/12/01/method_write_tech_blog/</link>
       <pubDate>Tue, 01 Dec 2020 16:31:15 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/12/01/method_write_tech_blog/</guid>
-      <description>はじめに merpay Tech Talkの「伝わる技術文書の書き方」をオンラインで視聴した際のメモです。 自分で見直す用です。 参考記事 merpay Tech Talk 伝わる技術文書の書き方</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;merpay Tech Talkの「伝わる技術文書の書き方」をオンラインで視聴した際のメモです。&lt;br/&gt;&#xA;自分で見直す用です。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=GvjScPO3OcA&amp;amp;feature=youtu.be&#34;&gt;merpay Tech Talk &lt;sub&gt;伝わる技術文書の書き方&lt;/sub&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_メモ&#34;&gt;メモ&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;sect2&#34;&gt;&#xA;&lt;h3 id=&#34;_注意点&#34;&gt;注意点&lt;/h3&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;言葉の揺れ&lt;/p&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;「あらたに」と「新たに」が混在&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

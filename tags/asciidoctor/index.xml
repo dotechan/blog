@@ -4,17 +4,16 @@
     <title>Asciidoctor on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/asciidoctor/</link>
     <description>Recent content in Asciidoctor on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 29 Apr 2020 22:32:23 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/asciidoctor/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Apr 2020 22:32:23 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/asciidoctor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugoで生成した静的サイトをGitHub Pagesで公開する</title>
       <link>https://dotechan.github.io/blog/2020/04/29/building_blog/</link>
       <pubDate>Wed, 29 Apr 2020 22:32:23 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/04/29/building_blog/</guid>
-      <description>はじめに Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。 ブログを公開するまでの流れを備忘録として残しておきます。 環</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Hugoでブログを生成し、GitHub Pagesで本ブログを公開してます。&lt;br/&gt;&#xA;ブログを公開するまでの流れを備忘録として残しておきます。&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Windows 10 Home (1903)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Git for Windows (v2.26.2)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Chocolatey (v0.1015)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ruby (2.7.1p83)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Asciidoctor (2.0.10)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

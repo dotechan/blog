@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on Work From Dote</title>
+    <link>https://dotechan.github.io/blog/tags/css/</link>
+    <description>Recent content in CSS on Work From Dote</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 03 Oct 2026 22:44:00 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>icebergの配色で記事HTMLのテンプレートを作った</title>
+      <link>https://dotechan.github.io/blog/2026/10/03/20261003_iceberg_article_kit/</link>
+      <pubDate>Sat, 03 Oct 2026 22:44:00 +0900</pubDate>
+      <guid>https://dotechan.github.io/blog/2026/10/03/20261003_iceberg_article_kit/</guid>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;社内のブログを、プレーンテキストではなく HTML で投稿することが増えた。&#xA;原稿を生成 AI に渡して HTML にしてもらうと、その場で CSS まで書かれてしまい、記事ごとに色も余白も変わる。&#xA;デザインの決まりがないので、再現性がなく、自分の色も残らない。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

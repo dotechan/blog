@@ -4,17 +4,16 @@
     <title>Docker Compose on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/docker-compose/</link>
     <description>Recent content in Docker Compose on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 04 Sep 2021 16:21:33 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Sep 2021 16:21:33 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker Composeとexpress.jsとMySQLでバックエンド環境を用意する</title>
       <link>https://dotechan.github.io/blog/2021/09/04/docker_compose_backend_db/</link>
       <pubDate>Sat, 04 Sep 2021 16:21:33 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/09/04/docker_compose_backend_db/</guid>
-      <description>はじめに Docker Composeとexpress.jsとMySQLで開発用のHTTPサーバを立てて、ホストPCから送ったHTTPリクエストにレスポン</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Docker Composeとexpress.jsとMySQLで開発用のHTTPサーバを立てて、ホストPCから送ったHTTPリクエストにレスポンスが返せるようになるところまで実施した際の備忘録です。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>theme on Work From Dote</title>
+    <title>Theme on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/theme/</link>
-    <description>Recent content in theme on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Theme on Work From Dote</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 06 May 2020 19:11:51 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 May 2020 19:11:51 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/theme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Androidのstyleとtheme</title>
       <link>https://dotechan.github.io/blog/2020/05/06/android_style_theme/</link>
       <pubDate>Wed, 06 May 2020 19:11:51 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/06/android_style_theme/</guid>
-      <description>はじめに Androidのstyleとthemeの使い分けについて調べた 参考記事 スタイルとテーマ スタイル属性を参照する Style Viewやウィンドウの</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Androidのstyleとthemeの使い分けについて調べた&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_参考記事&#34;&gt;参考記事&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/ui/themes?hl=ja&#34;&gt;スタイルとテーマ&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://developer.android.com/guide/topics/resources/accessing-resources.html#ReferencesToThemeAttributes&#34;&gt;スタイル属性を参照する&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_style&#34;&gt;Style&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Viewやウィンドウの外観や書式を指定するプロパティの集合&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ウェブデザインにおけるCSSと同じようなもの&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;レイアウトを指定するXMLとは別のXMLで定義される&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;View単位で指定する(レイアウトのXMLのView要素にstyle属性を追加する)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ViewGroupにスタイルを適用しても子要素Viewにはスタイルが適用されない&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

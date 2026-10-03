@@ -4,17 +4,16 @@
     <title>タイミング図 on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E5%9B%B3/</link>
     <description>Recent content in タイミング図 on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 09 Dec 2020 22:01:34 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E5%9B%B3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Dec 2020 22:01:34 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/%E3%82%BF%E3%82%A4%E3%83%9F%E3%83%B3%E3%82%B0%E5%9B%B3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PlantUMLでタイミング図を描く</title>
       <link>https://dotechan.github.io/blog/2020/12/09/plant_uml_timing-diagram/</link>
       <pubDate>Wed, 09 Dec 2020 22:01:34 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/12/09/plant_uml_timing-diagram/</guid>
-      <description>はじめに システムテストの障害解析時に複数のモジュール担当者で合同でログ解析を行う機会がありました。 それぞれのモジュールは並列に処理が動き、あ</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;システムテストの障害解析時に複数のモジュール担当者で合同でログ解析を行う機会がありました。&lt;br/&gt;&#xA;それぞれのモジュールは並列に処理が動き、あるタイミングでそれぞれの処理がバッティングすると問題が発生します。&lt;br/&gt;&#xA;障害発生ケースだけであればシーケンス図でまとめることでわかりやすくまとめることができます。&lt;br/&gt;&#xA;しかし、障害発生ケースと問題が発生しなかったケースの比較をしたい時、シーケンス図だと時間のスケールを表現が難しいです。&lt;br/&gt;&#xA;そこで時間のスケールを表現する手法やツールを調べていたところPlantUMLのタイミング図を見つけました。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

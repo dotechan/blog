@@ -4,26 +4,23 @@
     <title>RaspberryPi on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/raspberrypi/</link>
     <description>Recent content in RaspberryPi on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 18 Jan 2021 22:22:25 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jan 2021 22:22:25 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RaspberryPiにDockerをインストールする</title>
       <link>https://dotechan.github.io/blog/2021/01/18/install_docker_for_raspberrypi/</link>
       <pubDate>Mon, 18 Jan 2021 22:22:25 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/01/18/install_docker_for_raspberrypi/</guid>
-      <description>環境 Raspbian GNU/Linux 9.13 (stretch) 前提条件 OS requirementsを満たしているRaspbian OSでのDockerインストール手順です。 https://docs.docker.com/engine/install/debian/#os-requirements Using these scripts is not recommended for production environments, and</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_環境&#34;&gt;環境&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;ulist&#34;&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Raspbian GNU/Linux 9.13 (stretch)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_前提条件&#34;&gt;前提条件&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;OS requirementsを満たしているRaspbian OSでのDockerインストール手順です。&#xA;&lt;a href=&#34;https://docs.docker.com/engine/install/debian/#os-requirements&#34; class=&#34;bare&#34;&gt;https://docs.docker.com/engine/install/debian/#os-requirements&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&lt;div class=&#34;quoteblock&#34;&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;Using these scripts is not recommended for production environments, and you should understand the potential risks before you use them:&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>RaspberryPiを初回起動した後に変更した設定</title>
       <link>https://dotechan.github.io/blog/2021/01/10/setup_raspberrypi/</link>
       <pubDate>Sun, 10 Jan 2021 11:34:32 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2021/01/10/setup_raspberrypi/</guid>
-      <description>はじめに 友達からOSのインストールまで完了したRaspberryPiをもらったので、手元のPCからセキュリティを担保しつつ、sshで接続でき</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;友達からOSのインストールまで完了したRaspberryPiをもらったので、手元のPCからセキュリティを担保しつつ、sshで接続できるように設定しました。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>

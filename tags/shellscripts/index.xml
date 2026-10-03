@@ -4,17 +4,16 @@
     <title>ShellScripts on Work From Dote</title>
     <link>https://dotechan.github.io/blog/tags/shellscripts/</link>
     <description>Recent content in ShellScripts on Work From Dote</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 03 May 2020 18:15:09 +0900</lastBuildDate><atom:link href="https://dotechan.github.io/blog/tags/shellscripts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 May 2020 18:15:09 +0900</lastBuildDate>
+    <atom:link href="https://dotechan.github.io/blog/tags/shellscripts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>シェルスクリプトの実行方法は大きく分けて2つある</title>
       <link>https://dotechan.github.io/blog/2020/05/03/execute_pattern_shell_scripts/</link>
       <pubDate>Sun, 03 May 2020 18:15:09 +0900</pubDate>
-      
       <guid>https://dotechan.github.io/blog/2020/05/03/execute_pattern_shell_scripts/</guid>
-      <description>はじめに ブログの記事を作成するにあたってhugoコマンドやdeployするまでの gitコマンドの実行を自動化するためにシェルスクリプトを書く</description>
+      <description>&lt;div class=&#34;sect1&#34;&gt;&#xA;&lt;h2 id=&#34;_はじめに&#34;&gt;はじめに&lt;/h2&gt;&#xA;&lt;div class=&#34;sectionbody&#34;&gt;&#xA;&lt;div class=&#34;paragraph&#34;&gt;&#xA;&lt;p&gt;ブログの記事を作成するにあたってhugoコマンドやdeployするまでの&lt;br/&gt;&#xA;gitコマンドの実行を自動化するためにシェルスクリプトを書く機会がありました。&lt;br/&gt;&#xA;その中でシェルスクリプトの実行方法に種類があることがわかったので調べた結果をまとめます。&lt;/p&gt;&#xA;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>
